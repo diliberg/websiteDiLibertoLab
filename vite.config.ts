@@ -6,6 +6,7 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  base: './', // Add this line to make assets load correctly
   build: {
     outDir: 'dist',
     sourcemap: false,
