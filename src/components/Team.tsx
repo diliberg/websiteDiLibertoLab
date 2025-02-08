@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Globe, Twitter, Cloud } from 'lucide-react';
 
 type TeamMember = {
   name: string;
@@ -8,6 +8,10 @@ type TeamMember = {
   keywords?: string[];
   photo?: string;
   link?: string;
+  publications?: Array<{
+    title: string;
+    link: string;
+  }>;
 };
 
 const teamMembers = {
@@ -15,7 +19,14 @@ const teamMembers = {
     name: "Giovanni Di Liberto",
     role: "Principal Investigator",
     description: "Assistant Professor in Neural Engineering at Trinity College Dublin, School of Computer Science and Statistics. PI at ADAPT Centre.",
-    photo: "https://www.diliberg.net/images/cv3.jpg"
+    photo: "https://www.diliberg.net/images/cv3.jpg",
+    links: [
+      { title: "Full list of publications", url: "https://scholar.google.it/citations?view_op=list_works&hl=en&hl=en&user=0NWmnJYAAAAJ" },
+      { title: "Academic webpage", url: "https://www.tcd.ie/scss/people/academic-staff/gdiliber/" },
+      { title: "Research Gate", url: "https://www.researchgate.net/profile/Giovanni_Di_Liberto" },
+      { title: "X (Twitter)", url: "https://twitter.com/diliberg" },
+      { title: "BlueSky", url: "https://bsky.app/profile/diliberg.bsky.social" }
+    ]
   },
   postdocs: [
     {
@@ -31,13 +42,19 @@ const teamMembers = {
       name: "Sara Carta",
       role: "PhD Student",
       keywords: ["Speech perception", "Selective Attention", "Hearing Impairment"],
-      description: "Check out Sara's latest preprint on the cortical encoding of phonemes in hearing impaired participants.",
+      publications: [
+        { title: "PLoS One, 2024", link: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0308554" },
+        { title: "J Neurosci Methods, 2022", link: "https://www.sciencedirect.com/science/article/pii/S0165027022002916" }
+      ],
       photo: "https://www.diliberg.net/images/SaraLabpic.jpeg"
     },
     {
       name: "Amirhossein Chalehchaleh",
       role: "PhD Student",
       keywords: ["Speech perception", "Semantic processing", "Statistical learning"],
+      publications: [
+        { title: "J Neural Eng, 2024", link: "https://iopscience.iop.org/article/10.1088/1741-2552/ada30a/meta" }
+      ],
       photo: "https://www.diliberg.net/images/amirPic.jpg"
     },
     {
@@ -89,7 +106,12 @@ const teamMembers = {
     {
       name: "Evander Darius Sequeira",
       role: "MSc Student",
-      keywords: ["Speech production", "EEG"]
+      keywords: ["Speech production", "EEG"],
+      photo: "https://www.diliberg.net/images/2024Evander.jpg",
+      publications: [
+        { title: "Website", link: "https://evanderds.github.io/" },
+        { title: "LinkedIn", link: "https://www.linkedin.com/in/evanderds" }
+      ]
     },
     {
       name: "Sathvika Thorali Suresh",
@@ -99,17 +121,23 @@ const teamMembers = {
     {
       name: "Sudheendra Neela",
       role: "MSc Student",
-      keywords: ["Speech perception", "EEG", "large language models"]
+      keywords: ["Speech perception", "EEG", "large language models"],
+      publications: [
+        { title: "LinkedIn", link: "https://www.linkedin.com/in/sudheendra-neela/" }
+      ],
+      photo: "https://www.diliberg.net/images/2024Sudheendra.jpg"
     },
     {
       name: "Sahana Hegde",
       role: "MSc Student",
-      keywords: ["Music enjoyment", "EEG"]
+      keywords: ["Music enjoyment", "EEG"],
+      photo: "https://www.diliberg.net/images/2024Sahana.jpg"
     },
     {
       name: "Cillian French",
       role: "BA ICS Student",
-      keywords: ["Big data", "CNSP", "TRF"]
+      keywords: ["Big data", "Open Science", "CNSP", "TRF"],
+      photo: "https://www.diliberg.net/images/2024Cillian.jpg"
     }
   ],
   alumni2324: [
@@ -217,7 +245,9 @@ const teamMembers = {
       name: "Giorgia Cantisani",
       role: "Postdoc Research Visitor (Ecole Normal Superieure, 2022-23)",
       keywords: ["Speech and Music perception", "Source separation", "Machine learning"],
-      description: "Check out Giorgia's latest study with us on speech and music perception.",
+      publications: [
+        { title: "Latest preprint", link: "https://hal.science/hal-04529950/" }
+      ],
       photo: "https://www.diliberg.net/images/giorgiaCantisani.jpg"
     },
     {
@@ -235,7 +265,10 @@ const teamMembers = {
       name: "Giorgio Piazza",
       role: "Visiting Student (BCBL, 2023)",
       keywords: ["Speech perception", "Phonological processing", "EEG"],
-      description: "Check out Giogio's talk at CNSP2023, where he presents the work he did with us at TCD (among other studies).",
+      publications: [
+        { title: "Latest preprint", link: "https://www.biorxiv.org/content/10.1101/2024.09.02.610805.abstract" },
+        { title: "CNSP2023 talk", link: "https://www.data.cnspworkshop.net/CNSP2023_videos/session1d.mp4" }
+      ],
       photo: "https://i1.rgstatic.net/ii/profile.image/947252432474114-1602853987361_Q512/Giorgio-Piazza-2.jpg"
     },
     {
@@ -287,6 +320,21 @@ function TeamSection({ title, members }: { title: string; members: TeamMember[] 
                 {member.description && (
                   <p className="text-gray-600 text-sm">{member.description}</p>
                 )}
+                {member.publications && (
+                  <div className="mt-2 space-y-1">
+                    {member.publications.map((pub, idx) => (
+                      <a
+                        key={idx}
+                        href={pub.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block text-blue-600 hover:text-blue-800 text-sm"
+                      >
+                        {pub.title} <ExternalLink className="inline h-3 w-3" />
+                      </a>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
             <KeywordsList keywords={member.keywords} />
@@ -320,7 +368,20 @@ export function Team({ onViewCV }: { onViewCV: () => void }) {
               </button>
             </div>
             <p className="text-gray-700 font-medium mb-4">{teamMembers.pi.role}</p>
-            <p className="text-gray-600">{teamMembers.pi.description}</p>
+            <p className="text-gray-600 mb-4">{teamMembers.pi.description}</p>
+            <div className="flex flex-wrap gap-3">
+              {teamMembers.pi.links.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm text-blue-600 hover:text-blue-800"
+                >
+                  {link.title} <ExternalLink className="h-3.5 w-3.5" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>

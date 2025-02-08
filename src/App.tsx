@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Menu } from 'lucide-react';
 import { Welcome } from './components/Welcome';
 import { Team } from './components/Team';
+import { Research } from './components/Research';
 import { Publications } from './components/Publications';
 import { OpenScience } from './components/OpenScience';
 import { Press } from './components/Press';
@@ -46,6 +47,8 @@ function App() {
         return <Welcome />;
       case 'team':
         return <Team onViewCV={() => setShowCV(true)} />;
+      case 'research':
+        return <Research />;
       case 'publications':
         return <Publications />;
       case 'press':
@@ -56,13 +59,6 @@ function App() {
         return <Teaching />;
       case 'join-us':
         return <JoinUs />;
-      case 'research':
-        return (
-          <div className="max-w-4xl">
-            <h2 className="text-3xl font-semibold mb-8">Research</h2>
-            <p className="text-gray-600">Research section content coming soon.</p>
-          </div>
-        );
       default:
         return <Welcome />;
     }

@@ -18,6 +18,30 @@ type Position = {
   link?: string;
 };
 
+type Education = {
+  degree: string;
+  institution: string;
+  year: string;
+};
+
+const education: Education[] = [
+  {
+    degree: "PhD in Electronic and Electrical Engineering",
+    institution: "Trinity College Dublin",
+    year: "2017"
+  },
+  {
+    degree: "Master's degree in Computer Engineering",
+    institution: "Universita' degli Studi di Padova",
+    year: "2013"
+  },
+  {
+    degree: "Bachelor's degree in Information Engineering",
+    institution: "Universita' degli studi di Padova",
+    year: "2011"
+  }
+];
+
 const currentPositions: Position[] = [
   { title: "Assistant Professor in Intelligent Systems", organization: "Discipline of Artificial Intelligence, School of Computer Science and Statistics, The University of Dublin, Trinity College, Ireland" },
   { title: "Funded Investigator", organization: "ADAPT Centre, Ireland" },
@@ -25,7 +49,8 @@ const currentPositions: Position[] = [
   { title: "Visiting Scientist", organization: "Centre for Neuroscience in Education, Department of Psychology, University of Cambridge, Cambridge, United Kingdom" },
   { title: "Member of the TCD-SCSS Research Ethics Committee" },
   { title: "Member of the TCIN MEG Committee" },
-  { title: "Co-ordinator of the CNSP open-science initiative (Cognition and Natural Sensory Processing)" }
+  { title: "Member of the TCD-SCSS Research Strategy Committee" },
+  { title: "Associate Editor for IEEE Journal of Translational Engineering in Health and Medicine" }
 ];
 
 type TeachingYear = {
@@ -40,10 +65,19 @@ type TeachingYear = {
 
 const teachingHistory: TeachingYear[] = [
   {
+    year: "2024-25",
+    courses: [
+      { title: "Introduction to Machine Learning", code: "CSP7000", role: "coordinator", program: "MSc in Smart and Sustainable Cities" },
+      { title: "Machine Learning", code: "CS7CS4", role: "co-teaching", program: "MSc in Computer Science - Data Science" },
+      { title: "Introduction to Machine Learning", code: "CSP7001", role: "coordinator", program: "PG Diploma in Applied Social Data Science" }
+    ]
+  },
+  {
     year: "2023-24",
     courses: [
       { title: "Introduction to Machine Learning", code: "CSP7000", role: "coordinator", program: "MSc in Smart and Sustainable Cities" },
       { title: "Machine Learning", code: "CS7CS4", role: "co-teaching", program: "MSc in Computer Science - Data Science" },
+      { title: " Foundations of Data Science 1", code: "STP80080", role: "design", program: "MSc in Statistics and Data Science" },
       { title: "Introduction to Machine Learning", code: "CSP7001", role: "coordinator", program: "PG Diploma in Applied Social Data Science" }
     ]
   },
@@ -71,24 +105,24 @@ const pastPositions: Position[] = [
     link: "https://www.frontiersin.org/research-topics/12581/neural-tracking-closing-the-gap-between-neurophysiology-and-translational-medicine"
   },
   { 
-    title: "Postdoctoral research scientist", 
+    title: "Postdoctoral researcher (FTE 0.5)", 
     organization: "Cognitive Neural Systems lab (PI: Simon Kelly), University College Dublin, Ireland",
     link: "https://cogneusys.com/"
   },
   { 
-    title: "Postdoctoral research scientist", 
+    title: "Postdoctoral researcher (FTE 0.5)", 
     organization: "Reilly Lab (PI: Richard Reilly), University of Dublin, Trinity College, Ireland",
     link: "https://reillylab.net/"
   },
   { 
-    title: "Postdoctoral research scientist", 
+    title: "Postdoctoral researcher", 
     organization: "LSP, École Normale Superieure, Paris (PI: Shihab Shamma)",
-    link: "https://lsp.dec.ens.fr/en/member/7735/giovanni-di-liberto"
+    link: "https://lsp.dec.ens.fr/en"
   },
   { 
-    title: "Postdoctoral research scientist", 
+    title: "Postdoctoral researcher", 
     organization: "LSP, École Normale Superieure, Paris (PI: Alain de Cheveigné)",
-    link: "https://lsp.dec.ens.fr/en/member/7735/giovanni-di-liberto"
+    link: "https://lsp.dec.ens.fr/en"
   }
 ];
 
@@ -135,6 +169,26 @@ export function CV() {
       </div>
 
       <div className="space-y-8">
+        <section>
+          <div className="flex items-center gap-2 mb-4">
+            <GraduationCap className="h-6 w-6 text-blue-600" />
+            <h2 className="text-2xl font-semibold">Education</h2>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className="space-y-4">
+              {education.map((edu, index) => (
+                <div key={index} className="flex items-start gap-2">
+                  <span className="text-blue-600 mt-1.5">•</span>
+                  <div>
+                    <div className="font-medium">{edu.degree}</div>
+                    <div className="text-gray-600">{edu.institution}, {edu.year}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section>
           <div className="flex items-center gap-2 mb-4">
             <Building className="h-6 w-6 text-blue-600" />

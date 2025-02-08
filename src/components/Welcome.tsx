@@ -1,41 +1,84 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Brain, Microscope, Code, Lightbulb } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ExternalLink, MapPin } from 'lucide-react';
 
 const slides = [
   {
-    url: "https://www.diliberg.net/images/labphoto1.png",
+    url: "https://www.diliberg.net/images/labPhotoAA1.jpg",
     alt: "Di Liberto Lab team"
   },
   {
-    url: "https://www.diliberg.net/images/SaraSetup1.jpg",
-    alt: "Lab setup"
+    url: "https://www.diliberg.net/images/labPhotoAA2.jpg",
+    alt: "Di Liberto Lab team"
   },
   {
-    url: "https://www.diliberg.net/images/SaraSetup2.jpg",
+    url: "https://www.diliberg.net/images/labPhotoAA3.jpg",
+    alt: "Di Liberto Lab team"
+  },
+  {
+    url: "https://www.diliberg.net/images/labPhotoAA4.jpg",
     alt: "Lab setup"
   }
 ];
 
-const researchHighlights = [
+const newsItems = [
   {
-    icon: Brain,
-    title: "Neural Foundations",
-    description: "Understanding the neural foundations of human communication, with a focus on speech, music perception, and sign language."
+    date: "March 2024",
+    title: "New lab Paper Published in Journal of Neural Engineering",
+    description: "Amir's latest work on robust assessment of cortical encoding has been published.",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=500&h=300",
+    link: "https://iopscience.iop.org/article/10.1088/1741-2552/ada30a"
   },
   {
-    icon: Microscope,
-    title: "Multidisciplinary Approach",
-    description: "Combining neurophysiology, machine learning, signal processing, computational linguistics, and psychology."
+    date: "February 2024",
+    title: "CNSP Workshop 2025 Announced",
+    description: "Join us in September 2025 for the next CNSP workshop on neural signal processing and cognitive science.",
+    image: "https://cnspworkshop.net/images/CNSP_Logo.gif"
   },
   {
-    icon: Code,
-    title: "Advanced Technologies",
-    description: "Utilizing EEG, MEG, pupillometry, and other technologies for multivariate neural data analysis."
+    date: "January 2024",
+    title: "New Research Published in PLoS One",
+    description: "Sara's work on cortical encoding of phonological information in hearing impaired individuals.",
+    image: "https://www.diliberg.net/images/labPhotoAA4.jpg",
+    link: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0308554"
   },
   {
-    icon: Lightbulb,
-    title: "Impact Areas",
-    description: "Contributing to understanding of language learning, development, developmental deficits, ageing, and hearing-impairment."
+    date: "December 2023",
+    title: "New Laboratory for Social Interaction Research",
+    description: "Excited to announce our new Collective-minds laboratory at Trinity College Dublin, dedicated to studying social interaction.",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=500&h=300",
+    link: "https://www.collective-minds.net"
+  },
+  {
+    date: "November 2023",
+    title: "ADAPT Best Researcher Award 2023",
+    description: "Giovanni Di Liberto receives ADAPT's Best Researcher Award for his research on the emergence of phonological encoding in the first year of life.",
+    image: "https://www.diliberg.net/images/adaptAward.jpg"
+  },
+  {
+    date: "November 2023",
+    title: "Live Interview on NPR's AirTalk",
+    description: "Giovanni discusses latest research with Larry Mantle on AirTalk radio show.",
+    image: "https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?auto=format&fit=crop&q=80&w=500&h=300",
+    link: "https://laist.com/shows/airtalk/what-you-should-know-about-the-tesla-recall"
+  },
+  {
+    date: "October 2023",
+    title: "Welcome Asena to the Team",
+    description: "Asena joins us with a PhD project supported by the SFI centre d-REAL.",
+    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=500&h=300"
+  },
+  {
+    date: "October 2023",
+    title: "IRC Scholarship Success",
+    description: "John Joins us with an IRC postgraduate scholarship to study music cognition.",
+    image: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?auto=format&fit=crop&q=80&w=500&h=300"
+  },
+  {
+    date: "September 2023",
+    title: "Major Publication in Nature Communications",
+    description: "Our research on infant language development published in Nature Communications.",
+    image: "https://images.unsplash.com/photo-1492725764893-90b379c2b6e7?auto=format&fit=crop&q=80&w=500&h=300",
+    link: "https://www.nature.com/articles/s41467-023-43490-x"
   }
 ];
 
@@ -60,7 +103,7 @@ export function Welcome() {
 
   return (
     <div className="max-w-4xl">      
-      <div className="relative h-[400px] mb-8 rounded-lg overflow-hidden shadow-md group">
+      <div className="relative h-[400px] mb-12 rounded-lg overflow-hidden shadow-md group">
         {slides.map((slide, index) => (
           <div
             key={index}
@@ -107,23 +150,46 @@ export function Welcome() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {researchHighlights.map((highlight, index) => {
-          const Icon = highlight.icon;
-          return (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 p-3 bg-blue-50 rounded-full">
-                  <Icon className="h-6 w-6 text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">{highlight.title}</h3>
-                  <p className="text-gray-600 text-sm">{highlight.description}</p>
-                </div>
+      <div className="bg-white p-8 rounded-lg shadow-sm mb-12">
+        <p className="text-gray-600 text-lg leading-relaxed mb-4">
+          Welcome to the Di Liberto-lab at Trinity College Dublin. Our research interest centers on understanding the neural foundation of human communication. We develop neural data analysis methodologies based on machine learning and signal processing. Then, we apply those methodologies on neurophysiology brain data to better understand auditory communication and other aspects of human cognition. Those findings are then used to derive objective measurements of cognition, allowing us to conduct applied research on the causes, impact, and potential solutions of cognitive and communication deficits (e.g., hearing impairment, cognitive decline).
+        </p>
+        <div className="flex items-center gap-2 text-gray-500">
+          <MapPin className="h-5 w-5" />
+          <span>School of Computer Science and Statistics, Trinity College Dublin</span>
+        </div>
+      </div>
+
+      <div>
+        <h2 className="text-2xl font-semibold mb-6">Latest News</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {newsItems.map((item, index) => (
+            <div key={index} className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+              <div className="h-40 overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-4">
+                <div className="text-sm text-gray-500 mb-2">{item.date}</div>
+                <h3 className="font-medium text-lg mb-2 line-clamp-2 min-h-[3.5rem]">{item.title}</h3>
+                <p className="text-gray-600 text-sm mb-3 min-h-[6rem]">{item.description}</p>
+                {item.link && (
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-blue-600 hover:text-blue-800 text-sm"
+                  >
+                    Read more <ExternalLink className="h-4 w-4 ml-1" />
+                  </a>
+                )}
               </div>
             </div>
-          );
-        })}
+          ))}
+        </div>
       </div>
     </div>
   );
