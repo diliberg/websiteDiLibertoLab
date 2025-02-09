@@ -26,12 +26,12 @@ type Education = {
 
 const education: Education[] = [
   {
-    degree: "PhD in Electronic and Electrical Engineering",
+    degree: "PhD in Electronic and Electrical Engineering (PI: Prof. Edmund Lalor)",
     institution: "Trinity College Dublin",
     year: "2017"
   },
   {
-    degree: "Master's degree in Computer Engineering",
+    degree: "Master's degree in Computer Engineering (Thesis supervisors: Prof. Matteo Fischetti; Dr. Yuri Malitsky)",
     institution: "Universita' degli Studi di Padova",
     year: "2013"
   },

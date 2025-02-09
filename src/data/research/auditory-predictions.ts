@@ -11,7 +11,7 @@ export const auditoryPredictionsResearch: ResearchArea = {
     {
       title: 'Speech',
       description: 'Predictive processing is a longstanding framework in neuroscience. Our brains continuously attempt to predict upcoming sensory inputs, leading to measurable prediction errors. In speech listening, those predictions occur at multiple acoustic and linguistic levels in parallel. Our work has probed that phenomenon at the phonological and lexical level. We found these predictive processes to change due to healthy ageing, when listening to a native vs. a non-native language, and depending on selective attention.',
-      image: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=2000&h=1000',
+      image: 'https://www.diliberg.net/images/picSpeech.jpg',
       publications: [
         {
           title: 'Neural representation of linguistic feature hierarchy reflects second-language proficiency',
@@ -22,7 +22,7 @@ export const auditoryPredictionsResearch: ResearchArea = {
     {
       title: 'Music',
       description: 'Similarly, we investigate auditory predictions in the context of music listening. Melodic expectations can be estimated with models such as IDyOM and music transformers. Expectations are then related with EEG/MEG signals to identify cortical areas and time-latencies where melodic predictions are most strongly encoded. Collaborations with Prof. Nima Mesgarani, Prof. Shihab Shamma, Dr. Guilhem Marion, and Dr. Roberta Bianco shed light on how, where, and when melodic expectations are encoded in the human cortex, as well as identifying a striking similarity in the neural activity reflecting prediction and that recorded during imagination of melodies. Based on that data, we have proposed a tantalising explanation for how auditory imagination unfolds, rooted in auditory prediction mechanisms.',
-      image: 'https://images.unsplash.com/photo-1507838153414-b4b713384a76?auto=format&fit=crop&q=80&w=2000&h=1000',
+      image: 'https://www.diliberg.net/images/picMusic.jpg',
       publications: [
         {
           title: 'Neural encoding of melodic expectations',
@@ -41,7 +41,7 @@ export const auditoryPredictionsResearch: ResearchArea = {
     {
       title: 'Relating speech and music',
       description: 'While we know quite a lot about prediction mechanisms for speech and music, it remains unclear how those two mechanisms relate with each other. Are they fundamentally the same neural mechanism applied to different stimuli. Or are there some fundamental distinctions between the two. In our work, we compare neural responses recorded during the listening of speech and music. We push this even further by studying sung speech, a very particular stimulus including both melodic and speech content. Studying sung speech gives us the opportunity to study how speech and music prediction mechanism unfold when the two processes occur simultaneously, giving us a clearer view into their unique neural patterns. Our results suggest that the two prediction phenomena are distinct processes based on the same fundamental functioning principle.',
-      image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&q=80&w=2000&h=1000',
+      image: 'https://www.diliberg.net/images/picSinging.jpg',
       publications: [
         {
           title: 'Neural signatures of musical and linguistic interactions during natural song listening',

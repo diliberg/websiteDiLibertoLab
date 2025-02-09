@@ -30,7 +30,7 @@ export const speechLanguageResearch: ResearchArea = {
     {
       title: 'Listening in noisy environments',
       description: 'The PI has worked previously as part of a consortium studying auditory attention in multitalker environments and brain computer interfaces (the COCOHA project). Building on that expertise and collaborations, our team investigates the neural processing of speech in realistic noisy environments, focussing on auditory selective attention and attention switching. We carry out this investigation across the lifespan and also studying hearing impairment. We carry out some of this work independently, as well as through collaborations with the Eriksholm research centre (part of Oticon), Prof. Alejandro Lopez Valdes (TCD), and Prof. Bonnie Lau (UK).',
-      image: 'https://www.diliberg.net/images/picSpeech.jpg',
+      image: 'https://www.diliberg.net/images/picAuditoryAttention.jpg',
       publications: [
         {
           title: 'Methods and device COCOHA',
