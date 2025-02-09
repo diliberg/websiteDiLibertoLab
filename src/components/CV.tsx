@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Building, GraduationCap, History, BookOpen } from 'lucide-react';
+import { ExternalLink, Building, GraduationCap, History, Users } from 'lucide-react';
 
 type SocialLink = {
   name: string;
@@ -7,9 +7,11 @@ type SocialLink = {
 };
 
 const socialLinks: SocialLink[] = [
-  { name: "Google Scholar", url: "https://scholar.google.com/citations?user=0NWmnJYAAAAJ&hl=en" },
-  { name: "Research Gate", url: "https://www.researchgate.net/profile/Giovanni_Di_Liberto" },
-  { name: "X (Twitter)", url: "https://twitter.com/diliberg" }
+  { name: "Publications", url: "https://scholar.google.it/citations?view_op=list_works&hl=en&hl=en&user=0NWmnJYAAAAJ" },
+  { name: "Academic", url: "https://www.tcd.ie/scss/people/academic-staff/gdiliber/" },
+  { name: "X", url: "https://twitter.com/diliberg" },
+  { name: "BlueSky", url: "https://bsky.app/profile/diliberg.bsky.social" },
+  { name: "Further details", url: "https://peoplefinder.tcd.ie/Profile?Username=GDILIBER" }
 ];
 
 type Position = {
@@ -43,62 +45,20 @@ const education: Education[] = [
 ];
 
 const currentPositions: Position[] = [
-  { title: "Assistant Professor in Intelligent Systems", organization: "Discipline of Artificial Intelligence, School of Computer Science and Statistics, The University of Dublin, Trinity College, Ireland" },
+  { title: "Assistant Professor in Neural Engineering", organization: "Discipline of Artificial Intelligence, School of Computer Science and Statistics, The University of Dublin, Trinity College, Ireland" },
   { title: "Funded Investigator", organization: "ADAPT Centre, Ireland" },
   { title: "Principal Investigator", organization: "Trinity College Institute of Neuroscience, Ireland" },
-  { title: "Visiting Scientist", organization: "Centre for Neuroscience in Education, Department of Psychology, University of Cambridge, Cambridge, United Kingdom" },
   { title: "Member of the TCD-SCSS Research Ethics Committee" },
   { title: "Member of the TCIN MEG Committee" },
   { title: "Member of the TCD-SCSS Research Strategy Committee" },
   { title: "Associate Editor for IEEE Journal of Translational Engineering in Health and Medicine" }
 ];
 
-type TeachingYear = {
-  year: string;
-  courses: Array<{
-    title: string;
-    code: string;
-    role: string;
-    program: string;
-  }>;
-};
-
-const teachingHistory: TeachingYear[] = [
-  {
-    year: "2024-25",
-    courses: [
-      { title: "Introduction to Machine Learning", code: "CSP7000", role: "coordinator", program: "MSc in Smart and Sustainable Cities" },
-      { title: "Machine Learning", code: "CS7CS4", role: "co-teaching", program: "MSc in Computer Science - Data Science" },
-      { title: "Introduction to Machine Learning", code: "CSP7001", role: "coordinator", program: "PG Diploma in Applied Social Data Science" }
-    ]
-  },
-  {
-    year: "2023-24",
-    courses: [
-      { title: "Introduction to Machine Learning", code: "CSP7000", role: "coordinator", program: "MSc in Smart and Sustainable Cities" },
-      { title: "Machine Learning", code: "CS7CS4", role: "co-teaching", program: "MSc in Computer Science - Data Science" },
-      { title: " Foundations of Data Science 1", code: "STP80080", role: "design", program: "MSc in Statistics and Data Science" },
-      { title: "Introduction to Machine Learning", code: "CSP7001", role: "coordinator", program: "PG Diploma in Applied Social Data Science" }
-    ]
-  },
-  {
-    year: "2022-23",
-    courses: [
-      { title: "Introduction to Machine Learning", code: "CSP7000", role: "coordinator", program: "MSc in Smart and Sustainable Cities" },
-      { title: "Machine Learning", code: "CS7CS4", role: "co-teaching", program: "MSc in Computer Science - Data Science" },
-      { title: "Introduction to Machine Learning", code: "CSP7001", role: "coordinator", program: "PG Diploma in Applied Social Data Science" }
-    ]
-  },
-  {
-    year: "2021-22",
-    courses: [
-      { title: "Introduction to Machine Learning", code: "CSP7000", role: "design and coordinator", program: "MSc in Smart and Sustainable Cities" },
-      { title: "Introduction to Machine Learning", code: "CSP7001", role: "design and coordinator", program: "PG Diploma in Applied Social Data Science" }
-    ]
-  }
-];
-
 const pastPositions: Position[] = [
+  { 
+    title: "Visiting Scientist", 
+    organization: "Centre for Neuroscience in Education, Department of Psychology, University of Cambridge, Cambridge, United Kingdom"
+  },
   { 
     title: "Guest Associate Editor", 
     organization: "Frontiers Research Topic 'Neural Tracking: Closing the Gap Between Neurophysiology and Translational Medicine'",
@@ -132,7 +92,7 @@ export function CV() {
       <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
         <div className="flex gap-8 items-start">
           <img
-            src="https://www.diliberg.net/images/cv3.jpg"
+            src="https://www.diliberg.net/images/headshot2024.jpg"
             alt="Giovanni M. Di Liberto"
             className="w-48 h-48 object-cover rounded-lg shadow-md"
           />
@@ -140,7 +100,7 @@ export function CV() {
             <h2 className="text-3xl font-semibold mb-2">Giovanni M. Di Liberto</h2>
             <h3 className="text-xl text-gray-600 mb-4">Assistant Professor in Intelligent Systems</h3>
             
-            <div className="flex gap-4 mb-6">
+            <div className="flex flex-wrap gap-4">
               {socialLinks.map((link, index) => (
                 <a
                   key={index}
@@ -154,41 +114,11 @@ export function CV() {
                 </a>
               ))}
             </div>
-
-            <p className="text-gray-600 text-justify">
-              Giovanni received his Bachelor's degree in Information Engineering in 2011 and
-              his Master's degree in Computer Engineering in 2013, both from the University of Padova, Italy. 
-              After a period working on his thesis at University College Cork (UCC, Ireland), he joined{' '}
-              <a href="https://www.urmc.rochester.edu/labs/lalor.aspx" className="text-blue-600 hover:text-blue-800">
-                Edmund Lalor
-              </a>'s research lab in Trinity College Dublin where he pursued a PhD in auditory neuroscience 
-              in the School of Electronic and Electrical Engineering.
-            </p>
           </div>
         </div>
       </div>
 
       <div className="space-y-8">
-        <section>
-          <div className="flex items-center gap-2 mb-4">
-            <GraduationCap className="h-6 w-6 text-blue-600" />
-            <h2 className="text-2xl font-semibold">Education</h2>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-sm">
-            <div className="space-y-4">
-              {education.map((edu, index) => (
-                <div key={index} className="flex items-start gap-2">
-                  <span className="text-blue-600 mt-1.5">•</span>
-                  <div>
-                    <div className="font-medium">{edu.degree}</div>
-                    <div className="text-gray-600">{edu.institution}, {edu.year}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section>
           <div className="flex items-center gap-2 mb-4">
             <Building className="h-6 w-6 text-blue-600" />
@@ -213,22 +143,21 @@ export function CV() {
 
         <section>
           <div className="flex items-center gap-2 mb-4">
-            <BookOpen className="h-6 w-6 text-blue-600" />
-            <h2 className="text-2xl font-semibold">Teaching History</h2>
+            <GraduationCap className="h-6 w-6 text-blue-600" />
+            <h2 className="text-2xl font-semibold">Education</h2>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-sm">
-            {teachingHistory.map((year, index) => (
-              <div key={index} className="mb-6 last:mb-0">
-                <h3 className="font-semibold text-lg mb-3">{year.year}</h3>
-                <ul className="space-y-2 ml-4">
-                  {year.courses.map((course, courseIndex) => (
-                    <li key={courseIndex} className="text-gray-600">
-                      {course.title} - {course.code} ({course.role}; {course.program})
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            <div className="space-y-4">
+              {education.map((edu, index) => (
+                <div key={index} className="flex items-start gap-2">
+                  <span className="text-blue-600 mt-1.5">•</span>
+                  <div>
+                    <div className="font-medium">{edu.degree}</div>
+                    <div className="text-gray-600">{edu.institution}, {edu.year}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 

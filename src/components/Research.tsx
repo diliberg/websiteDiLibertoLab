@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 import { researchAreas } from '../data/research';
 import { collaborations, fundingLogos } from '../data/collaborations';
@@ -42,16 +42,10 @@ function ResearchAreaCard({ area, expanded, onToggle }: {
   );
 }
 
-function ExpandedContent({ area }: { area: ResearchArea }) {
-  const [loadedImages, setLoadedImages] = useState<{[key: string]: boolean}>({});
-
-  const handleImageLoad = (imageUrl: string) => {
-    setLoadedImages(prev => ({
-      ...prev,
-      [imageUrl]: true
-    }));
-  };
-
+function ExpandedContent({ area, isTransitioning }: { 
+  area: ResearchArea;
+  isTransitioning: boolean;
+}) {
   return (
     <div className="bg-white rounded-lg shadow-lg p-8 mt-8">
       <h3 className="text-2xl font-semibold mb-6">{area.title}</h3>
@@ -63,14 +57,13 @@ function ExpandedContent({ area }: { area: ResearchArea }) {
               <div className="lg:w-1/2 mb-6 lg:mb-0">
                 {study.image && (
                   <div className="relative aspect-[2/1] rounded-lg overflow-hidden bg-gray-100">
-                    <img 
-                      src={study.image} 
-                      alt={study.title}
-                      className={`w-full h-full object-cover transition-opacity duration-300 ${
-                        loadedImages[study.image] ? 'opacity-100' : 'opacity-0'
-                      }`}
-                      onLoad={() => handleImageLoad(study.image!)}
-                    />
+                    {!isTransitioning && (
+                      <img 
+                        src={study.image} 
+                        alt={study.title}
+                        className="w-full h-full object-cover transition-opacity duration-300"
+                      />
+                    )}
                   </div>
                 )}
                 
@@ -155,6 +148,62 @@ function FundingSection() {
 
 export function Research() {
   const [expandedArea, setExpandedArea] = useState<string | null>(null);
+  const [contentHeight, setContentHeight] = useState<number>(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const expandedContentRef = useRef<HTMLDivElement>(null);
+  const expandedWrapperRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (expandedArea) {
+      setIsTransitioning(true);
+      // Reset transition state after content is loaded
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+      }, 500); // Match the duration of the scroll animation
+      return () => clearTimeout(timer);
+    }
+  }, [expandedArea]);
+
+  useEffect(() => {
+    if (expandedContentRef.current && expandedArea) {
+      setContentHeight(expandedContentRef.current.scrollHeight);
+      
+      setTimeout(() => {
+        if (expandedWrapperRef.current) {
+          const yOffset = -20;
+          const y = expandedWrapperRef.current.getBoundingClientRect().top + 
+                   window.pageYOffset + yOffset;
+          
+          const startPosition = window.pageYOffset;
+          const distance = y - startPosition;
+          const duration = 500;
+          const startTime = performance.now();
+
+          function easeInOutCubic(t: number): number {
+            return t < 0.5
+              ? 4 * t * t * t
+              : 1 - Math.pow(-2 * t + 2, 3) / 2;
+          }
+
+          function scrollAnimation(currentTime: number) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            const easedProgress = easeInOutCubic(progress);
+            window.scrollTo(0, startPosition + distance * easedProgress);
+
+            if (progress < 1) {
+              requestAnimationFrame(scrollAnimation);
+            }
+          }
+
+          requestAnimationFrame(scrollAnimation);
+        }
+      }, 50);
+    } else {
+      setContentHeight(0);
+    }
+  }, [expandedArea]);
 
   return (
     <div className="max-w-6xl">
@@ -172,29 +221,40 @@ export function Research() {
         </div>
       </section>
 
-      {expandedArea && (
-        <ExpandedContent 
-          area={researchAreas.find(area => area.id === expandedArea)!}
-        />
-      )}
+      <div 
+        ref={expandedWrapperRef}
+        className="transition-all duration-500 ease-in-out overflow-hidden"
+        style={{ height: contentHeight ? `${contentHeight}px` : '0px' }}
+      >
+        <div ref={expandedContentRef}>
+          {expandedArea && (
+            <ExpandedContent 
+              area={researchAreas.find(area => area.id === expandedArea)!}
+              isTransitioning={isTransitioning}
+            />
+          )}
+        </div>
+      </div>
 
-      {!expandedArea && (
-        <>
-          <section className="mb-12">
-            <h2 className="text-3xl font-semibold mb-8">Main Collaborators</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {collaborations.map((collaboration, index) => (
-                <CollaborationCard key={index} collaboration={collaboration} />
-              ))}
-            </div>
-          </section>
+      <div 
+        className={`transition-all duration-500 ${
+          expandedArea ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100'
+        }`}
+      >
+        <section className="mb-12">
+          <h2 className="text-3xl font-semibold mb-8">Main Collaborators</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {collaborations.map((collaboration, index) => (
+              <CollaborationCard key={index} collaboration={collaboration} />
+            ))}
+          </div>
+        </section>
 
-          <section>
-            <h2 className="text-3xl font-semibold mb-8">Funding & Support</h2>
-            <FundingSection />
-          </section>
-        </>
-      )}
+        <section>
+          <h2 className="text-3xl font-semibold mb-8">Funding & Support</h2>
+          <FundingSection />
+        </section>
+      </div>
     </div>
   );
 }
