@@ -3,15 +3,19 @@ import { ChevronLeft, ChevronRight, ExternalLink, MapPin } from 'lucide-react';
 
 const slides = [
   {
+    url: "https://www.diliberg.net/images/labPhoto2025.jpg",
+    alt: "Di Liberto Lab team"
+  },
+  {
+    url: "https://www.diliberg.net/images/labPhotoEEG2025.jpg",
+    alt: "Di Liberto Lab team"
+  },
+  {
     url: "https://www.diliberg.net/images/labPhotoAA1.jpg",
     alt: "Di Liberto Lab team"
   },
   {
     url: "https://www.diliberg.net/images/labPhotoAA2.jpg",
-    alt: "Di Liberto Lab team"
-  },
-  {
-    url: "https://www.diliberg.net/images/labPhotoAA3.jpg",
     alt: "Di Liberto Lab team"
   },
   {
@@ -22,34 +26,34 @@ const slides = [
 
 const newsItems = [
   {
-    date: "March 2024",
+    date: "January 2025",
     title: "New lab Paper Published in Journal of Neural Engineering",
     description: "Amir's latest work on robust assessment of cortical encoding has been published.",
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=500&h=300",
     link: "https://iopscience.iop.org/article/10.1088/1741-2552/ada30a"
   },
   {
-    date: "February 2024",
+    date: "January 2025",
     title: "CNSP Workshop 2025 Announced",
     description: "Join us in September 2025 for the next CNSP workshop on neural signal processing and cognitive science.",
     image: "https://cnspworkshop.net/images/CNSP_Logo.gif"
   },
   {
-    date: "January 2024",
+    date: "December 2024",
     title: "New Research Published in PLoS One",
     description: "Sara's work on cortical encoding of phonological information in hearing impaired individuals.",
     image: "https://www.diliberg.net/images/labPhotoAA4.jpg",
     link: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0308554"
   },
   {
-    date: "December 2023",
+    date: "October 2024",
     title: "New Laboratory for Social Interaction Research",
     description: "Excited to announce our new Collective-minds laboratory at Trinity College Dublin, dedicated to studying social interaction.",
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=500&h=300",
     link: "https://www.collective-minds.net"
   },
   {
-    date: "November 2023",
+    date: "December 2023",
     title: "ADAPT Best Researcher Award 2023",
     description: "Giovanni Di Liberto receives ADAPT's Best Researcher Award for his research on the emergence of phonological encoding in the first year of life.",
     image: "https://www.diliberg.net/images/adaptAward.jpg"
@@ -62,6 +66,13 @@ const newsItems = [
     link: "https://laist.com/shows/airtalk/what-you-should-know-about-the-tesla-recall"
   },
   {
+    date: "December 2023",
+    title: "Major Publication in Nature Communications",
+    description: "Our research on infant language development published in Nature Communications.",
+    image: "https://images.unsplash.com/photo-1492725764893-90b379c2b6e7?auto=format&fit=crop&q=80&w=500&h=300",
+    link: "https://www.nature.com/articles/s41467-023-43490-x"
+  },
+  {
     date: "October 2023",
     title: "Welcome Asena to the Team",
     description: "Asena joins us with a PhD project supported by the SFI centre d-REAL.",
@@ -72,13 +83,6 @@ const newsItems = [
     title: "IRC Scholarship Success",
     description: "John Joins us with an IRC postgraduate scholarship to study music cognition.",
     image: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?auto=format&fit=crop&q=80&w=500&h=300"
-  },
-  {
-    date: "September 2023",
-    title: "Major Publication in Nature Communications",
-    description: "Our research on infant language development published in Nature Communications.",
-    image: "https://images.unsplash.com/photo-1492725764893-90b379c2b6e7?auto=format&fit=crop&q=80&w=500&h=300",
-    link: "https://www.nature.com/articles/s41467-023-43490-x"
   }
 ];
 

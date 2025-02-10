@@ -34,7 +34,7 @@ const teamMembers = {
       role: "Postdoctoral Researcher",
       description: "Research interests: Cognition, Psycholinguistics",
       keywords: ["Speech interaction", "language", "trust"],
-      photo: "https://www.diliberg.net/images/JaimyLabpic.jpeg"
+      photo: "https://www.diliberg.net/images/2025Jaimy.jpg"
     }
   ],
   phd: [
@@ -96,7 +96,8 @@ const teamMembers = {
     {
       name: "Arshad Mohammed",
       role: "MCS Student",
-      keywords: ["Speech production", "Decoding", "Transformers"]
+      keywords: ["Speech production", "Decoding", "Transformers"],
+      photo: "https://www.diliberg.net/images/2024Arshad.jpg"
     },
     {
       name: "Holly Daly",

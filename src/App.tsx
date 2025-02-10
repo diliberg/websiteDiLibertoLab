@@ -123,7 +123,7 @@ function App() {
             />
           </button>
         </div>
-        <div className="p-4 md:p-8 lg:pl-8">
+        <div className="p-4 md:p-8 lg:pl-8 mt-8 lg:mt-0">
           {renderContent()}
         </div>
       </main>
