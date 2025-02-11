@@ -117,7 +117,11 @@ const teamMembers = {
     {
       name: "Sathvika Thorali Suresh",
       role: "MSc Student",
-      keywords: ["Second language learning", "large language models"]
+      keywords: ["Second language learning", "large language models"],
+      publications: [
+        { title: "LinkedIn", link: "https://www.linkedin.com/in/sathvits" }
+      ],
+      photo: "https://www.diliberg.net/images/2024Sathvika.jpg"
     },
     {
       name: "Sudheendra Neela",
