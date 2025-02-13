@@ -19,7 +19,7 @@ const teamMembers = {
     name: "Giovanni Di Liberto",
     role: "Principal Investigator",
     description: "Assistant Professor in Neural Engineering at Trinity College Dublin, School of Computer Science and Statistics. PI at ADAPT Centre.",
-    photo: "https://www.diliberg.net/images/cv3.jpg",
+    photo: "https://diliberg.github.io/websiteDiLibertoLabImages/cv3.jpg",
     links: [
       { title: "Full list of publications", url: "https://scholar.google.it/citations?view_op=list_works&hl=en&hl=en&user=0NWmnJYAAAAJ" },
       { title: "Academic webpage", url: "https://www.tcd.ie/scss/people/academic-staff/gdiliber/" },
@@ -34,7 +34,7 @@ const teamMembers = {
       role: "Postdoctoral Researcher",
       description: "Research interests: Cognition, Psycholinguistics",
       keywords: ["Speech interaction", "language", "trust"],
-      photo: "https://www.diliberg.net/images/2025Jaimy.jpg"
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Jaimy.jpg"
     }
   ],
   phd: [
@@ -46,7 +46,7 @@ const teamMembers = {
         { title: "PLoS One, 2024", link: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0308554" },
         { title: "J Neurosci Methods, 2022", link: "https://www.sciencedirect.com/science/article/pii/S0165027022002916" }
       ],
-      photo: "https://www.diliberg.net/images/SaraLabpic.jpeg"
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/SaraLabpic.jpeg"
     },
     {
       name: "Amirhossein Chalehchaleh",
@@ -55,13 +55,13 @@ const teamMembers = {
       publications: [
         { title: "J Neural Eng, 2024", link: "https://iopscience.iop.org/article/10.1088/1741-2552/ada30a/meta" }
       ],
-      photo: "https://www.diliberg.net/images/amirPic.jpg"
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/amirPic.jpg"
     },
     {
       name: "Emily Ip",
       role: "PhD Student",
       keywords: ["Speech perception", "Statistical learning", "Perspective taking"],
-      photo: "https://www.diliberg.net/images/emilyPic.jpg"
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/emilyPic.jpg"
     },
     {
       name: "Martin Winchester",
@@ -72,13 +72,13 @@ const teamMembers = {
       name: "John O'Doherty",
       role: "PhD Student",
       keywords: ["Music perception", "Music decoding", "Machine learning"],
-      photo: "https://www.diliberg.net/images/2022john.jpg"
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2022john.jpg"
     },
     {
       name: "Asena Akkaya",
       role: "PhD Student",
       keywords: ["Speech and music processing", "Prosody", "Social anxiety"],
-      photo: "https://www.diliberg.net/images/asenaPic.jpg"
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/asenaPic.jpg"
     }
   ],
   staff: [
@@ -97,7 +97,7 @@ const teamMembers = {
       name: "Arshad Mohammed",
       role: "MCS Student",
       keywords: ["Speech production", "Decoding", "Transformers"],
-      photo: "https://www.diliberg.net/images/2024Arshad.jpg"
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2024Arshad.jpg"
     },
     {
       name: "Holly Daly",
@@ -108,7 +108,7 @@ const teamMembers = {
       name: "Evander Darius Sequeira",
       role: "MSc Student",
       keywords: ["Speech production", "EEG"],
-      photo: "https://www.diliberg.net/images/2024Evander.jpg",
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2024Evander.jpg",
       publications: [
         { title: "Website", link: "https://evanderds.github.io/" },
         { title: "LinkedIn", link: "https://www.linkedin.com/in/evanderds" }
@@ -121,7 +121,7 @@ const teamMembers = {
       publications: [
         { title: "LinkedIn", link: "https://www.linkedin.com/in/sathvits" }
       ],
-      photo: "https://www.diliberg.net/images/2024Sathvika.jpg"
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2024Sathvika.jpg"
     },
     {
       name: "Sudheendra Neela",
@@ -130,19 +130,19 @@ const teamMembers = {
       publications: [
         { title: "LinkedIn", link: "https://www.linkedin.com/in/sudheendra-neela/" }
       ],
-      photo: "https://www.diliberg.net/images/2024Sudheendra.jpg"
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2024Sudheendra.jpg"
     },
     {
       name: "Sahana Hegde",
       role: "MSc Student",
       keywords: ["Music enjoyment", "EEG"],
-      photo: "https://www.diliberg.net/images/2024Sahana.jpg"
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2024Sahana.jpg"
     },
     {
       name: "Cillian French",
       role: "BA ICS Student",
       keywords: ["Big data", "Open Science", "CNSP", "TRF"],
-      photo: "https://www.diliberg.net/images/2024Cillian.jpg"
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2024Cillian.jpg"
     }
   ],
   alumni2324: [
@@ -182,31 +182,31 @@ const teamMembers = {
       name: "Isabel Moulton",
       role: "MAI Student",
       keywords: ["Speech Perception", "Statistical learning", "Decision making"],
-      photo: "https://www.diliberg.net/images/2022isabel.jpg"
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2022isabel.jpg"
     },
     {
       name: "Jeroen Lemsom",
       role: "MSc Student",
       keywords: ["Humor", "Speech Perception", "Statistics"],
-      photo: "https://www.diliberg.net/images/2022jeroen.jpg"
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2022jeroen.jpg"
     },
     {
       name: "Mehak Roy",
       role: "MSc Student",
       keywords: ["Speech Perception", "Speech reconstruction", "Auditory imagery"],
-      photo: "https://www.diliberg.net/images/2022mehak.jpg"
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2022mehak.jpg"
     },
     {
       name: "Satwick Chandra",
       role: "BA ICS Student",
       keywords: ["Open science", "CNSP"],
-      photo: "https://www.diliberg.net/images/2022satwik.jpg"
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2022satwik.jpg"
     },
     {
       name: "John O'Doherty",
       role: "MCS Student",
       keywords: ["Music decoding", "Machine learning"],
-      photo: "https://www.diliberg.net/images/2022john.jpg"
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2022john.jpg"
     }
   ],
   alumni2122: [
@@ -214,13 +214,13 @@ const teamMembers = {
       name: "Kevin Reynolds",
       role: "MSc Student",
       keywords: ["Machine learning", "Music perception", "Statistical learning"],
-      photo: "https://www.diliberg.net/images/kevinReynolds.jpg"
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/kevinReynolds.jpg"
     },
     {
       name: "Sophie Crowley",
       role: "MSc Student",
       keywords: ["EEG Decoding", "Speech Reconstruction", "Linguistics"],
-      photo: "https://www.diliberg.net/images/sophieCrowley.jpg"
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/sophieCrowley.jpg"
     },
     {
       name: "Sean Brieffies",
@@ -253,13 +253,13 @@ const teamMembers = {
       publications: [
         { title: "Latest preprint", link: "https://hal.science/hal-04529950/" }
       ],
-      photo: "https://www.diliberg.net/images/giorgiaCantisani.jpg"
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/giorgiaCantisani.jpg"
     },
     {
       name: "Frank Sierra",
       role: "Post PhD Research Visitor (Max Planck Institute for Empirical Aesthetics, 2022-23)",
       keywords: ["Time perception", "Neural Decoding", "EEG"],
-      photo: "https://www.diliberg.net/images/2022frank.jpg"
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2022frank.jpg"
     },
     {
       name: "Jwaad Hussain",
