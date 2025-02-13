@@ -11,7 +11,7 @@ export const musicCognitionResearch: ResearchArea = {
     {
       title: 'Encoding',
       description: 'We study how the human brain encodes music. We utilise computational models, like IDyOM and music transformers, to determine how our brains process a note based on the preceding context, as well as studying the neural encoding of music timing and pitch. Our team is interested in shedding light on the relationship between melody statistics and music enjoyment, as well as investigating how different music genres are encoded in the human brain.',
-      image: 'https://www.diliberg.net/images/picMusic.jpg',
+      image: 'https://diliberg.github.io/websiteDiLibertoLabImages/picMusic.jpg',
       publications: [
         {
           title: 'Neural encoding of melodic expectations',
@@ -26,7 +26,7 @@ export const musicCognitionResearch: ResearchArea = {
     {
       title: 'Decoding',
       description: 'Can we decode melody from neural signals recorded during music listening? Can we decode imagined melodies? Our team has been investigating these questions using non-invasive EEG. This work explores methodologies that could contribute to future brain-computer interfaces, as well as taking a first step that bridges the gap between music neurophysiology research and the study of music creativity and composition.',
-      image: 'https://www.diliberg.net/images/picDecoding.jpg',
+      image: 'https://diliberg.github.io/websiteDiLibertoLabImages/picDecoding.jpg',
       publications: [
         {
           title: 'Decoding of imagined and heard melodies',
