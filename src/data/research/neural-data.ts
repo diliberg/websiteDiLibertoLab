@@ -11,7 +11,7 @@ export const neuralDataResearch: ResearchArea = {
     {
       title: 'Methodological Innovations',
       description: 'Our methodological work has contributed to the growing use of realistic listening tasks in neurophysiology research, for example involving audiobooks, podcasts, or even watching cartoons or movies. We are now working on the next methodological shift, with the goal of enabling the study of speech and music neurophysiology in social scenarios. In fact, while listening to audiobooks or melodies are real-world task, the primary role of auditory communication is social interaction. To that end, the PI has been working with other colleagues at Trinity College Dublin to build a new lab centred on the study of social interaction.',
-      image: 'https://www.diliberg.net/images/picMethods.avif',
+      image: 'https://diliberg.github.io/websiteDiLibertoLabImages/picMethods.avif',
       publications: [
         {
           title: 'Probing the neural encoding of highly correlated stimulus features - Phonological encoding',
