@@ -11,7 +11,7 @@ export const developmentalResearch: ResearchArea = {
     {
       title: 'Early Development',
       description: 'Our collaboration with Prof. Usha Goswami\'s team (BabyRhythm project) shed light on how the cortical tracking of speech develops in the first year of life. One key outputs of that research was the discovery that the infant brain reliably encodes phonological information during nursery rhyme listening starting from 7 months of age. A related study led by Dr. Adam Attaheri and Prof. Usha Goswami demonstrated that EEG responses to nursery rhymes in preverbal infants predict language skills a year later. My team continue working in that direction in the context of bilingualism through a collaboration with Dr. Marina Kalashnikova and her team (BCBL).',
-      image: 'https://www.diliberg.net/images/picEarlyDevelopment.avif',
+      image: 'https://diliberg.github.io/websiteDiLibertoLabImages/picEarlyDevelopment.avif',
       publications: [
         {
           title: 'Emergence of phonological encoding in the first year of life, Nat Comms 2023',
@@ -30,7 +30,7 @@ export const developmentalResearch: ResearchArea = {
     {
       title: 'Dyslexia Research',
       description: 'Our work has also contributed to research on developmental Dyslexia. That work led to the identification of neurophysiological and behavioural differences between neurotypical and dyslexic individuals. While Dyslexia is known as a reading deficit, it has been suggested to be underpinned by more fundamental neurodiversity. In our work, we found neurophysiological differences with the neural encoding of phonological information (as opposed to the encoding of sounds). In addition, a study led by Dr. Mahmoud Keshavarzi and Prof. Usha Goswami\'s team, aided by methodologies from our team, identified differences in speech production (using listen-and-repeat), contributing with potentially effective markers for the detection of Dyslexia.',
-      image: 'https://www.diliberg.net/images/picDyslexia.avif',
+      image: 'https://diliberg.github.io/websiteDiLibertoLabImages/picDyslexia.avif',
       publications: [
         {
           title: 'Atypical phonological encoding in Dyslexia',
@@ -45,7 +45,7 @@ export const developmentalResearch: ResearchArea = {
     {
       title: 'Auditory Attention',
       description: 'Our team has been studying how speech is processed in complex multi-talker environments. In collaboration with Prof. Bonnie Lau\'s team (University of Washington), as well as through our own independent experiments, we have extended that research to the study of infants, children, and autism, leading to novel insights into the development of selective attention functions.',
-      image: 'https://www.diliberg.net/images/picAuditoryAttention.jpg'
+      image: 'https://diliberg.github.io/websiteDiLibertoLabImages/picAuditoryAttention.jpg'
     }
   ]
 };
