@@ -15,7 +15,7 @@ const slides = [
     alt: "Di Liberto Lab team"
   },
   {
-    url: "images/labPhotoAA2.jpg",
+    url: "../images/labPhotoAA2.jpg",
     alt: "Di Liberto Lab team"
   },
   {
