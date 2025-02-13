@@ -92,7 +92,7 @@ export function CV() {
       <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
         <div className="flex gap-8 items-start">
           <img
-            src="https://www.diliberg.net/images/headshot2024.jpg"
+            src="https://diliberg.github.io/websiteDiLibertoLabImages/headshot2024.jpg"
             alt="Giovanni M. Di Liberto"
             className="w-48 h-48 object-cover rounded-lg shadow-md"
           />
