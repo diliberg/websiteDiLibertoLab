@@ -7,15 +7,15 @@ const slides = [
     alt: "Di Liberto Lab team"
   },
   {
-    url: "https://www.diliberg.net/images/labPhotoEEG2025.jpg",
+    url: "../../images/labPhotoEEG2025.jpg",
     alt: "Di Liberto Lab team"
   },
   {
-    url: "https://www.diliberg.net/images/labPhotoAA1.jpg",
+    url: "../../images/labPhotoAA1.jpg",
     alt: "Di Liberto Lab team"
   },
   {
-    url: "https://www.diliberg.net/images/labPhotoAA2.jpg",
+    url: "images/labPhotoAA2.jpg",
     alt: "Di Liberto Lab team"
   },
   {
