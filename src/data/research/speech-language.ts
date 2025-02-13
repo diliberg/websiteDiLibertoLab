@@ -11,7 +11,7 @@ export const speechLanguageResearch: ResearchArea = {
     {
       title: 'From sound to meaning',
       description: 'We study how the brain processes sounds into meaning using neural measurements such as EEG and MEG. Our experiments have been particularly innovative in that they involved the listening of audiobooks, podcasts, or even watching a cartoon or a movie. In doing so, we shed light on the neural encoding of progressively more abstract properties, from sound to language, especially speech acoustics, phonological information, and lexical information. By probing those processes, we could shed light on how the neural encoding of language evolves as adults learning a second language, and we demonstrated fundamental differences between native and non-native speech processing (e.g., slower lexical processing). We also studying the impact of the social component of speech on its neural encoding (unpublished – coming soon), comparing monologue vs. dialogue listening as well as measuring the impact of emotional prosody and trust.',
-      image: 'https://www.diliberg.net/images/picSoundToMeaning.avif',
+      image: 'https://diliberg.github.io/websiteDiLibertoLabImages/picSoundToMeaning.avif',
       publications: [
         {
           title: 'Probing the neural encoding of highly correlated stimulus features - Phonological encoding',
@@ -30,7 +30,7 @@ export const speechLanguageResearch: ResearchArea = {
     {
       title: 'Listening in noisy environments',
       description: 'The PI has worked previously as part of a consortium studying auditory attention in multitalker environments and brain computer interfaces (the COCOHA project). Building on that expertise and collaborations, our team investigates the neural processing of speech in realistic noisy environments, focussing on auditory selective attention and attention switching. We carry out this investigation across the lifespan and also studying hearing impairment. We carry out some of this work independently, as well as through collaborations with the Eriksholm research centre (part of Oticon), Prof. Alejandro Lopez Valdes (TCD), and Prof. Bonnie Lau (UK).',
-      image: 'https://www.diliberg.net/images/picAuditoryAttention.jpg',
+      image: 'https://diliberg.github.io/websiteDiLibertoLabImages/picAuditoryAttention.jpg',
       publications: [
         {
           title: 'Methods and device COCOHA',
@@ -49,7 +49,7 @@ export const speechLanguageResearch: ResearchArea = {
     {
       title: 'Sign language',
       description: 'Though a collaboration with the sign language group at Ecole Normale Superieure, our team investigates the neural encoding of sign language. This is an ongoing investigation on an understudied research area.',
-      image: 'https://www.diliberg.net/images/picSignLanguage.jpg'
+      image: 'https://diliberg.github.io/websiteDiLibertoLabImages/picSignLanguage.jpg'
     }
   ]
 };
