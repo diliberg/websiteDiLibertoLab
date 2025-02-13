@@ -42,7 +42,7 @@ const newsItems = [
     date: "December 2024",
     title: "New Research Published in PLoS One",
     description: "Sara's work on cortical encoding of phonological information in hearing impaired individuals.",
-    image: "https://www.diliberg.net/images/labPhotoAA4.jpg",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/labPhotoAA4.jpg",
     link: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0308554"
   },
   {
@@ -56,7 +56,7 @@ const newsItems = [
     date: "December 2023",
     title: "ADAPT Best Researcher Award 2023",
     description: "Giovanni Di Liberto receives ADAPT's Best Researcher Award for his research on the emergence of phonological encoding in the first year of life.",
-    image: "https://www.diliberg.net/images/adaptAward.jpg"
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/adaptAward.jpg"
   },
   {
     date: "November 2023",
