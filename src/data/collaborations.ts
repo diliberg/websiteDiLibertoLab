@@ -104,12 +104,12 @@ export const collaborations = [
 export const fundingLogos = [
   {
     name: "Irish Research Council",
-    logo: "https://www.diliberg.net/images/ircLogo.png",
+    logo: "https://diliberg.github.io/websiteDiLibertoLabImages/ircLogo.png",
     link: "https://research.ie/"
   },
   {
     name: "Demant Foundation",
-    logo: "https://www.diliberg.net/images/wdf.png",
+    logo: "https://diliberg.github.io/websiteDiLibertoLabImages/wdf.png",
     link: "https://www.demant.com/about/foundation"
   },
   {
