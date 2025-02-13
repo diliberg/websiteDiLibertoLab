@@ -117,7 +117,7 @@ function App() {
             className="block transition-transform hover:scale-105"
           >
             <img
-              src="https://www.diliberg.net/images/brainGio2_v2.png"
+              src="https://diliberg.github.io/websiteDiLibertoLabImages/brainGio2_v2.png"
               alt="Di Liberto Lab"
               className="h-16 object-contain"
             />
