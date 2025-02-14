@@ -67,7 +67,7 @@ const newsItems = [
     date: "November 2023",
     title: "Live Interview on NPR's AirTalk",
     description: "Giovanni discusses latest research with Larry Mantle on AirTalk radio show.",
-    image: "https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?auto=format&fit=crop&q=80&w=500&h=300",
+    image: "https://lnx.diliberg.net/images/airtalk.png",
     link: "https://laist.com/shows/airtalk/what-you-should-know-about-the-tesla-recall"
   },
   {
