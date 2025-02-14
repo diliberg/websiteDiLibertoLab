@@ -40,12 +40,6 @@ const newsItems = [
   },
   {
     date: "December 2024",
-    title: "CNSP Workshop 2025 Announced",
-    description: "Join us in September 2025 for the next CNSP workshop on neural signal processing and cognitive science.",
-    image: "https://cnspworkshop.net/images/CNSP_Logo.gif"
-  },
-  {
-    date: "December 2024",
     title: "Jaimy joins the team!",
     description: "New project studying  the impact of trust on speech perception, with the ADAPT centre and the Fidelity Center for Applied Technology.",
     image: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Jaimy.jpg"
