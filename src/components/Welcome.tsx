@@ -40,10 +40,15 @@ const newsItems = [
   },
   {
     date: "December 2024",
-    title: "New Research Published in PLoS One",
-    description: "Sara's work on cortical encoding of phonological information in hearing impaired individuals.",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/labPhotoAA4.jpg",
-    link: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0308554"
+    title: "CNSP Workshop 2025 Announced",
+    description: "Join us in September 2025 for the next CNSP workshop on neural signal processing and cognitive science.",
+    image: "https://cnspworkshop.net/images/CNSP_Logo.gif"
+  },
+  {
+    date: "December 2024",
+    title: "Jaimy joins the team!",
+    description: "New project studying  the impact of trust on speech perception, with the ADAPT centre and the Fidelity Center for Applied Technology.",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Jaimy.jpg"
   },
   {
     date: "October 2024",
