@@ -72,7 +72,7 @@ const newsItems = [
   },
   {
     date: "December 2023",
-    title: "Major Publication in Nature Communications",
+    title: "New Publication in Nature Communications",
     description: "Our research on infant language development published in Nature Communications.",
     image: "https://images.unsplash.com/photo-1492725764893-90b379c2b6e7?auto=format&fit=crop&q=80&w=500&h=300",
     link: "https://www.nature.com/articles/s41467-023-43490-x"
