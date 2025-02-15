@@ -61,7 +61,7 @@ const teamMembers = {
       name: "Emily Ip",
       role: "PhD Student",
       keywords: ["Speech perception", "Statistical learning", "Perspective taking"],
-      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/emilyPic.jpg"
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Emily.jpeg"
     },
     {
       name: "Martin Winchester",
