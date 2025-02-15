@@ -48,7 +48,7 @@ const newsItems = [
     date: "October 2024",
     title: "New Laboratory for Social Interaction Research",
     description: "Excited to announce our new Collective-minds laboratory at Trinity College Dublin, dedicated to studying social interaction.",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=500&h=300",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/collectiveMinds.png",
     link: "https://www.collective-minds.net"
   },
   {
@@ -79,8 +79,8 @@ const newsItems = [
   },
   {
     date: "October 2023",
-    title: "IRC Scholarship Success",
-    description: "John Joins us with an IRC postgraduate scholarship to study music cognition.",
+    title: "John's IRC Scholarship Success",
+    description: "John joins us with an IRC postgraduate scholarship to study music cognition.",
     image: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?auto=format&fit=crop&q=80&w=500&h=300"
   }
 ];
