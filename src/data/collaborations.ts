@@ -80,11 +80,6 @@ export const collaborations = [
     website: "https://guimarion.github.io/"
   },
   {
-    name: "Di Liberto-lab",
-    institution: "Trinity College Dublin",
-    website: "https://www.diliberg.net/people.html"
-  },
-  {
     name: "Lars Meyer",
     institution: "Max Planck - Human Cog. and Brain Sciences",
     website: "https://www.cbs.mpg.de/person/44724/2482"
@@ -93,11 +88,6 @@ export const collaborations = [
     name: "CNSP team",
     institution: "Many!",
     website: "https://cnspworkshop.net"
-  },
-  {
-    name: "...",
-    institution: "",
-    website: "https://diliberg.net"
   }
 ];
 
