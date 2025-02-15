@@ -10,7 +10,7 @@ export const developmentalResearch: ResearchArea = {
   keyStudies: [
     {
       title: 'Early Development',
-      description: 'Our collaboration with Prof. Usha Goswami\'s team (BabyRhythm project) shed light on how the cortical tracking of speech develops in the first year of life. One key outputs of that research was the discovery that the infant brain reliably encodes phonological information during nursery rhyme listening starting from 7 months of age. A related study led by Dr. Adam Attaheri and Prof. Usha Goswami demonstrated that EEG responses to nursery rhymes in preverbal infants predict language skills a year later. My team continue working in that direction in the context of bilingualism through a collaboration with Dr. Marina Kalashnikova and her team (BCBL).',
+      description: 'Our collaboration with Prof. Usha Goswami\'s team (BabyRhythm project) sheds light on how the cortical tracking of speech develops in the first year of life. One key output of that research was the discovery that the infant brain reliably encodes phonological information during nursery rhyme listening starting from 7 months of age. A related study led by Dr. Adam Attaheri and Prof. Usha Goswami demonstrated that EEG responses to nursery rhymes in preverbal infants predict language skills a year later. My team continue working in that direction in the context of bilingualism through a collaboration with Dr. Marina Kalashnikova and her team (BCBL).',
       image: 'https://diliberg.github.io/websiteDiLibertoLabImages/picEarlyDevelopment.avif',
       publications: [
         {
@@ -29,7 +29,7 @@ export const developmentalResearch: ResearchArea = {
     },
     {
       title: 'Dyslexia Research',
-      description: 'Our work has also contributed to research on developmental Dyslexia. That work led to the identification of neurophysiological and behavioural differences between neurotypical and dyslexic individuals. While Dyslexia is known as a reading deficit, it has been suggested to be underpinned by more fundamental neurodiversity. In our work, we found neurophysiological differences with the neural encoding of phonological information (as opposed to the encoding of sounds). In addition, a study led by Dr. Mahmoud Keshavarzi and Prof. Usha Goswami\'s team, aided by methodologies from our team, identified differences in speech production (using listen-and-repeat), contributing with potentially effective markers for the detection of Dyslexia.',
+      description: 'Our work has also contributed to research on developmental Dyslexia. That work led to the identification of neurophysiological and behavioural differences between neurotypical and dyslexic individuals. While Dyslexia is known as a reading deficit, it has been suggested to be underpinned by more fundamental neurodiversity. In our work, we found neurophysiological differences with the neural encoding of phonological information (as opposed to the encoding of sounds). In addition, a study led by Dr. Mahmoud Keshavarzi and Prof. Usha Goswami\'s team, aided by methodologies from our team, identified differences in speech production (using listen-and-repeat), contributing to potentially effective markers for the detection of Dyslexia.',
       image: 'https://diliberg.github.io/websiteDiLibertoLabImages/picDyslexia.avif',
       publications: [
         {
