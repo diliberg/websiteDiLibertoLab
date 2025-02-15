@@ -10,7 +10,7 @@ export const musicCognitionResearch: ResearchArea = {
   keyStudies: [
     {
       title: 'Encoding',
-      description: 'We study how the human brain encodes music. We utilise computational models, like IDyOM and music transformers, to determine how our brains process a note based on the preceding context, as well as studying the neural encoding of music timing and pitch. Our team is interested in shedding light on the relationship between melody statistics and music enjoyment, as well as investigating how different music genres are encoded in the human brain.',
+      description: 'We study how the human brain encodes music. We utilise computational models, like IDyOM and music transformers, to determine how our brains process a note based on the preceding context and to study the neural encoding of music timing and pitch. Our team is interested in shedding light on the relationship between melody statistics and music enjoyment, as well as investigating how different music genres are encoded in the human brain.',
       image: 'https://diliberg.github.io/websiteDiLibertoLabImages/picMusic.jpg',
       publications: [
         {
