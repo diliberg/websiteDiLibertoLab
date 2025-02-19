@@ -26,6 +26,12 @@ const slides = [
 
 const newsItems = [
   {
+    date: "February 2025",
+    title: "Giorgio's Marie-Curie fellowship",
+    description: "Giorgio was awarded a Marie-Curie fellowship to join our team!",
+    image: "https://i1.rgstatic.net/ii/profile.image/947252432474114-1602853987361_Q512/Giorgio-Piazza-2.jpg"
+  },
+  {
     date: "January 2025",
     title: "New lab Paper Published in Journal of Neural Engineering",
     description: "Amir's latest work on robust assessment of cortical encoding has been published.",
