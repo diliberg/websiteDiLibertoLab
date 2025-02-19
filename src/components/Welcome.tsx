@@ -11,16 +11,16 @@ const slides = [
     alt: "Di Liberto Lab team"
   },
   {
+    url: "https://diliberg.github.io/websiteDiLibertoLabImages/labPhotoAA4.jpg",
+    alt: "Lab setup"
+  },
+  {
     url: "https://diliberg.github.io/websiteDiLibertoLabImages/labPhotoAA1.jpg",
     alt: "Di Liberto Lab team"
   },
   {
     url: "https://diliberg.github.io/websiteDiLibertoLabImages/labPhotoAA2.jpg",
     alt: "Di Liberto Lab team"
-  },
-  {
-    url: "https://diliberg.github.io/websiteDiLibertoLabImages/labPhotoAA4.jpg",
-    alt: "Lab setup"
   }
 ];
 
