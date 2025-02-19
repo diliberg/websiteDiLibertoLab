@@ -28,7 +28,7 @@ const newsItems = [
   {
     date: "February 2025",
     title: "Giorgio's Marie-Curie fellowship",
-    description: "Giorgio was awarded a Marie-Curie fellowship to join our team!",
+    description: "Giorgio Piazza was awarded a Marie-Curie fellowship to join our team!",
     image: "https://i1.rgstatic.net/ii/profile.image/947252432474114-1602853987361_Q512/Giorgio-Piazza-2.jpg"
   },
   {
