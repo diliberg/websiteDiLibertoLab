@@ -29,7 +29,7 @@ const newsItems = [
     date: "May 2025",
     title: "Emily's best presentation award",
     description: "Emily was awarded the best contribution award at the ADAPT conference in Dublin!",
-    image: "https://cnspworkshop.net/images/emilyPrizeADAPT.jpg"
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/emilyPrizeADAPT.jpg"
   },
   {
     date: "April 2025",
