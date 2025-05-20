@@ -35,7 +35,7 @@ const researchCoverage: ResearchCoverage[] = [
         { name: "Univ. of Cambridge", link: "https://www.cam.ac.uk/research/news/why-reading-nursery-rhymes-and-singing-to-babies-may-help-them-to-learn-language" }
       ],
       radio: [
-        { name: "AirTalk (with Larry Mantle and Prof. Angela Lukowsky), on NPR LAist radio", link: "https://laist.com/shows/airtalk/what-you-should-know-about-the-tesla-recall" }
+        { name: "AirTalk (with Larry Mantle and Prof. Angela Lukowski), on NPR LAist radio", link: "https://laist.com/shows/airtalk/what-you-should-know-about-the-tesla-recall" }
       ],
       tv: [
         { name: "itv news", link: "https://www.itv.com/news/2023-12-01/speaking-to-babies-in-sing-song-speech-helps-them-learn-language" }
