@@ -26,6 +26,19 @@ const slides = [
 
 const newsItems = [
   {
+    date: "May 2025",
+    title: "Emily's best presentation award",
+    description: "Emily was awarded the best contribution award at the ADAPT conference in Dublin!",
+    image: "https://cnspworkshop.net/images/emilyPrizeADAPT.jpg"
+  },
+  {
+    date: "April 2025",
+    title: "Giorgio's paper is on Imaging Neuroscience",
+    description: "New paper on speech adaptation to non-native speakers!",
+    image: "https://mitp.silverchair-cdn.com/data/SiteBuilderAssets/Live/Images/imag/IMAG_cover-1980937453.png",
+    link: "https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00539/128622/Are-you-talking-to-me-How-the-choice-of-speech"
+  },
+  {
     date: "February 2025",
     title: "Giorgio's Marie-Curie fellowship",
     description: "Giorgio Piazza was awarded a Marie-Curie fellowship to join our team!",
