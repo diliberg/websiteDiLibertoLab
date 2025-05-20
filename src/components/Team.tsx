@@ -83,9 +83,16 @@ const teamMembers = {
   ],
   staff: [
     {
-      name: "Fionn O'Connor",
-      role: "Visiting Research Assistant"
+      name: "Yannick Peters",
+      role: "Research Assistant"
     }
+  ],
+  visitorsCurrent: [
+    {
+      name: "Antonia Schuerg",
+      role: "Erasmus+ student",
+      keywords: ["EEG", "Music perception"]
+    },
   ],
   dissertation: [
     {
@@ -148,7 +155,7 @@ const teamMembers = {
   alumni2324: [
     {
       name: "Fionn O'Connor",
-      role: "MCS Student",
+      role: "MCS Student and RA",
       keywords: ["Speech perception", "humour", "EEG"]
     },
     {
@@ -395,6 +402,7 @@ export function Team({ onViewCV }: { onViewCV: () => void }) {
       <TeamSection title="PhD Students" members={teamMembers.phd} />
       <TeamSection title="Research Staff" members={teamMembers.staff} />
       <TeamSection title="Dissertation Projects 2024-25" members={teamMembers.dissertation} />
+      <TeamSection title="Visiting Students/Researchers" members={teamMembers.visitorsCurrent} />
       <TeamSection title="Alumni: Visiting Students/Researchers" members={teamMembers.visitors} />
       <TeamSection title="Alumni: Research Staff" members={teamMembers.pastStaff} />
       <TeamSection title="Alumni: Master's/Final year projects (2023-24)" members={teamMembers.alumni2324} />
