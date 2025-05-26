@@ -32,6 +32,12 @@ const newsItems = [
     image: "https://diliberg.github.io/websiteDiLibertoLabImages/emilyPrizeADAPT.jpg"
   },
   {
+    date: "May 2025",
+    title: "Pint of Science",
+    description: "Our team led discussions about trust (Jaimy) and babytalk (Giovanni) at two Pint of Science events!",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/pintOfScience2025.jpg"
+  },
+  {
     date: "April 2025",
     title: "Giorgio's paper is on Imaging Neuroscience",
     description: "New paper on speech adaptation to non-native speakers!",
