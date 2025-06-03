@@ -10,7 +10,7 @@ export function JoinUs() {
         <div className="bg-white p-6 rounded-lg shadow-sm">
           <h3 className="text-xl font-semibold mb-4">Open Positions</h3>
           <p className="text-gray-600">
-            There are no available positions at the moment. We always welcome expressions of interest from students interested in applying for external funding (e.g., PhD Scholarships) to join our team. Please note that the submission deadline for some PhD Scholarship / Postdoctoral Fellowship applications is often 1 year before the proposed start date. We welcome applications from candidates with diverse backgrounds and experiences relevant to our research.
+            There are no available positions at the moment. We always welcome expressions of interest from students interested in applying for external funding (e.g., PhD Scholarships) to join our team. Please note that the submission deadline for some PhD Scholarship / Postdoctoral Fellowship applications is often 1 year before the proposed start date. We welcome applications from candidates with diverse backgrounds and experiences relevant to our research. We also welcome TCD undergraduate students to join our team for gaining lab experience with us.
           </p>
         </div>
 
