@@ -35,6 +35,17 @@ const teamMembers = {
       description: "Research interests: Cognition, Psycholinguistics",
       keywords: ["Speech interaction", "language", "trust"],
       photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Jaimy.jpg"
+    },
+    {
+      name: "Giorgio Piazza (joining in Nov 2025)",
+      role: "Marie-Curie Postdoctoral Fellow",
+      description: "Research interests: Speech, Language, Neurophysiology",
+      keywords: ["Speech", "Perception", "Adaptation", "EEG"],
+      publications: [
+        { title: "Imaging Neuroscience, 2025", link: "https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00539/128622" },
+        { title: "CNSP2023 talk", link: "https://www.youtube.com/watch?v=lJu9XWgENgA" }
+      ],
+      photo: "https://i1.rgstatic.net/ii/profile.image/947252432474114-1602853987361_Q512/Giorgio-Piazza-2.jpg"
     }
   ],
   phd: [
