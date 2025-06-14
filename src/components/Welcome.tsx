@@ -117,12 +117,6 @@ const newsItems = [
   }
 ];
 
-
-FLUX-MEG
-
-
-
-
 const nextConferences = [
   {
     date: "12-14 September 2025",
