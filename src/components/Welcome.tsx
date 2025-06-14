@@ -77,6 +77,13 @@ const newsItems = [
     link: "https://www.collective-minds.net"
   },
   {
+    date: "March 2024",
+    title: "Top 25 Social Science and Human Behavior Article",
+    description: "Our paper made it to the top 25 Social Science and Human Behavior Article of 2023!",
+    image: "https://www.nature.com/ncomms",
+    link: "https://www.nature.com/collections/ifdfgjdggc"
+  },
+  {
     date: "December 2023",
     title: "ADAPT Best Researcher Award 2023",
     description: "Giovanni Di Liberto receives ADAPT's Best Researcher Award for his research on the emergence of phonological encoding in the first year of life.",
