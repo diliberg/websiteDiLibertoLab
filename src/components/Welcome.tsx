@@ -117,6 +117,23 @@ const newsItems = [
   }
 ];
 
+
+
+const nextConferences = [
+  {
+    date: "May 2025",
+    title: "Emily's best presentation award",
+    description: "Emily was awarded the best contribution award at the ADAPT conference in Dublin!",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/emilyPrizeADAPT.jpg"
+  },
+  {
+    date: "June 2025",
+    title: "FLUX-MEG",
+    description: "dfgfdg.",
+    image: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?auto=format&fit=crop&q=80&w=500&h=300"
+  }
+];
+
 export function Welcome() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -226,6 +243,39 @@ export function Welcome() {
           ))}
         </div>
       </div>
+
+      <div>
+        <h2 className="text-2xl font-semibold mb-6">Where can you find us?</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {nextConferences.map((item, index) => (
+            <div key={index} className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+              <div className="h-40 overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-4">
+                <div className="text-sm text-gray-500 mb-2">{item.date}</div>
+                <h3 className="font-medium text-lg mb-2 line-clamp-2 min-h-[3.5rem]">{item.title}</h3>
+                <p className="text-gray-600 text-sm mb-3 min-h-[6rem]">{item.description}</p>
+                {item.link && (
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-blue-600 hover:text-blue-800 text-sm"
+                  >
+                    Read more <ExternalLink className="h-4 w-4 ml-1" />
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
     </div>
   );
 }
