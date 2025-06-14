@@ -118,11 +118,60 @@ const newsItems = [
 ];
 
 
+FLUX-MEG
+
+
+
 
 const nextConferences = [
   {
+    date: "12-14 September 2025",
+    title: "CNSP Hackathon",
+    description: "We are organising the CNSP hackathon 2025 (satellite of ICAC) in Maastricht!",
+    image: "https://cnspworkshop.net/images/CNSP_Logo.gif",
+    link: "https://cnspworkshop.net/hackathon.html"
+  },
+  {
+    date: "14-18 September 2025",
+    title: "International conference on auditory cortex (ICAC)",
+    description: "Giovanni, Jaimy, Amir, Martin, Asena, and John will be at ICAC this year!",
+    image: "https://www.maastrichtuniversity.nl/sites/default/files/styles/1560x1040/public/2025-06/fpn-LOGO_ICAC2025_v02_UM_landing-16x9.png?h=8eee6c50&itok=3YFrSHgj",
+    link: "https://www.maastrichtuniversity.nl/icac2025/international-conference-auditory-cortex"
+  },
+  {
+    date: "2-3 September 2025",
+    title: "CNSP Workshop (online)",
+    description: "We are organising the CNSP workshop 2025. The organisation team is composed of a strong team of 11 international scientists. Check out the CNSP website to know more.",
+    image: "https://cnspworkshop.net/images/CNSP_Logo.gif",
+    link: "https://cnspworkshop.net/workshops.html"
+  },
+  {
     date: "May 2025",
-    title: "Emily's best presentation award",
+    title: "ISAAR",
+    description: "Emily was awarded the best contribution award at the ADAPT conference in Dublin!",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/emilyPrizeADAPT.jpg"
+  },
+  {
+    date: "May 2025",
+    title: "FENS",
+    description: "Emily was awarded the best contribution award at the ADAPT conference in Dublin!",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/emilyPrizeADAPT.jpg"
+  },
+  {
+    date: "May 2025",
+    title: "Telluride NeuroMorphic Engineering Workshop",
+    description: "Emily was awarded the best contribution award at the ADAPT conference in Dublin!",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/emilyPrizeADAPT.jpg"
+  },
+  {
+    date: "May 2025",
+    title: "CogHear",
+    description: "Emily was awarded the best contribution award at the ADAPT conference in Dublin!",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/emilyPrizeADAPT.jpg"
+  },
+  {
+    date: "May 2025",
+    title: "MEG-UKI",
     description: "Emily was awarded the best contribution award at the ADAPT conference in Dublin!",
     image: "https://diliberg.github.io/websiteDiLibertoLabImages/emilyPrizeADAPT.jpg"
   },
