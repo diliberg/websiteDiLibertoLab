@@ -16,6 +16,22 @@ type Resource = {
 
 const resources: Resource[] = [
   {
+    title: "Nursery rhymes - EEG dataset",
+    description: "Longitudinal datasets with 50 participants, 3 recordings each (at 4, 7, and 11 months of age). Part of the Baby Rhythm Cambridge project (PI: Prof. Usha Goswami)",
+    links: [
+      {
+        text: "https://osf.io/mdnwg/",
+        url: "https://osf.io/mdnwg/"
+      }
+    ],
+    papers: [
+      {
+        text: "Di Liberto, Attaheri et al., and Goswami, Nature Communications, 2023",
+        url: "https://www.nature.com/articles/s41467-023-43490-x"
+      }
+    ]
+  },
+  {
     title: "Music - EEG dataset",
     description: "Datasets with 20 participants from the study",
     links: [
