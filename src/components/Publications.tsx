@@ -11,6 +11,13 @@ type Publication = {
 
 const latestPublications: Publication[] = [
   {
+    title: "Are you talking to me? How the choice of speech register impacts listeners' hierarchical encoding of speech",
+    authors: "G Piazza, S Carta, E Ip, J Pérez-Navarro, M Kalashnikova, CD Martin, GM Di Liberto",
+    journal: "Imaging Neuroscience 3: imag_a_00539.",
+    year: "2025",
+    link: "https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00539/128622/Are-you-talking-to-me-How-the-choice-of-speech"
+  },
+  {
     title: "Robust assessment of the cortical encoding of word-level expectations using the temporal response function",
     authors: "A Chalehchaleh, MM Winchester, GM Di Liberto",
     journal: "Journal of Neural Engineering 22 (1), 016004",
@@ -35,18 +42,18 @@ const latestPublications: Publication[] = [
 
 const latestPreprints: Publication[] = [
   {
+    title: "Speech Neurophysiology in Realistic Contexts: Big Hype or Big Leap?",
+    authors: "GM Di Liberto and E Ip",
+    journal: "arXiv",
+    year: "in review",
+    link: "https://arxiv.org/abs/2506.05494"
+  },
+  {
     title: "Neural signatures of musical and linguistic interactions during natural song listening",
     authors: "G Cantisani, S Shamma, GM Di Liberto",
     journal: "HAL",
     year: "in review",
     link: "https://hal.science/hal-04529950/"
-  },
-  {
-    title: "Are you talking to me? How the choice of speech register impacts listeners' hierarchical encoding of speech",
-    authors: "G Piazza, S Carta, E Ip, J Pérez-Navarro, M Kalashnikova, CD Martin, GM Di Liberto",
-    journal: "bioRxiv",
-    year: "in review",
-    link: "https://www.biorxiv.org/content/10.1101/2024.09.02.610805.abstract"
   }
 ];
 
