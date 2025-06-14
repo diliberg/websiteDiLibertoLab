@@ -128,7 +128,7 @@ const nextConferences = [
   {
     date: "14-18 September 2025",
     title: "International conference on auditory cortex (ICAC)",
-    description: "Giovanni, Jaimy, Amir, Martin, Asena, and John will be at ICAC this year!",
+    description: "Giovanni, Jaimy, Amir, Martin, Asena, and John will present their work at ICAC this year!",
     image: "https://www.maastrichtuniversity.nl/sites/default/files/styles/1560x1040/public/2025-06/fpn-LOGO_ICAC2025_v02_UM_landing-16x9.png?h=8eee6c50&itok=3YFrSHgj",
     link: "https://www.maastrichtuniversity.nl/icac2025/international-conference-auditory-cortex"
   },
@@ -140,40 +140,45 @@ const nextConferences = [
     link: "https://cnspworkshop.net/workshops.html"
   },
   {
-    date: "May 2025",
+    date: "20-22 August 2025",
     title: "ISAAR",
-    description: "Emily was awarded the best contribution award at the ADAPT conference in Dublin!",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/emilyPrizeADAPT.jpg"
+    description: "Giovanni will give an invited talk at the International Symposium on Auditory and Audiological Research in Denmark!",
+    image: "https://isaar.eu/wp-content/uploads/2021/05/cropped-ISAAR-2021-Grid_0.png",
+    link: "https://isaar.eu/information-isaar-2025/"
   },
   {
-    date: "May 2025",
-    title: "FENS",
-    description: "Emily was awarded the best contribution award at the ADAPT conference in Dublin!",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/emilyPrizeADAPT.jpg"
+    date: "24-27 July 2025",
+    title: "Japan Neuroscience Society",
+    description: "Martin and Asena will present their work at that 48th Annual Meeting of the Japan Neuroscience Society! Congratulations to Martin, who was awarded a travel grant for participating in this conference.",
+    image: "https://www.fens.org/wp-content/uploads/2024/10/JNS-2025-768x403.jpg"
   },
   {
-    date: "May 2025",
-    title: "Telluride NeuroMorphic Engineering Workshop",
-    description: "Emily was awarded the best contribution award at the ADAPT conference in Dublin!",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/emilyPrizeADAPT.jpg"
-  },
-  {
-    date: "May 2025",
-    title: "CogHear",
-    description: "Emily was awarded the best contribution award at the ADAPT conference in Dublin!",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/emilyPrizeADAPT.jpg"
-  },
-  {
-    date: "May 2025",
+    date: "16-18 July 2025",
     title: "MEG-UKI",
-    description: "Emily was awarded the best contribution award at the ADAPT conference in Dublin!",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/emilyPrizeADAPT.jpg"
+    description: "Emily will participate at the MEG-UKI event in London!",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/emilyPrizeADAPT.jpg",
+    link: "https://meguk.ac.uk/meg-uki-2025/"
+  },
+  {
+    date: "29 June - 19 July 2025",
+    title: "Telluride Neuromorphic Cognition Engineering Workshop",
+    description: "John will participate in the prestigious Telluride Neuromorphic workshop!",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Telluride_from_the_ski_hill.jpg/500px-Telluride_from_the_ski_hill.jpg",
+    link: "https://sites.google.com/view/telluride-2025/home?pli=1&authuser=1"
+  },
+  {
+    date: "16-20 June 2025",
+    title: "CogHear 2025",
+    description: "Giovanni and John will participate in CogHear 2025 in Maryland. Giovanni was invited to give a talk/lead a discussion on the final day of the workshop.",
+    image: "https://umd-brand.transforms.svdcdn.com/production/uploads/images/logos-formal-seal.jpg?w=1801&h=1801&auto=compress%2Cformat&fit=crop&dm=1651267392&s=81a14f930f7888983f0f8bc10146c0b2",
+    link: "https://sites.google.com/view/coghear2020/in-person-coghear/coghear-2025?pli=1&authuser=1"
   },
   {
     date: "8-12 June 2025",
     title: "OPM-FLUX",
     description: "Emily had fun at the FLUX-MEG workshop, boosting the expertise on OPM-MEG at the Trinity College Institute of Neuroscience.",
-    image: "https://static.wixstatic.com/media/daa417_974f22e4f7214db5a365e046887d221e~mv2.jpg/v1/fill/w_740,h_555,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/daa417_974f22e4f7214db5a365e046887d221e~mv2.jpg"
+    image: "https://static.wixstatic.com/media/daa417_974f22e4f7214db5a365e046887d221e~mv2.jpg/v1/fill/w_740,h_555,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/daa417_974f22e4f7214db5a365e046887d221e~mv2.jpg",
+    link: "https://www.neuosc.com/post/announcing-the-first-opm-flux-toolkit-9-12-june-at-university-of-oxford"
   }
 ];
 
