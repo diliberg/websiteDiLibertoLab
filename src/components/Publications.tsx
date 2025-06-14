@@ -33,8 +33,8 @@ const latestPublications: Publication[] = [
   },
   {
     title: "A standardised open science framework for sharing and re-analysing neural data acquired to continuous stimuli",
-    authors: "GM Di Liberto, A Nidiffer, MJ Crosse, NJ Zuk, S Haro, G Cantisani, ...",
-    journal: "ArXiv, arXiv: 2309.07671 v4",
+    authors: "GM Di Liberto, A Nidiffer, MJ Crosse, NJ Zuk, S Haro, G Cantisani, et al.",
+    journal: "Neurons, Behavior, Data Analysis, and Theory, October, 1–25",
     year: 2024,
     link: "https://nbdt.scholasticahq.com/article/124867"
   }
