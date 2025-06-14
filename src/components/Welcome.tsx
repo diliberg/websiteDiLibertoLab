@@ -176,10 +176,10 @@ const nextConferences = [
     image: "https://diliberg.github.io/websiteDiLibertoLabImages/emilyPrizeADAPT.jpg"
   },
   {
-    date: "June 2025",
-    title: "FLUX-MEG",
-    description: "dfgfdg.",
-    image: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?auto=format&fit=crop&q=80&w=500&h=300"
+    date: "8-12 June 2025",
+    title: "OPM-FLUX",
+    description: "Emily had fun at the FLUX-MEG workshop, boosting the expertise on OPM-MEG at the Trinity College Institute of Neuroscience.",
+    image: "https://static.wixstatic.com/media/daa417_974f22e4f7214db5a365e046887d221e~mv2.jpg/v1/fill/w_740,h_555,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/daa417_974f22e4f7214db5a365e046887d221e~mv2.jpg"
   }
 ];
 
