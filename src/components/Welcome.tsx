@@ -80,8 +80,8 @@ const newsItems = [
     date: "March 2024",
     title: "Top 25 Social Science and Human Behavior Article",
     description: "Our paper made it to the top 25 Social Science and Human Behavior Article of 2023!",
-    image: "https://www.nature.com/ncomms",
-    link: "https://diliberg.github.io/websiteDiLibertoLabImages/ncomms.jpg"
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/ncomms.jpg",
+    link: "https://www.nature.com/collections/ifdfgjdggc"
   },
   {
     date: "December 2023",
