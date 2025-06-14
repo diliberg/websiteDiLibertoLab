@@ -167,6 +167,13 @@ const nextConferences = [
     link: "https://sites.google.com/view/telluride-2025/home?pli=1&authuser=1"
   },
   {
+    date: "26-26 June 2025",
+    title: "VCCA 2025",
+    description: "Giovanni will give a keynote presentation at the Virtual Conference on Computational Audiology!",
+    image: "https://i0.wp.com/computationalaudiology.com/wp-content/uploads/2024/10/vcca2025_logo-e1749699764368.png?fit=312%2C341&ssl=1",
+    link: "https://computationalaudiology.com/events/vcca2025/"
+  },
+  {
     date: "16-20 June 2025",
     title: "CogHear 2025",
     description: "Giovanni and John will participate in CogHear 2025 in Maryland. Giovanni was invited to give a talk/lead a discussion on the final day of the workshop.",
