@@ -160,6 +160,13 @@ const nextConferences = [
     link: "https://meguk.ac.uk/meg-uki-2025/"
   },
   {
+    date: "8-11 July 2025",
+    title: "CSBBCS Annual Meeting",
+    description: "Jaimy is attending the 2025 annual meeting of the Canadian Society for Brain, Behaviour, and Cognitive Science in Dundee, Scotland. She'll be presenting her work on trust in speech communication.",
+    image: "https://www.csbbcs.org/fileadmin/_processed_/8/8/csm_Meeting_Poster_d2e479ba52.png",
+    link: "https://www.csbbcs.org/meetings/2025-meeting"
+  },   
+  {
     date: "29 June - 19 July 2025",
     title: "Telluride Neuromorphic Cognition Engineering Workshop",
     description: "John will participate in the prestigious Telluride Neuromorphic workshop!",
