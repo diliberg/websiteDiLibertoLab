@@ -124,6 +124,24 @@ export function OpenScience() {
               >
                 Di Liberto, Nidiffer, Crosse, Zuk, Haro, Cantisani, et al. (2024). A standardised open science framework for sharing and re-analysing neural data acquired to continuous stimuli. Neurons, Behavior, Data analysis and Theory
               </a>
+
+              <a
+                href="https://humanbrainmapping.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-blue-600 italic block"
+              >
+                John is presenting out latest mTRF-Toolbox tutorials at the Open Science Room of the OHBM conference (Brisbane, Australia; June 2025).                
+              </a>
+
+              <a
+                href="https://www.youtube.com/watch?v=Sj1txAtvMiA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-blue-600 italic block"
+              >
+                Giovanni talked about some of our open science work (CNSP) at the CogHear conference (Maryland, USA; June 2025). Check out the videorecording here.                
+              </a>
             </div>
           </div>
         </div>
