@@ -72,6 +72,9 @@ const teamMembers = {
       name: "Emily Ip",
       role: "PhD Student",
       keywords: ["Speech perception", "Statistical learning", "Perspective taking"],
+      publications: [
+        { title: "arXiv, 2025", link: "https://arxiv.org/abs/2506.05494" }
+      ],
       photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Emily.jpeg"
     },
     {
