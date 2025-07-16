@@ -54,6 +54,7 @@ const teamMembers = {
       role: "PhD Student",
       keywords: ["Speech perception", "Selective Attention", "Hearing Impairment"],
       publications: [
+        { title: "bioRxiv, 2025", link: "https://www.biorxiv.org/content/10.1101/2025.07.02.662762v1" },
         { title: "PLoS One, 2024", link: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0308554" },
         { title: "J Neurosci Methods, 2022", link: "https://www.sciencedirect.com/science/article/pii/S0165027022002916" }
       ],
