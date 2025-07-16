@@ -99,7 +99,7 @@ const teamMembers = {
     {
       name: "Yannick Peters",
       role: "Research Assistant", 
-      keywords: ["Reference", "Sign Linguistics", "Language"],
+      keywords: ["Reference", "Sign/Spoken language", "Production"],
       photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025yannick.jpg"
     }
   ],
