@@ -98,7 +98,9 @@ const teamMembers = {
   staff: [
     {
       name: "Yannick Peters",
-      role: "Research Assistant"
+      role: "Research Assistant", 
+      keywords: ["Reference", "Sign Linguistics", "Language"],
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025yannick.jpg"
     }
   ],
   visitorsCurrent: [
