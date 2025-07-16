@@ -42,6 +42,14 @@ const latestPublications: Publication[] = [
 
 const latestPreprints: Publication[] = [
   {
+    title: "Simultaneous cortical tracking of competing speech stream during attention switching",
+    authors: "S Carta, E Aličković, J Zaar, A López Valdés",
+    journal: "bioRxiv",
+    year: "in review",
+    link: "https://www.biorxiv.org/content/10.1101/2025.07.02.662762v1"
+  },
+  
+  {
     title: "Speech Neurophysiology in Realistic Contexts: Big Hype or Big Leap?",
     authors: "GM Di Liberto and E Ip",
     journal: "arXiv",
