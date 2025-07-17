@@ -26,6 +26,24 @@ const slides = [
 
 const newsItems = [
   {
+    date: "July 2025", 
+    title: "Giorgio Frego's research visit",
+    description: "Giorgio Frego from the Free University of Bozen-Bolzano joins the lab for a 9-month research visit!",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/2025giorgiof2.jpg"
+  },
+  {
+    date: "July 2025", 
+    title: "John's travel award", 
+    description: "John has received a travel award for the 2025 meeting of the International Conference on Auditory Cortex in Maastricht, the Netherlands.",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/2025icacconf.png"
+  },
+  {
+    date: "July 2025", 
+    title: "Martin's travel award",
+    description: "Martin has received a travel award and attends the 48th Annual Meeting of the Japan Neuroscience Society in Niigata, Japan.",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/2025jnsconf.jpg"
+  },
+  {
     date: "May 2025",
     title: "Emily's best presentation award",
     description: "Emily was awarded the best contribution award at the ADAPT conference in Dublin!",
