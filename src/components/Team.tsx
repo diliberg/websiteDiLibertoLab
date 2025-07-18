@@ -34,7 +34,7 @@ const teamMembers = {
       role: "Postdoctoral Researcher",
       description: "Research interests: Cognition, Psycholinguistics",
       keywords: ["Speech interaction", "language", "trust"],
-      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Jaimy.jpg"
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Jaimy.jpeg"
     },
     {
       name: "Giorgio Piazza (joining from Nov 2025)",
