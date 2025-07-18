@@ -35,7 +35,7 @@ const newsItems = [
     date: "July 2025", 
     title: "John and Martin's travel award", 
     description: "John and Martin have both received a travel award for the 2025 meetings of the International Conference on Auditory Cortex in Maastricht and the the 48th Annual Meeting of the Japan Neuroscience Society in Niigata, Japan..",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/conferences.png"
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/conferences.jpg"
   },
   {
     date: "May 2025",
