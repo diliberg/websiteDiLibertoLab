@@ -33,15 +33,9 @@ const newsItems = [
   },
   {
     date: "July 2025", 
-    title: "John's travel award", 
-    description: "John has received a travel award for the 2025 meeting of the International Conference on Auditory Cortex in Maastricht, the Netherlands.",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/2025icacconf.png"
-  },
-  {
-    date: "July 2025", 
-    title: "Martin's travel award",
-    description: "Martin has received a travel award and attends the 48th Annual Meeting of the Japan Neuroscience Society in Niigata, Japan.",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/2025jnsconf.jpg"
+    title: "John and Martin's travel award", 
+    description: "John and Martin have both received a travel award for the 2025 meetings of the International Conference on Auditory Cortex in Maastricht and the the 48th Annual Meeting of the Japan Neuroscience Society in Niigata, Japan..",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/conferences.png"
   },
   {
     date: "May 2025",
