@@ -14,7 +14,7 @@ const courses: Course[] = [
     code: "CSP7000",
     title: "Introduction to Machine Learning",
     role: "Coordinator",
-    program: ["MSc in Smart and Sustainable Cities", "E3 MSc in Climate Adaptation Engineering"],
+    program: "MSc in Smart and Sustainable Cities",
     icon: GraduationCap
   },
   {
@@ -28,7 +28,7 @@ const courses: Course[] = [
     code: "CSP7001",
     title: "Introduction to Machine Learning",
     role: "Coordinator",
-    program: ["MSc in Applied Social Data Science", "MSc Environmental Science and Engineering", "MSc in Biomedical Engineering (Neural Eng stream)"],
+    program: "MSc in Applied Social Data Science",
     icon: BookOpen
   }
 ];
