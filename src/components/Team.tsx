@@ -106,15 +106,15 @@ const teamMembers = {
   ],
   visitorsCurrent: [
     {
-      name: "Antonia Schuerg",
-      role: "Erasmus+ student",
-      keywords: ["EEG", "Music perception"]
-    },
-    {
       name: "Giorgio Frego", 
       role: "PhD student", 
       keywords: ["Music decoding", "EEG"], 
       photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025giorgiof.jpg"
+    },
+    {
+      name: "Antonia Schuerg",
+      role: "Erasmus+ student",
+      keywords: ["EEG", "Music perception"]
     }
   ],
   dissertation: [
