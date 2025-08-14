@@ -68,7 +68,23 @@ const researchCoverage: ResearchCoverage[] = [
   }
 ];
 
-const otherMedia = [
+const otherMedia = [ 
+  {
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/coghear.png",
+    imageWidth: 130,
+    date: "June 2025",
+    title: "Presentation discussing speech neurophysiology in realistic contexts",
+    description: "CogHear", 
+    link: "https://youtu.be/Sj1txAtvMiA?si=iIyj1pFgwRr7FDW-"
+  },
+  {
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/lclogo.png",
+    imageWith: 130,
+    date: "November 2024",
+    title: "Presentation outlining lab goals, methods and results", 
+    description: "Language Cycles", 
+    link: "https://youtu.be/aFpM5Y3R5AA?si=w21UKkAk-XNvkYiY"  
+  },
   {
     image: "https://www.scientificast.it/blog/wp-content/uploads/2018/09/Logo-sito1.png",
     imageWidth: 130,
@@ -78,7 +94,7 @@ const otherMedia = [
     link: "https://www.scientificast.it/la-musica-dei-muoni-a-rna/"
   },
   {
-    image: "images/adaptRadio.jpg",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/adaptradio.jpg",
     imageWidth: 130,
     date: "Feb 2023",
     title: "Fun discussion about AI and human interaction with Dr. Andrea Patane",
