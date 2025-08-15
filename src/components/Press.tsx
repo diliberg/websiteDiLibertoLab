@@ -71,7 +71,7 @@ const researchCoverage: ResearchCoverage[] = [
 const otherMedia = [ 
   {
     image: "https://diliberg.github.io/websiteDiLibertoLabImages/coghear.png",
-    imageWidth: 81,
+    imageWidth: 130,
     date: "June 2025",
     title: "Scientific talk on speech neurophysiology in realistic contexts",
     description: "YouTube", 
@@ -79,7 +79,7 @@ const otherMedia = [
   },
   {
     image: "https://diliberg.github.io/websiteDiLibertoLabImages/lclogo.png",
-    imageWidth: 100,
+    imageWidth: 130,
     date: "November 2024",
     title: "Scientific talk on recent research results (Language Cycles)", 
     description: "YouTube", 
