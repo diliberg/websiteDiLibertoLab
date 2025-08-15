@@ -73,16 +73,16 @@ const otherMedia = [
     image: "https://diliberg.github.io/websiteDiLibertoLabImages/coghear.png",
     imageWidth: 130,
     date: "June 2025",
-    title: "Presentation discussing speech neurophysiology in realistic contexts",
-    description: "CogHear", 
+    title: "Scientific talk on speech neurophysiology in realistic contexts",
+    description: "YouTube", 
     link: "https://youtu.be/Sj1txAtvMiA?si=iIyj1pFgwRr7FDW-"
   },
   {
     image: "https://diliberg.github.io/websiteDiLibertoLabImages/lclogo.png",
     imageWith: 130,
     date: "November 2024",
-    title: "Presentation outlining lab goals, methods and results", 
-    description: "Language Cycles", 
+    title: "Scientific talk on recent research results (Language Cycles)", 
+    description: "YouTube", 
     link: "https://youtu.be/aFpM5Y3R5AA?si=w21UKkAk-XNvkYiY"  
   },
   {
