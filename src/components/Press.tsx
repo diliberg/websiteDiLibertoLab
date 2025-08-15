@@ -79,7 +79,7 @@ const otherMedia = [
   },
   {
     image: "https://diliberg.github.io/websiteDiLibertoLabImages/lclogo.png",
-    imageWith: 20,
+    imageWidth: 100,
     date: "November 2024",
     title: "Scientific talk on recent research results (Language Cycles)", 
     description: "YouTube", 
