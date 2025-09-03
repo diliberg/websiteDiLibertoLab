@@ -42,6 +42,13 @@ const latestPublications: Publication[] = [
 
 const latestPreprints: Publication[] = [
   {
+    title: "Where is the melody? Spontaneous attention orchestrates melody formation during polyphonic music listening",
+    authors: "MM Winchester, K Reynolds, C Nebo, IC Scott, GM Di Liberto",
+    journal: "BioRxiv",
+    year: "in review",
+    link: "https://www.biorxiv.org/content/10.1101/2025.08.26.672294v1"
+  },
+  {
     title: "Simultaneous cortical tracking of competing speech stream during attention switching",
     authors: "S Carta, E Aličković, J Zaar, A López Valdés",
     journal: "bioRxiv",
