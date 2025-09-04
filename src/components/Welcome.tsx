@@ -26,6 +26,12 @@ const slides = [
 
 const newsItems = [
   {
+    date: "September 2025", 
+    title: "Martin's new preprint",
+    description: "Martin's new preprint on musical perception is available on BioRxiv",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/BioRxiv.png"
+  },
+  {
     date: "July 2025", 
     title: "Giorgio Frego's research visit",
     description: "Giorgio Frego from the Free University of Bozen-Bolzano joins the lab for a 9-month research visit!",
