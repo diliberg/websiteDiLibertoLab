@@ -28,8 +28,9 @@ const newsItems = [
   {
     date: "September 2025", 
     title: "Martin's new preprint",
-    description: "Martin's new preprint on musical perception is available on BioRxiv",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/BioRxiv.png"
+    description: "Martin's new preprint on polyphonic musical perception is available on BioRxiv",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/BioRxiv.png",
+    link: "https://www.biorxiv.org/content/10.1101/2025.08.26.672294v1"
   },
   {
     date: "July 2025", 
