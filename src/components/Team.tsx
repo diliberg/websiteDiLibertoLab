@@ -117,7 +117,7 @@ const teamMembers = {
       keywords: ["EEG", "Music perception"]
     }
   ],
-  dissertation: [
+  alumni2425: [
     {
       name: "Meaghan McGoldrick",
       role: "MAI Student",
