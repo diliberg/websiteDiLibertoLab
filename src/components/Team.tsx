@@ -117,6 +117,16 @@ const teamMembers = {
       keywords: ["EEG", "Music perception"]
     }
   ],
+  dissertation: [
+    {
+      name: "Ignacy Sus", 
+      role: "MCS",
+      keywords: ["Speech Production", "EEG"],
+      publications: [
+        { title: "LinkedIn", link: "https://www.linkedin.com/in/ignacy-sus/" }],
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Ignacy.jpg"
+    }      
+  ],
   alumni2425: [
     {
       name: "Meaghan McGoldrick",
