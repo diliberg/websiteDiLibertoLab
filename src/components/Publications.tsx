@@ -30,13 +30,6 @@ const latestPublications: Publication[] = [
     journal: "PLoS One 19 (11), e0308554",
     year: 2024,
     link: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0308554"
-  },
-  {
-    title: "A standardised open science framework for sharing and re-analysing neural data acquired to continuous stimuli",
-    authors: "GM Di Liberto, A Nidiffer, MJ Crosse, NJ Zuk, S Haro, G Cantisani, et al.",
-    journal: "Neurons, Behavior, Data Analysis, and Theory, October, 1–25",
-    year: 2024,
-    link: "https://nbdt.scholasticahq.com/article/124867"
   }
 ];
 
@@ -107,6 +100,13 @@ const selectedPublications: Publication[] = [
     journal: "Current Biology 25 (19), 2457-2465",
     year: 2015,
     link: "https://www.cell.com/current-biology/fulltext/S0960-9822(15)01001-5"
+  },
+  {
+    title: "A standardised open science framework for sharing and re-analysing neural data acquired to continuous stimuli",
+    authors: "GM Di Liberto, A Nidiffer, MJ Crosse, NJ Zuk, S Haro, G Cantisani, et al.",
+    journal: "Neurons, Behavior, Data Analysis, and Theory, October, 1–25",
+    year: 2024,
+    link: "https://nbdt.scholasticahq.com/article/124867"
   }
 ];
 
