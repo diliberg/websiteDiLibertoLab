@@ -120,7 +120,7 @@ const teamMembers = {
   dissertation: [
     {
       name: "Ignacy Sus", 
-      role: "MCS",
+      role: "MCS Student",
       keywords: ["Speech Production", "EEG"],
       publications: [
         { title: "LinkedIn", link: "https://www.linkedin.com/in/ignacy-sus/" }],
@@ -128,12 +128,32 @@ const teamMembers = {
     },
     {
       name: "Declan Michael McCabe", 
-      role: "MCS",
+      role: "MCS Student",
       keywords: ["Music Decoding", "Machine Learning", "Audio Perception"],
       publications: [
         { title: "LinkedIn", link: "https://www.linkedin.com/in/declan-michael-mccabe/" }],
       photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Declan.jpg"
     },
+    {
+      name: "Anna Sawichka", 
+      role: "MCS Student"
+    },
+    {
+      name: "Tom Gilbride", 
+      role: "MCS Student"
+    },
+    {
+      name: "Maria Mezquita Garcia-Poggio", 
+      role: "MAI Student"
+    },
+    {
+      name: "Niall Grogan", 
+      role: "MAI Student"
+    },
+    {
+      name: "Stephen Komolafe", 
+      role: "MCS Student"
+    }
   ],
   alumni2425: [
     {
