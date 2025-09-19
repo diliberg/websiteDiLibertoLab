@@ -125,7 +125,15 @@ const teamMembers = {
       publications: [
         { title: "LinkedIn", link: "https://www.linkedin.com/in/ignacy-sus/" }],
       photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Ignacy.jpg"
-    }      
+    },
+    {
+      name: "Declan Michael McCabe", 
+      role: "MCS",
+      keywords: ["Music Decoding", "Machine Learning", "Audio Perception"],
+      publications: [
+        { title: "LinkedIn", link: "https://www.linkedin.com/in/declan-michael-mccabe/" }],
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Declan.jpg"
+    },
   ],
   alumni2425: [
     {
