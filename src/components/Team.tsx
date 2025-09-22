@@ -143,6 +143,14 @@ const teamMembers = {
         { title: "GitHub", link: "https://github.com/SK-portfolio"}]
     },
     {
+      name: "Niall Grogan", 
+      role: "MAI Student", 
+      keywords: ["Machine Learning", "Speech Communication"],
+      publications: [
+      { title: "LinkedIn", link : "https://www.linkedin.com/in/niall-grogan-a17482228/"}],
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Niall.jpg"
+    },
+    {
       name: "Anna Sawichka", 
       role: "MCS Student"
     },
@@ -152,10 +160,6 @@ const teamMembers = {
     },
     {
       name: "Maria Mezquita Garcia-Poggio", 
-      role: "MAI Student"
-    },
-    {
-      name: "Niall Grogan", 
       role: "MAI Student"
     }
   ],
