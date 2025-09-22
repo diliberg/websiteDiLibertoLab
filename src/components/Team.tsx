@@ -135,6 +135,14 @@ const teamMembers = {
       photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Declan.jpg"
     },
     {
+      name: "Stephen Komolafe", 
+      role: "MCS Student",
+      keywords: ["Large Language Models","Auditory Cognition","EEG"],
+      publications: [
+        { title: "LinkedIn", link : "http://www.linkedin.com/in/stephen-komolafe-197842263/"},
+        { title: "GitHub", link: "https://github.com/SK-portfolio"}]
+    },
+    {
       name: "Anna Sawichka", 
       role: "MCS Student"
     },
@@ -149,10 +157,6 @@ const teamMembers = {
     {
       name: "Niall Grogan", 
       role: "MAI Student"
-    },
-    {
-      name: "Stephen Komolafe", 
-      role: "MCS Student"
     }
   ],
   alumni2425: [
