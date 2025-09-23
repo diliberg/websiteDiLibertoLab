@@ -151,8 +151,12 @@ const teamMembers = {
       photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Niall.jpg"
     },
     {
-      name: "Anna Sawichka", 
-      role: "MCS Student"
+      name: "Anna Sawicka", 
+      role: "MCS Student",
+      keywords: ["Speech","EEG","Machine Learning"],
+      publications: [
+        {title: "LinkedIn", link: "https://www.linkedin.com/in/annasawicka/"}],
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Anna.jpg"      
     },
     {
       name: "Tom Gilbride", 
