@@ -35,6 +35,13 @@ const latestPublications: Publication[] = [
 
 const latestPreprints: Publication[] = [
   {
+    title: "Exploring the impact of social relevance on the cortical tracking of speech: viability and temporal response characterisation",
+    authors: "EYJ Ip, A Akkaya, MM Winchester, SJ Bishop, BR Cowan, GM Di Liberto".
+    journal: "BioRxiv",
+    year: "in review",
+    link: "https://www.biorxiv.org/content/10.1101/2025.09.23.674728v1"
+  },
+  {
     title: "Where is the melody? Spontaneous attention orchestrates melody formation during polyphonic music listening",
     authors: "MM Winchester, K Reynolds, C Nebo, IC Scott, GM Di Liberto",
     journal: "BioRxiv",
@@ -51,7 +58,7 @@ const latestPreprints: Publication[] = [
   
   {
     title: "Speech Neurophysiology in Realistic Contexts: Big Hype or Big Leap?",
-    authors: "GM Di Liberto and E Ip",
+    authors: "GM Di Liberto and EYJ Ip",
     journal: "arXiv",
     year: "in review",
     link: "https://arxiv.org/abs/2506.05494"
