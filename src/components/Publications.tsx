@@ -36,7 +36,7 @@ const latestPublications: Publication[] = [
 const latestPreprints: Publication[] = [
   {
     title: "Exploring the impact of social relevance on the cortical tracking of speech: viability and temporal response characterisation",
-    authors: "EYJ Ip, A Akkaya, MM Winchester, SJ Bishop, BR Cowan, GM Di Liberto".
+    authors: "EYJ Ip, A Akkaya, MM Winchester, SJ Bishop, BR Cowan, GM Di Liberto",
     journal: "BioRxiv",
     year: "in review",
     link: "https://www.biorxiv.org/content/10.1101/2025.09.23.674728v1"
