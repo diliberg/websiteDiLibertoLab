@@ -25,6 +25,13 @@ const slides = [
 ];
 
 const newsItems = [
+  
+  {
+    date: "November 2025",
+    title: "Sara's PhD defence",
+    description: "Sara Carta has succesfully defended her PhD thesis on sustained attention and switching. Congratulations!", 
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/defenceSara.jpg"
+  },
   {
     date: "September 2025",
     title: "Emily and Asena's new preprint",
