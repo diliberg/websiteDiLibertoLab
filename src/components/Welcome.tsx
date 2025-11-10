@@ -3,16 +3,24 @@ import { ChevronLeft, ChevronRight, ExternalLink, MapPin } from 'lucide-react';
 
 const slides = [
   {
-    url: "https://diliberg.github.io/websiteDiLibertoLabImages/labPhoto2025.jpg",
+    url: "https://diliberg.github.io/websiteDiLibertoLabImages/2025-2labphoto_1.png",
     alt: "Di Liberto Lab team"
   },
   {
-    url: "https://diliberg.github.io/websiteDiLibertoLabImages/labPhotoEEG2025.jpg",
+    url: "https://diliberg.github.io/websiteDiLibertoLabImages/2025-2labphoto_2.jpg",
+    alt: "Di Liberto Lab team"
+  },
+  {
+    url: "https://diliberg.github.io/websiteDiLibertoLabImages/2025-2labphoto_3.png",
     alt: "Di Liberto Lab team"
   },
   {
     url: "https://diliberg.github.io/websiteDiLibertoLabImages/labPhotoAA4.jpg",
     alt: "Lab setup"
+  },
+  {
+    url: "https://diliberg.github.io/websiteDiLibertoLabImages/2025labphoto_Pearse.jpg",
+    alt: "Di Liberto Lab team"
   },
   {
     url: "https://diliberg.github.io/websiteDiLibertoLabImages/labPhotoAA1.jpg",
