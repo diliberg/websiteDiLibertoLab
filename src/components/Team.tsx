@@ -159,6 +159,12 @@ const teamMembers = {
       photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Anna.jpg"      
     },
     {
+      name: "Stevin Joseph Sebastian", 
+      role: "MCS Student",
+      keywords: ["Music Perception", "Sign Language", "Transformers"],
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Stevin.jpg"      
+    },
+    {
       name: "Tom Gilbride", 
       role: "MCS Student"
     },
