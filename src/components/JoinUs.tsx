@@ -9,13 +9,23 @@ export function JoinUs() {
       <div className="space-y-8">
         <div className="bg-white p-6 rounded-lg shadow-sm">
           <h3 className="text-xl font-semibold mb-4">Open Positions</h3>
+            <h4>
+            <a href="https://www.adaptcentre.ie/careers/research-assistant-in-cognitive-science-and-generative-ai/" target="_blank">
+            Research Assistant in Cognitive Science and Generative AI
+            </a>
+            </h4>
+            <h5>
+            <a href="https://www.adaptcentre.ie/careers/postdoctoral-researcher-in-cognitive-science-and-generative-ai/" target="_blank">
+            Postdoctoral Researcher in Cognitive Science and Generative AI
+            </a>
+            </h5>
           <p className="text-gray-600">
-            There are no available positions at the moment. We always welcome expressions of interest from students interested in applying for external funding (e.g., PhD Scholarships) to join our team. Please note that the submission deadline for some PhD Scholarship / Postdoctoral Fellowship applications is often 1 year before the proposed start date. We welcome applications from candidates with diverse backgrounds and experiences relevant to our research. We also welcome TCD undergraduate students to join our team for gaining lab experience with us.
+            We always welcome expressions of interest from students interested in applying for external funding (e.g., PhD Scholarships) to join our team. Please note that the submission deadline for some PhD Scholarship / Postdoctoral Fellowship applications is often 1 year before the proposed start date. We welcome applications from candidates with diverse backgrounds and experiences relevant to our research. We also welcome TCD undergraduate students to join our team for gaining lab experience with us.
           </p>
         </div>
 
         <div className="bg-white p-6 rounded-lg shadow-sm">
-          <h3 className="text-xl font-semibold mb-4">Volunteers</h3>
+          <h6 className="text-xl font-semibold mb-4">Volunteers</h6>
           <p className="text-gray-600 mb-6">
             If you are based in Dublin, please feel free to get in touch if you would like to get involved in our research. We are always looking for volunteers for our experiments.
           </p>
