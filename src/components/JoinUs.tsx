@@ -9,13 +9,13 @@ export function JoinUs() {
       <div className="space-y-8">
         <div className="bg-white p-6 rounded-lg shadow-sm">
           <h3 className="text-xl font-semibold mb-4">Open Positions</h3>
-            <h4>
-            <a href="https://www.adaptcentre.ie/careers/research-assistant-in-cognitive-science-and-generative-ai/" target="_blank">
+            <h4 className="text-xl font-semibold mb-4">
+            <a href="https://www.adaptcentre.ie/careers/research-assistant-in-cognitive-science-and-generative-ai/" style="color: blue; text-decoration: none;" target="_blank">
             Research Assistant in Cognitive Science and Generative AI
             </a>
             </h4>
-            <h5>
-            <a href="https://www.adaptcentre.ie/careers/postdoctoral-researcher-in-cognitive-science-and-generative-ai/" target="_blank">
+            <h5 className="text-xl font-semibold mb-4">
+            <a href="https://www.adaptcentre.ie/careers/postdoctoral-researcher-in-cognitive-science-and-generative-ai/" style="color: blue; text-decoration: none;" target="_blank">
             Postdoctoral Researcher in Cognitive Science and Generative AI
             </a>
             </h5>
