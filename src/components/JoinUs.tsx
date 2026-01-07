@@ -11,26 +11,28 @@ export function JoinUs() {
         <div className="bg-white p-6 rounded-lg shadow-sm">
           <h3 className="text-xl font-semibold mb-4">Open Positions</h3>
 
-          <h3>
-            <a
-              href="https://www.adaptcentre.ie/careers/research-assistant-in-cognitive-science-and-generative-ai/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: 'blue', textDecoration: 'none' }}
-            >
-              Research Assistant in Cognitive Science and Generative AI
-            </a>
+          
+          <h3 className="text-2xl font-semibold">
+          <a
+            href="https://www.adaptcentre.ie/careers/research-assistant-in-cognitive-science-and-generative-ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-800 no-underline"
+          >
+            Research Assistant in Cognitive Science and Generative AI
+          </a>
           </h3>
 
-          <h3>
-            <a
-              href="https://www.adaptcentre.ie/careers/postdoctoral-researcher-in-cognitive-science-and-generative-ai/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: 'blue', textDecoration: 'none' }}
-            >
-              Postdoctoral Researcher in Cognitive Science and Generative AI
-            </a>
+          <h3 className="text-2xl font-semibold">
+          <a
+            href="https://www.adaptcentre.ie/careers/postdoctoral-researcher-in-cognitive-science-and-generative-ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-800 no-underline"
+          >
+            Postdoctoral Researcher in Cognitive Science and Generative AI
+
+          </a>
           </h3>
 
           <p className="text-gray-600">
