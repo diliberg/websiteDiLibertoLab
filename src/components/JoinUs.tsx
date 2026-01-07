@@ -12,7 +12,7 @@ export function JoinUs() {
           <h3 className="text-xl font-semibold mb-4">Open Positions</h3>
 
           
-          <h3 className="text-2xl font-semibold">
+          <h3 className="text-xl font-semibold mb-4">
           <a
             href="https://www.adaptcentre.ie/careers/research-assistant-in-cognitive-science-and-generative-ai/"
             target="_blank"
@@ -23,7 +23,7 @@ export function JoinUs() {
           </a>
           </h3>
 
-          <h3 className="text-2xl font-semibold">
+          <h3 className="text-xl font-semibold mb-4">
           <a
             href="https://www.adaptcentre.ie/careers/postdoctoral-researcher-in-cognitive-science-and-generative-ai/"
             target="_blank"
