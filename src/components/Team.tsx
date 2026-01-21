@@ -37,7 +37,7 @@ const teamMembers = {
       photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Jaimy.jpeg"
     },
     {
-      name: "Giorgio Piazza (joining from Nov 2025)",
+      name: "Giorgio Piazza",
       role: "Marie-Curie Postdoctoral Fellow",
       description: "Research interests: Speech, Language, Neurophysiology",
       keywords: ["Speech", "Perception", "Adaptation", "EEG"],
