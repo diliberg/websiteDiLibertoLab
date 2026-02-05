@@ -33,7 +33,18 @@ const slides = [
 ];
 
 const newsItems = [
-  
+  {
+    date: "February 2026",
+    title: "Simon visits the lab",
+    description: "Simon Geirnaert from KU Leuven will join the lab for a three-months visit!",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/2026Simoncap.jpg"
+  },
+    {
+    date: "November 2025",
+    title: "Giorgio joins the lab",
+    description: "Giorgio Piazza has joined the lab with a Marie-Curie fellowship.",
+    image: "https://i1.rgstatic.net/ii/profile.image/947252432474114-1602853987361_Q512/Giorgio-Piazza-2.jpg"
+  },
   {
     date: "November 2025",
     title: "Sara's PhD defence",
@@ -84,12 +95,6 @@ const newsItems = [
     description: "New paper on speech adaptation to non-native speakers!",
     image: "https://mitp.silverchair-cdn.com/data/SiteBuilderAssets/Live/Images/imag/IMAG_cover-1980937453.png",
     link: "https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00539/128622/Are-you-talking-to-me-How-the-choice-of-speech"
-  },
-  {
-    date: "February 2025",
-    title: "Giorgio's Marie-Curie fellowship",
-    description: "Giorgio Piazza was awarded a Marie-Curie fellowship to join our team!",
-    image: "https://i1.rgstatic.net/ii/profile.image/947252432474114-1602853987361_Q512/Giorgio-Piazza-2.jpg"
   },
   {
     date: "January 2025",
