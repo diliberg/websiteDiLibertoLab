@@ -50,17 +50,6 @@ const teamMembers = {
   ],
   phd: [
     {
-      name: "Sara Carta",
-      role: "PhD Student",
-      keywords: ["Speech perception", "Selective Attention", "Hearing Impairment"],
-      publications: [
-        { title: "bioRxiv, 2025", link: "https://www.biorxiv.org/content/10.1101/2025.07.02.662762v1" },
-        { title: "PLoS One, 2024", link: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0308554" },
-        { title: "J Neurosci Methods, 2022", link: "https://www.sciencedirect.com/science/article/pii/S0165027022002916" }
-      ],
-      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/SaraLabpic.jpeg"
-    },
-    {
       name: "Amirhossein Chalehchaleh",
       role: "PhD Student",
       keywords: ["Speech perception", "Semantic processing", "Statistical learning"],
@@ -74,14 +63,16 @@ const teamMembers = {
       role: "PhD Student",
       keywords: ["Speech perception", "Statistical learning", "Perspective taking"],
       publications: [
-        { title: "arXiv, 2025", link: "https://arxiv.org/abs/2506.05494" }
+        { title: "arXiv, 2025", link: "https://arxiv.org/abs/2506.05494" },
+        { title: "BioRxiv, 2025", link: "https://www.biorxiv.org/content/10.1101/2025.09.23.674728v1"}
       ],
       photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Emily.jpeg"
     },
     {
       name: "Martin Winchester",
       role: "PhD Student",
-      keywords: ["Speech communication", "Music perception", "EEG", "CNSP"]
+      keywords: ["Speech communication", "Music perception", "EEG", "CNSP"], 
+      publications: [{title: "BioRxiv, 2025", link: "https://www.biorxiv.org/content/10.1101/2025.08.26.672294v1"}]
     },
     {
       name: "John O'Doherty",
@@ -93,6 +84,8 @@ const teamMembers = {
       name: "Asena Akkaya",
       role: "PhD Student",
       keywords: ["Speech and music processing", "Prosody", "Social anxiety"],
+      publications: [
+        {title: "BioRxiv, 2025", link: "https://www.biorxiv.org/content/10.1101/2025.09.23.674728v1"}],
       photo: "https://diliberg.github.io/websiteDiLibertoLabImages/asenaPic.jpg"
     }
   ],
@@ -106,15 +99,10 @@ const teamMembers = {
   ],
   visitorsCurrent: [
     {
-      name: "Giorgio Frego", 
-      role: "PhD student", 
-      keywords: ["Music decoding", "EEG"], 
-      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025giorgiof.jpg"
-    },
-    {
-      name: "Antonia Schuerg",
-      role: "Erasmus+ student",
-      keywords: ["EEG", "Music perception"]
+      name: "Simon Geirnaert", 
+      role: "Postdoctoral Researcher", 
+      keywords: ["Signal Processing", "EEG"], 
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2026Simon.jpg"
     }
   ],
   dissertation: [
@@ -171,6 +159,19 @@ const teamMembers = {
     {
       name: "Maria Mezquita Garcia-Poggio", 
       role: "MAI Student"
+    }
+  ],
+  pastPhD: [
+        {
+      name: "Sara Carta",
+      role: "PhD Graduate",
+      keywords: ["Speech perception", "Selective Attention", "Hearing Impairment"],
+      publications: [
+        { title: "bioRxiv, 2025", link: "https://www.biorxiv.org/content/10.1101/2025.07.02.662762v1" },
+        { title: "PLoS One, 2024", link: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0308554" },
+        { title: "J Neurosci Methods, 2022", link: "https://www.sciencedirect.com/science/article/pii/S0165027022002916" }
+      ],
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/SaraLabpic.jpeg"
     }
   ],
   alumni2425: [
@@ -333,6 +334,17 @@ const teamMembers = {
   ],
   visitors: [
     {
+      name: "Giorgio Frego", 
+      role: "PhD student", 
+      keywords: ["Music decoding", "EEG"], 
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025giorgiof.jpg"
+    },
+    {
+      name: "Antonia Schuerg",
+      role: "Erasmus+ student",
+      keywords: ["EEG", "Music perception"]
+    },
+    {
       name: "Giorgia Cantisani",
       role: "Postdoc Research Visitor (Ecole Normal Superieure, 2022-23)",
       keywords: ["Speech and Music perception", "Source separation", "Machine learning"],
@@ -482,6 +494,7 @@ export function Team({ onViewCV }: { onViewCV: () => void }) {
       <TeamSection title="Research Staff" members={teamMembers.staff} />
       <TeamSection title="Dissertation Projects 2025-26" members={teamMembers.dissertation} />
       <TeamSection title="Visiting Students/Researchers" members={teamMembers.visitorsCurrent} />
+      <TeamSection title="Alumni: PhD Students" members={teamMembers.pastPhD} />
       <TeamSection title="Alumni: Visiting Students/Researchers" members={teamMembers.visitors} />
       <TeamSection title="Alumni: Research Staff" members={teamMembers.pastStaff} />
       <TeamSection title="Alumni: Master's/Final year projects (2024-25)" members={teamMembers.alumni2425} />
