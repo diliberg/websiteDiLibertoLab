@@ -66,7 +66,7 @@ const teamMembers = {
         { title: "arXiv, 2025", link: "https://arxiv.org/abs/2506.05494" },
         { title: "BioRxiv, 2025", link: "https://www.biorxiv.org/content/10.1101/2025.09.23.674728v1"}
       ],
-      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Emily.jpeg"
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/M1.jpg"
     },
     {
       name: "Martin Winchester",
