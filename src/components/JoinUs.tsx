@@ -36,7 +36,7 @@ export function JoinUs() {
           </h3>
 
           <p className="text-gray-600">
-            We thank everyone who has submitted their application. We have received a high volume of applications and we will contact the applicants about the outcome of stage 1 by the second week of February. We always welcome expressions of interest from students interested in applying for external funding (e.g., PhD Scholarships) to join our team. Please note that the submission deadline for some PhD Scholarship / Postdoctoral Fellowship applications is often 1 year before the proposed start date. We welcome applications from candidates with diverse backgrounds and experiences relevant to our research. We also welcome TCD undergraduate students to join our team for gaining lab experience with us.
+            We thank everyone who has submitted their application. We have received a high volume of applications and we will contact the applicants about the outcome of stage 1 by the third week of February. We always welcome expressions of interest from students interested in applying for external funding (e.g., PhD Scholarships) to join our team. Please note that the submission deadline for some PhD Scholarship / Postdoctoral Fellowship applications is often 1 year before the proposed start date. We welcome applications from candidates with diverse backgrounds and experiences relevant to our research. We also welcome TCD undergraduate students to join our team for gaining lab experience with us.
           </p>
         </div>
 
