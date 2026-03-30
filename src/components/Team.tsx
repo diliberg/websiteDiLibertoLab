@@ -407,31 +407,29 @@ function TeamSection({ title, members }: { title: string; members: TeamMember[] 
   
   return (
     <div className="mb-12">
-      <h3 className="text-xl font-semibold mb-6 text-gray-800">{title}</h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <h3 className="text-xl font-semibold mb-6 text-gray-800 border-b pb-2">{title}</h3>
+      {/* UPDATED: Changed grid columns to scale up to 3 columns on large screens and 4 on extra large */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {members.map((member, index) => (
-          <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col border border-gray-100">
-            <div className="flex gap-4">
+          <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col border border-gray-100 h-full">
+            <div className="flex gap-4 mb-4">
               <img
                 src={member.photo || defaultBrainImage}
                 alt={member.name}
-                className={`w-24 h-24 object-cover rounded-full flex-shrink-0 ${!member.photo ? 'opacity-70 grayscale' : ''}`}
+                className={`w-20 h-20 object-cover rounded-full flex-shrink-0 ${!member.photo ? 'opacity-70 grayscale' : ''}`}
               />
               <div>
-                <h4 className="font-semibold text-gray-900">{member.name}</h4>
-                <p className="text-gray-600 text-sm mb-2">{member.role}</p>
-                {member.description && (
-                  <p className="text-gray-600 text-sm">{member.description}</p>
-                )}
+                <h4 className="font-semibold text-gray-900 leading-tight">{member.name}</h4>
+                <p className="text-gray-600 text-sm mt-1 mb-1">{member.role}</p>
                 {member.publications && (
-                  <div className="mt-2 space-y-1">
+                  <div className="mt-1 space-y-1">
                     {member.publications.map((pub, idx) => (
                       <a
                         key={idx}
                         href={pub.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block text-blue-600 hover:text-blue-800 text-sm"
+                        className="block text-blue-600 hover:text-blue-800 text-xs"
                       >
                         {pub.title} <ExternalLink className="inline h-3 w-3" />
                       </a>
@@ -440,7 +438,14 @@ function TeamSection({ title, members }: { title: string; members: TeamMember[] 
                 )}
               </div>
             </div>
-            <KeywordsList keywords={member.keywords} />
+            
+            {member.description && (
+              <p className="text-gray-600 text-sm mb-3 flex-grow">{member.description}</p>
+            )}
+            
+            <div className="mt-auto">
+              <KeywordsList keywords={member.keywords} />
+            </div>
           </div>
         ))}
       </div>
@@ -450,38 +455,40 @@ function TeamSection({ title, members }: { title: string; members: TeamMember[] 
 
 export function Team({ onViewCV }: { onViewCV: () => void }) {
   return (
-    <div className="max-w-4xl">
-      <h2 className="text-3xl font-semibold mb-8">Our Team</h2>
+    {/* UPDATED: Changed max-w-4xl to max-w-7xl to allow space for multiple columns */}
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <h2 className="text-3xl font-bold mb-8 text-gray-900">Our Team</h2>
       
-      <div className="mb-12">
-        <div className="bg-gray-50 p-8 rounded-lg flex gap-6 items-start">
+      {/* Principal Investigator Section */}
+      <div className="mb-16">
+        <div className="bg-gray-50 p-8 rounded-xl flex flex-col md:flex-row gap-8 items-start shadow-sm border border-gray-100">
           <img
             src={teamMembers.pi.photo}
             alt={teamMembers.pi.name}
-            className="w-32 h-32 object-cover rounded-lg"
+            className="w-40 h-40 md:w-48 md:h-48 object-cover rounded-xl shadow-sm"
           />
-          <div>
-            <div className="flex items-center gap-4">
-              <h3 className="text-2xl font-semibold text-gray-900">{teamMembers.pi.name}</h3>
+          <div className="flex-1">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-2">
+              <h3 className="text-3xl font-bold text-gray-900">{teamMembers.pi.name}</h3>
               <button
                 onClick={onViewCV}
-                className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 text-sm"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-colors text-sm font-medium w-fit"
               >
                 View CV <ExternalLink className="h-4 w-4" />
               </button>
             </div>
-            <p className="text-gray-700 font-medium mb-4">{teamMembers.pi.role}</p>
-            <p className="text-gray-600 mb-4">{teamMembers.pi.description}</p>
-            <div className="flex flex-wrap gap-3">
+            <p className="text-blue-600 font-medium mb-4 text-lg">{teamMembers.pi.role}</p>
+            <p className="text-gray-700 mb-6 max-w-3xl leading-relaxed">{teamMembers.pi.description}</p>
+            <div className="flex flex-wrap gap-4">
               {teamMembers.pi.links.map((link, index) => (
                 <a
                   key={index}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm text-blue-600 hover:text-blue-800"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-700 hover:text-blue-600 hover:border-blue-300 transition-colors shadow-sm"
                 >
-                  {link.title} <ExternalLink className="h-3.5 w-3.5" />
+                  {link.title} <ExternalLink className="h-3.5 w-3.5 text-gray-400" />
                 </a>
               ))}
             </div>
@@ -489,18 +496,21 @@ export function Team({ onViewCV }: { onViewCV: () => void }) {
         </div>
       </div>
 
-      <TeamSection title="Postdoctoral Researchers" members={teamMembers.postdocs} />
-      <TeamSection title="PhD Students" members={teamMembers.phd} />
-      <TeamSection title="Research Staff" members={teamMembers.staff} />
-      <TeamSection title="Dissertation Projects 2025-26" members={teamMembers.dissertation} />
-      <TeamSection title="Visiting Students/Researchers" members={teamMembers.visitorsCurrent} />
-      <TeamSection title="Alumni: PhD Students" members={teamMembers.pastPhD} />
-      <TeamSection title="Alumni: Visiting Students/Researchers" members={teamMembers.visitors} />
-      <TeamSection title="Alumni: Research Staff" members={teamMembers.pastStaff} />
-      <TeamSection title="Alumni: Master's/Final year projects (2024-25)" members={teamMembers.alumni2425} />
-      <TeamSection title="Alumni: Master's/Final year projects (2023-24)" members={teamMembers.alumni2324} />
-      <TeamSection title="Alumni: Master's/Final year projects (2022-23)" members={teamMembers.alumni2223} />
-      <TeamSection title="Alumni: Master's/Final year projects (2021-22)" members={teamMembers.alumni2122} />
+      {/* Team Sections */}
+      <div className="space-y-16">
+        <TeamSection title="Postdoctoral Researchers" members={teamMembers.postdocs} />
+        <TeamSection title="PhD Students" members={teamMembers.phd} />
+        <TeamSection title="Research Staff" members={teamMembers.staff} />
+        <TeamSection title="Dissertation Projects 2025-26" members={teamMembers.dissertation} />
+        <TeamSection title="Visiting Students/Researchers" members={teamMembers.visitorsCurrent} />
+        <TeamSection title="Alumni: PhD Students" members={teamMembers.pastPhD} />
+        <TeamSection title="Alumni: Visiting Students/Researchers" members={teamMembers.visitors} />
+        <TeamSection title="Alumni: Research Staff" members={teamMembers.pastStaff} />
+        <TeamSection title="Alumni: Master's/Final year projects (2024-25)" members={teamMembers.alumni2425} />
+        <TeamSection title="Alumni: Master's/Final year projects (2023-24)" members={teamMembers.alumni2324} />
+        <TeamSection title="Alumni: Master's/Final year projects (2022-23)" members={teamMembers.alumni2223} />
+        <TeamSection title="Alumni: Master's/Final year projects (2021-22)" members={teamMembers.alumni2122} />
+      </div>
     </div>
   );
 }
