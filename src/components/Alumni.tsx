@@ -305,7 +305,6 @@ export function Alumni() {
   return (
     <div className="max-w-4xl">
       <h2 className="text-3xl font-semibold mb-8">Alumni</h2>     
-
       <TeamSection title="PhD Students" members={teamMembers.pastPhD} />
       <TeamSection title="Visiting Students/Researchers" members={teamMembers.visitors} />
       <TeamSection title="Research Staff" members={teamMembers.pastStaff} />
