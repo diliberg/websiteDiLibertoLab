@@ -55,7 +55,7 @@ function App() {
         return <Research />;
       case 'publications':
         return <Publications />;
-      case 'news'
+      case 'news':
         return <News />;
       case 'press':
         return <Press />;
