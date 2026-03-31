@@ -71,97 +71,7 @@ const newsItems = [
     description: "Giorgio Frego from the Free University of Bozen-Bolzano joins the lab for a 9-month research visit!",
     image: "https://diliberg.github.io/websiteDiLibertoLabImages/2025giorgiof2.jpg"
   },
-  {
-    date: "July 2025", 
-    title: "John and Martin's travel award", 
-    description: "John and Martin have both received a travel award for the 2025 meetings of the International Conference on Auditory Cortex in Maastricht and the the 48th Annual Meeting of the Japan Neuroscience Society in Niigata, Japan.",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/conferences.jpg"
-  },
-  {
-    date: "May 2025",
-    title: "Emily's best presentation award",
-    description: "Emily was awarded the best contribution award at the ADAPT conference in Dublin!",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/emilyPrizeADAPT.jpg"
-  },
-  {
-    date: "May 2025",
-    title: "Pint of Science",
-    description: "Our team led discussions about trust (Jaimy) and babytalk (Giovanni) at two Pint of Science events!",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/pintOfScience2025.jpg"
-  },
-  {
-    date: "April 2025",
-    title: "Giorgio's paper is on Imaging Neuroscience",
-    description: "New paper on speech adaptation to non-native speakers!",
-    image: "https://mitp.silverchair-cdn.com/data/SiteBuilderAssets/Live/Images/imag/IMAG_cover-1980937453.png",
-    link: "https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00539/128622/Are-you-talking-to-me-How-the-choice-of-speech"
-  },
-  {
-    date: "January 2025",
-    title: "New lab Paper Published in Journal of Neural Engineering",
-    description: "Amir's latest work on robust assessment of cortical encoding has been published.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=500&h=300",
-    link: "https://iopscience.iop.org/article/10.1088/1741-2552/ada30a"
-  },
-  {
-    date: "January 2025",
-    title: "CNSP Workshop 2025 Announced",
-    description: "Join us in September 2025 for the next CNSP workshop on neural signal processing and cognitive science.",
-    image: "https://cnspworkshop.net/images/CNSP_Logo.gif"
-  },
-  {
-    date: "December 2024",
-    title: "Jaimy joins the team!",
-    description: "New project studying  the impact of trust on speech perception, with the ADAPT centre and the Fidelity Center for Applied Technology.",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Jaimy.jpg"
-  },
-  {
-    date: "October 2024",
-    title: "New Laboratory for Social Interaction Research",
-    description: "Excited to announce our new Collective-minds laboratory at Trinity College Dublin, dedicated to studying social interaction.",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/collectiveMinds.png",
-    link: "https://www.collective-minds.net"
-  },
-  {
-    date: "March 2024",
-    title: "Top 25 Social Science and Human Behavior Article",
-    description: "Our paper made it to the top 25 Social Science and Human Behavior Article of 2023!",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/ncomms.jpg",
-    link: "https://www.nature.com/collections/ifdfgjdggc"
-  },
-  {
-    date: "December 2023",
-    title: "ADAPT Best Researcher Award 2023",
-    description: "Giovanni Di Liberto receives ADAPT's Best Researcher Award for his research on the emergence of phonological encoding in the first year of life.",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/adaptAward.jpg"
-  },
-  {
-    date: "November 2023",
-    title: "Live Interview on NPR's AirTalk",
-    description: "Giovanni discusses latest research with Larry Mantle on AirTalk radio show.",
-    image: "https://lnx.diliberg.net/images/airtalk.png",
-    link: "https://laist.com/shows/airtalk/what-you-should-know-about-the-tesla-recall"
-  },
-  {
-    date: "December 2023",
-    title: "New Publication in Nature Communications",
-    description: "Our research on infant language development published in Nature Communications.",
-    image: "https://images.unsplash.com/photo-1492725764893-90b379c2b6e7?auto=format&fit=crop&q=80&w=500&h=300",
-    link: "https://www.nature.com/articles/s41467-023-43490-x"
-  },
-  {
-    date: "October 2023",
-    title: "Welcome Asena to the Team",
-    description: "Asena joins us with a PhD project supported by the SFI centre d-REAL.",
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=500&h=300"
-  },
-  {
-    date: "October 2023",
-    title: "John's IRC Scholarship Success",
-    description: "John joins us with an IRC postgraduate scholarship to study music cognition.",
-    image: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?auto=format&fit=crop&q=80&w=500&h=300"
-  }
-];
+ 
 
 const nextConferences = [
   {
@@ -325,7 +235,7 @@ export function Welcome() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {newsItems.map((item, index) => (
             <div key={index} className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-              <div className="h-40 overflow-hidden">
+              <div className="h-54 overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.title}
@@ -357,7 +267,7 @@ export function Welcome() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {nextConferences.map((item, index) => (
             <div key={index} className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-              <div className="h-40 overflow-hidden">
+              <div className="h-54 overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.title}
