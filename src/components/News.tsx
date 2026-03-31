@@ -140,7 +140,7 @@ return(
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {newsItems.map((item, index) => (
             <div key={index} className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-              <div className="h-54 overflow-hidden">
+              <div className="h-40 overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.title}
