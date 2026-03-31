@@ -301,11 +301,11 @@ function TeamSection({ title, members }: { title: string; members: TeamMember[] 
     </div>
   );
 }
-
 export function Alumni() {
   return (
     <div className="max-w-4xl">
       <h2 className="text-3xl font-semibold mb-8">Alumni</h2>     
+
       <TeamSection title="Alumni: PhD Students" members={teamMembers.pastPhD} />
       <TeamSection title="Alumni: Visiting Students/Researchers" members={teamMembers.visitors} />
       <TeamSection title="Alumni: Research Staff" members={teamMembers.pastStaff} />
