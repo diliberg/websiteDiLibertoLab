@@ -343,11 +343,7 @@ export function Team({ onViewCV }: { onViewCV: () => void }) {
         </div>
       </div>
 
-      <TeamSection title="Postdoctoral Researchers" members={teamMembers.postdocs} />
-      <TeamSection title="PhD Students" members={teamMembers.phd} />
-      <TeamSection title="Research Staff" members={teamMembers.staff} />
-      <TeamSection title="Dissertation Projects 2025-26" members={teamMembers.dissertation} />
-      <TeamSection title="Visiting Students/Researchers" members={teamMembers.visitorsCurrent} />
+     
       <TeamSection title="Alumni: PhD Students" members={teamMembers.pastPhD} />
       <TeamSection title="Alumni: Visiting Students/Researchers" members={teamMembers.visitors} />
       <TeamSection title="Alumni: Research Staff" members={teamMembers.pastStaff} />
