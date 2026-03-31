@@ -306,13 +306,13 @@ export function Alumni() {
     <div className="max-w-4xl">
       <h2 className="text-3xl font-semibold mb-8">Alumni</h2>     
 
-      <TeamSection title="Alumni: PhD Students" members={teamMembers.pastPhD} />
-      <TeamSection title="Alumni: Visiting Students/Researchers" members={teamMembers.visitors} />
-      <TeamSection title="Alumni: Research Staff" members={teamMembers.pastStaff} />
-      <TeamSection title="Alumni: Master's/Final year projects (2024-25)" members={teamMembers.alumni2425} />
-      <TeamSection title="Alumni: Master's/Final year projects (2023-24)" members={teamMembers.alumni2324} />
-      <TeamSection title="Alumni: Master's/Final year projects (2022-23)" members={teamMembers.alumni2223} />
-      <TeamSection title="Alumni: Master's/Final year projects (2021-22)" members={teamMembers.alumni2122} />
+      <TeamSection title="PhD Students" members={teamMembers.pastPhD} />
+      <TeamSection title="Visiting Students/Researchers" members={teamMembers.visitors} />
+      <TeamSection title="Research Staff" members={teamMembers.pastStaff} />
+      <TeamSection title="Master's/Final year projects (2024-25)" members={teamMembers.alumni2425} />
+      <TeamSection title="Master's/Final year projects (2023-24)" members={teamMembers.alumni2324} />
+      <TeamSection title="Master's/Final year projects (2022-23)" members={teamMembers.alumni2223} />
+      <TeamSection title="Master's/Final year projects (2021-22)" members={teamMembers.alumni2122} />
     </div>
   );
 }
