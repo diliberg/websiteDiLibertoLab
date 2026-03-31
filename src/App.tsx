@@ -60,7 +60,7 @@ function App() {
       case 'teaching':
         return <Teaching />;
       case 'alumni':
-        return <Alumni />
+        return <Alumni />;
       case 'join-us':
         return <JoinUs />;
       default:
