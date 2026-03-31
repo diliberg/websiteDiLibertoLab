@@ -6,6 +6,7 @@ import { Research } from './components/Research';
 import { Publications } from './components/Publications';
 import { OpenScience } from './components/OpenScience';
 import { Press } from './components/Press';
+import { Alumni } from './components/Alumni';
 import { JoinUs } from './components/JoinUs';
 import { Teaching } from './components/Teaching';
 import { CV } from './components/CV';
@@ -23,6 +24,7 @@ const menuItems: MenuItem[] = [
   { id: 'press', label: 'Press' },
   { id: 'open-science', label: 'Open Science' },
   { id: 'teaching', label: 'Teaching' },
+  { id: 'alumni', label: 'Alumni' },
   { id: 'join-us', label: 'Join us' },
 ];
 
@@ -57,6 +59,8 @@ function App() {
         return <OpenScience />;
       case 'teaching':
         return <Teaching />;
+      case 'alumni':
+        return <Alumni />
       case 'join-us':
         return <JoinUs />;
       default:
