@@ -134,7 +134,7 @@ const newsItems = [
 
 export function News() {
 return(
-  
+<div className="max-w-4xl">      
 <div>
         <h2 className="text-4xl font-semibold mb-6">News</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -166,5 +166,6 @@ return(
           ))}
         </div>
       </div>
+  </div>
   );
 }
