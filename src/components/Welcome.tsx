@@ -70,8 +70,8 @@ const newsItems = [
     title: "Giorgio Frego's research visit",
     description: "Giorgio Frego from the Free University of Bozen-Bolzano joins the lab for a 9-month research visit!",
     image: "https://diliberg.github.io/websiteDiLibertoLabImages/2025giorgiof2.jpg"
-  },
- 
+  }
+ ];
 
 const nextConferences = [
   {
