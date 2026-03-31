@@ -302,48 +302,10 @@ function TeamSection({ title, members }: { title: string; members: TeamMember[] 
   );
 }
 
-export function Team({ onViewCV }: { onViewCV: () => void }) {
+export function Alumni() {
   return (
     <div className="max-w-4xl">
-      <h2 className="text-3xl font-semibold mb-8">Our Team</h2>
-      
-      <div className="mb-12">
-        <div className="bg-gray-50 p-8 rounded-lg flex gap-6 items-start">
-          <img
-            src={teamMembers.pi.photo}
-            alt={teamMembers.pi.name}
-            className="w-32 h-32 object-cover rounded-lg"
-          />
-          <div>
-            <div className="flex items-center gap-4">
-              <h3 className="text-2xl font-semibold text-gray-900">{teamMembers.pi.name}</h3>
-              <button
-                onClick={onViewCV}
-                className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 text-sm"
-              >
-                View CV <ExternalLink className="h-4 w-4" />
-              </button>
-            </div>
-            <p className="text-gray-700 font-medium mb-4">{teamMembers.pi.role}</p>
-            <p className="text-gray-600 mb-4">{teamMembers.pi.description}</p>
-            <div className="flex flex-wrap gap-3">
-              {teamMembers.pi.links.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm text-blue-600 hover:text-blue-800"
-                >
-                  {link.title} <ExternalLink className="h-3.5 w-3.5" />
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-     
+      <h2 className="text-3xl font-semibold mb-8">Alumni</h2>     
       <TeamSection title="Alumni: PhD Students" members={teamMembers.pastPhD} />
       <TeamSection title="Alumni: Visiting Students/Researchers" members={teamMembers.visitors} />
       <TeamSection title="Alumni: Research Staff" members={teamMembers.pastStaff} />
