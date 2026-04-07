@@ -10,6 +10,7 @@ import { Alumni } from './components/Alumni';
 import { JoinUs } from './components/JoinUs';
 import { Teaching } from './components/Teaching';
 import { CV } from './components/CV';
+import { Datasets } from './components/Datasets';
 import { News } from './components/News';
 
 type MenuItem = {
@@ -65,6 +66,8 @@ function App() {
         return <Teaching />;
       case 'alumni':
         return <Alumni />;
+      case 'datasets':
+        return <Datasets/>;
       case 'join-us':
         return <JoinUs />;
       default:
