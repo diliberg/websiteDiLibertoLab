@@ -27,6 +27,7 @@ const menuItems: MenuItem[] = [
   { id: 'news', label: 'News' },
   { id: 'press', label: 'Press' },
   { id: 'open-science', label: 'Open Science' },
+  { id: 'datasets', label: 'Datasets' },
   { id: 'teaching', label: 'Teaching' },
   { id: 'join-us', label: 'Join us' },
 ];
