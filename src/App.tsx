@@ -20,13 +20,13 @@ type MenuItem = {
 const menuItems: MenuItem[] = [
   { id: 'welcome', label: 'Welcome' },
   { id: 'team', label: 'Team' },
+  { id: 'alumni', label: 'Alumni' },
   { id: 'research', label: 'Research' },
   { id: 'publications', label: 'Publications' },
   { id: 'news', label: 'News' },
   { id: 'press', label: 'Press' },
   { id: 'open-science', label: 'Open Science' },
   { id: 'teaching', label: 'Teaching' },
-  { id: 'alumni', label: 'Alumni' },
   { id: 'join-us', label: 'Join us' },
 ];
 
