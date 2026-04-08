@@ -90,10 +90,6 @@ const resources: Resource[] = [
 ];
 
 export function OpenScience() {
-  // Helpers to generate the table structure
-  const rowCount = 32;
-  const colCount = 8;
-
   return (
     <div className="max-w-4xl">
       <h2 className="text-3xl font-semibold mb-8">Open Science</h2>
@@ -135,7 +131,7 @@ export function OpenScience() {
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-blue-600 italic block"
               >
-                John is presenting out latest mTRF-Toolbox tutorials at the Open Science Room of the OHBM conference (Brisbane, Australia; June 2025).                
+                John is presenting out latest mTRF-Toolbox tutorials at the Open Science Room of the OHBM conference (Brisbane, Australia; June 2025).                 
               </a>
 
               <a
@@ -144,7 +140,7 @@ export function OpenScience() {
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-blue-600 italic block"
               >
-                Giovanni talked about some of our open science work (CNSP) at the CogHear conference (Maryland, USA; June 2025). Check out the videorecording here.                
+                Giovanni talked about some of our open science work (CNSP) at the CogHear conference (Maryland, USA; June 2025). Check out the videorecording here.                 
               </a>
             </div>
           </div>
@@ -186,33 +182,6 @@ export function OpenScience() {
             </div>
           </div>
         ))}
-
-        {/* New 32x8 Table Section */}
-        <div className="bg-white p-6 rounded-lg shadow-sm overflow-x-auto">
-          <h3 className="text-xl font-semibold mb-4">Data Log</h3>
-          <table className="min-w-full border-collapse border border-gray-300">
-            <thead>
-              <tr>
-                {Array.from({ length: colCount }).map((_, i) => (
-                  <th key={i} className="border border-gray-300 bg-gray-50 p-2 text-left text-sm font-medium text-gray-700">
-                    Col {i + 1}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {Array.from({ length: rowCount }).map((_, rowIndex) => (
-                <tr key={rowIndex}>
-                  {Array.from({ length: colCount }).map((_, colIndex) => (
-                    <td key={colIndex} className="border border-gray-300 p-2 h-10">
-                      {/* Empty Cell */}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
       </div>
     </div>
   );
