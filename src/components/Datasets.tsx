@@ -129,6 +129,16 @@ export function Datasets() {
         .attr('rel', 'noopener noreferrer');
     };
 
+
+    // Resize listener to ensure map recalculates fit on mobile orientation change
+    const handleResize = () => {
+      if (mmRef.current) {
+        mmRef.current.fit();
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
     const observer = new MutationObserver(handleLinks);
     if (svgRef.current) {
       observer.observe(svgRef.current, { childList: true, subtree: true });
@@ -139,11 +149,15 @@ export function Datasets() {
   }, []);
 
   return (
-    <div className="max-w-7xl ml-0 px-4 py-8 text-left">
+    /* Removed ml-0 and max-w-7xl to allow natural flex growth on mobile */
+    <div className="w-full px-2 sm:px-4 py-8 text-left overflow-x-hidden">
       <style>{`
         .markmap-node a { color: #2563eb !important; font-weight: 500; text-decoration: none !important; }
         .markmap-node a:hover { text-decoration: underline !important; }
-        .markmap-foreign { line-height: 1.2; }
+        .markmap-foreign { line-height: 1.2; font-size: 12px; }
+        @media (min-width: 768px) {
+          .markmap-foreign { font-size: 14px; }
+        }
       `}</style>
       
       <div className="mb-8">
@@ -151,7 +165,8 @@ export function Datasets() {
         <p className="text-gray-600 mt-2 italic">For a table overview, see below.</p>
       </div>
 
-      <div className="relative bg-white rounded-2xl border border-gray-200 shadow-xl overflow-hidden mb-12" style={{ height: '550px' }}>
+      {/* Responsive Map Container: Slightly shorter on mobile */}
+      <div className="relative bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden mb-12 h-[450px] md:h-[550px] w-full">
         <svg ref={svgRef} className="w-full h-full bg-gray-50" style={{ cursor: 'grab' }} />
       </div>
 
