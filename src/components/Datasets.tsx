@@ -156,7 +156,7 @@ export function Datasets() {
       </div>
 
       <div className="mt-16">
-        <h3 className="text-2xl font-bold text-gray-800 mb-6">Study Catalog</h3>
+        <h3 className="text-2xl font-bold text-gray-800 mb-6">Datasets Table</h3>
         <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
           <table className="min-w-full divide-y divide-gray-200 bg-white">
             <thead className="bg-gray-50">
