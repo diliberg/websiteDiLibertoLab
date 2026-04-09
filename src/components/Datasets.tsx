@@ -4,7 +4,6 @@ import { Markmap } from 'markmap-view';
 import * as d3 from 'd3';
 import { ExternalLink } from 'lucide-react';
 
-// Full data from your Excel file
 const datasetTableData = [
   { "Name": "LalorNatSpeech", "Age": "Adults", "N": "19", "nativeLang": "L1", "Stimulus": "Audiobook recordings", "Modality": "EEG", "Authors": "Broderick/Di Liberto & Lalor", "Papers": ["https://pubmed.ncbi.nlm.nih.gov/29478856/"], "Link": "https://datadryad.org/dataset/doi:10.5061/dryad.070jc" },
   { "Name": "LalorRevSpeech", "Age": "Adults", "N": "10", "nativeLang": "L1", "Stimulus": "Time-reversed audiobooks", "Modality": "EEG", "Authors": "Broderick/Di Liberto & Lalor", "Papers": ["https://pubmed.ncbi.nlm.nih.gov/29478856/"], "Link": "https://datadryad.org/dataset/doi:10.5061/dryad.070jc" },
@@ -46,7 +45,6 @@ export function Datasets() {
   const mmRef = useRef<Markmap | null>(null);
 
   useEffect(() => {
-    // RESTORED: The full detailed markdown hierarchy
     const markdown = `
 # Datasets
 - EEG
@@ -67,7 +65,6 @@ export function Datasets() {
           - [LalorRevSpeech - Broderick/Di Liberto & Lalor](https://datadryad.org/dataset/doi:10.5061/dryad.070jc)
           - [AliceSpeech - Brennan & Hale](https://deepblue.lib.umich.edu/data/concern/data_sets/bg257f92t)
           - PodcastListening - Ip & Di Liberto (Available Soon)
-          - EmotionSpeech - Akkaya & Di Liberto (Available Soon)
           - FDSpeech L1 - Piazza & Martin/Di Liberto (Available Soon)
           - FDSpeech L2 - Piazza & Martin/Di Liberto (Available Soon)
           - [SparrKULee1 - Accou/Bollens & Francart](https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/K3VSND)
@@ -80,6 +77,7 @@ export function Datasets() {
         - Synthesised
           - [VocodedSpeech - Calderon & Lopez Valdes](https://osf.io/gx6rm/overview)
           - ConversationListening - Chalehchaleh & Di Liberto (Available Soon)
+          - EmotionSpeech - Akkaya & Di Liberto (Available Soon)
   - Music
     - Musicians
       - Listening
@@ -104,61 +102,55 @@ export function Datasets() {
   - [GwilliamsSpeechMEG-1 - Gwilliams & Poeppel/King](https://osf.io/ag3kj/overview)
   - [GwilliamsSpeechMEG-2 - Gwilliams & Poeppel/King](https://osf.io/ag3kj/overview)
 - fNIRS
-  - PodcastListening fNIRS - Wilroth/Hannah & Di Liberto (Available Soon)
+  - PodcastListening fNIRS - Wilroth & Hannah/Di Liberto (Available Soon)
 `;
 
     const transformer = new Transformer();
     const { root } = transformer.transform(markdown);
 
-    // IMPROVED: Parent mapping logic
-    const findParent = (node: any, target: any): any => {
-      if (node.children && node.children.includes(target)) return node;
+    // Give every node a reference to its siblings for the accordion logic
+    const setupAccordionData = (node: any, parent: any = null) => {
+      node.parent = parent;
       if (node.children) {
-        for (let child of node.children) {
-          const found = findParent(child, target);
-          if (found) return found;
-        }
+        node.children.forEach((c: any) => setupAccordionData(c, node));
       }
-      return null;
     };
+    setupAccordionData(root);
 
     if (svgRef.current) {
-      if (!mmRef.current) {
-        const mm = Markmap.create(svgRef.current, {
-          autoFit: true,
-          initialExpandLevel: 2,
-          duration: 500,
-        }, root);
-        mmRef.current = mm;
+      const mm = Markmap.create(svgRef.current, {
+        autoFit: true,
+        initialExpandLevel: 2,
+        duration: 500,
+      }, root);
+      mmRef.current = mm;
 
-        // FIXED: Accordion logic that actually works by forcing state refresh
-        const internalMM = mm as any;
-        const originalToggle = internalMM.handleToggle;
+      // --- THE ACCORDION INTERCEPTOR ---
+      const mmAny = mm as any;
+      const originalToggle = mmAny.handleToggle;
 
-        internalMM.handleToggle = (n: any, e: any) => {
-          // Check if we are UNFOLDING (Markmap internal: f=true means it is folded)
-          if (n.data.f) {
-            const parent = findParent(internalMM.state.data, n.data);
-            if (parent && parent.children) {
-              // Collapse all other siblings
-              parent.children.forEach((sibling: any) => {
-                if (sibling !== n.data) {
-                  sibling.f = true;
-                }
-              });
-            }
+      mmAny.handleToggle = (node: any, event: any) => {
+        // node.data.f is true if the node is currently FOLDED
+        if (node.data.f) {
+          const parent = node.data.parent;
+          if (parent && parent.children) {
+            // Fold all other children of the same parent
+            parent.children.forEach((sibling: any) => {
+              if (sibling !== node.data) {
+                sibling.f = true;
+              }
+            });
+            // Update the map data to reflect siblings being folded
+            mmAny.setData(mmAny.state.data);
           }
-          // Perform toggle and then force a global refresh
-          originalToggle.call(internalMM, n, e);
-          setTimeout(() => {
-            internalMM.setData(internalMM.state.data);
-            internalMM.fit();
-          }, 10);
-        };
-      } else {
-        mmRef.current.setData(root);
-        mmRef.current.fit();
-      }
+        }
+        
+        // Carry out the standard animation/toggle
+        originalToggle.call(mmAny, node, event);
+        
+        // Re-center after the animation finishes
+        setTimeout(() => mm.fit(), 550);
+      };
     }
 
     const handleLinks = () => {
@@ -177,26 +169,26 @@ export function Datasets() {
   }, []);
 
   return (
-    <div className="w-full px-4 sm:px-6 lg:px-8 py-8 text-left overflow-x-hidden">
+    <div className="flex flex-col items-start w-full px-4 sm:px-8 py-10 overflow-x-hidden">
       <style>{`
-        .markmap-node a { color: #2563eb !important; font-weight: 500; text-decoration: none !important; }
+        .markmap-node a { color: #2563eb !important; text-decoration: none !important; }
         .markmap-node a:hover { text-decoration: underline !important; }
-        .markmap-foreign { line-height: 1.2; font-size: 11px; }
+        .markmap-foreign { font-size: 12px; line-height: 1.3; }
         @media (min-width: 768px) { .markmap-foreign { font-size: 14px; } }
       `}</style>
       
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-8">
-          <h2 className="text-3xl font-bold text-gray-900">Datasets Explorer</h2>
-          <p className="text-gray-600 mt-2 italic text-sm md:text-base">Focus View: Opening a branch collapses its neighbors.</p>
+      <div className="w-full max-w-7xl">
+        <div className="mb-10">
+          <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight">Datasets Explorer</h2>
+          <p className="text-gray-500 mt-3 text-lg">Focus Mode: Sibling branches collapse automatically when you expand a new one.</p>
         </div>
 
-        {/* Improved Map Container: Responsively sized */}
-        <div className="relative bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden mb-12 h-[500px] md:h-[600px] w-full">
-          <svg ref={svgRef} className="w-full h-full bg-gray-50" style={{ cursor: 'grab' }} />
+        {/* Map container: ensures centering and scale on mobile */}
+        <div className="relative bg-white rounded-3xl border border-gray-100 shadow-2xl overflow-hidden mb-20 h-[500px] md:h-[650px] w-full">
+          <svg ref={svgRef} className="w-full h-full bg-slate-50/30" style={{ cursor: 'grab' }} />
         </div>
 
-        <div className="mt-16">
+        <div className="w-full">
           <h3 className="text-2xl font-bold text-gray-800 mb-6">Study Catalog</h3>
           <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
             <table className="min-w-full divide-y divide-gray-200 bg-white">
@@ -218,14 +210,14 @@ export function Datasets() {
                     <td className="px-4 py-3 text-sm text-gray-600">{row.nativeLang}</td>
                     <td className="px-4 py-3 text-sm text-gray-600 max-w-xs truncate" title={row.Stimulus}>{row.Stimulus}</td>
                     <td className="px-4 py-3 text-sm">
-                      <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded-md text-xs font-medium uppercase">
+                      <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded-md text-xs font-semibold uppercase border border-blue-100">
                         {row.Modality}
                       </span>
                     </td>
                     <td className="px-4 py-3 text-sm text-gray-500 italic">{row.Authors}</td>
                     <td className="px-4 py-3 text-sm space-y-1">
                       {row.Link.startsWith('http') ? (
-                        <a href={row.Link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-600 hover:text-blue-800">
+                        <a href={row.Link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
                           Dataset <ExternalLink className="h-3 w-3 ml-1" />
                         </a>
                       ) : (
