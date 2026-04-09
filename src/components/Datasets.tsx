@@ -66,7 +66,6 @@ export function Datasets() {
           - [LalorRevSpeech - Broderick/Di Liberto & Lalor](https://datadryad.org/dataset/doi:10.5061/dryad.070jc)
           - [AliceSpeech - Brennan & Hale](https://deepblue.lib.umich.edu/data/concern/data_sets/bg257f92t)
           - PodcastListening - Ip & Di Liberto (Available Soon)
-          - EmotionSpeech - Akkaya & Di Liberto (Available Soon)
           - FDSpeech L1 - Piazza & Martin/Di Liberto (Available Soon)
           - FDSpeech L2 - Piazza & Martin/Di Liberto (Available Soon)
           - [SparrKULee1 - Accou/Bollens & Francart](https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/K3VSND)
@@ -79,6 +78,7 @@ export function Datasets() {
         - Synthesised
           - [VocodedSpeech - Calderon & Lopez Valdes](https://osf.io/gx6rm/overview)
           - ConversationListening - Chalehchaleh & Di Liberto (Available Soon)
+          - EmotionSpeech - Akkaya & Di Liberto (Available Soon)
   - Music
     - Musicians
       - Listening
@@ -109,6 +109,18 @@ export function Datasets() {
     const transformer = new Transformer();
     const { root } = transformer.transform(markdown);
 
+    // Helper to find parent of a node in the tree
+    const findParent = (node: any, target: any): any => {
+      if (node.children && node.children.includes(target)) return node;
+      if (node.children) {
+        for (let child of node.children) {
+          const found = findParent(child, target);
+          if (found) return found;
+        }
+      }
+      return null;
+    };
+
     if (svgRef.current) {
       if (!mmRef.current) {
         mmRef.current = Markmap.create(svgRef.current, {
@@ -116,6 +128,27 @@ export function Datasets() {
           initialExpandLevel: 2,
           duration: 500,
         }, root);
+
+        // --- CORRECTED ACCORDION LOGIC WITH TYPE CASTING ---
+        const mm = mmRef.current as any; // Cast to any to access internal handleToggle
+        const originalHandleToggle = mm.handleToggle;
+
+        mm.handleToggle = (n: any, e: any) => {
+          // If the branch is currently folded (it's about to open)
+          if (n.data.f) {
+            const parent = findParent(root, n.data);
+            if (parent && parent.children) {
+              // Collapse all other siblings
+              parent.children.forEach((sibling: any) => {
+                if (sibling !== n.data) {
+                  sibling.f = true;
+                }
+              });
+            }
+          }
+          // Perform the original toggle action
+          originalHandleToggle.call(mm, n, e);
+        };
       } else {
         mmRef.current.setData(root);
         mmRef.current.fit();
@@ -129,12 +162,8 @@ export function Datasets() {
         .attr('rel', 'noopener noreferrer');
     };
 
-
-    // Resize listener to ensure map recalculates fit on mobile orientation change
     const handleResize = () => {
-      if (mmRef.current) {
-        mmRef.current.fit();
-      }
+      if (mmRef.current) mmRef.current.fit();
     };
 
     window.addEventListener('resize', handleResize);
@@ -145,11 +174,13 @@ export function Datasets() {
     }
 
     handleLinks();
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
-    /* Removed ml-0 and max-w-7xl to allow natural flex growth on mobile */
     <div className="w-full px-2 sm:px-4 py-8 text-left overflow-x-hidden">
       <style>{`
         .markmap-node a { color: #2563eb !important; font-weight: 500; text-decoration: none !important; }
@@ -162,10 +193,9 @@ export function Datasets() {
       
       <div className="mb-8">
         <h2 className="text-3xl font-bold text-gray-900">Datasets Explorer</h2>
-        <p className="text-gray-600 mt-2 italic">For a table overview, see below.</p>
+        <p className="text-gray-600 mt-2 italic text-sm md:text-base">Opening a branch collapses its siblings.</p>
       </div>
 
-      {/* Responsive Map Container: Slightly shorter on mobile */}
       <div className="relative bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden mb-12 h-[450px] md:h-[550px] w-full">
         <svg ref={svgRef} className="w-full h-full bg-gray-50" style={{ cursor: 'grab' }} />
       </div>
