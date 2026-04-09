@@ -4,7 +4,6 @@ import { Markmap } from 'markmap-view';
 import * as d3 from 'd3';
 import { ExternalLink } from 'lucide-react';
 
-// Full data from your Excel file
 const datasetTableData = [
   { "Name": "LalorNatSpeech", "Age": "Adults", "N": "19", "nativeLang": "L1", "Stimulus": "Audiobook recordings", "Modality": "EEG", "Authors": "Broderick/Di Liberto & Lalor", "Papers": ["https://pubmed.ncbi.nlm.nih.gov/29478856/"], "Link": "https://datadryad.org/dataset/doi:10.5061/dryad.070jc" },
   { "Name": "LalorRevSpeech", "Age": "Adults", "N": "10", "nativeLang": "L1", "Stimulus": "Time-reversed audiobooks", "Modality": "EEG", "Authors": "Broderick/Di Liberto & Lalor", "Papers": ["https://pubmed.ncbi.nlm.nih.gov/29478856/"], "Link": "https://datadryad.org/dataset/doi:10.5061/dryad.070jc" },
@@ -46,7 +45,6 @@ export function Datasets() {
   const mmRef = useRef<Markmap | null>(null);
 
   useEffect(() => {
-    // 1. Markdown Definition
     const markdown = `
 # Datasets
 - EEG
@@ -107,11 +105,10 @@ export function Datasets() {
   - PodcastListening fNIRS - Wilroth/Hannah & Di Liberto (Available Soon)
 `;
 
-    // 2. Transform Markdown
     const transformer = new Transformer();
     const { root } = transformer.transform(markdown);
 
-    // 3. RECURSIVELY ADD PARENT LINKS (Crucial for the Accordion logic)
+    // Recursively add parent links to the root data
     const addParentRefs = (node: any, parent: any = null) => {
       node.parent = parent;
       if (node.children) {
@@ -122,7 +119,6 @@ export function Datasets() {
 
     if (svgRef.current) {
       if (!mmRef.current) {
-        // 4. Create Markmap
         const mm = Markmap.create(svgRef.current, {
           autoFit: true,
           initialExpandLevel: 2,
@@ -130,24 +126,27 @@ export function Datasets() {
         }, root);
         mmRef.current = mm;
 
-        // 5. IMPROVED ACCORDION LOGIC
+        // --- ENHANCED ACCORDION LOGIC ---
         const internalMM = mm as any;
         const originalToggle = internalMM.handleToggle;
 
         internalMM.handleToggle = (n: any, e: any) => {
-          // If n.f is true, the user just clicked to UNFOLD this branch
-          if (n.f) {
-            const parentNode = n.parent;
-            if (parentNode && parentNode.children) {
-              // Loop through all siblings of the clicked node and fold them
-              parentNode.children.forEach((sibling: any) => {
-                if (sibling !== n) {
+          // Check if we are UNFOLDING a node
+          // In Markmap's internal state, n.data.f=true means it is currently folded
+          if (n.data.f) {
+            const parent = n.data.parent;
+            if (parent && parent.children) {
+              // Fold all siblings
+              parent.children.forEach((sibling: any) => {
+                if (sibling !== n.data) {
                   sibling.f = true;
                 }
               });
+              // Force the data refresh across the whole map to visually collapse neighbors
+              internalMM.setData(internalMM.state.data);
             }
           }
-          // Now perform the standard toggle (which will also trigger the layout update)
+          // Proceed with the standard toggle animation for the clicked node
           originalToggle.call(internalMM, n, e);
         };
       } else {
@@ -156,7 +155,6 @@ export function Datasets() {
       }
     }
 
-    // 6. Support Logic: Links & Resize
     const handleLinks = () => {
       d3.select(svgRef.current)
         .selectAll('a')
