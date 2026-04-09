@@ -46,6 +46,7 @@ export function Datasets() {
   const mmRef = useRef<Markmap | null>(null);
 
   useEffect(() => {
+    // RESTORED: The full detailed markdown hierarchy
     const markdown = `
 # Datasets
 - EEG
@@ -56,16 +57,17 @@ export function Datasets() {
       - Sung Speech
         - CantisaniSong - Cantisani & Di Liberto/Shamma (Available Soon)
         - Nursery Rhymes
-          - [BabyRhythmCambridge Adults](https://osf.io/mdnwg/)
-          - [BabyRhythmCambridge 4mo](https://osf.io/mdnwg/)
-          - [BabyRhythmCambridge 7mo](https://osf.io/mdnwg/)
-          - [BabyRhythmCambridge 11mo](https://osf.io/mdnwg/)
+          - [BabyRhythmCambridge Adults - Attaheri/Di Liberto & Goswami](https://osf.io/mdnwg/)
+          - [BabyRhythmCambridge 4mo - Attaheri/Di Liberto & Goswami](https://osf.io/mdnwg/)
+          - [BabyRhythmCambridge 7mo - Attaheri/Di Liberto & Goswami](https://osf.io/mdnwg/)
+          - [BabyRhythmCambridge 11mo - Attaheri/Di Liberto & Goswami](https://osf.io/mdnwg/)
       - Regular Speech
         - Natural
           - [LalorNatSpeech - Broderick/Di Liberto & Lalor](https://datadryad.org/dataset/doi:10.5061/dryad.070jc)
           - [LalorRevSpeech - Broderick/Di Liberto & Lalor](https://datadryad.org/dataset/doi:10.5061/dryad.070jc)
           - [AliceSpeech - Brennan & Hale](https://deepblue.lib.umich.edu/data/concern/data_sets/bg257f92t)
           - PodcastListening - Ip & Di Liberto (Available Soon)
+          - EmotionSpeech - Akkaya & Di Liberto (Available Soon)
           - FDSpeech L1 - Piazza & Martin/Di Liberto (Available Soon)
           - FDSpeech L2 - Piazza & Martin/Di Liberto (Available Soon)
           - [SparrKULee1 - Accou/Bollens & Francart](https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/K3VSND)
@@ -78,7 +80,6 @@ export function Datasets() {
         - Synthesised
           - [VocodedSpeech - Calderon & Lopez Valdes](https://osf.io/gx6rm/overview)
           - ConversationListening - Chalehchaleh & Di Liberto (Available Soon)
-          - EmotionSpeech - Akkaya & Di Liberto (Available Soon)
   - Music
     - Musicians
       - Listening
@@ -109,15 +110,13 @@ export function Datasets() {
     const transformer = new Transformer();
     const { root } = transformer.transform(markdown);
 
-    // Dynamic parent finding function
-    const findParentInTree = (currentNode: any, targetNodeData: any): any => {
-      if (currentNode.children && currentNode.children.some((c: any) => c === targetNodeData)) {
-        return currentNode;
-      }
-      if (currentNode.children) {
-        for (const child of currentNode.children) {
-          const result = findParentInTree(child, targetNodeData);
-          if (result) return result;
+    // IMPROVED: Parent mapping logic
+    const findParent = (node: any, target: any): any => {
+      if (node.children && node.children.includes(target)) return node;
+      if (node.children) {
+        for (let child of node.children) {
+          const found = findParent(child, target);
+          if (found) return found;
         }
       }
       return null;
@@ -132,40 +131,36 @@ export function Datasets() {
         }, root);
         mmRef.current = mm;
 
-        // --- THE RELIABLE ACCORDION HOOK ---
-        const mmAny = mm as any;
-        const originalHandleToggle = mmAny.handleToggle;
+        // FIXED: Accordion logic that actually works by forcing state refresh
+        const internalMM = mm as any;
+        const originalToggle = internalMM.handleToggle;
 
-        mmAny.handleToggle = (d3Node: any, event: any) => {
-          // If the node was folded (f=true) and we are unfolding it
-          if (d3Node.data.f) {
-            const treeData = mmAny.state.data;
-            const parent = findParentInTree(treeData, d3Node.data);
-
+        internalMM.handleToggle = (n: any, e: any) => {
+          // Check if we are UNFOLDING (Markmap internal: f=true means it is folded)
+          if (n.data.f) {
+            const parent = findParent(internalMM.state.data, n.data);
             if (parent && parent.children) {
-              parent.children.forEach((child: any) => {
-                if (child !== d3Node.data) {
-                  child.f = true; // Fold siblings
+              // Collapse all other siblings
+              parent.children.forEach((sibling: any) => {
+                if (sibling !== n.data) {
+                  sibling.f = true;
                 }
               });
             }
           }
-          
-          // Call the original toggle logic
-          originalHandleToggle.call(mmAny, d3Node, event);
-          
-          // CRITICAL: Force the whole view to update so siblings actually hide
-          mmAny.setData(mmAny.state.data);
-          mmAny.fit();
+          // Perform toggle and then force a global refresh
+          originalToggle.call(internalMM, n, e);
+          setTimeout(() => {
+            internalMM.setData(internalMM.state.data);
+            internalMM.fit();
+          }, 10);
         };
-
       } else {
         mmRef.current.setData(root);
         mmRef.current.fit();
       }
     }
 
-    // Standard support logic
     const handleLinks = () => {
       d3.select(svgRef.current).selectAll('a').attr('target', '_blank').attr('rel', 'noopener noreferrer');
     };
@@ -182,68 +177,71 @@ export function Datasets() {
   }, []);
 
   return (
-    <div className="w-full px-2 sm:px-4 py-8 text-left overflow-x-hidden">
+    <div className="w-full px-4 sm:px-6 lg:px-8 py-8 text-left overflow-x-hidden">
       <style>{`
         .markmap-node a { color: #2563eb !important; font-weight: 500; text-decoration: none !important; }
         .markmap-node a:hover { text-decoration: underline !important; }
-        .markmap-foreign { line-height: 1.2; font-size: 12px; }
+        .markmap-foreign { line-height: 1.2; font-size: 11px; }
         @media (min-width: 768px) { .markmap-foreign { font-size: 14px; } }
       `}</style>
       
-      <div className="mb-8">
-        <h2 className="text-3xl font-bold text-gray-900">Datasets Explorer</h2>
-        <p className="text-gray-600 mt-2 italic text-sm md:text-base">For a table overview, see below.</p>
-      </div>
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-8">
+          <h2 className="text-3xl font-bold text-gray-900">Datasets Explorer</h2>
+          <p className="text-gray-600 mt-2 italic text-sm md:text-base">Focus View: Opening a branch collapses its neighbors.</p>
+        </div>
 
-      <div className="relative bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden mb-12 h-[450px] md:h-[550px] w-full">
-        <svg ref={svgRef} className="w-full h-full bg-gray-50" style={{ cursor: 'grab' }} />
-      </div>
+        {/* Improved Map Container: Responsively sized */}
+        <div className="relative bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden mb-12 h-[500px] md:h-[600px] w-full">
+          <svg ref={svgRef} className="w-full h-full bg-gray-50" style={{ cursor: 'grab' }} />
+        </div>
 
-      <div className="mt-16">
-        <h3 className="text-2xl font-bold text-gray-800 mb-6">Datasets Table</h3>
-        <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
-          <table className="min-w-full divide-y divide-gray-200 bg-white">
-            <thead className="bg-gray-50">
-              <tr>
-                {["Name", "Age", "N", "Language", "Stimulus", "Modality", "Authors", "Links"].map((header) => (
-                  <th key={header} className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                    {header}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-200">
-              {datasetTableData.map((row, idx) => (
-                <tr key={idx} className="hover:bg-gray-50 transition-colors">
-                  <td className="px-4 py-3 text-sm font-bold text-gray-900">{row.Name}</td>
-                  <td className="px-4 py-3 text-sm text-gray-600 whitespace-nowrap">{row.Age}</td>
-                  <td className="px-4 py-3 text-sm text-gray-600">{row.N}</td>
-                  <td className="px-4 py-3 text-sm text-gray-600">{row.nativeLang}</td>
-                  <td className="px-4 py-3 text-sm text-gray-600 max-w-xs truncate" title={row.Stimulus}>{row.Stimulus}</td>
-                  <td className="px-4 py-3 text-sm">
-                    <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded-md text-xs font-medium uppercase">
-                      {row.Modality}
-                    </span>
-                  </td>
-                  <td className="px-4 py-3 text-sm text-gray-500 italic">{row.Authors}</td>
-                  <td className="px-4 py-3 text-sm space-y-1">
-                    {row.Link.startsWith('http') ? (
-                      <a href={row.Link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-600 hover:text-blue-800">
-                        Dataset <ExternalLink className="h-3 w-3 ml-1" />
-                      </a>
-                    ) : (
-                      <span className="text-gray-400 text-xs italic">{row.Link}</span>
-                    )}
-                    {row.Papers.map((paper, pIdx) => (
-                      <a key={pIdx} href={paper} target="_blank" rel="noopener noreferrer" className="block text-gray-400 hover:text-gray-600 text-xs underline truncate max-w-[150px]">
-                        Paper {pIdx + 1}
-                      </a>
-                    ))}
-                  </td>
+        <div className="mt-16">
+          <h3 className="text-2xl font-bold text-gray-800 mb-6">Study Catalog</h3>
+          <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+            <table className="min-w-full divide-y divide-gray-200 bg-white">
+              <thead className="bg-gray-50">
+                <tr>
+                  {["Name", "Age", "N", "Language", "Stimulus", "Modality", "Authors", "Links"].map((header) => (
+                    <th key={header} className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                      {header}
+                    </th>
+                  ))}
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                {datasetTableData.map((row, idx) => (
+                  <tr key={idx} className="hover:bg-gray-50 transition-colors">
+                    <td className="px-4 py-3 text-sm font-bold text-gray-900">{row.Name}</td>
+                    <td className="px-4 py-3 text-sm text-gray-600 whitespace-nowrap">{row.Age}</td>
+                    <td className="px-4 py-3 text-sm text-gray-600">{row.N}</td>
+                    <td className="px-4 py-3 text-sm text-gray-600">{row.nativeLang}</td>
+                    <td className="px-4 py-3 text-sm text-gray-600 max-w-xs truncate" title={row.Stimulus}>{row.Stimulus}</td>
+                    <td className="px-4 py-3 text-sm">
+                      <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded-md text-xs font-medium uppercase">
+                        {row.Modality}
+                      </span>
+                    </td>
+                    <td className="px-4 py-3 text-sm text-gray-500 italic">{row.Authors}</td>
+                    <td className="px-4 py-3 text-sm space-y-1">
+                      {row.Link.startsWith('http') ? (
+                        <a href={row.Link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-600 hover:text-blue-800">
+                          Dataset <ExternalLink className="h-3 w-3 ml-1" />
+                        </a>
+                      ) : (
+                        <span className="text-gray-400 text-xs italic">{row.Link}</span>
+                      )}
+                      {row.Papers.map((paper, pIdx) => (
+                        <a key={pIdx} href={paper} target="_blank" rel="noopener noreferrer" className="block text-gray-400 hover:text-gray-600 text-xs underline truncate max-w-[150px]">
+                          Paper {pIdx + 1}
+                        </a>
+                      ))}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
