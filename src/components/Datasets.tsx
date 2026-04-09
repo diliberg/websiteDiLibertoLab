@@ -180,7 +180,7 @@ export function Datasets() {
       <div className="w-full max-w-7xl">
         <div className="mb-10">
           <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight">Datasets Explorer</h2>
-          <p className="text-gray-500 mt-3 text-lg">Focus Mode: Sibling branches collapse automatically when you expand a new one.</p>
+          <p className="text-gray-500 mt-3 text-lg">For table overview, see below.</p>
         </div>
 
         {/* Map container: ensures centering and scale on mobile */}
