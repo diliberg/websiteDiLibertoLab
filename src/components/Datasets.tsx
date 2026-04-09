@@ -45,6 +45,7 @@ export function Datasets() {
   const mmRef = useRef<Markmap | null>(null);
 
   useEffect(() => {
+    // 1. DATA DEFINITION (Full detailed hierarchy restored)
     const markdown = `
 # Datasets
 - EEG
@@ -105,19 +106,18 @@ export function Datasets() {
   - PodcastListening fNIRS - Wilroth & Hannah/Di Liberto (Available Soon)
 `;
 
+    // 2. TRANSFORM & ENRICH DATA
     const transformer = new Transformer();
     const { root } = transformer.transform(markdown);
 
-    // Give every node a reference to its siblings for the accordion logic
-    const setupAccordionData = (node: any, parent: any = null) => {
+    const setupParents = (node: any, parent: any = null) => {
       node.parent = parent;
-      if (node.children) {
-        node.children.forEach((c: any) => setupAccordionData(c, node));
-      }
+      if (node.children) node.children.forEach((c: any) => setupParents(c, node));
     };
-    setupAccordionData(root);
+    setupParents(root);
 
     if (svgRef.current) {
+      // 3. INITIALIZE MARKMAP
       const mm = Markmap.create(svgRef.current, {
         autoFit: true,
         initialExpandLevel: 2,
@@ -125,34 +125,33 @@ export function Datasets() {
       }, root);
       mmRef.current = mm;
 
-      // --- THE ACCORDION INTERCEPTOR ---
+      // 4. THE ROBUST ACCORDION INTERCEPTOR
       const mmAny = mm as any;
-      const originalToggle = mmAny.handleToggle;
+      const originalHandleToggle = mmAny.handleToggle;
 
-      mmAny.handleToggle = (node: any, event: any) => {
-        // node.data.f is true if the node is currently FOLDED
-        if (node.data.f) {
-          const parent = node.data.parent;
+      mmAny.handleToggle = (d3Node: any, event: any) => {
+        const data = d3Node.data;
+        // If expanding (Markmap internal: data.f = true means it was folded)
+        if (data.f) {
+          const parent = data.parent;
           if (parent && parent.children) {
-            // Fold all other children of the same parent
-            parent.children.forEach((sibling: any) => {
-              if (sibling !== node.data) {
-                sibling.f = true;
-              }
+            parent.children.forEach((sib: any) => {
+              if (sib !== data) sib.f = true; // Fold all siblings
             });
-            // Update the map data to reflect siblings being folded
-            mmAny.setData(mmAny.state.data);
           }
+          // FORCE DATA SYNC: Update the whole tree state to reflect folded siblings
+          mmAny.setData(mmAny.state.data);
         }
         
-        // Carry out the standard animation/toggle
-        originalToggle.call(mmAny, node, event);
+        // Execute the actual toggle animation for the target node
+        originalHandleToggle.call(mmAny, d3Node, event);
         
-        // Re-center after the animation finishes
+        // Center the view after a short delay
         setTimeout(() => mm.fit(), 550);
       };
     }
 
+    // 5. GLOBAL LISTENERS (Links, Resize)
     const handleLinks = () => {
       d3.select(svgRef.current).selectAll('a').attr('target', '_blank').attr('rel', 'noopener noreferrer');
     };
@@ -169,27 +168,34 @@ export function Datasets() {
   }, []);
 
   return (
-    <div className="flex flex-col items-start w-full px-4 sm:px-8 py-10 overflow-x-hidden">
+    <div className="flex flex-col items-start w-full px-4 sm:px-6 md:px-12 py-10 bg-white min-h-screen overflow-x-hidden">
       <style>{`
+        /* Markmap Internal Link Styling */
         .markmap-node a { color: #2563eb !important; text-decoration: none !important; }
         .markmap-node a:hover { text-decoration: underline !important; }
-        .markmap-foreign { font-size: 12px; line-height: 1.3; }
-        @media (min-width: 768px) { .markmap-foreign { font-size: 14px; } }
+        .markmap-foreign { font-size: 11px; line-height: 1.3; }
+        @media (min-width: 768px) { .markmap-foreign { font-size: 13px; } }
       `}</style>
       
-      <div className="w-full max-w-7xl">
-        <div className="mb-10">
-          <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight">Datasets Explorer</h2>
-          <p className="text-gray-500 mt-3 text-lg">For table overview, see below.</p>
+      <div className="w-full max-w-screen-2xl">
+        <div className="mb-10 text-left">
+          <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight">Datasets</h2>
+          <p className="text-gray-500 mt-3 text-lg italic">
+            For a table overview, see below.
+          </p>
         </div>
 
-        {/* Map container: ensures centering and scale on mobile */}
-        <div className="relative bg-white rounded-3xl border border-gray-100 shadow-2xl overflow-hidden mb-20 h-[500px] md:h-[650px] w-full">
-          <svg ref={svgRef} className="w-full h-full bg-slate-50/30" style={{ cursor: 'grab' }} />
+        {/* MAP CONTAINER: Centered logic for mobile */}
+        <div className="relative bg-white rounded-3xl border border-gray-100 shadow-2xl overflow-hidden mb-20 h-[500px] md:h-[650px] w-full border-2">
+          <svg 
+            ref={svgRef} 
+            className="w-full h-full bg-slate-50/20" 
+            style={{ cursor: 'grab' }} 
+          />
         </div>
 
         <div className="w-full">
-          <h3 className="text-2xl font-bold text-gray-800 mb-6">Study Catalog</h3>
+          <h3 className="text-2xl font-bold text-gray-800 mb-6">Datasets Table</h3>
           <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
             <table className="min-w-full divide-y divide-gray-200 bg-white">
               <thead className="bg-gray-50">
