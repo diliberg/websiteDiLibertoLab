@@ -4,6 +4,7 @@ import { Markmap } from 'markmap-view';
 import * as d3 from 'd3';
 import { ExternalLink } from 'lucide-react';
 
+// Full data from your Excel file
 const datasetTableData = [
   { "Name": "LalorNatSpeech", "Age": "Adults", "N": "19", "nativeLang": "L1", "Stimulus": "Audiobook recordings", "Modality": "EEG", "Authors": "Broderick/Di Liberto & Lalor", "Papers": ["https://pubmed.ncbi.nlm.nih.gov/29478856/"], "Link": "https://datadryad.org/dataset/doi:10.5061/dryad.070jc" },
   { "Name": "LalorRevSpeech", "Age": "Adults", "N": "10", "nativeLang": "L1", "Stimulus": "Time-reversed audiobooks", "Modality": "EEG", "Authors": "Broderick/Di Liberto & Lalor", "Papers": ["https://pubmed.ncbi.nlm.nih.gov/29478856/"], "Link": "https://datadryad.org/dataset/doi:10.5061/dryad.070jc" },
@@ -55,10 +56,10 @@ export function Datasets() {
       - Sung Speech
         - CantisaniSong - Cantisani & Di Liberto/Shamma (Available Soon)
         - Nursery Rhymes
-          - [BabyRhythmCambridge Adults - Attaheri/Di Liberto & Goswami](https://osf.io/mdnwg/)
-          - [BabyRhythmCambridge 4mo - Attaheri/Di Liberto & Goswami](https://osf.io/mdnwg/)
-          - [BabyRhythmCambridge 7mo - Attaheri/Di Liberto & Goswami](https://osf.io/mdnwg/)
-          - [BabyRhythmCambridge 11mo - Attaheri/Di Liberto & Goswami](https://osf.io/mdnwg/)
+          - [BabyRhythmCambridge Adults](https://osf.io/mdnwg/)
+          - [BabyRhythmCambridge 4mo](https://osf.io/mdnwg/)
+          - [BabyRhythmCambridge 7mo](https://osf.io/mdnwg/)
+          - [BabyRhythmCambridge 11mo](https://osf.io/mdnwg/)
       - Regular Speech
         - Natural
           - [LalorNatSpeech - Broderick/Di Liberto & Lalor](https://datadryad.org/dataset/doi:10.5061/dryad.070jc)
@@ -108,14 +109,19 @@ export function Datasets() {
     const transformer = new Transformer();
     const { root } = transformer.transform(markdown);
 
-    // Recursively add parent links to the root data
-    const addParentRefs = (node: any, parent: any = null) => {
-      node.parent = parent;
-      if (node.children) {
-        node.children.forEach((child: any) => addParentRefs(child, node));
+    // Dynamic parent finding function
+    const findParentInTree = (currentNode: any, targetNodeData: any): any => {
+      if (currentNode.children && currentNode.children.some((c: any) => c === targetNodeData)) {
+        return currentNode;
       }
+      if (currentNode.children) {
+        for (const child of currentNode.children) {
+          const result = findParentInTree(child, targetNodeData);
+          if (result) return result;
+        }
+      }
+      return null;
     };
-    addParentRefs(root);
 
     if (svgRef.current) {
       if (!mmRef.current) {
@@ -126,48 +132,47 @@ export function Datasets() {
         }, root);
         mmRef.current = mm;
 
-        // --- ENHANCED ACCORDION LOGIC ---
-        const internalMM = mm as any;
-        const originalToggle = internalMM.handleToggle;
+        // --- THE RELIABLE ACCORDION HOOK ---
+        const mmAny = mm as any;
+        const originalHandleToggle = mmAny.handleToggle;
 
-        internalMM.handleToggle = (n: any, e: any) => {
-          // Check if we are UNFOLDING a node
-          // In Markmap's internal state, n.data.f=true means it is currently folded
-          if (n.data.f) {
-            const parent = n.data.parent;
+        mmAny.handleToggle = (d3Node: any, event: any) => {
+          // If the node was folded (f=true) and we are unfolding it
+          if (d3Node.data.f) {
+            const treeData = mmAny.state.data;
+            const parent = findParentInTree(treeData, d3Node.data);
+
             if (parent && parent.children) {
-              // Fold all siblings
-              parent.children.forEach((sibling: any) => {
-                if (sibling !== n.data) {
-                  sibling.f = true;
+              parent.children.forEach((child: any) => {
+                if (child !== d3Node.data) {
+                  child.f = true; // Fold siblings
                 }
               });
-              // Force the data refresh across the whole map to visually collapse neighbors
-              internalMM.setData(internalMM.state.data);
             }
           }
-          // Proceed with the standard toggle animation for the clicked node
-          originalToggle.call(internalMM, n, e);
+          
+          // Call the original toggle logic
+          originalHandleToggle.call(mmAny, d3Node, event);
+          
+          // CRITICAL: Force the whole view to update so siblings actually hide
+          mmAny.setData(mmAny.state.data);
+          mmAny.fit();
         };
+
       } else {
         mmRef.current.setData(root);
         mmRef.current.fit();
       }
     }
 
+    // Standard support logic
     const handleLinks = () => {
-      d3.select(svgRef.current)
-        .selectAll('a')
-        .attr('target', '_blank')
-        .attr('rel', 'noopener noreferrer');
+      d3.select(svgRef.current).selectAll('a').attr('target', '_blank').attr('rel', 'noopener noreferrer');
     };
-
     const handleResize = () => { if (mmRef.current) mmRef.current.fit(); };
     window.addEventListener('resize', handleResize);
-
     const observer = new MutationObserver(handleLinks);
     if (svgRef.current) observer.observe(svgRef.current, { childList: true, subtree: true });
-
     handleLinks();
 
     return () => {
@@ -187,7 +192,7 @@ export function Datasets() {
       
       <div className="mb-8">
         <h2 className="text-3xl font-bold text-gray-900">Datasets Explorer</h2>
-        <p className="text-gray-600 mt-2 italic text-sm md:text-base">Focus View: Opening a branch collapses its siblings.</p>
+        <p className="text-gray-600 mt-2 italic text-sm md:text-base">For a table overview, see below.</p>
       </div>
 
       <div className="relative bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden mb-12 h-[450px] md:h-[550px] w-full">
