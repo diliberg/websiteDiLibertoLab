@@ -46,6 +46,7 @@ export function Datasets() {
   const mmRef = useRef<Markmap | null>(null);
 
   useEffect(() => {
+    // 1. Markdown Definition
     const markdown = `
 # Datasets
 - EEG
@@ -106,48 +107,48 @@ export function Datasets() {
   - PodcastListening fNIRS - Wilroth/Hannah & Di Liberto (Available Soon)
 `;
 
+    // 2. Transform Markdown
     const transformer = new Transformer();
     const { root } = transformer.transform(markdown);
 
-    // Helper to find parent of a node in the tree
-    const findParent = (node: any, target: any): any => {
-      if (node.children && node.children.includes(target)) return node;
+    // 3. RECURSIVELY ADD PARENT LINKS (Crucial for the Accordion logic)
+    const addParentRefs = (node: any, parent: any = null) => {
+      node.parent = parent;
       if (node.children) {
-        for (let child of node.children) {
-          const found = findParent(child, target);
-          if (found) return found;
-        }
+        node.children.forEach((child: any) => addParentRefs(child, node));
       }
-      return null;
     };
+    addParentRefs(root);
 
     if (svgRef.current) {
       if (!mmRef.current) {
-        mmRef.current = Markmap.create(svgRef.current, {
+        // 4. Create Markmap
+        const mm = Markmap.create(svgRef.current, {
           autoFit: true,
           initialExpandLevel: 2,
           duration: 500,
         }, root);
+        mmRef.current = mm;
 
-        // --- CORRECTED ACCORDION LOGIC WITH TYPE CASTING ---
-        const mm = mmRef.current as any; // Cast to any to access internal handleToggle
-        const originalHandleToggle = mm.handleToggle;
+        // 5. IMPROVED ACCORDION LOGIC
+        const internalMM = mm as any;
+        const originalToggle = internalMM.handleToggle;
 
-        mm.handleToggle = (n: any, e: any) => {
-          // If the branch is currently folded (it's about to open)
-          if (n.data.f) {
-            const parent = findParent(root, n.data);
-            if (parent && parent.children) {
-              // Collapse all other siblings
-              parent.children.forEach((sibling: any) => {
-                if (sibling !== n.data) {
+        internalMM.handleToggle = (n: any, e: any) => {
+          // If n.f is true, the user just clicked to UNFOLD this branch
+          if (n.f) {
+            const parentNode = n.parent;
+            if (parentNode && parentNode.children) {
+              // Loop through all siblings of the clicked node and fold them
+              parentNode.children.forEach((sibling: any) => {
+                if (sibling !== n) {
                   sibling.f = true;
                 }
               });
             }
           }
-          // Perform the original toggle action
-          originalHandleToggle.call(mm, n, e);
+          // Now perform the standard toggle (which will also trigger the layout update)
+          originalToggle.call(internalMM, n, e);
         };
       } else {
         mmRef.current.setData(root);
@@ -155,6 +156,7 @@ export function Datasets() {
       }
     }
 
+    // 6. Support Logic: Links & Resize
     const handleLinks = () => {
       d3.select(svgRef.current)
         .selectAll('a')
@@ -162,18 +164,14 @@ export function Datasets() {
         .attr('rel', 'noopener noreferrer');
     };
 
-    const handleResize = () => {
-      if (mmRef.current) mmRef.current.fit();
-    };
-
+    const handleResize = () => { if (mmRef.current) mmRef.current.fit(); };
     window.addEventListener('resize', handleResize);
 
     const observer = new MutationObserver(handleLinks);
-    if (svgRef.current) {
-      observer.observe(svgRef.current, { childList: true, subtree: true });
-    }
+    if (svgRef.current) observer.observe(svgRef.current, { childList: true, subtree: true });
 
     handleLinks();
+
     return () => {
       observer.disconnect();
       window.removeEventListener('resize', handleResize);
@@ -186,14 +184,12 @@ export function Datasets() {
         .markmap-node a { color: #2563eb !important; font-weight: 500; text-decoration: none !important; }
         .markmap-node a:hover { text-decoration: underline !important; }
         .markmap-foreign { line-height: 1.2; font-size: 12px; }
-        @media (min-width: 768px) {
-          .markmap-foreign { font-size: 14px; }
-        }
+        @media (min-width: 768px) { .markmap-foreign { font-size: 14px; } }
       `}</style>
       
       <div className="mb-8">
         <h2 className="text-3xl font-bold text-gray-900">Datasets Explorer</h2>
-        <p className="text-gray-600 mt-2 italic text-sm md:text-base">Opening a branch collapses its siblings.</p>
+        <p className="text-gray-600 mt-2 italic text-sm md:text-base">Focus View: Opening a branch collapses its siblings.</p>
       </div>
 
       <div className="relative bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden mb-12 h-[450px] md:h-[550px] w-full">
