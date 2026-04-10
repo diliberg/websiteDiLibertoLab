@@ -78,7 +78,9 @@ export function Datasets() {
         - Synthesised
           - [VocodedSpeech - Calderon & Lopez Valdes](https://osf.io/gx6rm/overview)
           - ConversationListening - Chalehchaleh & Di Liberto (Available Soon)
+          - TrustSpeech - Hannah & Di Liberto (Available Soon)
           - EmotionSpeech - Akkaya & Di Liberto (Available Soon)
+
   - Music
     - Musicians
       - Listening
