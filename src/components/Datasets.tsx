@@ -49,58 +49,46 @@ export function Datasets() {
     const markdown = `
 # Datasets
 - EEG
-  - Speech
-    - Production
-      - ConversationSpeaking - Chalehchaleh & Di Liberto (Available Soon)
-    - Listening
-      - Sung Speech
-        - CantisaniSong - Cantisani & Di Liberto/Shamma (Available Soon)
-        - Nursery Rhymes
-          - [BabyRhythmCambridge Adults - Attaheri/Di Liberto & Goswami](https://osf.io/mdnwg/)
-          - [BabyRhythmCambridge 4mo - Attaheri/Di Liberto & Goswami](https://osf.io/mdnwg/)
-          - [BabyRhythmCambridge 7mo - Attaheri/Di Liberto & Goswami](https://osf.io/mdnwg/)
-          - [BabyRhythmCambridge 11mo - Attaheri/Di Liberto & Goswami](https://osf.io/mdnwg/)
-      - Regular Speech
-        - Natural
-          - [LalorNatSpeech - Broderick/Di Liberto & Lalor](https://datadryad.org/dataset/doi:10.5061/dryad.070jc)
-          - [LalorRevSpeech - Broderick/Di Liberto & Lalor](https://datadryad.org/dataset/doi:10.5061/dryad.070jc)
-          - [AliceSpeech - Brennan & Hale](https://deepblue.lib.umich.edu/data/concern/data_sets/bg257f92t)
-          - PodcastListening - Ip & Di Liberto (Available Soon)
-          - FDSpeech L1 - Piazza & Martin/Di Liberto (Available Soon)
-          - FDSpeech L2 - Piazza & Martin/Di Liberto (Available Soon)
-          - [SparrKULee1 - Accou/Bollens & Francart](https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/K3VSND)
-          - [SparrKULee2 - Accou/Bollens & Francart](https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/K3VSND)
-          - [ChildStories_Sysoeva - Rogachev & Sysoeva](https://osf.io/c3agw/)
-          - ConversationListening - Chalehchaleh & Di Liberto (Available Soon)
-          - CocktailAttSwitch - Carta & Lopez/Di Liberto (Available Soon)
-          - [AAD KULeuven - Das & Francart/Bertrand](https://zenodo.org/records/3997352#.X0fP1sgza5g)
-          - StandupComedy - Peters & Di Liberto (Available Soon)
-        - Synthesised
-          - [VocodedSpeech - Calderon & Lopez Valdes](https://osf.io/gx6rm/overview)
-          - ConversationListening - Chalehchaleh & Di Liberto (Available Soon)
-          - TrustSpeech - Hannah & Di Liberto (Available Soon)
-          - EmotionSpeech - Akkaya & Di Liberto (Available Soon)
-
+  - Speech Production
+    - ConversationSpeaking - Chalehchaleh & Di Liberto (Available Soon)
+    
+  - Speech Listening
+    - [LalorNatSpeech - Broderick/Di Liberto & Lalor](https://datadryad.org/dataset/doi:10.5061/dryad.070jc)
+    - [LalorRevSpeech - Broderick/Di Liberto & Lalor](https://datadryad.org/dataset/doi:10.5061/dryad.070jc)
+    - [AliceSpeech - Brennan & Hale](https://deepblue.lib.umich.edu/data/concern/data_sets/bg257f92t)
+    - PodcastListening - Ip & Di Liberto (Available Soon)
+    - FDSpeech L1 - Piazza & Martin/Di Liberto (Available Soon)
+    - FDSpeech L2 - Piazza & Martin/Di Liberto (Available Soon)
+    - [SparrKULee1 - Accou/Bollens & Francart](https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/K3VSND)
+    - [SparrKULee2 - Accou/Bollens & Francart](https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/K3VSND)
+    - [ChildStories_Sysoeva - Rogachev & Sysoeva](https://osf.io/c3agw/)
+    - ConversationListening - Chalehchaleh & Di Liberto (Available Soon)
+    - CocktailAttSwitch - Carta & Lopez/Di Liberto (Available Soon)
+    - [AAD KULeuven - Das & Francart/Bertrand](https://zenodo.org/records/3997352#.X0fP1sgza5g)
+    - StandupComedy - Peters & Di Liberto (Available Soon)
+    - CantisaniSong - Cantisani & Di Liberto/Shamma (Available Soon)
+    - [VocodedSpeech - Calderon & Lopez Valdes](https://osf.io/gx6rm/overview)
+    - ConversationListening - Chalehchaleh & Di Liberto (Available Soon)
+    - TrustSpeech - Hannah & Di Liberto (Available Soon)
+    - EmotionSpeech - Akkaya & Di Liberto (Available Soon)
+    - Nursery Rhymes
+      - [BabyRhythmCambridge Adults - Attaheri/Di Liberto & Goswami](https://osf.io/mdnwg/)
+      - [BabyRhythmCambridge 4mo - Attaheri/Di Liberto & Goswami](https://osf.io/mdnwg/)
+      - [BabyRhythmCambridge 7mo - Attaheri/Di Liberto & Goswami](https://osf.io/mdnwg/)
+      - [BabyRhythmCambridge 11mo - Attaheri/Di Liberto & Goswami](https://osf.io/mdnwg/)
   - Music
-    - Musicians
-      - Listening
-        - [DiliBach - Di Liberto & Shamma](https://datadryad.org/dataset/doi:10.5061/dryad.g1jwstqmh)
-        - [PolyphonicBach - Winchester & Di Liberto](https://osf.io/bjdh6/overview)
-        - [MusicImagery Listening - Marion/Di Liberto & Shamma](https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j)
-      - Imagining
-        - [MusicImagery Imagination - Marion/Di Liberto & Shamma](https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j)
-    - Non-Musicians
-      - Recorded
-        - CantisaniMelody - Cantisani & Di Liberto/Shamma (Available Soon)
-      - Synthesised
-        - [DiliBach - Di Liberto & Shamma](https://datadryad.org/dataset/doi:10.5061/dryad.g1jwstqmh)
-        - [PolyphonicBach - Winchester & Di Liberto](https://osf.io/bjdh6/overview)
-        - MelodySwitch - O'Doherty & Di Liberto (Available Soon)
+    - [DiliBach - Di Liberto & Shamma](https://datadryad.org/dataset/doi:10.5061/dryad.g1jwstqmh)
+    - [PolyphonicBach - Winchester & Di Liberto](https://osf.io/bjdh6/overview)
+    - [MusicImagery Listening - Marion/Di Liberto & Shamma](https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j)
+    - CantisaniMelody - Cantisani & Di Liberto/Shamma (Available Soon)
+    - [DiliBach - Di Liberto & Shamma](https://datadryad.org/dataset/doi:10.5061/dryad.g1jwstqmh)
+    - [PolyphonicBach - Winchester & Di Liberto](https://osf.io/bjdh6/overview)
+    - MelodySwitch - O'Doherty & Di Liberto (Available Soon)
+    - Imagining
+      - [MusicImagery Imagination - Marion/Di Liberto & Shamma](https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j)   
   - Sign Language
-    - Signers
-      - SignLanguageSigners - Mertz/Hannah & Kuhn/Di Liberto (Available Soon)
-    - Non Signers
-      - SignLanguageNonsigners - Mertz/Hannah & Kuhn/Di Liberto (Available Soon)
+    - SignLanguageSigners - Mertz/Hannah & Kuhn/Di Liberto (Available Soon)
+    - SignLanguageNonsigners - Mertz/Hannah & Kuhn/Di Liberto (Available Soon)
 - MEG
   - [GwilliamsSpeechMEG-1 - Gwilliams & Poeppel/King](https://osf.io/ag3kj/overview)
   - [GwilliamsSpeechMEG-2 - Gwilliams & Poeppel/King](https://osf.io/ag3kj/overview)
