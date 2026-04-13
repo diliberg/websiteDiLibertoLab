@@ -19,87 +19,84 @@ const datasetTableData = [
   { "Name": "SparrKULee2", "Age": "Adults", "N": "56", "nativeLang": "L1", "Stimulus": "Dutch/Flemish speech", "Modality": "EEG", "Authors": "Accou/Bollens & Francart", "Papers": [], "Link": "https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/K3VSND" },
   { "Name": "VocodedSpeech", "Age": "Adults", "N": "13", "nativeLang": "L1", "Stimulus": "Noise-vocoded speech", "Modality": "EEG", "Authors": "Calderon & Lopez Valdes", "Papers": ["https://www.isca-archive.org/interspeech_2023/calderondepalma23_interspeech.pdf"], "Link": "https://osf.io/gx6rm/overview" },
   { "Name": "ChildStories_Sysoeva", "Age": "3-8yo", "N": "52", "nativeLang": "L1", "Stimulus": "Russian child directed speech", "Modality": "EEG", "Authors": "Rogachev & Sysoeva", "Papers": ["https://www.sciencedirect.com/science/article/pii/S1389041724000305"], "Link": "https://osf.io/c3agw/" },
-  { "Name": "BabyRhythmCambridge 4mo", "Age": "4mo", "N": "47", "nativeLang": "L1", "Stimulus": "Recorded nursery rhymes", "Modality": "EEG", "Authors": "Attaheri/Di Liberto & Goswami", "Papers": ["https://www.nature.com/articles/s41467-023-43490-x"], "Link": "https://osf.io/mdnwg/" },
-  { "Name": "BabyRhythmCambridge 7mo", "Age": "7mo", "N": "47", "nativeLang": "L1", "Stimulus": "Recorded nursery rhymes", "Modality": "EEG", "Authors": "Attaheri/Di Liberto & Goswami", "Papers": ["https://www.nature.com/articles/s41467-023-43490-x"], "Link": "https://osf.io/mdnwg/" },
-  { "Name": "BabyRhythmCambridge 11mo", "Age": "11mo", "N": "47", "nativeLang": "L1", "Stimulus": "Recorded nursery rhymes", "Modality": "EEG", "Authors": "Attaheri/Di Liberto & Goswami", "Papers": ["https://www.nature.com/articles/s41467-023-43490-x"], "Link": "https://osf.io/mdnwg/" },
+  { "Name": "BabyRhythmCambridge Adults", "Age": "Adults", "N": "17", "nativeLang": "L1", "Stimulus": "Nursery rhymes", "Modality": "EEG", "Authors": "Attaheri/Di Liberto & Goswami", "Papers": ["https://www.nature.com/articles/s41467-023-43490-x"], "Link": "https://osf.io/mdnwg/" },
+  { "Name": "BabyRhythmCambridge 4mo", "Age": "4mo", "N": "47", "nativeLang": "L1", "Stimulus": "Nursery rhymes", "Modality": "EEG", "Authors": "Attaheri/Di Liberto & Goswami", "Papers": ["https://www.nature.com/articles/s41467-023-43490-x"], "Link": "https://osf.io/mdnwg/" },
+  { "Name": "BabyRhythmCambridge 7mo", "Age": "7mo", "N": "47", "nativeLang": "L1", "Stimulus": "Nursery rhymes", "Modality": "EEG", "Authors": "Attaheri/Di Liberto & Goswami", "Papers": ["https://www.nature.com/articles/s41467-023-43490-x"], "Link": "https://osf.io/mdnwg/" },
+  { "Name": "BabyRhythmCambridge 11mo", "Age": "11mo", "N": "47", "nativeLang": "L1", "Stimulus": "Nursery rhymes", "Modality": "EEG", "Authors": "Attaheri/Di Liberto & Goswami", "Papers": ["https://www.nature.com/articles/s41467-023-43490-x"], "Link": "https://osf.io/mdnwg/" },
   { "Name": "ConversationListening", "Age": "Adults", "N": "10", "nativeLang": "L1/L2", "Stimulus": "Synthesised + live opinion", "Modality": "EEG", "Authors": "Chalehchaleh & Di Liberto", "Papers": [], "Link": "Available Soon" },
   { "Name": "ConversationSpeaking", "Age": "Adults", "N": "10", "nativeLang": "L1/L2", "Stimulus": "Live opinion speech", "Modality": "EEG", "Authors": "Chalehchaleh & Di Liberto", "Papers": [], "Link": "Available Soon" },
-  { "Name": "CocktailAttSwitch", "Age": "Adults", "N": "24", "nativeLang": "L1", "Stimulus": "Simultaneous Eng TED talks", "Modality": "EEG", "Authors": "Carta & Lopez/Di Liberto", "Papers": ["https://www.biorxiv.org/content/10.1101/2025.07.02.662762v1.abstract"], "Link": "Available Soon" },
-  { "Name": "AAD KULeuven", "Age": "Adults", "N": "16", "nativeLang": "L1", "Stimulus": "Dutch short stories (2 simult.)", "Modality": "EEG", "Authors": "Das & Francart/Bertrand", "Papers": ["https://iopscience.iop.org/article/10.1088/1741-2560/13/5/056014"], "Link": "https://zenodo.org/records/3997352" },
-  { "Name": "CantisaniSpeech", "Age": "Adults", "N": "20", "nativeLang": "L1", "Stimulus": "Speech", "Modality": "EEG", "Authors": "Cantisani & Di Liberto/Shamma", "Papers": ["https://hal.science/hal-04529950"], "Link": "Available Soon" },
+  { "Name": "CocktailAttSwitch", "Age": "Adults", "N": "24", "nativeLang": "L1", "Stimulus": "TED talks + babble", "Modality": "EEG", "Authors": "Carta & Lopez/Di Liberto", "Papers": ["https://www.biorxiv.org/content/10.1101/2025.07.02.662762v1.abstract"], "Link": "Available Soon" },
+  { "Name": "AAD KULeuven", "Age": "Adults", "N": "16", "nativeLang": "L1", "Stimulus": "Dutch short stories", "Modality": "EEG", "Authors": "Das & Francart/Bertrand", "Papers": ["https://iopscience.iop.org/article/10.1088/1741-2560/13/5/056014"], "Link": "https://zenodo.org/records/3997352" },
+  { "Name": "CantisaniSpeech", "Age": "Adults", "N": "20", "nativeLang": "L1", "Stimulus": "Natural speech", "Modality": "EEG", "Authors": "Cantisani & Di Liberto/Shamma", "Papers": ["https://hal.science/hal-04529950"], "Link": "Available Soon" },
   { "Name": "CantisaniMelody", "Age": "Adults", "N": "20", "nativeLang": "non-M", "Stimulus": "Hummed speech", "Modality": "EEG", "Authors": "Cantisani & Di Liberto/Shamma", "Papers": ["https://hal.science/hal-04529950"], "Link": "Available Soon" },
   { "Name": "CantisaniSong", "Age": "Adults", "N": "20", "nativeLang": "L1/non-M", "Stimulus": "Sung speech", "Modality": "EEG", "Authors": "Cantisani & Di Liberto/Shamma", "Papers": ["https://hal.science/hal-04529950"], "Link": "Available Soon" },
-  { "Name": "DiliBach", "Age": "Adults", "N": "20", "nativeLang": "M/NM", "Stimulus": "Synthesised Bach Piano", "Modality": "EEG", "Authors": "Di Liberto & Shamma", "Papers": ["https://elifesciences.org/articles/51784"], "Link": "https://datadryad.org/dataset/doi:10.5061/dryad.g1jwstqmh" },
-  { "Name": "MelodySwitch", "Age": "Adults", "N": "17", "nativeLang": "NM", "Stimulus": "Piano melodies (4 genres)", "Modality": "EEG", "Authors": "O'Doherty & Di Liberto", "Papers": [], "Link": "Available Soon" },
-  { "Name": "PolyphonicBach", "Age": "Adults", "N": "30", "nativeLang": "M/NM", "Stimulus": "Bach Piano Double-point", "Modality": "EEG", "Authors": "Winchester & Di Liberto", "Papers": ["https://elifesciences.org/reviewed-preprints/108767"], "Link": "https://osf.io/bjdh6/overview" },
-  { "Name": "MusicImagery List.", "Age": "Adults", "N": "21", "nativeLang": "M", "Stimulus": "Bach Piano Melodies", "Modality": "EEG", "Authors": "Marion/Di Liberto & Shamma", "Papers": ["https://www.jneurosci.org/content/41/35/7435"], "Link": "https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j" },
-  { "Name": "MusicImagery Imag.", "Age": "Adults", "N": "21", "nativeLang": "M", "Stimulus": "Imagining Bach Melodies", "Modality": "EEG", "Authors": "Marion/Di Liberto & Shamma", "Papers": ["https://www.jneurosci.org/content/41/35/7435"], "Link": "https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j" },
-  { "Name": "StandupComedy", "Age": "Adults", "N": "14", "nativeLang": "L1", "Stimulus": "Stand-up comedy videos", "Modality": "EEG", "Authors": "Peters & Di Liberto", "Papers": [], "Link": "Available Soon" },
-  { "Name": "SignLang Signers", "Age": "Adults", "N": "14", "nativeLang": "L1/L2", "Stimulus": "LSF deaf signer videos", "Modality": "EEG", "Authors": "Mertz/Hannah & Kuhn/Di Liberto", "Papers": [], "Link": "Available Soon" },
-  { "Name": "SignLang NonSigners", "Age": "Adults", "N": "20", "nativeLang": "NonSigners", "Stimulus": "LSF deaf signer videos", "Modality": "EEG", "Authors": "Mertz/Hannah & Kuhn/Di Liberto", "Papers": [], "Link": "Available Soon" },
-  { "Name": "Podcast fNIRS", "Age": "Adults", "N": "8", "nativeLang": "L1/L2", "Stimulus": "Podcast ADS and CDS", "Modality": "fNIRS", "Authors": "Wilroth/Hannah & Di Liberto", "Papers": ["https://doi.org/10.64898/2026.03.20.713212"], "Link": "Available Soon" }
+  { "Name": "DiliBach", "Age": "Adults", "N": "20", "nativeLang": "M/NM", "Stimulus": "Synthesised Bach Melodies", "Modality": "EEG", "Authors": "Di Liberto & Shamma", "Papers": ["https://elifesciences.org/articles/51784"], "Link": "https://datadryad.org/dataset/doi:10.5061/dryad.g1jwstqmh" },
+  { "Name": "MelodySwitch", "Age": "Adults", "N": "17", "nativeLang": "NM", "Stimulus": "Piano melodies", "Modality": "EEG", "Authors": "O'Doherty & Di Liberto", "Papers": [], "Link": "Available Soon" },
+  { "Name": "PolyphonicBach", "Age": "Adults", "N": "30", "nativeLang": "M/NM", "Stimulus": "Double-point counterpoint", "Modality": "EEG", "Authors": "Winchester & Di Liberto", "Papers": ["https://elifesciences.org/reviewed-preprints/108767"], "Link": "https://osf.io/bjdh6/overview" },
+  { "Name": "MusicImagery Listening", "Age": "Adults", "N": "21", "nativeLang": "M", "Stimulus": "Bach Melodies (Listening)", "Modality": "EEG", "Authors": "Marion/Di Liberto & Shamma", "Papers": ["https://www.jneurosci.org/content/41/35/7435"], "Link": "https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j" },
+  { "Name": "MusicImagery Imagination", "Age": "Adults", "N": "21", "nativeLang": "M", "Stimulus": "Bach Melodies (Imagining)", "Modality": "EEG", "Authors": "Marion/Di Liberto & Shamma", "Papers": ["https://www.jneurosci.org/content/41/35/7435"], "Link": "https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j" },
+  { "Name": "StandupComedy", "Age": "Adults", "N": "14", "nativeLang": "L1", "Stimulus": "Stand-up videos", "Modality": "EEG", "Authors": "Peters & Di Liberto", "Papers": [], "Link": "Available Soon" },
+  { "Name": "SignLanguageSigners", "Age": "Adults", "N": "14", "nativeLang": "L1/L2", "Stimulus": "LSF deaf signer videos", "Modality": "EEG", "Authors": "Mertz/Hannah & Kuhn/Di Liberto", "Papers": [], "Link": "Available Soon" },
+  { "Name": "SignLanguageNonsigners", "Age": "Adults", "N": "20", "nativeLang": "NonSigners", "Stimulus": "LSF deaf signer videos", "Modality": "EEG", "Authors": "Mertz/Hannah & Kuhn/Di Liberto", "Papers": [], "Link": "Available Soon" },
+  { "Name": "Podcast fNIRS", "Age": "Adults", "N": "8", "nativeLang": "L1/L2", "Stimulus": "Podcast ADS and CDS", "Modality": "fNIRS", "Authors": "Wilroth & Hannah/Di Liberto", "Papers": ["https://doi.org/10.64898/2026.03.20.713212"], "Link": "Available Soon" }
 ];
 
 export function Datasets() {
   const svgRef = useRef<SVGSVGElement>(null);
+  const tooltipRef = useRef<HTMLDivElement>(null);
   const mmRef = useRef<Markmap | null>(null);
 
   useEffect(() => {
-    // 1. DATA DEFINITION (Full detailed hierarchy restored)
+    // 1. DATA DEFINITION
     const markdown = `
 # Datasets
 - EEG
   - Speech Production
-    - ConversationSpeaking - Chalehchaleh & Di Liberto (Available Soon)
-    
+    - [ConversationSpeaking](https://dilibertolab.org)
   - Speech Listening
-    - [LalorNatSpeech - Broderick/Di Liberto & Lalor](https://datadryad.org/dataset/doi:10.5061/dryad.070jc)
-    - [LalorRevSpeech - Broderick/Di Liberto & Lalor](https://datadryad.org/dataset/doi:10.5061/dryad.070jc)
-    - [AliceSpeech - Brennan & Hale](https://deepblue.lib.umich.edu/data/concern/data_sets/bg257f92t)
-    - PodcastListening - Ip & Di Liberto (Available Soon)
-    - FDSpeech L1 - Piazza & Martin/Di Liberto (Available Soon)
-    - FDSpeech L2 - Piazza & Martin/Di Liberto (Available Soon)
-    - [SparrKULee1 - Accou/Bollens & Francart](https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/K3VSND)
-    - [SparrKULee2 - Accou/Bollens & Francart](https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/K3VSND)
-    - [ChildStories_Sysoeva - Rogachev & Sysoeva](https://osf.io/c3agw/)
-    - ConversationListening - Chalehchaleh & Di Liberto (Available Soon)
-    - CocktailAttSwitch - Carta & Lopez/Di Liberto (Available Soon)
-    - [AAD KULeuven - Das & Francart/Bertrand](https://zenodo.org/records/3997352#.X0fP1sgza5g)
-    - StandupComedy - Peters & Di Liberto (Available Soon)
-    - CantisaniSong - Cantisani & Di Liberto/Shamma (Available Soon)
-    - [VocodedSpeech - Calderon & Lopez Valdes](https://osf.io/gx6rm/overview)
-    - ConversationListening - Chalehchaleh & Di Liberto (Available Soon)
-    - TrustSpeech - Hannah & Di Liberto (Available Soon)
-    - EmotionSpeech - Akkaya & Di Liberto (Available Soon)
+    - [LalorNatSpeech](https://datadryad.org/dataset/doi:10.5061/dryad.070jc)
+    - [LalorRevSpeech](https://datadryad.org/dataset/doi:10.5061/dryad.070jc)
+    - [AliceSpeech](https://deepblue.lib.umich.edu/data/concern/data_sets/bg257f92t)
+    - [PodcastListening](https://dilibertolab.org)
+    - [FDSpeech L1](https://dilibertolab.org)
+    - [FDSpeech L2](https://dilibertolab.org)
+    - [SparrKULee1](https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/K3VSND)
+    - [SparrKULee2](https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/K3VSND)
+    - [ChildStories_Sysoeva](https://osf.io/c3agw/)
+    - [ConversationListening](https://dilibertolab.org)
+    - [CocktailAttSwitch](https://dilibertolab.org)
+    - [AAD KULeuven](https://zenodo.org/records/3997352)
+    - [StandupComedy](https://dilibertolab.org)
+    - [CantisaniSong](https://dilibertolab.org)
+    - [VocodedSpeech](https://osf.io/gx6rm/overview)
+    - [TrustSpeech](https://dilibertolab.org)
+    - [EmotionSpeech](https://dilibertolab.org)
     - Nursery Rhymes
-      - [BabyRhythmCambridge Adults - Attaheri/Di Liberto & Goswami](https://osf.io/mdnwg/)
-      - [BabyRhythmCambridge 4mo - Attaheri/Di Liberto & Goswami](https://osf.io/mdnwg/)
-      - [BabyRhythmCambridge 7mo - Attaheri/Di Liberto & Goswami](https://osf.io/mdnwg/)
-      - [BabyRhythmCambridge 11mo - Attaheri/Di Liberto & Goswami](https://osf.io/mdnwg/)
-  - Music
-    - [DiliBach - Di Liberto & Shamma](https://datadryad.org/dataset/doi:10.5061/dryad.g1jwstqmh)
-    - [PolyphonicBach - Winchester & Di Liberto](https://osf.io/bjdh6/overview)
-    - [MusicImagery Listening - Marion/Di Liberto & Shamma](https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j)
-    - CantisaniMelody - Cantisani & Di Liberto/Shamma (Available Soon)
-    - [DiliBach - Di Liberto & Shamma](https://datadryad.org/dataset/doi:10.5061/dryad.g1jwstqmh)
-    - [PolyphonicBach - Winchester & Di Liberto](https://osf.io/bjdh6/overview)
-    - MelodySwitch - O'Doherty & Di Liberto (Available Soon)
-    - Imagining
-      - [MusicImagery Imagination - Marion/Di Liberto & Shamma](https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j)   
-  - Sign Language
-    - SignLanguageSigners - Mertz/Hannah & Kuhn/Di Liberto (Available Soon)
-    - SignLanguageNonsigners - Mertz/Hannah & Kuhn/Di Liberto (Available Soon)
+      - [BabyRhythmCambridge Adults](https://osf.io/mdnwg/)
+      - [BabyRhythmCambridge 4mo](https://osf.io/mdnwg/)
+      - [BabyRhythmCambridge 7mo](https://osf.io/mdnwg/)
+      - [BabyRhythmCambridge 11mo](https://osf.io/mdnwg/)
+- Music
+  - [DiliBach](https://datadryad.org/dataset/doi:10.5061/dryad.g1jwstqmh)
+  - [PolyphonicBach](https://osf.io/bjdh6/overview)
+  - [MusicImagery Listening](https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j)
+  - [CantisaniMelody](https://dilibertolab.org)
+  - [MelodySwitch](https://dilibertolab.org)
+  - [MusicImagery Imagination](https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j)
+- Sign Language
+  - [SignLanguageSigners](https://dilibertolab.org)
+  - [SignLanguageNonsigners](https://dilibertolab.org)
 - MEG
-  - [GwilliamsSpeechMEG-1 - Gwilliams & Poeppel/King](https://osf.io/ag3kj/overview)
-  - [GwilliamsSpeechMEG-2 - Gwilliams & Poeppel/King](https://osf.io/ag3kj/overview)
+  - [GwilliamsSpeechMEG-1](https://osf.io/ag3kj/overview)
+  - [GwilliamsSpeechMEG-2](https://osf.io/ag3kj/overview)
 - fNIRS
-  - PodcastListening fNIRS - Wilroth & Hannah/Di Liberto (Available Soon)
+  - [PodcastListening fNIRS](https://dilibertolab.org)
 `;
 
-    // 2. TRANSFORM & ENRICH DATA
     const transformer = new Transformer();
     const { root } = transformer.transform(markdown);
 
+    // Helper for Accordion
     const setupParents = (node: any, parent: any = null) => {
       node.parent = parent;
       if (node.children) node.children.forEach((c: any) => setupParents(c, node));
@@ -107,49 +104,74 @@ export function Datasets() {
     setupParents(root);
 
     if (svgRef.current) {
-      // 3. INITIALIZE MARKMAP
       const mm = Markmap.create(svgRef.current, {
         autoFit: true,
         initialExpandLevel: 2,
-        duration: 500,
+        duration: 400,
       }, root);
       mmRef.current = mm;
 
-      // 4. THE ROBUST ACCORDION INTERCEPTOR
+      // --- ACCORDION INTERCEPTOR ---
       const mmAny = mm as any;
       const originalHandleToggle = mmAny.handleToggle;
-
       mmAny.handleToggle = (d3Node: any, event: any) => {
-        const data = d3Node.data;
-        // If expanding (Markmap internal: data.f = true means it was folded)
-        if (data.f) {
-          const parent = data.parent;
+        if (d3Node.data.f) {
+          const parent = d3Node.data.parent;
           if (parent && parent.children) {
-            parent.children.forEach((sib: any) => {
-              if (sib !== data) sib.f = true; // Fold all siblings
-            });
+            parent.children.forEach((sib: any) => { if (sib !== d3Node.data) sib.f = true; });
           }
-          // FORCE DATA SYNC: Update the whole tree state to reflect folded siblings
           mmAny.setData(mmAny.state.data);
         }
-        
-        // Execute the actual toggle animation for the target node
         originalHandleToggle.call(mmAny, d3Node, event);
-        
-        // Center the view after a short delay
-        setTimeout(() => mm.fit(), 550);
+        setTimeout(() => mm.fit(), 500);
       };
     }
 
-    // 5. GLOBAL LISTENERS (Links, Resize)
+    // --- HOVER DESCRIPTION LOGIC ---
+    const updateHoverListeners = () => {
+      const svg = d3.select(svgRef.current);
+      const tooltip = d3.select(tooltipRef.current);
+
+      svg.selectAll('.markmap-node')
+        .on('mouseenter', function(event, d: any) {
+          const nodeText = d3.select(this).text().trim();
+          const dataset = datasetTableData.find(item => item.Name === nodeText);
+
+          if (dataset) {
+            tooltip
+              .style('opacity', 1)
+              .html(`
+                <div class="font-bold text-blue-700 mb-1">${dataset.Name}</div>
+                <div class="text-xs text-gray-600 mb-2"><strong>Stimulus:</strong> ${dataset.Stimulus}</div>
+                <div class="text-[10px] text-gray-400 italic">${dataset.Authors}</div>
+              `);
+          }
+        })
+        .on('mousemove', function(event) {
+          tooltip
+            .style('left', (event.pageX + 15) + 'px')
+            .style('top', (event.pageY - 20) + 'px');
+        })
+        .on('mouseleave', function() {
+          tooltip.style('opacity', 0);
+        });
+    };
+
+    // Listeners for links and resize
     const handleLinks = () => {
       d3.select(svgRef.current).selectAll('a').attr('target', '_blank').attr('rel', 'noopener noreferrer');
     };
     const handleResize = () => { if (mmRef.current) mmRef.current.fit(); };
     window.addEventListener('resize', handleResize);
-    const observer = new MutationObserver(handleLinks);
+    
+    const observer = new MutationObserver(() => {
+      handleLinks();
+      updateHoverListeners(); // Re-attach hover listeners when branches expand
+    });
     if (svgRef.current) observer.observe(svgRef.current, { childList: true, subtree: true });
+
     handleLinks();
+    updateHoverListeners();
 
     return () => {
       observer.disconnect();
@@ -159,11 +181,16 @@ export function Datasets() {
 
   return (
     <div className="flex flex-col items-start w-full px-4 sm:px-6 md:px-12 py-10 bg-white min-h-screen overflow-x-hidden">
+      {/* TOOLTIP COMPONENT */}
+      <div 
+        ref={tooltipRef}
+        className="fixed pointer-events-none opacity-0 bg-white border border-gray-200 shadow-xl rounded-lg p-3 z-[9999] max-w-xs transition-opacity duration-200 text-sm"
+      />
+
       <style>{`
-        /* Markmap Internal Link Styling */
         .markmap-node a { color: #2563eb !important; text-decoration: none !important; }
         .markmap-node a:hover { text-decoration: underline !important; }
-        .markmap-foreign { font-size: 11px; line-height: 1.3; }
+        .markmap-foreign { font-size: 11px; line-height: 1.3; cursor: help; }
         @media (min-width: 768px) { .markmap-foreign { font-size: 13px; } }
       `}</style>
       
@@ -171,17 +198,13 @@ export function Datasets() {
         <div className="mb-10 text-left">
           <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight">Datasets</h2>
           <p className="text-gray-500 mt-3 text-lg italic">
-            For table overview, see below. 
+            Hover over dataset names for a quick description. Opening a branch collapses neighbors.
           </p>
         </div>
 
-        {/* MAP CONTAINER: Centered logic for mobile */}
+        {/* MAP CONTAINER */}
         <div className="relative bg-white rounded-3xl border border-gray-100 shadow-2xl overflow-hidden mb-20 h-[500px] md:h-[650px] w-full border-2">
-          <svg 
-            ref={svgRef} 
-            className="w-full h-full bg-slate-50/20" 
-            style={{ cursor: 'grab' }} 
-          />
+          <svg ref={svgRef} className="w-full h-full bg-slate-50/20" style={{ cursor: 'grab' }} />
         </div>
 
         <div className="w-full">
