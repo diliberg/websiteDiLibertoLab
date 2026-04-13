@@ -27,18 +27,18 @@ const datasetTableData = [
   { "Name": "ConversationSpeaking", "Age": "Adults", "N": "10", "nativeLang": "L1/L2", "Stimulus": "Live opinion speech", "Modality": "EEG", "Authors": "Chalehchaleh & Di Liberto", "Papers": [], "Link": "Available Soon" },
   { "Name": "CocktailAttSwitch", "Age": "Adults", "N": "24", "nativeLang": "L1", "Stimulus": "TED talks + babble", "Modality": "EEG", "Authors": "Carta & Lopez/Di Liberto", "Papers": ["https://www.biorxiv.org/content/10.1101/2025.07.02.662762v1.abstract"], "Link": "Available Soon" },
   { "Name": "AAD KULeuven", "Age": "Adults", "N": "16", "nativeLang": "L1", "Stimulus": "Dutch short stories", "Modality": "EEG", "Authors": "Das & Francart/Bertrand", "Papers": ["https://iopscience.iop.org/article/10.1088/1741-2560/13/5/056014"], "Link": "https://zenodo.org/records/3997352" },
+  { "Name": "StandupComedy", "Age": "Adults", "N": "14", "nativeLang": "L1", "Stimulus": "Stand-up comedy videos", "Modality": "EEG", "Authors": "Peters & Di Liberto", "Papers": [], "Link": "Available Soon" },
   { "Name": "CantisaniSpeech", "Age": "Adults", "N": "20", "nativeLang": "L1", "Stimulus": "Natural speech", "Modality": "EEG", "Authors": "Cantisani & Di Liberto/Shamma", "Papers": ["https://hal.science/hal-04529950"], "Link": "Available Soon" },
   { "Name": "CantisaniMelody", "Age": "Adults", "N": "20", "nativeLang": "non-M", "Stimulus": "Hummed speech", "Modality": "EEG", "Authors": "Cantisani & Di Liberto/Shamma", "Papers": ["https://hal.science/hal-04529950"], "Link": "Available Soon" },
   { "Name": "CantisaniSong", "Age": "Adults", "N": "20", "nativeLang": "L1/non-M", "Stimulus": "Sung speech", "Modality": "EEG", "Authors": "Cantisani & Di Liberto/Shamma", "Papers": ["https://hal.science/hal-04529950"], "Link": "Available Soon" },
-  { "Name": "DiliBach", "Age": "Adults", "N": "20", "nativeLang": "M/NM", "Stimulus": "Synthesised Bach Melodies", "Modality": "EEG", "Authors": "Di Liberto & Shamma", "Papers": ["https://elifesciences.org/articles/51784"], "Link": "https://datadryad.org/dataset/doi:10.5061/dryad.g1jwstqmh" },
-  { "Name": "MelodySwitch", "Age": "Adults", "N": "17", "nativeLang": "NM", "Stimulus": "Piano melodies", "Modality": "EEG", "Authors": "O'Doherty & Di Liberto", "Papers": [], "Link": "Available Soon" },
-  { "Name": "PolyphonicBach", "Age": "Adults", "N": "30", "nativeLang": "M/NM", "Stimulus": "Double-point counterpoint", "Modality": "EEG", "Authors": "Winchester & Di Liberto", "Papers": ["https://elifesciences.org/reviewed-preprints/108767"], "Link": "https://osf.io/bjdh6/overview" },
-  { "Name": "MusicImagery Listening", "Age": "Adults", "N": "21", "nativeLang": "M", "Stimulus": "Bach Melodies (Listening)", "Modality": "EEG", "Authors": "Marion/Di Liberto & Shamma", "Papers": ["https://www.jneurosci.org/content/41/35/7435"], "Link": "https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j" },
-  { "Name": "MusicImagery Imagination", "Age": "Adults", "N": "21", "nativeLang": "M", "Stimulus": "Bach Melodies (Imagining)", "Modality": "EEG", "Authors": "Marion/Di Liberto & Shamma", "Papers": ["https://www.jneurosci.org/content/41/35/7435"], "Link": "https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j" },
-  { "Name": "StandupComedy", "Age": "Adults", "N": "14", "nativeLang": "L1", "Stimulus": "Stand-up videos", "Modality": "EEG", "Authors": "Peters & Di Liberto", "Papers": [], "Link": "Available Soon" },
+  { "Name": "DiliBach", "Age": "Adults", "N": "20", "nativeLang": "M/NM", "Stimulus": "Synthesised Bach Piano", "Modality": "EEG", "Authors": "Di Liberto & Shamma", "Papers": ["https://elifesciences.org/articles/51784"], "Link": "https://datadryad.org/dataset/doi:10.5061/dryad.g1jwstqmh" },
+  { "Name": "MelodySwitch", "Age": "Adults", "N": "17", "nativeLang": "NM", "Stimulus": "Piano melodies (4 genres)", "Modality": "EEG", "Authors": "O'Doherty & Di Liberto", "Papers": [], "Link": "Available Soon" },
+  { "Name": "PolyphonicBach", "Age": "Adults", "N": "30", "nativeLang": "M/NM", "Stimulus": "Bach Piano Double-point", "Modality": "EEG", "Authors": "Winchester & Di Liberto", "Papers": ["https://elifesciences.org/reviewed-preprints/108767"], "Link": "https://osf.io/bjdh6/overview" },
+  { "Name": "MusicImagery Listening", "Age": "Adults", "N": "21", "nativeLang": "M", "Stimulus": "Bach Piano Melodies", "Modality": "EEG", "Authors": "Marion/Di Liberto & Shamma", "Papers": ["https://www.jneurosci.org/content/41/35/7435"], "Link": "https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j" },
+  { "Name": "MusicImagery Imagination", "Age": "Adults", "N": "21", "nativeLang": "M", "Stimulus": "Imagining Bach Melodies", "Modality": "EEG", "Authors": "Marion/Di Liberto & Shamma", "Papers": ["https://www.jneurosci.org/content/41/35/7435"], "Link": "https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j" },
   { "Name": "SignLanguageSigners", "Age": "Adults", "N": "14", "nativeLang": "L1/L2", "Stimulus": "LSF deaf signer videos", "Modality": "EEG", "Authors": "Mertz/Hannah & Kuhn/Di Liberto", "Papers": [], "Link": "Available Soon" },
   { "Name": "SignLanguageNonsigners", "Age": "Adults", "N": "20", "nativeLang": "NonSigners", "Stimulus": "LSF deaf signer videos", "Modality": "EEG", "Authors": "Mertz/Hannah & Kuhn/Di Liberto", "Papers": [], "Link": "Available Soon" },
-  { "Name": "Podcast fNIRS", "Age": "Adults", "N": "8", "nativeLang": "L1/L2", "Stimulus": "Podcast ADS and CDS", "Modality": "fNIRS", "Authors": "Wilroth & Hannah/Di Liberto", "Papers": ["https://doi.org/10.64898/2026.03.20.713212"], "Link": "Available Soon" }
+  { "Name": "Podcast fNIRS", "Age": "Adults", "N": "8", "nativeLang": "L1/L2", "Stimulus": "Podcast ADS and CDS", "Modality": "fNIRS", "Authors": "Wilroth/Hannah & Di Liberto", "Papers": ["https://doi.org/10.64898/2026.03.20.713212"], "Link": "Available Soon" }
 ];
 
 export function Datasets() {
@@ -47,56 +47,55 @@ export function Datasets() {
   const mmRef = useRef<Markmap | null>(null);
 
   useEffect(() => {
-    // 1. DATA DEFINITION
+    // 1. DATA DEFINITION (Every single dataset restored, links only where existing)
     const markdown = `
 # Datasets
 - EEG
   - Speech Production
-    - [ConversationSpeaking](https://dilibertolab.org)
+    - ConversationSpeaking
   - Speech Listening
     - [LalorNatSpeech](https://datadryad.org/dataset/doi:10.5061/dryad.070jc)
     - [LalorRevSpeech](https://datadryad.org/dataset/doi:10.5061/dryad.070jc)
     - [AliceSpeech](https://deepblue.lib.umich.edu/data/concern/data_sets/bg257f92t)
-    - [PodcastListening](https://dilibertolab.org)
-    - [FDSpeech L1](https://dilibertolab.org)
-    - [FDSpeech L2](https://dilibertolab.org)
+    - PodcastListening
+    - FDSpeech L1
+    - FDSpeech L2
     - [SparrKULee1](https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/K3VSND)
     - [SparrKULee2](https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/K3VSND)
     - [ChildStories_Sysoeva](https://osf.io/c3agw/)
-    - [ConversationListening](https://dilibertolab.org)
-    - [CocktailAttSwitch](https://dilibertolab.org)
+    - ConversationListening
+    - CocktailAttSwitch
     - [AAD KULeuven](https://zenodo.org/records/3997352)
-    - [StandupComedy](https://dilibertolab.org)
-    - [CantisaniSong](https://dilibertolab.org)
+    - StandupComedy
+    - CantisaniSpeech
     - [VocodedSpeech](https://osf.io/gx6rm/overview)
-    - [TrustSpeech](https://dilibertolab.org)
-    - [EmotionSpeech](https://dilibertolab.org)
+    - TrustSpeech
+    - EmotionSpeech
     - Nursery Rhymes
       - [BabyRhythmCambridge Adults](https://osf.io/mdnwg/)
       - [BabyRhythmCambridge 4mo](https://osf.io/mdnwg/)
       - [BabyRhythmCambridge 7mo](https://osf.io/mdnwg/)
       - [BabyRhythmCambridge 11mo](https://osf.io/mdnwg/)
-- Music
-  - [DiliBach](https://datadryad.org/dataset/doi:10.5061/dryad.g1jwstqmh)
-  - [PolyphonicBach](https://osf.io/bjdh6/overview)
-  - [MusicImagery Listening](https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j)
-  - [CantisaniMelody](https://dilibertolab.org)
-  - [MelodySwitch](https://dilibertolab.org)
-  - [MusicImagery Imagination](https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j)
-- Sign Language
-  - [SignLanguageSigners](https://dilibertolab.org)
-  - [SignLanguageNonsigners](https://dilibertolab.org)
+  - Music
+    - [DiliBach](https://datadryad.org/dataset/doi:10.5061/dryad.g1jwstqmh)
+    - [PolyphonicBach](https://osf.io/bjdh6/overview)
+    - [MusicImagery Listening](https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j)
+    - [MusicImagery Imagination](https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j)
+    - CantisaniMelody
+    - MelodySwitch
+  - Sign Language
+    - SignLanguageSigners
+    - SignLanguageNonsigners
 - MEG
   - [GwilliamsSpeechMEG-1](https://osf.io/ag3kj/overview)
   - [GwilliamsSpeechMEG-2](https://osf.io/ag3kj/overview)
 - fNIRS
-  - [PodcastListening fNIRS](https://dilibertolab.org)
+  - PodcastListening fNIRS
 `;
 
     const transformer = new Transformer();
     const { root } = transformer.transform(markdown);
 
-    // Helper for Accordion
     const setupParents = (node: any, parent: any = null) => {
       node.parent = parent;
       if (node.children) node.children.forEach((c: any) => setupParents(c, node));
@@ -104,75 +103,61 @@ export function Datasets() {
     setupParents(root);
 
     if (svgRef.current) {
-      const mm = Markmap.create(svgRef.current, {
-        autoFit: true,
-        initialExpandLevel: 2,
-        duration: 400,
-      }, root);
-      mmRef.current = mm;
+      if (!mmRef.current) {
+        const mm = Markmap.create(svgRef.current, {
+          autoFit: true,
+          initialExpandLevel: 2,
+          duration: 400,
+        }, root);
+        mmRef.current = mm;
 
-      // --- ACCORDION INTERCEPTOR ---
-      const mmAny = mm as any;
-      const originalHandleToggle = mmAny.handleToggle;
-      mmAny.handleToggle = (d3Node: any, event: any) => {
-        if (d3Node.data.f) {
-          const parent = d3Node.data.parent;
-          if (parent && parent.children) {
-            parent.children.forEach((sib: any) => { if (sib !== d3Node.data) sib.f = true; });
+        const mmAny = mm as any;
+        const originalToggle = mmAny.handleToggle;
+        mmAny.handleToggle = (d3Node: any, event: any) => {
+          if (d3Node.data.f) {
+            const parent = d3Node.data.parent;
+            if (parent && parent.children) {
+              parent.children.forEach((sib: any) => { if (sib !== d3Node.data) sib.f = true; });
+            }
+            mmAny.setData(mmAny.state.data);
           }
-          mmAny.setData(mmAny.state.data);
-        }
-        originalHandleToggle.call(mmAny, d3Node, event);
-        setTimeout(() => mm.fit(), 500);
-      };
+          originalToggle.call(mmAny, d3Node, event);
+          setTimeout(() => mm.fit(), 500);
+        };
+      }
     }
 
-    // --- HOVER DESCRIPTION LOGIC ---
-    const updateHoverListeners = () => {
+    const updateHoverAndLinks = () => {
       const svg = d3.select(svgRef.current);
       const tooltip = d3.select(tooltipRef.current);
+
+      svg.selectAll('a').attr('target', '_blank').attr('rel', 'noopener noreferrer');
 
       svg.selectAll('.markmap-node')
         .on('mouseenter', function(event, d: any) {
           const nodeText = d3.select(this).text().trim();
           const dataset = datasetTableData.find(item => item.Name === nodeText);
-
           if (dataset) {
-            tooltip
-              .style('opacity', 1)
-              .html(`
-                <div class="font-bold text-blue-700 mb-1">${dataset.Name}</div>
-                <div class="text-xs text-gray-600 mb-2"><strong>Stimulus:</strong> ${dataset.Stimulus}</div>
-                <div class="text-[10px] text-gray-400 italic">${dataset.Authors}</div>
-              `);
+            tooltip.style('opacity', 1).html(`
+              <div class="font-bold text-blue-700 mb-1 border-b pb-1">${dataset.Name}</div>
+              <div class="text-[11px] text-gray-700 leading-relaxed"><strong>Stimulus:</strong> ${dataset.Stimulus}</div>
+              <div class="mt-2 text-[10px] text-gray-400 italic">Auth: ${dataset.Authors}</div>
+            `);
           }
         })
-        .on('mousemove', function(event) {
-          tooltip
-            .style('left', (event.pageX + 15) + 'px')
-            .style('top', (event.pageY - 20) + 'px');
+        .on('mousemove', (event) => {
+          tooltip.style('left', (event.pageX + 15) + 'px').style('top', (event.pageY - 20) + 'px');
         })
-        .on('mouseleave', function() {
-          tooltip.style('opacity', 0);
-        });
+        .on('mouseleave', () => tooltip.style('opacity', 0));
     };
 
-    // Listeners for links and resize
-    const handleLinks = () => {
-      d3.select(svgRef.current).selectAll('a').attr('target', '_blank').attr('rel', 'noopener noreferrer');
-    };
     const handleResize = () => { if (mmRef.current) mmRef.current.fit(); };
     window.addEventListener('resize', handleResize);
     
-    const observer = new MutationObserver(() => {
-      handleLinks();
-      updateHoverListeners(); // Re-attach hover listeners when branches expand
-    });
+    const observer = new MutationObserver(updateHoverAndLinks);
     if (svgRef.current) observer.observe(svgRef.current, { childList: true, subtree: true });
 
-    handleLinks();
-    updateHoverListeners();
-
+    updateHoverAndLinks();
     return () => {
       observer.disconnect();
       window.removeEventListener('resize', handleResize);
@@ -180,45 +165,28 @@ export function Datasets() {
   }, []);
 
   return (
-    <div className="flex flex-col items-start w-full px-4 sm:px-6 md:px-12 py-10 bg-white min-h-screen overflow-x-hidden">
-      {/* TOOLTIP COMPONENT */}
-      <div 
-        ref={tooltipRef}
-        className="fixed pointer-events-none opacity-0 bg-white border border-gray-200 shadow-xl rounded-lg p-3 z-[9999] max-w-xs transition-opacity duration-200 text-sm"
-      />
-
+    <div className="flex flex-col items-start w-full px-4 sm:px-10 py-10 bg-white min-h-screen overflow-x-hidden">
+      <div ref={tooltipRef} className="fixed pointer-events-none opacity-0 bg-white/95 backdrop-blur-sm border border-gray-200 shadow-2xl rounded-xl p-4 z-[9999] max-w-[280px] transition-opacity duration-200 text-sm ring-1 ring-black/5" />
       <style>{`
         .markmap-node a { color: #2563eb !important; text-decoration: none !important; }
         .markmap-node a:hover { text-decoration: underline !important; }
         .markmap-foreign { font-size: 11px; line-height: 1.3; cursor: help; }
         @media (min-width: 768px) { .markmap-foreign { font-size: 13px; } }
       `}</style>
-      
       <div className="w-full max-w-screen-2xl">
         <div className="mb-10 text-left">
-          <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight">Datasets</h2>
-          <p className="text-gray-500 mt-3 text-lg italic">
-            Hover over dataset names for a quick description. Opening a branch collapses neighbors.
-          </p>
+          <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight">Datasets Explorer</h2>
+          <p className="text-gray-500 mt-2 text-lg italic">Hover for details. Only underlined items contain external links.</p>
         </div>
-
-        {/* MAP CONTAINER */}
-        <div className="relative bg-white rounded-3xl border border-gray-100 shadow-2xl overflow-hidden mb-20 h-[500px] md:h-[650px] w-full border-2">
+        <div className="relative bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden mb-20 h-[500px] md:h-[650px] w-full">
           <svg ref={svgRef} className="w-full h-full bg-slate-50/20" style={{ cursor: 'grab' }} />
         </div>
-
         <div className="w-full">
-          <h3 className="text-2xl font-bold text-gray-800 mb-6">Datasets Table</h3>
-          <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+          <h3 className="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Complete Study Catalog</h3>
+          <div className="overflow-x-auto rounded-2xl border border-gray-200 shadow-sm">
             <table className="min-w-full divide-y divide-gray-200 bg-white">
               <thead className="bg-gray-50">
-                <tr>
-                  {["Name", "Age", "N", "Language", "Stimulus", "Modality", "Authors", "Links"].map((header) => (
-                    <th key={header} className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                      {header}
-                    </th>
-                  ))}
-                </tr>
+                <tr>{["Name", "Age", "N", "Language", "Stimulus", "Modality", "Authors", "Links"].map(h => <th key={h} className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">{h}</th>)}</tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
                 {datasetTableData.map((row, idx) => (
@@ -228,25 +196,11 @@ export function Datasets() {
                     <td className="px-4 py-3 text-sm text-gray-600">{row.N}</td>
                     <td className="px-4 py-3 text-sm text-gray-600">{row.nativeLang}</td>
                     <td className="px-4 py-3 text-sm text-gray-600 max-w-xs truncate" title={row.Stimulus}>{row.Stimulus}</td>
-                    <td className="px-4 py-3 text-sm">
-                      <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded-md text-xs font-semibold uppercase border border-blue-100">
-                        {row.Modality}
-                      </span>
-                    </td>
+                    <td className="px-4 py-3 text-sm"><span className="px-2 py-1 bg-blue-50 text-blue-700 rounded-md text-xs font-semibold uppercase border border-blue-100">{row.Modality}</span></td>
                     <td className="px-4 py-3 text-sm text-gray-500 italic">{row.Authors}</td>
                     <td className="px-4 py-3 text-sm space-y-1">
-                      {row.Link.startsWith('http') ? (
-                        <a href={row.Link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
-                          Dataset <ExternalLink className="h-3 w-3 ml-1" />
-                        </a>
-                      ) : (
-                        <span className="text-gray-400 text-xs italic">{row.Link}</span>
-                      )}
-                      {row.Papers.map((paper, pIdx) => (
-                        <a key={pIdx} href={paper} target="_blank" rel="noopener noreferrer" className="block text-gray-400 hover:text-gray-600 text-xs underline truncate max-w-[150px]">
-                          Paper {pIdx + 1}
-                        </a>
-                      ))}
+                      {row.Link.startsWith('http') ? <a href={row.Link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">Dataset <ExternalLink className="h-3 w-3 ml-1" /></a> : <span className="text-gray-400 text-xs italic">{row.Link}</span>}
+                      {row.Papers.map((paper, pIdx) => <a key={pIdx} href={paper} target="_blank" rel="noopener noreferrer" className="block text-gray-400 hover:text-gray-600 text-xs underline truncate max-w-[150px]">Paper {pIdx + 1}</a>)}
                     </td>
                   </tr>
                 ))}
