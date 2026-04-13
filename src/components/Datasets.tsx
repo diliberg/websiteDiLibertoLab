@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
 import { Transformer } from 'markmap-lib';
 import { Markmap } from 'markmap-view';
 import * as d3 from 'd3';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, ChevronUp, ChevronDown, ArrowUpDown, Search, Filter } from 'lucide-react';
 
 const datasetTableData = [
   { "Name": "LalorNatSpeech", "Age": "Adults", "N": "19", "nativeLang": "L1", "Stimulus": "Audiobook recordings", "Modality": "EEG", "Authors": "Broderick/Di Liberto & Lalor", "Papers": ["https://pubmed.ncbi.nlm.nih.gov/29478856/"], "Link": "https://datadryad.org/dataset/doi:10.5061/dryad.070jc" },
@@ -27,8 +27,8 @@ const datasetTableData = [
   { "Name": "ConversationSpeaking", "Age": "Adults", "N": "10", "nativeLang": "L1/L2", "Stimulus": "Live opinion speech", "Modality": "EEG", "Authors": "Chalehchaleh & Di Liberto", "Papers": [], "Link": "Available Soon" },
   { "Name": "CocktailAttSwitch", "Age": "Adults", "N": "24", "nativeLang": "L1", "Stimulus": "TED talks + babble", "Modality": "EEG", "Authors": "Carta & Lopez/Di Liberto", "Papers": ["https://www.biorxiv.org/content/10.1101/2025.07.02.662762v1.abstract"], "Link": "Available Soon" },
   { "Name": "AAD KULeuven", "Age": "Adults", "N": "16", "nativeLang": "L1", "Stimulus": "Dutch short stories", "Modality": "EEG", "Authors": "Das & Francart/Bertrand", "Papers": ["https://iopscience.iop.org/article/10.1088/1741-2560/13/5/056014"], "Link": "https://zenodo.org/records/3997352" },
-  { "Name": "StandupComedy", "Age": "Adults", "N": "14", "nativeLang": "L1", "Stimulus": "Stand-up comedy videos", "Modality": "EEG", "Authors": "Peters & Di Liberto", "Papers": [], "Link": "Available Soon" },
-  { "Name": "CantisaniSpeech", "Age": "Adults", "N": "20", "nativeLang": "L1", "Stimulus": "Natural speech", "Modality": "EEG", "Authors": "Cantisani & Di Liberto/Shamma", "Papers": ["https://hal.science/hal-04529950"], "Link": "Available Soon" },
+  { "Name": "StandupComedy", "Age": "Adults", "N": "14", "nativeLang": "L1", "Stimulus": "Stand-up videos", "Modality": "EEG", "Authors": "Peters & Di Liberto", "Papers": [], "Link": "Available Soon" },
+  { "Name": "CantisaniSpeech", "Age": "Adults", "N": "20", "nativeLang": "L1", "Stimulus": "Recorded natural speech", "Modality": "EEG", "Authors": "Cantisani & Di Liberto/Shamma", "Papers": ["https://hal.science/hal-04529950"], "Link": "Available Soon" },
   { "Name": "CantisaniMelody", "Age": "Adults", "N": "20", "nativeLang": "non-M", "Stimulus": "Hummed speech", "Modality": "EEG", "Authors": "Cantisani & Di Liberto/Shamma", "Papers": ["https://hal.science/hal-04529950"], "Link": "Available Soon" },
   { "Name": "CantisaniSong", "Age": "Adults", "N": "20", "nativeLang": "L1/non-M", "Stimulus": "Sung speech", "Modality": "EEG", "Authors": "Cantisani & Di Liberto/Shamma", "Papers": ["https://hal.science/hal-04529950"], "Link": "Available Soon" },
   { "Name": "DiliBach", "Age": "Adults", "N": "20", "nativeLang": "M/NM", "Stimulus": "Synthesised Bach Piano", "Modality": "EEG", "Authors": "Di Liberto & Shamma", "Papers": ["https://elifesciences.org/articles/51784"], "Link": "https://datadryad.org/dataset/doi:10.5061/dryad.g1jwstqmh" },
@@ -38,7 +38,7 @@ const datasetTableData = [
   { "Name": "MusicImagery Imagination", "Age": "Adults", "N": "21", "nativeLang": "M", "Stimulus": "Imagining Bach Melodies", "Modality": "EEG", "Authors": "Marion/Di Liberto & Shamma", "Papers": ["https://www.jneurosci.org/content/41/35/7435"], "Link": "https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j" },
   { "Name": "SignLanguageSigners", "Age": "Adults", "N": "14", "nativeLang": "L1/L2", "Stimulus": "LSF deaf signer videos", "Modality": "EEG", "Authors": "Mertz/Hannah & Kuhn/Di Liberto", "Papers": [], "Link": "Available Soon" },
   { "Name": "SignLanguageNonsigners", "Age": "Adults", "N": "20", "nativeLang": "NonSigners", "Stimulus": "LSF deaf signer videos", "Modality": "EEG", "Authors": "Mertz/Hannah & Kuhn/Di Liberto", "Papers": [], "Link": "Available Soon" },
-  { "Name": "Podcast fNIRS", "Age": "Adults", "N": "8", "nativeLang": "L1/L2", "Stimulus": "Podcast ADS and CDS", "Modality": "fNIRS", "Authors": "Wilroth/Hannah & Di Liberto", "Papers": ["https://doi.org/10.64898/2026.03.20.713212"], "Link": "Available Soon" }
+  { "Name": "PodcastListening fNIRS", "Age": "Adults", "N": "8", "nativeLang": "L1/L2", "Stimulus": "Podcast ADS and CDS", "Modality": "fNIRS", "Authors": "Wilroth & Hannah/Di Liberto", "Papers": ["https://doi.org/10.64898/2026.03.20.713212"], "Link": "Available Soon" }
 ];
 
 export function Datasets() {
@@ -46,8 +46,61 @@ export function Datasets() {
   const tooltipRef = useRef<HTMLDivElement>(null);
   const mmRef = useRef<Markmap | null>(null);
 
+  // --- FILTER & SORT STATE ---
+  const [searchTerm, setSearchTerm] = useState('');
+  const [modalityFilter, setModalityFilter] = useState('All');
+  const [ageFilter, setAgeFilter] = useState('All');
+  const [sortConfig, setSortConfig] = useState<{ key: string, direction: 'asc' | 'desc' } | null>(null);
+
+  const filteredAndSortedData = useMemo(() => {
+    let result = [...datasetTableData];
+
+    // 1. Filter
+    if (searchTerm) {
+      result = result.filter(item => 
+        item.Name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+        item.Authors.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+    if (modalityFilter !== 'All') {
+      result = result.filter(item => item.Modality === modalityFilter);
+    }
+    if (ageFilter !== 'All') {
+      result = result.filter(item => item.Age.includes(ageFilter));
+    }
+
+    // 2. Sort
+    if (sortConfig !== null) {
+      result.sort((a, b) => {
+        let aVal = a[sortConfig.key as keyof typeof a];
+        let bVal = b[sortConfig.key as keyof typeof b];
+
+        if (sortConfig.key === 'N') {
+          const aN = parseInt(a.N) || 0;
+          const bN = parseInt(b.N) || 0;
+          return sortConfig.direction === 'asc' ? aN - bN : bN - aN;
+        }
+
+        if (String(aVal) < String(bVal)) return sortConfig.direction === 'asc' ? -1 : 1;
+        if (String(aVal) > String(bVal)) return sortConfig.direction === 'asc' ? 1 : -1;
+        return 0;
+      });
+    }
+    return result;
+  }, [searchTerm, modalityFilter, ageFilter, sortConfig]);
+
+  const requestSort = (key: string) => {
+    let direction: 'asc' | 'desc' = 'asc';
+    if (sortConfig && sortConfig.key === key && sortConfig.direction === 'asc') direction = 'desc';
+    setSortConfig({ key, direction });
+  };
+
+  const getSortIcon = (key: string) => {
+    if (!sortConfig || sortConfig.key !== key) return <ArrowUpDown className="h-3 w-3 ml-1 text-gray-300" />;
+    return sortConfig.direction === 'asc' ? <ChevronUp className="h-3 w-3 ml-1 text-blue-600" /> : <ChevronDown className="h-3 w-3 ml-1 text-blue-600" />;
+  };
+
   useEffect(() => {
-    // 1. DATA DEFINITION (Every single dataset restored, links only where existing)
     const markdown = `
 # Datasets
 - EEG
@@ -80,9 +133,9 @@ export function Datasets() {
     - [DiliBach](https://datadryad.org/dataset/doi:10.5061/dryad.g1jwstqmh)
     - [PolyphonicBach](https://osf.io/bjdh6/overview)
     - [MusicImagery Listening](https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j)
-    - [MusicImagery Imagination](https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j)
     - CantisaniMelody
     - MelodySwitch
+    - [MusicImagery Imagination](https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j)
   - Sign Language
     - SignLanguageSigners
     - SignLanguageNonsigners
@@ -104,13 +157,8 @@ export function Datasets() {
 
     if (svgRef.current) {
       if (!mmRef.current) {
-        const mm = Markmap.create(svgRef.current, {
-          autoFit: true,
-          initialExpandLevel: 2,
-          duration: 400,
-        }, root);
+        const mm = Markmap.create(svgRef.current, { autoFit: true, initialExpandLevel: 2, duration: 400 }, root);
         mmRef.current = mm;
-
         const mmAny = mm as any;
         const originalToggle = mmAny.handleToggle;
         mmAny.handleToggle = (d3Node: any, event: any) => {
@@ -130,9 +178,7 @@ export function Datasets() {
     const updateHoverAndLinks = () => {
       const svg = d3.select(svgRef.current);
       const tooltip = d3.select(tooltipRef.current);
-
       svg.selectAll('a').attr('target', '_blank').attr('rel', 'noopener noreferrer');
-
       svg.selectAll('.markmap-node')
         .on('mouseenter', function(event, d: any) {
           const nodeText = d3.select(this).text().trim();
@@ -153,15 +199,10 @@ export function Datasets() {
 
     const handleResize = () => { if (mmRef.current) mmRef.current.fit(); };
     window.addEventListener('resize', handleResize);
-    
     const observer = new MutationObserver(updateHoverAndLinks);
     if (svgRef.current) observer.observe(svgRef.current, { childList: true, subtree: true });
-
     updateHoverAndLinks();
-    return () => {
-      observer.disconnect();
-      window.removeEventListener('resize', handleResize);
-    };
+    return () => { observer.disconnect(); window.removeEventListener('resize', handleResize); };
   }, []);
 
   return (
@@ -175,38 +216,87 @@ export function Datasets() {
       `}</style>
       <div className="w-full max-w-screen-2xl">
         <div className="mb-10 text-left">
-          <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight">Datasets Explorer</h2>
-          <p className="text-gray-500 mt-2 text-lg italic">Hover for details. Only underlined items contain external links.</p>
+          <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight">Datasets</h2>
+          <p className="text-gray-500 mt-2 text-lg italic">For table overview, see below.</p>
         </div>
-        <div className="relative bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden mb-20 h-[500px] md:h-[650px] w-full">
+        <div className="relative bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden mb-20 h-[500px] md:h-[650px] w-full border-2">
           <svg ref={svgRef} className="w-full h-full bg-slate-50/20" style={{ cursor: 'grab' }} />
         </div>
+
+        {/* TABLE CONTROLS */}
+        <div className="w-full mb-8 bg-gray-50 p-6 rounded-2xl border border-gray-200 shadow-sm">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="relative">
+              <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Dataset Tabkle</label>
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+                <input 
+                  type="text" placeholder="Search name or authors..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full pl-10 pr-4 py-2 bg-white border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+                />
+              </div>
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Modality</label>
+              <select value={modalityFilter} onChange={(e) => setModalityFilter(e.target.value)} className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="All">All Modalities</option>
+                <option value="EEG">EEG</option>
+                <option value="MEG">MEG</option>
+                <option value="fNIRS">fNIRS</option>
+              </select>
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Age Group</label>
+              <select value={ageFilter} onChange={(e) => setAgeFilter(e.target.value)} className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="All">All Ages</option>
+                <option value="Adults">Adults</option>
+                <option value="4mo">4mo Infants</option>
+                <option value="7mo">7mo Infants</option>
+                <option value="11mo">11mo Infants</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        {/* DATASET TABLE */}
         <div className="w-full">
-          <h3 className="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Complete Study Catalog</h3>
           <div className="overflow-x-auto rounded-2xl border border-gray-200 shadow-sm">
             <table className="min-w-full divide-y divide-gray-200 bg-white">
               <thead className="bg-gray-50">
-                <tr>{["Name", "Age", "N", "Language", "Stimulus", "Modality", "Authors", "Links"].map(h => <th key={h} className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">{h}</th>)}</tr>
+                <tr>
+                  {[
+                    { label: "Name", key: "Name" }, { label: "Age", key: "Age" }, { label: "N", key: "N" },
+                    { label: "Language", key: "nativeLang" }, { label: "Stimulus", key: "Stimulus" },
+                    { label: "Modality", key: "Modality" }, { label: "Authors", key: "Authors" }, { label: "Links", key: "Link" }
+                  ].map(col => (
+                    <th key={col.key} onClick={() => requestSort(col.key)} className="px-4 py-4 text-left text-[10px] font-bold text-gray-500 uppercase tracking-widest cursor-pointer hover:bg-gray-100 transition-colors">
+                      <div className="flex items-center">{col.label} {getSortIcon(col.key)}</div>
+                    </th>
+                  ))}
+                </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
-                {datasetTableData.map((row, idx) => (
-                  <tr key={idx} className="hover:bg-gray-50 transition-colors">
-                    <td className="px-4 py-3 text-sm font-bold text-gray-900">{row.Name}</td>
-                    <td className="px-4 py-3 text-sm text-gray-600 whitespace-nowrap">{row.Age}</td>
-                    <td className="px-4 py-3 text-sm text-gray-600">{row.N}</td>
-                    <td className="px-4 py-3 text-sm text-gray-600">{row.nativeLang}</td>
-                    <td className="px-4 py-3 text-sm text-gray-600 max-w-xs truncate" title={row.Stimulus}>{row.Stimulus}</td>
-                    <td className="px-4 py-3 text-sm"><span className="px-2 py-1 bg-blue-50 text-blue-700 rounded-md text-xs font-semibold uppercase border border-blue-100">{row.Modality}</span></td>
-                    <td className="px-4 py-3 text-sm text-gray-500 italic">{row.Authors}</td>
-                    <td className="px-4 py-3 text-sm space-y-1">
-                      {row.Link.startsWith('http') ? <a href={row.Link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">Dataset <ExternalLink className="h-3 w-3 ml-1" /></a> : <span className="text-gray-400 text-xs italic">{row.Link}</span>}
-                      {row.Papers.map((paper, pIdx) => <a key={pIdx} href={paper} target="_blank" rel="noopener noreferrer" className="block text-gray-400 hover:text-gray-600 text-xs underline truncate max-w-[150px]">Paper {pIdx + 1}</a>)}
+                {filteredAndSortedData.map((row, idx) => (
+                  <tr key={idx} className="hover:bg-gray-50/80 transition-colors">
+                    <td className="px-4 py-4 text-sm font-bold text-gray-900">{row.Name}</td>
+                    <td className="px-4 py-4 text-xs text-gray-600 whitespace-nowrap">{row.Age}</td>
+                    <td className="px-4 py-4 text-xs text-gray-600">{row.N}</td>
+                    <td className="px-4 py-4 text-xs text-gray-600">{row.nativeLang}</td>
+                    <td className="px-4 py-4 text-xs text-gray-600 max-w-xs truncate" title={row.Stimulus}>{row.Stimulus}</td>
+                    <td className="px-4 py-4 text-xs"><span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-[10px] font-bold uppercase border border-blue-100">{row.Modality}</span></td>
+                    <td className="px-4 py-4 text-xs text-gray-500 italic">{row.Authors}</td>
+                    <td className="px-4 py-4 text-xs space-y-1">
+                      {row.Link.startsWith('http') ? <a href={row.Link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-bold">Dataset <ExternalLink className="h-3 w-3 ml-1" /></a> : <span className="text-gray-400 text-[10px] italic">{row.Link}</span>}
+                      {row.Papers.map((paper, pIdx) => <a key={pIdx} href={paper} target="_blank" rel="noopener noreferrer" className="block text-gray-400 hover:text-gray-600 underline truncate max-w-[120px]">Paper {pIdx + 1}</a>)}
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
+          {filteredAndSortedData.length === 0 && (
+            <div className="text-center py-12 bg-gray-50 rounded-b-2xl border-x border-b border-gray-200 text-gray-400 italic">No datasets match your current filters.</div>
+          )}
         </div>
       </div>
     </div>
