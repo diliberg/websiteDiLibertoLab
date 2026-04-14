@@ -1,6 +1,5 @@
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
-import { Link } from 'react-router-dom'; // Added for internal navigation
 
 type Resource = {
   title: string;
@@ -136,11 +135,11 @@ export function OpenScience() {
           </div>
         ))}
 
-        {/* New section added under the mTRF block */}
+        {/* New section added under the mTRF block using a standard <a> tag */}
         <div className="mt-12">
           <h3 className="text-2xl font-semibold mb-8">
             The Di Liberto-lab has contributed by sharing several standardised neurophysiology datasets 
-            (see <Link to="/datasets" className="text-blue-600 hover:underline">Dataset Explorer</Link>).
+            (see <a href="/datasets" className="text-blue-600 hover:underline">Dataset Explorer</a>).
           </h3>
         </div>
       </div>

@@ -202,11 +202,11 @@ export function Datasets() {
       `}</style>
       <div className="w-full max-w-screen-2xl">
         <div className="mb-10 text-left">
-          <h2 className="text-4xl font-Semibold text-gray-900 tracking-tight">Open Data</h2>
+          <h2 className="text-4xl font-semibold mb-6">Open Data</h2>
           <p className="text-3xl font-semibold mb-8">Dataset Explorer</p>
           <p className="text-gray-500 mt-2 text-lg italic">
-          This is a collection of standardised datasets all in the same data structure <a href="https://cnspworkshop.net/cndFormat.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">(CND)</a> 
-          all compatible with the analysis scripts here <a href="https://github.com/CNSP-Workshop/CNSP-resources" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">(github)</a>.
+          This is a collection of standardised datasets all in the same data structure <a href="https://cnspworkshop.net/cndFormat.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">(CND)</a>
+          , all compatible with the analysis scripts here <a href="https://github.com/CNSP-Workshop/CNSP-resources" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">(GitHub)</a>.
           </p>
         </div>
         <div className="relative bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden mb-20 h-[500px] md:h-[650px] w-full border-2">
