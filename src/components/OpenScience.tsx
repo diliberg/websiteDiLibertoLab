@@ -1,4 +1,3 @@
-import React from 'react';
 import { ExternalLink } from 'lucide-react';
 
 type Resource = {
@@ -135,7 +134,6 @@ export function OpenScience() {
           </div>
         ))}
 
-        {/* New section added under the mTRF block using a standard <a> tag */}
         <div className="mt-12">
           <h3 className="text-2xl font-semibold mb-8">
             The Di Liberto-lab has contributed by sharing several standardised neurophysiology datasets 
