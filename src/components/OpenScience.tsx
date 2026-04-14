@@ -137,7 +137,7 @@ export function OpenScience() {
         <div className="mt-12">
           <h3 className="text-2xl font-semibold mb-8">
             The Di Liberto-lab has contributed by sharing several standardised neurophysiology datasets 
-            (see <a href="/datasets" className="text-blue-600 hover:underline">Dataset Explorer</a>).
+            (see Open Data).
           </h3>
         </div>
       </div>
