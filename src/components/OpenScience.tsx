@@ -1,5 +1,6 @@
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom'; // Added for internal navigation
 
 type Resource = {
   title: string;
@@ -15,54 +16,6 @@ type Resource = {
 };
 
 const resources: Resource[] = [
-  {
-    title: "Nursery rhymes - EEG dataset",
-    description: "Longitudinal datasets with 50 participants, 3 recordings each (at 4, 7, and 11 months of age). Part of the Baby Rhythm Cambridge project (PI: Prof. Usha Goswami)",
-    links: [
-      {
-        text: "https://osf.io/mdnwg/",
-        url: "https://osf.io/mdnwg/"
-      }
-    ],
-    papers: [
-      {
-        text: "Di Liberto, Attaheri et al., and Goswami, Nature Communications, 2023",
-        url: "https://www.nature.com/articles/s41467-023-43490-x"
-      }
-    ]
-  },
-  {
-    title: "Music - EEG dataset",
-    description: "Datasets with 20 participants from the study",
-    links: [
-      {
-        text: "doi:10.5061/dryad.g1jwstqmh",
-        url: "https://datadryad.org/stash/dataset/doi:10.5061/dryad.g1jwstqmh"
-      }
-    ],
-    papers: [
-      {
-        text: "Di Liberto, Pelofi, Bianco, Patel, Mehta, Herrero, de Cheveigné, Shamma and Mesgarani, eLife, 2020",
-        url: "https://elifesciences.org/articles/51784"
-      }
-    ]
-  },
-  {
-    title: "Speech - EEG dataset",
-    description: "A collection of five speech-listening datasets from the study",
-    links: [
-      {
-        text: "https://doi.org/10.5061/dryad.070jc",
-        url: "https://doi.org/10.5061/dryad.070jc"
-      }
-    ],
-    papers: [
-      {
-        text: "Broderick, Andreson, Di Liberto, Crosse and Lalor, Current Biology, 2018",
-        url: "https://doi.org/10.1016/j.cub.2018.01.080"
-      }
-    ]
-  },
   {
     title: "mTRF toolbox",
     description: "A MATLAB toolbox for relating neural signals to continuous stimuli",
@@ -182,6 +135,14 @@ export function OpenScience() {
             </div>
           </div>
         ))}
+
+        {/* New section added under the mTRF block */}
+        <div className="mt-12">
+          <h3 className="text-2xl font-semibold mb-8">
+            The Di Liberto-lab has contributed by sharing several standardised neurophysiology datasets 
+            (see <Link to="/datasets" className="text-blue-600 hover:underline">Dataset Explorer</Link>).
+          </h3>
+        </div>
       </div>
     </div>
   );
