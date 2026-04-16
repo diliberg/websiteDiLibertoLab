@@ -13,8 +13,8 @@ const datasetTableData = [
   { "Name": "*PodcastListening", "Age": "Adults", "N": "20", "nativeLang": "L1", "Stimulus": "Podcast ADS and CDS", "Modality": "EEG", "Authors": "Ip & Di Liberto", "Papers": ["https://www.biorxiv.org/content/10.1101/2025.09.23.674728v1.abstract", "In preparation"], "Link": "Available Soon" },
   { "Name": "*TrustSpeech", "Age": "Adults", "N": "20", "nativeLang": "L1", "Stimulus": "Synthesised speech stories", "Modality": "EEG", "Authors": "Hannah & Di Liberto", "Papers": ["https://doi.org/10.64898/2026.03.11.711118"], "Link": "Available Soon" },
   { "Name": "*EmotionSpeech", "Age": "Adults", "N": "27", "nativeLang": "L1", "Stimulus": "Recorded emotional stories", "Modality": "EEG", "Authors": "Akkaya & Di Liberto", "Papers": ["https://www.biorxiv.org/content/10.1101/2025.09.23.674728v1.abstract", "In preparation"], "Link": "Available Soon" },
-  { "Name": "*FDSpeech L1", "Age": "Adults", "N": "19", "nativeLang": "L1", "Stimulus": "Native directed speech", "Modality": "EEG", "Authors": "Piazza & Martin/Di Liberto", "Papers": ["https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00539/128622/Are-you-talking-to-me-How-the-choice-of-speech"], "Link": "https://osf.io/ba3p4/overview" },
-  { "Name": "*FDSpeech L2", "Age": "Adults", "N": "21", "nativeLang": "L2", "Stimulus": "Foreigner directed speech", "Modality": "EEG", "Authors": "Piazza & Di Liberto/Martin", "Papers": ["https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00539/128622/Are-you-talking-to-me-How-the-choice-of-speech"], "Link": "https://osf.io/ba3p4/overview" },
+  { "Name": "*FDSpeech L1", "Age": "Adults", "N": "19", "nativeLang": "L1", "Stimulus": "Native directed speech", "Modality": "EEG", "Authors": "Piazza & Martin/Di Liberto", "Papers": ["https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00539/128622/Are-you-talking-to-me-How-the-choice-of-speech"], "CNDLink": "https://osf.io/ba3p4/overview" },
+  { "Name": "*FDSpeech L2", "Age": "Adults", "N": "21", "nativeLang": "L2", "Stimulus": "Foreigner directed speech", "Modality": "EEG", "Authors": "Piazza & Di Liberto/Martin", "Papers": ["https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00539/128622/Are-you-talking-to-me-How-the-choice-of-speech"], "CNDLink": "https://osf.io/ba3p4/overview" },
   { "Name": "SparrKULee1", "Age": "Adults", "N": "77", "nativeLang": "L1", "Stimulus": "Dutch/Flemish speech", "Modality": "EEG", "Authors": "Accou/Bollens & Francart", "Papers": [], "Link": "https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/K3VSND", "Download": "https://www.data.cnspworkshop.net/data/SparrKULee1.zip" },
   { "Name": "SparrKULee2", "Age": "Adults", "N": "56", "nativeLang": "L1", "Stimulus": "Dutch/Flemish speech", "Modality": "EEG", "Authors": "Accou/Bollens & Francart", "Papers": [], "Link": "https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/K3VSND", "Download": "https://www.data.cnspworkshop.net/data/SparrKULee2.zip" },
   { "Name": "VocodedSpeech", "Age": "Adults", "N": "13", "nativeLang": "L1", "Stimulus": "Noise-vocoded speech", "Modality": "EEG", "Authors": "Calderon & Lopez Valdes", "Papers": ["https://www.isca-archive.org/interspeech_2023/calderondepalma23_interspeech.pdf"], "Link": "https://osf.io/gx6rm/overview" },
@@ -264,6 +264,15 @@ export function Datasets() {
                       ) : (
                         <span className="text-gray-400 text-[10px] italic">{row.Link}</span>
                       )}
+
+                      {row.CNDLink.startsWith('http') ? (
+                        <a href={row.CNDLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-bold">
+                          Original Dataset (CND)<ExternalLink className="h-3 w-3 ml-1" />
+                        </a>
+                      ) : (
+                        <span className="text-green-600 text-[10px] italic">{row.CNDLink}</span>
+                      )}
+
 
                       {row.Download && (
                         <a href={row.Download} className="flex items-center text-green-600 hover:text-green-800 font-bold">
