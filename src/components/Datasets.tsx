@@ -106,7 +106,7 @@ export function Datasets() {
 # Datasets
 - EEG
   - Speech Production
-    - [*ConversationSpeaking](In preparation)
+    - *ConversationSpeaking
   - Speech Listening
     - [LalorNatSpeech](https://www.data.cnspworkshop.net/data/datasetCND_LalorNatSpeech.zip)
     - [LalorRevSpeech](https://www.data.cnspworkshop.net/data/datasetCND_LalorNatSpeechReverse.zip)
@@ -117,10 +117,10 @@ export function Datasets() {
     - [SparrKULee1](https://www.data.cnspworkshop.net/data/SparrKULee1.zip)
     - [SparrKULee2](https://www.data.cnspworkshop.net/data/SparrKULee2.zip)
     - [ChildStories_Sysoeva](https://osf.io/c3agw/)
-    - [\\*ConversationListening](In preparation)
+    - \\*ConversationListening 
     - [\\*CocktailAttSwitch](https://www.biorxiv.org/content/10.1101/2025.07.02.662762v1.abstract)
     - [AAD KULeuven](https://www.data.cnspworkshop.net/data/AAD_KULeuven.zip)
-    - [\\*StandupComedy](In preparation)
+    - \\*StandupComedy
     - [CantisaniSpeech](https://hal.science/hal-04529950)
     - [VocodedSpeech](https://osf.io/gx6rm/overview)
     - [\\*TrustSpeech](https://doi.org/10.64898/2026.03.11.711118)
@@ -136,10 +136,10 @@ export function Datasets() {
     - [\\*MusicImagery Listening](https://www.data.cnspworkshop.net/data/datasetCND_musicImagery.zip)
     - [\\*MusicImagery Imagination](https://www.data.cnspworkshop.net/data/datasetCND_musicImagery.zip)
     - [CantisaniMelody](https://hal.science/hal-04529950)
-    - [\\*MelodySwitch](In preparation)
+    - \\*MelodySwitch
   - Sign Language
-    - [\\*SignLanguageSigners](In preparation)
-    - [\\*SignLanguageNonsigners](In preparation)
+    - \\*SignLanguageSigners
+    - \\*SignLanguageNonsigners 
 - MEG
   - [GwilliamsSpeechMEG-1](https://osf.io/ag3kj/overview)
   - [GwilliamsSpeechMEG-2](https://osf.io/ag3kj/overview)
@@ -217,7 +217,7 @@ export function Datasets() {
       `}</style>
       <div className="w-full max-w-screen-2xl">
         <div className="mb-10 text-left">
-          <h2 className="text-4xl font-semibold mb-2 text-gray-900">Open Data</h2>
+          <h2 className="text-4xl font-semibold mb-6 text-gray-900">Open Data</h2>
           <p className="text-3xl font-semibold mb-8 text-gray-800">Dataset Explorer</p>
           <p className="text-gray-500 mt-2 text-lg italic">
           This is a collection of standardised datasets all in the same data structure <a href="https://cnspworkshop.net/cndFormat.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">(CND)</a>
@@ -241,8 +241,8 @@ export function Datasets() {
         </div>
 
         <div className="w-full">
-          <h2 className="text-4xl font-bold mb-4 text-gray-900">Study Catalog</h2>
-          <h3 className="text-3xl font-semibold mb-8 text-gray-700">List of datasets, shared by Di Liberto-lab(*) and other teams.</h3>
+          <h2 className="text-3xl font-semibold mb-8 text-gray-800">Dataset List</h2>
+          <h3 className="text-xl font-semibold mb-8 text-gray-700">List of datasets, shared by Di Liberto-lab(*) and other teams.</h3>
           
           <div className="overflow-x-auto rounded-2xl border border-gray-200 shadow-sm">
             <table className="min-w-full divide-y divide-gray-200 bg-white">
@@ -271,7 +271,7 @@ export function Datasets() {
                     <td className="px-4 py-4 text-xs text-gray-500 italic">{row.Authors}</td>
                     <td className="px-4 py-4 text-xs space-y-2">
                       {row.CNDLink && (
-                        <a href={row.CNDLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-bold">
+                        <a href={row.CNDLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-green-600 hover:text-green-800 font-bold">
                           Original Dataset (CND) <ExternalLink className="h-3 w-3 ml-1" />
                         </a>
                       )}
