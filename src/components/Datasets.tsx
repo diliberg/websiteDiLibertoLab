@@ -4,7 +4,6 @@ import { Markmap } from 'markmap-view';
 import * as d3 from 'd3';
 import { ExternalLink, ChevronUp, ChevronDown, ArrowUpDown, Search, Download } from 'lucide-react';
 
-// 1. Define a strict type for your data to satisfy TypeScript
 type Dataset = {
   Name: string;
   Age: string;
@@ -14,9 +13,9 @@ type Dataset = {
   Modality: string;
   Authors: string;
   Papers: string[];
-  Link: string;      // Required string
-  Download?: string;  // Optional
-  CNDLink?: string;   // Optional
+  Link?: string;
+  Download?: string;
+  CNDLink?: string;
 };
 
 const datasetTableData: Dataset[] = [
@@ -28,32 +27,32 @@ const datasetTableData: Dataset[] = [
   { "Name": "*PodcastListening", "Age": "Adults", "N": "20", "nativeLang": "L1", "Stimulus": "Podcast ADS and CDS", "Modality": "EEG", "Authors": "Ip & Di Liberto", "Papers": ["https://www.biorxiv.org/content/10.1101/2025.09.23.674728v1.abstract", "In preparation"], "Link": "Available Soon" },
   { "Name": "*TrustSpeech", "Age": "Adults", "N": "20", "nativeLang": "L1", "Stimulus": "Synthesised speech stories", "Modality": "EEG", "Authors": "Hannah & Di Liberto", "Papers": ["https://doi.org/10.64898/2026.03.11.711118"], "Link": "Available Soon" },
   { "Name": "*EmotionSpeech", "Age": "Adults", "N": "27", "nativeLang": "L1", "Stimulus": "Recorded emotional stories", "Modality": "EEG", "Authors": "Akkaya & Di Liberto", "Papers": ["https://www.biorxiv.org/content/10.1101/2025.09.23.674728v1.abstract", "In preparation"], "Link": "Available Soon" },
-  { "Name": "*FDSpeech L1", "Age": "Adults", "N": "19", "nativeLang": "L1", "Stimulus": "Native directed speech", "Modality": "EEG", "Authors": "Piazza & Martin/Di Liberto", "Papers": ["https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00539/128622/Are-you-talking-to-me-How-the-choice-of-speech"], "Link": "https://osf.io/ba3p4/overview", "CNDLink": "https://osf.io/ba3p4/overview" },
-  { "Name": "*FDSpeech L2", "Age": "Adults", "N": "21", "nativeLang": "L2", "Stimulus": "Foreigner directed speech", "Modality": "EEG", "Authors": "Piazza & Di Liberto/Martin", "Papers": ["https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00539/128622/Are-you-talking-to-me-How-the-choice-of-speech"], "Link": "https://osf.io/ba3p4/overview", "CNDLink": "https://osf.io/ba3p4/overview" },
+  { "Name": "*FDSpeech L1", "Age": "Adults", "N": "19", "nativeLang": "L1", "Stimulus": "Native directed speech", "Modality": "EEG", "Authors": "Piazza & Martin/Di Liberto", "Papers": ["https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00539/128622/Are-you-talking-to-me-How-the-choice-of-speech"], "CNDLink": "https://osf.io/ba3p4/overview" },
+  { "Name": "*FDSpeech L2", "Age": "Adults", "N": "21", "nativeLang": "L2", "Stimulus": "Foreigner directed speech", "Modality": "EEG", "Authors": "Piazza & Di Liberto/Martin", "Papers": ["https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00539/128622/Are-you-talking-to-me-How-the-choice-of-speech"], "CNDLink": "https://osf.io/ba3p4/overview" },
   { "Name": "SparrKULee1", "Age": "Adults", "N": "77", "nativeLang": "L1", "Stimulus": "Dutch/Flemish speech", "Modality": "EEG", "Authors": "Accou/Bollens & Francart", "Papers": [], "Link": "https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/K3VSND", "Download": "https://www.data.cnspworkshop.net/data/SparrKULee1.zip" },
   { "Name": "SparrKULee2", "Age": "Adults", "N": "56", "nativeLang": "L1", "Stimulus": "Dutch/Flemish speech", "Modality": "EEG", "Authors": "Accou/Bollens & Francart", "Papers": [], "Link": "https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/K3VSND", "Download": "https://www.data.cnspworkshop.net/data/SparrKULee2.zip" },
-  { "Name": "VocodedSpeech", "Age": "Adults", "N": "13", "nativeLang": "L1", "Stimulus": "Noise-vocoded speech", "Modality": "EEG", "Authors": "Calderon & Lopez Valdes", "Papers": ["https://www.isca-archive.org/interspeech_2023/calderondepalma23_interspeech.pdf"], "Link": "https://osf.io/gx6rm/overview" },
-  { "Name": "ChildStories_Sysoeva", "Age": "3-8yo", "N": "52", "nativeLang": "L1", "Stimulus": "Russian child directed speech", "Modality": "EEG", "Authors": "Rogachev & Sysoeva", "Papers": ["https://www.sciencedirect.com/science/article/pii/S1389041724000305?via=ihub"], "Link": "https://osf.io/c3agw/" },
-  { "Name": "*BabyRhythmCambridge Adults", "Age": "Adults", "N": "17", "nativeLang": "L1", "Stimulus": "Nursery rhymes", "Modality": "EEG", "Authors": "Attaheri/Di Liberto & Goswami", "Papers": ["https://www.nature.com/articles/s41467-023-43490-x", "https://www.sciencedirect.com/science/article/pii/S105381192100971X?via%3Dihub"], "Link": "https://osf.io/mdnwg/" },
-  { "Name": "*BabyRhythmCambridge 4mo", "Age": "4mo", "N": "47", "nativeLang": "L1", "Stimulus": "Nursery rhymes", "Modality": "EEG", "Authors": "Attaheri/Di Liberto & Goswami", "Papers": ["https://www.nature.com/articles/s41467-023-43490-x", "https://www.sciencedirect.com/science/article/pii/S105381192100971X?via%3Dihub"], "Link": "https://osf.io/mdnwg/" },
-  { "Name": "*BabyRhythmCambridge 7mo", "Age": "7mo", "N": "47", "nativeLang": "L1", "Stimulus": "Nursery rhymes", "Modality": "EEG", "Authors": "Attaheri/Di Liberto & Goswami", "Papers": ["https://www.nature.com/articles/s41467-023-43490-x", "https://www.sciencedirect.com/science/article/pii/S105381192100971X?via%3Dihub"], "Link": "https://osf.io/mdnwg/" },
-  { "Name": "*BabyRhythmCambridge 11mo", "Age": "11mo", "N": "47", "nativeLang": "L1", "Stimulus": "Nursery rhymes", "Modality": "EEG", "Authors": "Attaheri/Di Liberto & Goswami", "Papers": ["https://www.nature.com/articles/s41467-023-43490-x", "https://www.sciencedirect.com/science/article/pii/S105381192100971X?via%3Dihub"], "Link": "https://osf.io/mdnwg/" },
+  { "Name": "VocodedSpeech", "Age": "Adults", "N": "13", "nativeLang": "L1", "Stimulus": "Noise-vocoded speech", "Modality": "EEG", "Authors": "Calderon & Lopez Valdes", "Papers": ["https://www.isca-archive.org/interspeech_2023/calderondepalma23_interspeech.pdf"], "CNDLink": "https://osf.io/gx6rm/overview" },
+  { "Name": "ChildStories_Sysoeva", "Age": "3-8yo", "N": "52", "nativeLang": "L1", "Stimulus": "Russian child directed speech", "Modality": "EEG", "Authors": "Rogachev & Sysoeva", "Papers": ["https://www.sciencedirect.com/science/article/pii/S1389041724000305?via=ihub"], "CNDLink": "https://osf.io/c3agw/" },
+  { "Name": "*BabyRhythmCambridge Adults", "Age": "Adults", "N": "17", "nativeLang": "L1", "Stimulus": "Nursery rhymes", "Modality": "EEG", "Authors": "Attaheri/Di Liberto & Goswami", "Papers": ["https://www.nature.com/articles/s41467-023-43490-x", "https://www.sciencedirect.com/science/article/pii/S105381192100971X?via%3Dihub"], "CNDLink": "https://osf.io/mdnwg/" },
+  { "Name": "*BabyRhythmCambridge 4mo", "Age": "4mo", "N": "47", "nativeLang": "L1", "Stimulus": "Nursery rhymes", "Modality": "EEG", "Authors": "Attaheri/Di Liberto & Goswami", "Papers": ["https://www.nature.com/articles/s41467-023-43490-x", "https://www.sciencedirect.com/science/article/pii/S105381192100971X?via%3Dihub"], "CNDLink": "https://osf.io/mdnwg/" },
+  { "Name": "*BabyRhythmCambridge 7mo", "Age": "7mo", "N": "47", "nativeLang": "L1", "Stimulus": "Nursery rhymes", "Modality": "EEG", "Authors": "Attaheri/Di Liberto & Goswami", "Papers": ["https://www.nature.com/articles/s41467-023-43490-x", "https://www.sciencedirect.com/science/article/pii/S105381192100971X?via%3Dihub"], "CNDLink": "https://osf.io/mdnwg/" },
+  { "Name": "*BabyRhythmCambridge 11mo", "Age": "11mo", "N": "47", "nativeLang": "L1", "Stimulus": "Nursery rhymes", "Modality": "EEG", "Authors": "Attaheri/Di Liberto & Goswami", "Papers": ["https://www.nature.com/articles/s41467-023-43490-x", "https://www.sciencedirect.com/science/article/pii/S105381192100971X?via%3Dihub"], "CNDLink": "https://osf.io/mdnwg/" },
   { "Name": "*ConversationListening", "Age": "Adults", "N": "10", "nativeLang": "L1/L2", "Stimulus": "Synthesised + live opinion", "Modality": "EEG", "Authors": "Chalehchaleh & Di Liberto", "Papers": ["In preparation"], "Link": "Available Soon" },
   { "Name": "*ConversationSpeaking", "Age": "Adults", "N": "10", "nativeLang": "L1/L2", "Stimulus": "Live opinion speech", "Modality": "EEG", "Authors": "Chalehchaleh & Di Liberto", "Papers": ["In preparation"], "Link": "Available Soon" },
   { "Name": "*CocktailAttSwitch", "Age": "Adults", "N": "24", "nativeLang": "L1", "Stimulus": "TED talks + babble", "Modality": "EEG", "Authors": "Carta & Lopez/Di Liberto", "Papers": ["https://www.biorxiv.org/content/10.1101/2025.07.02.662762v1.abstract"], "Link": "Available Soon" },
-  { "Name": "AAD KULeuven", "Age": "Adults", "N": "16", "nativeLang": "L1", "Stimulus": "Dutch short stories", "Modality": "EEG", "Authors": "Das & Francart/Bertrand", "Papers": ["https://iopscience.iop.org/article/10.1088/1741-2560/13/5/056014"], "Link": "https://zenodo.org/records/3997352" },
+  { "Name": "AAD KULeuven", "Age": "Adults", "N": "16", "nativeLang": "L1", "Stimulus": "Dutch short stories", "Modality": "EEG", "Authors": "Das & Francart/Bertrand", "Papers": ["https://iopscience.iop.org/article/10.1088/1741-2560/13/5/056014"], "Link": "https://zenodo.org/records/3997352", "Download": "https://www.data.cnspworkshop.net/data/AAD_KULeuven.zip" },
   { "Name": "*StandupComedy", "Age": "Adults", "N": "14", "nativeLang": "L1", "Stimulus": "Stand-up comedy videos", "Modality": "EEG", "Authors": "Peters & Di Liberto", "Papers": ["In preparation"], "Link": "Available Soon" },
   { "Name": "CantisaniSpeech", "Age": "Adults", "N": "20", "nativeLang": "L1", "Stimulus": "Recorded natural speech", "Modality": "EEG", "Authors": "Cantisani & Di Liberto/Shamma", "Papers": ["https://hal.science/hal-04529950", "https://www.isca-archive.org/interspeech_2023/cantisani23_interspeech.html"], "Link": "Available Soon" },
   { "Name": "CantisaniMelody", "Age": "Adults", "N": "20", "nativeLang": "non-M", "Stimulus": "Hummed speech", "Modality": "EEG", "Authors": "Cantisani & Di Liberto/Shamma", "Papers": ["https://hal.science/hal-04529950", "https://www.isca-archive.org/interspeech_2023/cantisani23_interspeech.html"], "Link": "Available Soon" },
   { "Name": "CantisaniSong", "Age": "Adults", "N": "20", "nativeLang": "L1/non-M", "Stimulus": "Sung speech", "Modality": "EEG", "Authors": "Cantisani & Di Liberto/Shamma", "Papers": ["https://hal.science/hal-04529950", "https://www.isca-archive.org/interspeech_2023/cantisani23_interspeech.html"], "Link": "Available Soon" },
   { "Name": "*DiliBach", "Age": "Adults", "N": "20", "nativeLang": "M/NM", "Stimulus": "Synthesised Bach Piano", "Modality": "EEG", "Authors": "Di Liberto & Shamma", "Papers": ["https://elifesciences.org/articles/51784"], "Link": "https://datadryad.org/dataset/doi:10.5061/dryad.g1jwstqmh", "Download": "https://www.data.cnspworkshop.net/data/datasetCND_diliBach.zip" },
   { "Name": "*MelodySwitch", "Age": "Adults", "N": "17", "nativeLang": "NM", "Stimulus": "Piano melodies (4 genres)", "Modality": "EEG", "Authors": "O'Doherty & Di Liberto", "Papers": ["In preparation"], "Link": "Available Soon" },
-  { "Name": "*PolyphonicBach", "Age": "Adults", "N": "30", "nativeLang": "M/NM", "Stimulus": "Bach Piano Double-point", "Modality": "EEG", "Authors": "Winchester & Di Liberto", "Papers": ["https://elifesciences.org/reviewed-preprints/108767"], "Link": "https://osf.io/bjdh6/overview" },
+  { "Name": "*PolyphonicBach", "Age": "Adults", "N": "30", "nativeLang": "M/NM", "Stimulus": "Bach Piano Double-point", "Modality": "EEG", "Authors": "Winchester & Di Liberto", "Papers": ["https://elifesciences.org/reviewed-preprints/108767"], "CNDLink": "https://osf.io/bjdh6/overview" },
   { "Name": "*MusicImagery Listening", "Age": "Adults", "N": "21", "nativeLang": "M", "Stimulus": "Bach Piano Melodies", "Modality": "EEG", "Authors": "Marion/Di Liberto & Shamma", "Papers": ["https://www.jneurosci.org/content/41/35/7435", "https://www.jneurosci.org/content/41/35/7449"], "Link": "https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j", "Download": "https://www.data.cnspworkshop.net/data/datasetCND_musicImagery.zip" },
   { "Name": "*MusicImagery Imagination", "Age": "Adults", "N": "21", "nativeLang": "M", "Stimulus": "Imagining Bach Melodies", "Modality": "EEG", "Authors": "Marion/Di Liberto & Shamma", "Papers": ["https://www.jneurosci.org/content/41/35/7435", "https://www.jneurosci.org/content/41/35/7449"], "Link": "https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j", "Download": "https://www.data.cnspworkshop.net/data/datasetCND_musicImagery.zip" },
   { "Name": "*SignLanguageSigners", "Age": "Adults", "N": "14", "nativeLang": "L1/L2", "Stimulus": "LSF deaf signer videos", "Modality": "EEG", "Authors": "Mertz/Hannah & Kuhn/Di Liberto", "Papers": ["In preparation"], "Link": "Available Soon" },
   { "Name": "*SignLanguageNonsigners", "Age": "Adults", "N": "20", "nativeLang": "NonSigners", "Stimulus": "LSF deaf signer videos", "Modality": "EEG", "Authors": "Mertz/Hannah & Kuhn/Di Liberto", "Papers": ["In preparation"], "Link": "Available Soon" },
-  { "Name": "*PodcastListening fNIRS", "Age": "Adults", "N": "8", "nativeLang": "L1/L2", "Stimulus": "Podcast ADS and CDS", "Modality": "fNIRS", "Authors": "Wilroth & Hannah/Di Liberto", "Papers": ["https://doi.org/10.64898/2026.03.20.713212"], "Link": "https://osf.io/vsb8h/overview" }
+  { "Name": "*PodcastListening fNIRS", "Age": "Adults", "N": "8", "nativeLang": "L1/L2", "Stimulus": "Podcast ADS and CDS", "Modality": "fNIRS", "Authors": "Wilroth & Hannah/Di Liberto", "Papers": ["https://doi.org/10.64898/2026.03.20.713212"], "CNDLink": "https://osf.io/vsb8h/overview" }
 ];
 
 export function Datasets() {
@@ -102,49 +101,50 @@ export function Datasets() {
   };
 
   useEffect(() => {
+    // UPDATED MARKDOWN: Links now follow priority hierarchy Download > CNDLink > Link > Papers
     const markdown = `
 # Datasets
 - EEG
   - Speech Production
-    - ConversationSpeaking
+    - [*ConversationSpeaking](In preparation)
   - Speech Listening
-    - [LalorNatSpeech](https://datadryad.org/dataset/doi:10.5061/dryad.070jc)
-    - [LalorRevSpeech](https://datadryad.org/dataset/doi:10.5061/dryad.070jc)
-    - [AliceSpeech](https://deepblue.lib.umich.edu/data/concern/data_sets/bg257f92t)
-    - \\*PodcastListening
-    - \\*FDSpeech L1
-    - \\*FDSpeech L2
-    - [SparrKULee1](https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/K3VSND)
-    - [SparrKULee2](https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/K3VSND)
+    - [LalorNatSpeech](https://www.data.cnspworkshop.net/data/datasetCND_LalorNatSpeech.zip)
+    - [LalorRevSpeech](https://www.data.cnspworkshop.net/data/datasetCND_LalorNatSpeechReverse.zip)
+    - [AliceSpeech](https://www.data.cnspworkshop.net/data/AliceSpeech.zip)
+    - [\\*PodcastListening](https://www.biorxiv.org/content/10.1101/2025.09.23.674728v1.abstract)
+    - [\\*FDSpeech L1](https://osf.io/ba3p4/overview)
+    - [\\*FDSpeech L2](https://osf.io/ba3p4/overview)
+    - [SparrKULee1](https://www.data.cnspworkshop.net/data/SparrKULee1.zip)
+    - [SparrKULee2](https://www.data.cnspworkshop.net/data/SparrKULee2.zip)
     - [ChildStories_Sysoeva](https://osf.io/c3agw/)
-    - \\*ConversationListening
-    - \\*CocktailAttSwitch
-    - [AAD KULeuven](https://zenodo.org/records/3997352)
-    - \\*StandupComedy
-    - CantisaniSpeech
+    - [\\*ConversationListening](In preparation)
+    - [\\*CocktailAttSwitch](https://www.biorxiv.org/content/10.1101/2025.07.02.662762v1.abstract)
+    - [AAD KULeuven](https://www.data.cnspworkshop.net/data/AAD_KULeuven.zip)
+    - [\\*StandupComedy](In preparation)
+    - [CantisaniSpeech](https://hal.science/hal-04529950)
     - [VocodedSpeech](https://osf.io/gx6rm/overview)
-    - \\*TrustSpeech
-    - \\*EmotionSpeech
+    - [\\*TrustSpeech](https://doi.org/10.64898/2026.03.11.711118)
+    - [\\*EmotionSpeech](https://www.biorxiv.org/content/10.1101/2025.09.23.674728v1.abstract)
     - Nursery Rhymes
       - [\\*BabyRhythmCambridge Adults](https://osf.io/mdnwg/)
       - [\\*BabyRhythmCambridge 4mo](https://osf.io/mdnwg/)
       - [\\*BabyRhythmCambridge 7mo](https://osf.io/mdnwg/)
       - [\\*BabyRhythmCambridge 11mo](https://osf.io/mdnwg/)
   - Music
-    - [\\*DiliBach](https://datadryad.org/dataset/doi:10.5061/dryad.g1jwstqmh)
+    - [\\*DiliBach](https://www.data.cnspworkshop.net/data/datasetCND_diliBach.zip)
     - [\\*PolyphonicBach](https://osf.io/bjdh6/overview)
-    - [\\*MusicImagery Listening](https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j)
-    - [\\*MusicImagery Imagination](https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j)
-    - CantisaniMelody
-    - \\*MelodySwitch
+    - [\\*MusicImagery Listening](https://www.data.cnspworkshop.net/data/datasetCND_musicImagery.zip)
+    - [\\*MusicImagery Imagination](https://www.data.cnspworkshop.net/data/datasetCND_musicImagery.zip)
+    - [CantisaniMelody](https://hal.science/hal-04529950)
+    - [\\*MelodySwitch](In preparation)
   - Sign Language
-    - \\*SignLanguageSigners
-    - \\*SignLanguageNonsigners  
+    - [\\*SignLanguageSigners](In preparation)
+    - [\\*SignLanguageNonsigners](In preparation)
 - MEG
   - [GwilliamsSpeechMEG-1](https://osf.io/ag3kj/overview)
   - [GwilliamsSpeechMEG-2](https://osf.io/ag3kj/overview)
 - fNIRS
-  - \\*PodcastListening fNIRS
+  - [\\*PodcastListening fNIRS](https://osf.io/vsb8h/overview)
 `;
 
     const transformer = new Transformer();
@@ -241,7 +241,7 @@ export function Datasets() {
         </div>
 
         <div className="w-full">
-          <h2 className="text-4xl font-bold mb-4 text-gray-900">Dataset List</h2>
+          <h2 className="text-4xl font-bold mb-4 text-gray-900">Study Catalog</h2>
           <h3 className="text-3xl font-semibold mb-8 text-gray-700">List of datasets, shared by Di Liberto-lab(*) and other teams.</h3>
           
           <div className="overflow-x-auto rounded-2xl border border-gray-200 shadow-sm">
@@ -270,13 +270,11 @@ export function Datasets() {
                     <td className="px-4 py-4 text-xs"><span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-[10px] font-bold uppercase border border-blue-100">{row.Modality}</span></td>
                     <td className="px-4 py-4 text-xs text-gray-500 italic">{row.Authors}</td>
                     <td className="px-4 py-4 text-xs space-y-2">
-                      {/* Optional CNDLink check with Optional Chaining */}
                       {row.CNDLink && (
-                        <a href={row.CNDLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-green-800 hover:text-blue-800 font-bold">
+                        <a href={row.CNDLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-bold">
                           Original Dataset (CND) <ExternalLink className="h-3 w-3 ml-1" />
                         </a>
                       )}
-                      {/* Secure Link check with Optional Chaining */}
                       {row.Link?.startsWith('http') ? (
                         <a href={row.Link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-bold">
                           Original Dataset <ExternalLink className="h-3 w-3 ml-1" />
