@@ -193,7 +193,7 @@ export function Datasets() {
           }
         })
         .on('mousemove', (event) => {
-          tooltip.style('left', (event.pageX + 15) + 'px').style('top', (event.pageY - 20) + 'px');
+          tooltip.style('left', (event.clientX + 15) + 'px').style('top', (event.clientY - 20) + 'px');
         })
         .on('mouseleave', () => tooltip.style('opacity', 0));
     };
