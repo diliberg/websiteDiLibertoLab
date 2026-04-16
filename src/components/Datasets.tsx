@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useMemo } from 'react';
+import { useEffect, useRef, useState, useMemo } from 'react';
 import { Transformer } from 'markmap-lib';
 import { Markmap } from 'markmap-view';
 import * as d3 from 'd3';
@@ -87,6 +87,7 @@ export function Datasets() {
   };
 
   useEffect(() => {
+    // Escaping asterisks in names so they don't trigger italic markdown parsing
     const markdown = `
 # Datasets
 - EEG
@@ -96,40 +97,40 @@ export function Datasets() {
     - [LalorNatSpeech](https://datadryad.org/dataset/doi:10.5061/dryad.070jc)
     - [LalorRevSpeech](https://datadryad.org/dataset/doi:10.5061/dryad.070jc)
     - [AliceSpeech](https://deepblue.lib.umich.edu/data/concern/data_sets/bg257f92t)
-    - *PodcastListening
-    - *FDSpeech L1
-    - *FDSpeech L2
+    - \\*PodcastListening
+    - \\*FDSpeech L1
+    - \\*FDSpeech L2
     - [SparrKULee1](https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/K3VSND)
     - [SparrKULee2](https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/K3VSND)
     - [ChildStories_Sysoeva](https://osf.io/c3agw/)
-    - *ConversationListening
-    - *CocktailAttSwitch
+    - \\*ConversationListening
+    - \\*CocktailAttSwitch
     - [AAD KULeuven](https://zenodo.org/records/3997352)
-    - *StandupComedy
+    - \\*StandupComedy
     - CantisaniSpeech
     - [VocodedSpeech](https://osf.io/gx6rm/overview)
-    - *TrustSpeech
-    - *EmotionSpeech
+    - \\*TrustSpeech
+    - \\*EmotionSpeech
     - Nursery Rhymes
-      - [*BabyRhythmCambridge Adults](https://osf.io/mdnwg/)
-      - [*BabyRhythmCambridge 4mo](https://osf.io/mdnwg/)
-      - [*BabyRhythmCambridge 7mo](https://osf.io/mdnwg/)
-      - [*BabyRhythmCambridge 11mo](https://osf.io/mdnwg/)
+      - [\\*BabyRhythmCambridge Adults](https://osf.io/mdnwg/)
+      - [\\*BabyRhythmCambridge 4mo](https://osf.io/mdnwg/)
+      - [\\*BabyRhythmCambridge 7mo](https://osf.io/mdnwg/)
+      - [\\*BabyRhythmCambridge 11mo](https://osf.io/mdnwg/)
   - Music
-    - [*DiliBach](https://datadryad.org/dataset/doi:10.5061/dryad.g1jwstqmh)
-    - [*PolyphonicBach](https://osf.io/bjdh6/overview)
-    - [*MusicImagery Listening](https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j)
-    - [*MusicImagery Imagination](https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j)
+    - [\\*DiliBach](https://datadryad.org/dataset/doi:10.5061/dryad.g1jwstqmh)
+    - [\\*PolyphonicBach](https://osf.io/bjdh6/overview)
+    - [\\*MusicImagery Listening](https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j)
+    - [\\*MusicImagery Imagination](https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j)
     - CantisaniMelody
-    - *MelodySwitch
+    - \\*MelodySwitch
   - Sign Language
-    - *SignLanguageSigners
-    - *SignLanguageNonsigners  
+    - \\*SignLanguageSigners
+    - \\*SignLanguageNonsigners  
 - MEG
   - [GwilliamsSpeechMEG-1](https://osf.io/ag3kj/overview)
   - [GwilliamsSpeechMEG-2](https://osf.io/ag3kj/overview)
 - fNIRS
-  - *PodcastListening fNIRS
+  - \\*PodcastListening fNIRS
 `;
 
     const transformer = new Transformer();
@@ -202,11 +203,12 @@ export function Datasets() {
       `}</style>
       <div className="w-full max-w-screen-2xl">
         <div className="mb-10 text-left">
-          <h2 className="text-4xl font-semibold mb-6">Open Data</h2>
+          <h2 className="text-4xl font-semibold mb-2">Open Data</h2>
           <p className="text-3xl font-semibold mb-8">Dataset Explorer</p>
           <p className="text-gray-500 mt-2 text-lg italic">
           This is a collection of standardised datasets all in the same data structure <a href="https://cnspworkshop.net/cndFormat.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">(CND)</a>
-          , all compatible with the analysis scripts here <a href="https://github.com/CNSP-Workshop/CNSP-resources" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">(GitHub)</a>.
+          <br />
+          all compatible with the analysis scripts here <a href="https://github.com/CNSP-Workshop/CNSP-resources" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">(GitHub)</a>.
           </p>
         </div>
         <div className="relative bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden mb-20 h-[500px] md:h-[650px] w-full border-2">
@@ -225,7 +227,10 @@ export function Datasets() {
         </div>
 
         <div className="w-full">
+          {/* New Title Added Below */}
           <h3 className="text-3xl font-semibold mb-8">List of datasets, shared by Di Liberto-lab(*) and other teams.</h3>
+
+          
           <div className="overflow-x-auto rounded-2xl border border-gray-200 shadow-sm">
             <table className="min-w-full divide-y divide-gray-200 bg-white">
               <thead className="bg-gray-50">
@@ -252,7 +257,6 @@ export function Datasets() {
                     <td className="px-4 py-4 text-xs"><span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-[10px] font-bold uppercase border border-blue-100">{row.Modality}</span></td>
                     <td className="px-4 py-4 text-xs text-gray-500 italic">{row.Authors}</td>
                     <td className="px-4 py-4 text-xs space-y-2">
-                      {/* Dataset Link */}
                       {row.Link.startsWith('http') ? (
                         <a href={row.Link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-bold">
                           Original Dataset <ExternalLink className="h-3 w-3 ml-1" />
@@ -261,14 +265,12 @@ export function Datasets() {
                         <span className="text-gray-400 text-[10px] italic">{row.Link}</span>
                       )}
 
-                      {/* Direct Download Link */}
                       {row.Download && (
                         <a href={row.Download} className="flex items-center text-green-600 hover:text-green-800 font-bold">
                           Download CND <Download className="h-3 w-3 ml-1" />
                         </a>
                       )}
 
-                      {/* Paper Links */}
                       <div className="flex flex-col space-y-1">
                         {row.Papers.map((paper, pIdx) => paper.startsWith('http') ? (
                           <a key={pIdx} href={paper} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-600 underline truncate max-w-[120px]">Paper {pIdx + 1}</a>
