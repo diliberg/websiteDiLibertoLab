@@ -4,7 +4,22 @@ import { Markmap } from 'markmap-view';
 import * as d3 from 'd3';
 import { ExternalLink, ChevronUp, ChevronDown, ArrowUpDown, Search, Download } from 'lucide-react';
 
-const datasetTableData = [
+// 1. Define a strict type for your data to satisfy TypeScript
+type Dataset = {
+  Name: string;
+  Age: string;
+  N: string;
+  nativeLang: string;
+  Stimulus: string;
+  Modality: string;
+  Authors: string;
+  Papers: string[];
+  Link: string;      // Required string
+  Download?: string;  // Optional
+  CNDLink?: string;   // Optional
+};
+
+const datasetTableData: Dataset[] = [
   { "Name": "LalorNatSpeech", "Age": "Adults", "N": "19", "nativeLang": "L1", "Stimulus": "Audiobook recordings", "Modality": "EEG", "Authors": "Broderick/Di Liberto & Lalor", "Papers": ["https://pubmed.ncbi.nlm.nih.gov/29478856/", "https://www.sciencedirect.com/science/article/pii/S0960982215010015"], "Link": "https://datadryad.org/dataset/doi:10.5061/dryad.070jc", "Download": "https://www.data.cnspworkshop.net/data/datasetCND_LalorNatSpeech.zip" },
   { "Name": "LalorRevSpeech", "Age": "Adults", "N": "10", "nativeLang": "L1", "Stimulus": "Time-reversed audiobooks", "Modality": "EEG", "Authors": "Broderick/Di Liberto & Lalor", "Papers": ["https://pubmed.ncbi.nlm.nih.gov/29478856/", "https://www.sciencedirect.com/science/article/pii/S0960982215010015"], "Link": "https://datadryad.org/dataset/doi:10.5061/dryad.070jc", "Download": "https://www.data.cnspworkshop.net/data/datasetCND_LalorNatSpeechReverse.zip" },
   { "Name": "AliceSpeech", "Age": "Adults", "N": "20", "nativeLang": "L1", "Stimulus": "Audiobook (slowed 20%)", "Modality": "EEG", "Authors": "Brennan & Hale", "Papers": ["https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0207741"], "Link": "https://deepblue.lib.umich.edu/data/concern/data_sets/bg257f92t", "Download": "https://www.data.cnspworkshop.net/data/AliceSpeech.zip" },
@@ -13,8 +28,8 @@ const datasetTableData = [
   { "Name": "*PodcastListening", "Age": "Adults", "N": "20", "nativeLang": "L1", "Stimulus": "Podcast ADS and CDS", "Modality": "EEG", "Authors": "Ip & Di Liberto", "Papers": ["https://www.biorxiv.org/content/10.1101/2025.09.23.674728v1.abstract", "In preparation"], "Link": "Available Soon" },
   { "Name": "*TrustSpeech", "Age": "Adults", "N": "20", "nativeLang": "L1", "Stimulus": "Synthesised speech stories", "Modality": "EEG", "Authors": "Hannah & Di Liberto", "Papers": ["https://doi.org/10.64898/2026.03.11.711118"], "Link": "Available Soon" },
   { "Name": "*EmotionSpeech", "Age": "Adults", "N": "27", "nativeLang": "L1", "Stimulus": "Recorded emotional stories", "Modality": "EEG", "Authors": "Akkaya & Di Liberto", "Papers": ["https://www.biorxiv.org/content/10.1101/2025.09.23.674728v1.abstract", "In preparation"], "Link": "Available Soon" },
-  { "Name": "*FDSpeech L1", "Age": "Adults", "N": "19", "nativeLang": "L1", "Stimulus": "Native directed speech", "Modality": "EEG", "Authors": "Piazza & Martin/Di Liberto", "Papers": ["https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00539/128622/Are-you-talking-to-me-How-the-choice-of-speech"], "CNDLink": "https://osf.io/ba3p4/overview" },
-  { "Name": "*FDSpeech L2", "Age": "Adults", "N": "21", "nativeLang": "L2", "Stimulus": "Foreigner directed speech", "Modality": "EEG", "Authors": "Piazza & Di Liberto/Martin", "Papers": ["https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00539/128622/Are-you-talking-to-me-How-the-choice-of-speech"], "CNDLink": "https://osf.io/ba3p4/overview" },
+  { "Name": "*FDSpeech L1", "Age": "Adults", "N": "19", "nativeLang": "L1", "Stimulus": "Native directed speech", "Modality": "EEG", "Authors": "Piazza & Martin/Di Liberto", "Papers": ["https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00539/128622/Are-you-talking-to-me-How-the-choice-of-speech"], "Link": "https://osf.io/ba3p4/overview", "CNDLink": "https://osf.io/ba3p4/overview" },
+  { "Name": "*FDSpeech L2", "Age": "Adults", "N": "21", "nativeLang": "L2", "Stimulus": "Foreigner directed speech", "Modality": "EEG", "Authors": "Piazza & Di Liberto/Martin", "Papers": ["https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00539/128622/Are-you-talking-to-me-How-the-choice-of-speech"], "Link": "https://osf.io/ba3p4/overview", "CNDLink": "https://osf.io/ba3p4/overview" },
   { "Name": "SparrKULee1", "Age": "Adults", "N": "77", "nativeLang": "L1", "Stimulus": "Dutch/Flemish speech", "Modality": "EEG", "Authors": "Accou/Bollens & Francart", "Papers": [], "Link": "https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/K3VSND", "Download": "https://www.data.cnspworkshop.net/data/SparrKULee1.zip" },
   { "Name": "SparrKULee2", "Age": "Adults", "N": "56", "nativeLang": "L1", "Stimulus": "Dutch/Flemish speech", "Modality": "EEG", "Authors": "Accou/Bollens & Francart", "Papers": [], "Link": "https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/K3VSND", "Download": "https://www.data.cnspworkshop.net/data/SparrKULee2.zip" },
   { "Name": "VocodedSpeech", "Age": "Adults", "N": "13", "nativeLang": "L1", "Stimulus": "Noise-vocoded speech", "Modality": "EEG", "Authors": "Calderon & Lopez Valdes", "Papers": ["https://www.isca-archive.org/interspeech_2023/calderondepalma23_interspeech.pdf"], "Link": "https://osf.io/gx6rm/overview" },
@@ -60,8 +75,8 @@ export function Datasets() {
     }
     if (sortConfig !== null) {
       result.sort((a, b) => {
-        let aVal = a[sortConfig.key as keyof typeof a];
-        let bVal = b[sortConfig.key as keyof typeof b];
+        let aVal = a[sortConfig.key as keyof Dataset];
+        let bVal = b[sortConfig.key as keyof Dataset];
         if (sortConfig.key === 'N') {
           const aN = parseInt(a.N) || 0;
           const bN = parseInt(b.N) || 0;
@@ -96,40 +111,40 @@ export function Datasets() {
     - [LalorNatSpeech](https://datadryad.org/dataset/doi:10.5061/dryad.070jc)
     - [LalorRevSpeech](https://datadryad.org/dataset/doi:10.5061/dryad.070jc)
     - [AliceSpeech](https://deepblue.lib.umich.edu/data/concern/data_sets/bg257f92t)
-    - *PodcastListening
-    - *FDSpeech L1
-    - *FDSpeech L2
+    - \\*PodcastListening
+    - \\*FDSpeech L1
+    - \\*FDSpeech L2
     - [SparrKULee1](https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/K3VSND)
     - [SparrKULee2](https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/K3VSND)
     - [ChildStories_Sysoeva](https://osf.io/c3agw/)
-    - *ConversationListening
-    - *CocktailAttSwitch
+    - \\*ConversationListening
+    - \\*CocktailAttSwitch
     - [AAD KULeuven](https://zenodo.org/records/3997352)
-    - *StandupComedy
+    - \\*StandupComedy
     - CantisaniSpeech
     - [VocodedSpeech](https://osf.io/gx6rm/overview)
-    - *TrustSpeech
-    - *EmotionSpeech
+    - \\*TrustSpeech
+    - \\*EmotionSpeech
     - Nursery Rhymes
-      - [*BabyRhythmCambridge Adults](https://osf.io/mdnwg/)
-      - [*BabyRhythmCambridge 4mo](https://osf.io/mdnwg/)
-      - [*BabyRhythmCambridge 7mo](https://osf.io/mdnwg/)
-      - [*BabyRhythmCambridge 11mo](https://osf.io/mdnwg/)
+      - [\\*BabyRhythmCambridge Adults](https://osf.io/mdnwg/)
+      - [\\*BabyRhythmCambridge 4mo](https://osf.io/mdnwg/)
+      - [\\*BabyRhythmCambridge 7mo](https://osf.io/mdnwg/)
+      - [\\*BabyRhythmCambridge 11mo](https://osf.io/mdnwg/)
   - Music
-    - [*DiliBach](https://datadryad.org/dataset/doi:10.5061/dryad.g1jwstqmh)
-    - [*PolyphonicBach](https://osf.io/bjdh6/overview)
-    - [*MusicImagery Listening](https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j)
-    - [*MusicImagery Imagination](https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j)
+    - [\\*DiliBach](https://datadryad.org/dataset/doi:10.5061/dryad.g1jwstqmh)
+    - [\\*PolyphonicBach](https://osf.io/bjdh6/overview)
+    - [\\*MusicImagery Listening](https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j)
+    - [\\*MusicImagery Imagination](https://datadryad.org/dataset/doi:10.5061/dryad.dbrv15f0j)
     - CantisaniMelody
-    - *MelodySwitch
+    - \\*MelodySwitch
   - Sign Language
-    - *SignLanguageSigners
-    - *SignLanguageNonsigners  
+    - \\*SignLanguageSigners
+    - \\*SignLanguageNonsigners  
 - MEG
   - [GwilliamsSpeechMEG-1](https://osf.io/ag3kj/overview)
   - [GwilliamsSpeechMEG-2](https://osf.io/ag3kj/overview)
 - fNIRS
-  - *PodcastListening fNIRS
+  - \\*PodcastListening fNIRS
 `;
 
     const transformer = new Transformer();
@@ -202,11 +217,12 @@ export function Datasets() {
       `}</style>
       <div className="w-full max-w-screen-2xl">
         <div className="mb-10 text-left">
-          <h2 className="text-4xl font-semibold mb-6">Open Data</h2>
-          <p className="text-3xl font-semibold mb-8">Dataset Explorer</p>
+          <h2 className="text-4xl font-semibold mb-2 text-gray-900">Open Data</h2>
+          <p className="text-3xl font-semibold mb-8 text-gray-800">Dataset Explorer</p>
           <p className="text-gray-500 mt-2 text-lg italic">
           This is a collection of standardised datasets all in the same data structure <a href="https://cnspworkshop.net/cndFormat.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">(CND)</a>
-          , all compatible with the analysis scripts here <a href="https://github.com/CNSP-Workshop/CNSP-resources" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">(GitHub)</a>.
+          <br />
+          all compatible with the analysis scripts here <a href="https://github.com/CNSP-Workshop/CNSP-resources" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">(GitHub)</a>.
           </p>
         </div>
         <div className="relative bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden mb-20 h-[500px] md:h-[650px] w-full border-2">
@@ -225,7 +241,9 @@ export function Datasets() {
         </div>
 
         <div className="w-full">
-          <h3 className="text-3xl font-semibold mb-8">List of datasets, shared by Di Liberto-lab(*) and other teams.</h3>
+          <h2 className="text-4xl font-bold mb-4 text-gray-900">Dataset List</h2>
+          <h3 className="text-3xl font-semibold mb-8 text-gray-700">List of datasets, shared by Di Liberto-lab(*) and other teams.</h3>
+          
           <div className="overflow-x-auto rounded-2xl border border-gray-200 shadow-sm">
             <table className="min-w-full divide-y divide-gray-200 bg-white">
               <thead className="bg-gray-50">
@@ -252,30 +270,25 @@ export function Datasets() {
                     <td className="px-4 py-4 text-xs"><span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-[10px] font-bold uppercase border border-blue-100">{row.Modality}</span></td>
                     <td className="px-4 py-4 text-xs text-gray-500 italic">{row.Authors}</td>
                     <td className="px-4 py-4 text-xs space-y-2">
-                      {/* NEW: Original Dataset (CND) */}
+                      {/* Optional CNDLink check with Optional Chaining */}
                       {row.CNDLink && (
                         <a href={row.CNDLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-green-800 hover:text-blue-800 font-bold">
                           Original Dataset (CND) <ExternalLink className="h-3 w-3 ml-1" />
                         </a>
                       )}
-                      {/* Dataset Link */}
-                      {row.Link.startsWith('http') ? (
+                      {/* Secure Link check with Optional Chaining */}
+                      {row.Link?.startsWith('http') ? (
                         <a href={row.Link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-bold">
                           Original Dataset <ExternalLink className="h-3 w-3 ml-1" />
                         </a>
                       ) : (
                         <span className="text-gray-400 text-[10px] italic">{row.Link}</span>
                       )}
-                      
-
-                      {/* Direct Download Link */}
                       {row.Download && (
                         <a href={row.Download} className="flex items-center text-green-600 hover:text-green-800 font-bold">
                           Download CND <Download className="h-3 w-3 ml-1" />
                         </a>
                       )}
-
-                      {/* Paper Links */}
                       <div className="flex flex-col space-y-1">
                         {row.Papers.map((paper, pIdx) => paper.startsWith('http') ? (
                           <a key={pIdx} href={paper} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-600 underline truncate max-w-[120px]">Paper {pIdx + 1}</a>
