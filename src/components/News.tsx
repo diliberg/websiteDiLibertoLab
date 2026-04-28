@@ -3,6 +3,12 @@ import { ChevronLeft, ChevronRight, ExternalLink, MapPin } from 'lucide-react';
 
 const newsItems = [
   {
+    date: "April 2026",
+    title: "Joaquín visits the lab",
+    description: "Joaquín Ordoñez from BCBL will join the lab for a three-months visit!",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/Joaquin2026_wide.jpg"
+  },
+  {
     date: "February 2026",
     title: "Simon visits the lab",
     description: "Simon Geirnaert from KU Leuven will join the lab for a three-months visit!",
