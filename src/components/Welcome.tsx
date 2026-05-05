@@ -34,6 +34,26 @@ const slides = [
 
 const newsItems = [
   {
+    date: "May 2026",
+    title: "fNIRS preprint",
+    description: "Please check out our new preprint using fNIRS, co-led by Giovanni and Jaimy, that came about from the CNSP Hackathon (Maastricht, 2025)",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/FNIRS_2025.jpg", 
+    link: "https://www.biorxiv.org/content/10.64898/2026.03.20.713212v1"
+  },
+  {
+    date: "May 2026",
+    title: "Joaquín visits the lab",
+    description: "Joaquín Ordoñez from BCBL will join the lab for a three-months visit!",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/Joaquin2026_wide.jpg"
+  },
+  {
+    date: "May 2026",
+    title: "Jaimy's new preprint",
+    description: "Please check out Jaimy's new preprint on trust in speech tracking!",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/gnome.png", 
+    link: "https://www.biorxiv.org/content/10.64898/2026.03.11.711118v1.abstract"
+  },
+  {
     date: "February 2026",
     title: "Simon visits the lab",
     description: "Simon Geirnaert from KU Leuven will join the lab for a three-months visit!",
@@ -50,26 +70,6 @@ const newsItems = [
     title: "Sara's PhD defence",
     description: "Sara Carta has succesfully defended her PhD thesis on sustained attention and switching. Congratulations!", 
     image: "https://diliberg.github.io/websiteDiLibertoLabImages/defenceSara.jpg"
-  },
-  {
-    date: "September 2025",
-    title: "Emily and Asena's new preprint",
-    description: "Please check out our new preprint on social relevance and cortical speech tracking on BioRxiv", 
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/BioRxiv.png",
-    link: "https://www.biorxiv.org/content/10.1101/2025.09.23.674728v1"
-  },
-  {
-    date: "September 2025", 
-    title: "Martin's new preprint",
-    description: "Martin's new preprint on polyphonic musical perception is available on BioRxiv",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/polyphon.jpg",
-    link: "https://www.biorxiv.org/content/10.1101/2025.08.26.672294v1"
-  },
-  {
-    date: "July 2025", 
-    title: "Giorgio Frego's research visit",
-    description: "Giorgio Frego from the Free University of Bozen-Bolzano joins the lab for a 9-month research visit!",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/2025giorgiof2.jpg"
   }
  ];
 

@@ -35,6 +35,20 @@ const latestPublications: Publication[] = [
 
 const latestPreprints: Publication[] = [
   {
+    title: "Investigating neural speech processing with functional near infrared spectroscopy: considerations for temporal response functions",
+    authors: "J Wilrotha, NS Silva, A Tafakkor, B de Avo Mesquita, EYJ Ip, B Lau, J Hannah and GM Di Liberto",
+    journal: "BioRxiv",
+    year: "in review",
+    link: "https://www.biorxiv.org/content/10.64898/2026.03.20.713212v1.article-info"
+  },
+  {
+    title: "Trust Modulates Speech Entrainment: Enhanced Cortical Tracking for Low-Trust Speakers",
+    authors: "J Hannah, GM Di Liberto",
+    journal: "BioRxiv",
+    year: "in review",
+    link: "https://www.biorxiv.org/content/10.64898/2026.03.11.711118v1.abstract"
+  },
+  {
     title: "Exploring the impact of social relevance on the cortical tracking of speech: viability and temporal response characterisation",
     authors: "EYJ Ip, A Akkaya, MM Winchester, SJ Bishop, BR Cowan, GM Di Liberto",
     journal: "BioRxiv",

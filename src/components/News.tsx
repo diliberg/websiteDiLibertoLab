@@ -3,10 +3,24 @@ import { ChevronLeft, ChevronRight, ExternalLink, MapPin } from 'lucide-react';
 
 const newsItems = [
   {
-    date: "April 2026",
+    date: "May 2026",
+    title: "fNIRS preprint",
+    description: "Please check out our new preprint using fNIRS, co-led by Giovanni and Jaimy, that came about from the CNSP Hackathon (Maastricht, 2025)",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/FNIRS_2025.jpg", 
+    link: "https://www.biorxiv.org/content/10.64898/2026.03.20.713212v1"
+  },
+  {
+    date: "May 2026",
     title: "Joaquín visits the lab",
     description: "Joaquín Ordoñez from BCBL will join the lab for a three-months visit!",
     image: "https://diliberg.github.io/websiteDiLibertoLabImages/Joaquin2026_wide.jpg"
+  },
+  {
+    date: "May 2026",
+    title: "Jaimy's new preprint",
+    description: "Please check out Jaimy's new preprint on trust in speech tracking!",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/gnome.png", 
+    link: "https://www.biorxiv.org/content/10.64898/2026.03.11.711118v1.abstract"
   },
   {
     date: "February 2026",

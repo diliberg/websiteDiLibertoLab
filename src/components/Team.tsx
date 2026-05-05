@@ -34,6 +34,10 @@ const teamMembers = {
       role: "Postdoctoral Researcher",
       description: "Research interests: Cognition, Psycholinguistics",
       keywords: ["Speech interaction", "language", "trust"],
+      publications: [
+        { title: "bioRxiv 2026 (1)", link: "https://www.biorxiv.org/content/10.64898/2026.03.11.711118v1.abstract" },
+        { title: "bioRxiv 2026 (2)", link: "https://www.biorxiv.org/content/10.64898/2026.03.20.713212v1" }
+      ],
       photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Jaimy.jpeg"
     },
     {
@@ -51,7 +55,7 @@ const teamMembers = {
   phd: [
     {
       name: "Amirhossein Chalehchaleh",
-      role: "PhD Student",
+      role: "PhD Candidate",
       keywords: ["Speech perception", "Semantic processing", "Statistical learning"],
       publications: [
         { title: "J Neural Eng, 2024", link: "https://iopscience.iop.org/article/10.1088/1741-2552/ada30a/meta" }
@@ -60,7 +64,7 @@ const teamMembers = {
     },
     {
       name: "Emily Ip",
-      role: "PhD Student",
+      role: "PhD Candidate",
       keywords: ["Speech perception", "Statistical learning", "Perspective taking"],
       publications: [
         { title: "arXiv, 2025", link: "https://arxiv.org/abs/2506.05494" },
@@ -70,19 +74,19 @@ const teamMembers = {
     },
     {
       name: "Martin Winchester",
-      role: "PhD Student",
+      role: "PhD Candidate",
       keywords: ["Speech communication", "Music perception", "EEG", "CNSP"], 
       publications: [{title: "BioRxiv, 2025", link: "https://www.biorxiv.org/content/10.1101/2025.08.26.672294v1"}]
     },
     {
       name: "John O'Doherty",
-      role: "PhD Student",
+      role: "PhD Candidate",
       keywords: ["Music perception", "Music decoding", "Machine learning"],
       photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2022john.jpg"
     },
     {
       name: "Asena Akkaya",
-      role: "PhD Student",
+      role: "PhD Candidate",
       keywords: ["Speech and music processing", "Prosody", "Social anxiety"],
       publications: [
         {title: "BioRxiv, 2025", link: "https://www.biorxiv.org/content/10.1101/2025.09.23.674728v1"}],
@@ -103,6 +107,12 @@ const teamMembers = {
       role: "Postdoctoral Researcher", 
       keywords: ["Signal Processing", "EEG"], 
       photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2026Simon.jpg"
+    },
+    {
+      name: "Joaquín Ordoñez", 
+      role: "Predoctoral Researcher", 
+      keywords: ["Sign Language", "Deafness", "Motion Tracking"], 
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/Joaquin_2026.jpg"
     }
   ],
   dissertation: [
