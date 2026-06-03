@@ -63,7 +63,7 @@ const newsItems = [
     date: "November 2025",
     title: "Giorgio joins the lab",
     description: "Giorgio Piazza has joined the lab with a Marie-Curie fellowship.",
-    image: "https://i1.rgstatic.net/ii/profile.image/947252432474114-1602853987361_Q512/Giorgio-Piazza-2.jpg"
+    image: "https://i1.rgstatic.net/ii/profile.image/11431282128365079-1779096808941_Q128/Giorgio-Piazza-2.jpg"
   },
   {
     date: "November 2025",
