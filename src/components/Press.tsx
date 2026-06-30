@@ -50,7 +50,7 @@ const researchCoverage: ResearchCoverage[] = [
     paperLink: "https://www.jneurosci.org/content/41/35/7449",
     coverage: {
       press: [
-        { name: "The Sunday Times", link: "images/sundaytimesmusicsilence.jpg" },
+        { name: "The Sunday Times", link: "https://diliberg.github.io/websiteDiLibertoLabImages/sundaytimesmusicsilence.jpg" },
         { name: "Inverse", link: "https://www.inverse.com/mind-body/neuroscience-of-imagined-music" },
         { name: "Medical News Today", link: "https://www.medicalnewstoday.com/articles/medical-myths-all-about-dementia#11.-Dementia-is-never-fatal" },
         { name: "CORDIS", link: "https://cordis.europa.eu/article/id/435248-the-brain-alive-with-imagined-music-and-the-sound-of-silence/fr" },
