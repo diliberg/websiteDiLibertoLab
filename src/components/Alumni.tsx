@@ -21,11 +21,20 @@ const teamMembers = {
       role: "PhD Graduate",
       keywords: ["Speech perception", "Selective Attention", "Hearing Impairment"],
       publications: [
-        { title: "bioRxiv, 2025", link: "https://www.biorxiv.org/content/10.1101/2025.07.02.662762v1" },
+        { title: "PLoS Biology, 2026", link: "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3003876" },
         { title: "PLoS One, 2024", link: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0308554" },
         { title: "J Neurosci Methods, 2022", link: "https://www.sciencedirect.com/science/article/pii/S0165027022002916" }
       ],
       photo: "https://diliberg.github.io/websiteDiLibertoLabImages/SaraLabpic.jpeg"
+    },
+    {
+      name: "Amirhossein Chalehchaleh",
+      role: "PhD Graduate",
+      keywords: ["Speech perception", "Semantic processing", "Statistical learning"],
+      publications: [
+        { title: "J Neural Eng, 2024", link: "https://iopscience.iop.org/article/10.1088/1741-2552/ada30a/meta" }
+      ],
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/amir2026.jpeg"
     }
   ],
   alumni2425: [

@@ -50,24 +50,24 @@ const teamMembers = {
         { title: "CNSP2023 talk", link: "https://www.youtube.com/watch?v=lJu9XWgENgA" }
       ],
       photo: "https://i1.rgstatic.net/ii/profile.image/11431282128365079-1779096808941_Q128/Giorgio-Piazza-2.jpg"
-    }
-  ],
-  phd: [
+    },
     {
       name: "Amirhossein Chalehchaleh",
-      role: "PhD Candidate",
+      role: "Postdoctoral Researcher",
       keywords: ["Speech perception", "Semantic processing", "Statistical learning"],
       publications: [
         { title: "J Neural Eng, 2024", link: "https://iopscience.iop.org/article/10.1088/1741-2552/ada30a/meta" }
       ],
-      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/amirPic.jpg"
-    },
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/amir2026.jpeg"
+    }
+  ],
+  phd: [
     {
       name: "Emily Ip",
       role: "PhD Candidate",
       keywords: ["Speech perception", "Statistical learning", "Perspective taking"],
       publications: [
-        { title: "arXiv, 2025", link: "https://arxiv.org/abs/2506.05494" },
+        { title: "EJN, 2026", link: "https://onlinelibrary.wiley.com/doi/full/10.1111/ejn.70496" },
         { title: "BioRxiv, 2025", link: "https://www.biorxiv.org/content/10.1101/2025.09.23.674728v1"}
       ],
       photo: "https://diliberg.github.io/websiteDiLibertoLabImages/M1.jpg"

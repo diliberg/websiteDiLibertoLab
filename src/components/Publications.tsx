@@ -11,10 +11,24 @@ type Publication = {
 
 const latestPublications: Publication[] = [
   {
+    title: "Competing speech streams are simultaneously represented in the human cortex during attention switching",
+    authors: "S Carta, E Aličković, J Zaar, A López Valdés, GM Di Liberto",
+    journal: "PLoS Biol 24(7): e3003876.",
+    year: 2026,
+    link: "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3003876"
+  },
+  {
+    title: "Speech Neurophysiology in Realistic Contexts: Big Hype or Big Leap?",
+    authors: "GM Di Liberto, EYJ Ip",
+    journal: "European Journal of Neuroscience 63 (12), e70496 (2026)",
+    year: 2026,
+    link: "https://iopscience.iop.org/article/10.1088/1741-2552/ada30a/meta"
+  },
+  {
     title: "Are you talking to me? How the choice of speech register impacts listeners' hierarchical encoding of speech",
     authors: "G Piazza, S Carta, E Ip, J Pérez-Navarro, M Kalashnikova, CD Martin, GM Di Liberto",
     journal: "Imaging Neuroscience 3: imag_a_00539.",
-    year: "2025",
+    year: 2025,
     link: "https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00539/128622/Are-you-talking-to-me-How-the-choice-of-speech"
   },
   {

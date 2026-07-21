@@ -3,6 +3,26 @@ import { ChevronLeft, ChevronRight, ExternalLink, MapPin } from 'lucide-react';
 
 const newsItems = [
   {
+    date: "July 2026",
+    title: "Amir's PhD defence",
+    description: "Amirhossein Chalehchaleh has succesfully defended his PhD thesis on methods towards realistic tasks and scenarios. Congratulations!",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/amir_graduation.jpeg"
+  },
+  {
+    date: "July 2026",
+    title: "Sara's new publication",
+    description: "Sara's paper on attention switching has been published in PLOS Biology",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/sara_paper_image.png", 
+    link: "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3003876"
+  },
+  {
+    date: "June 2026",
+    title: "New publication",
+    description: "Emily and Giovanni's paper on speech neurophysiology in realistic contexts has been publised in the European Journal of Neuroscience",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/big_leap.png", 
+    link: "https://onlinelibrary.wiley.com/doi/full/10.1111/ejn.70496"
+  },
+  {
     date: "May 2026",
     title: "fNIRS preprint",
     description: "Please check out our new preprint using fNIRS, co-led by Giovanni and Jaimy, that came about from the CNSP Hackathon (Maastricht, 2025)",

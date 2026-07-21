@@ -34,6 +34,26 @@ const slides = [
 
 const newsItems = [
   {
+    date: "July 2026",
+    title: "Amir's PhD defence",
+    description: "Amirhossein Chalehchaleh has succesfully defended his PhD thesis on methods towards realistic tasks and scenarios. Congratulations!",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/amir_graduation.jpeg"
+  },
+  {
+    date: "July 2026",
+    title: "Sara's new publication",
+    description: "Sara's paper on attention switching has been published in PLoS Biology",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/sara_paper_image.png", 
+    link: "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3003876"
+  },
+  {
+    date: "June 2026",
+    title: "New publication",
+    description: "Emily and Giovanni's paper on speech neurophysiology in realistic contexts has been publised in the European Journal of Neuroscience",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/big_leap.png", 
+    link: "https://onlinelibrary.wiley.com/doi/full/10.1111/ejn.70496"
+  },
+  {
     date: "May 2026",
     title: "fNIRS preprint",
     description: "Please check out our new preprint using fNIRS, co-led by Giovanni and Jaimy, that came about from the CNSP Hackathon (Maastricht, 2025)",
@@ -52,24 +72,6 @@ const newsItems = [
     description: "Please check out Jaimy's new preprint on trust in speech tracking!",
     image: "https://diliberg.github.io/websiteDiLibertoLabImages/gnome.png", 
     link: "https://www.biorxiv.org/content/10.64898/2026.03.11.711118v1.abstract"
-  },
-  {
-    date: "February 2026",
-    title: "Simon visits the lab",
-    description: "Simon Geirnaert from KU Leuven will join the lab for a three-months visit!",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/2026Simoncap.jpg"
-  },
-    {
-    date: "November 2025",
-    title: "Giorgio joins the lab",
-    description: "Giorgio Piazza has joined the lab with a Marie-Curie fellowship.",
-    image: "https://i1.rgstatic.net/ii/profile.image/11431282128365079-1779096808941_Q128/Giorgio-Piazza-2.jpg"
-  },
-  {
-    date: "November 2025",
-    title: "Sara's PhD defence",
-    description: "Sara Carta has succesfully defended her PhD thesis on sustained attention and switching. Congratulations!", 
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/defenceSara.jpg"
   }
  ];
 
