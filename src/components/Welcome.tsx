@@ -77,6 +77,27 @@ const newsItems = [
 
 const nextConferences = [
   {
+    date: "29 September - 2 October 2026",
+    title: "Society for the Neurobiology of Language (SNL), 18th annual meeting",
+    description: "Jaimy, Giorgio, and Emily are presenting their work at the SNL annual meeting in Geneva!",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/snl_logo.png",
+    link: "https://2026.neurolang.org/"
+  },
+  {
+    date: "23-25 August 2026",
+    title: "BIOMAG 2026",
+    description: "Emily will present her work using both EEG and MEG at BIOMAG 2026 in Beijing!",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/biomag_logo.png",
+    link: "https://mm.scimeeting.cn/en/web/index/31426_3081797"
+  },
+  {
+    date: "6-10 July 2026",
+    title: "FENS Forum 2026",
+    description: "Jaimy, Asena and Emily presented their work at the Federation of European Neuroscience Societies 2026!",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/fens_logo.png",
+    link: "https://cnspworkshop.net/workshops.html"
+  },
+  {
     date: "12-14 September 2025",
     title: "CNSP Hackathon",
     description: "We are organising the CNSP hackathon 2025 (satellite of ICAC) in Maastricht!",
