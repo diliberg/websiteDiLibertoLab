@@ -19,7 +19,7 @@ const newsItems = [
     date: "June 2026",
     title: "New publication",
     description: "Emily and Giovanni's paper on speech neurophysiology in realistic contexts has been publised in the European Journal of Neuroscience",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/big_leap.png", 
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/big_leap_updated.png", 
     link: "https://onlinelibrary.wiley.com/doi/full/10.1111/ejn.70496"
   },
   {
