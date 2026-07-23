@@ -37,6 +37,56 @@ const teamMembers = {
       photo: "https://diliberg.github.io/websiteDiLibertoLabImages/amir2026.jpeg"
     }
   ],
+  alumni2526: [
+    {
+      name: "Ignacy Sus", 
+      role: "MCS Student",
+      keywords: ["Speech Production", "EEG"],
+      publications: [
+        { title: "LinkedIn", link: "https://www.linkedin.com/in/ignacy-sus/" }],
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Ignacy.jpg"
+    },
+    {
+      name: "Declan Michael McCabe", 
+      role: "MCS Student",
+      keywords: ["Music Decoding", "Machine Learning", "Audio Perception"],
+      publications: [
+        { title: "LinkedIn", link: "https://www.linkedin.com/in/declan-michael-mccabe/" }],
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Declan.jpg"
+    },
+    {
+      name: "Stephen Komolafe", 
+      role: "MCS Student",
+      keywords: ["Large Language Models","Auditory Cognition","EEG"],
+      publications: [
+        { title: "LinkedIn", link : "http://www.linkedin.com/in/stephen-komolafe-197842263/"},
+        { title: "GitHub", link: "https://github.com/SK-portfolio"}]
+    },
+    {
+      name: "Niall Grogan", 
+      role: "MAI Student", 
+      keywords: ["Machine Learning", "Speech Communication"],
+      publications: [
+      { title: "LinkedIn", link : "https://www.linkedin.com/in/niall-grogan-a17482228/"}],
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Niall.jpg"
+    },
+    {
+      name: "Anna Sawicka", 
+      role: "MCS Student",
+      keywords: ["Speech","EEG","Machine Learning"],
+      publications: [
+        {title: "LinkedIn", link: "https://www.linkedin.com/in/annasawicka/"}],
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Anna.jpg"      
+    },
+    {
+      name: "Tom Gilbride", 
+      role: "MCS Student"
+    },
+    {
+      name: "Maria Mezquita Garcia-Poggio", 
+      role: "MAI Student"
+    }
+  ],
   alumni2425: [
     {
       name: "Meaghan McGoldrick",
@@ -197,6 +247,12 @@ const teamMembers = {
   ],
   visitors: [
     {
+      name: "Simon Geirnaert", 
+      role: "Postdoctoral Researcher", 
+      keywords: ["Signal Processing", "EEG"], 
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2026Simon.jpg"
+    },
+    {
       name: "Giorgio Frego", 
       role: "PhD student", 
       keywords: ["Music decoding", "EEG"], 
@@ -317,6 +373,7 @@ export function Alumni() {
       <TeamSection title="PhD Students" members={teamMembers.pastPhD} />
       <TeamSection title="Visiting Students/Researchers" members={teamMembers.visitors} />
       <TeamSection title="Research Staff" members={teamMembers.pastStaff} />
+      <TeamSection title="Master's/Final year projects (2025-26)" members={teamMembers.alumni2526} />
       <TeamSection title="Master's/Final year projects (2024-25)" members={teamMembers.alumni2425} />
       <TeamSection title="Master's/Final year projects (2023-24)" members={teamMembers.alumni2324} />
       <TeamSection title="Master's/Final year projects (2022-23)" members={teamMembers.alumni2223} />
