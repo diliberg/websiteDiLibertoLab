@@ -99,76 +99,21 @@ const teamMembers = {
       role: "Research Assistant", 
       keywords: ["Sign Language Processing", "Irish Sign Language", "Modality"],
       photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025yannick.jpg"
+    }, 
+    { name: "Sharon Moran", 
+      role: "Research Assistant", 
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/sharon2026.jpg"
     }
   ],
   visitorsCurrent: [
-    {
-      name: "Simon Geirnaert", 
-      role: "Postdoctoral Researcher", 
-      keywords: ["Signal Processing", "EEG"], 
-      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2026Simon.jpg"
-    },
-    {
-      name: "Joaquín Ordoñez", 
-      role: "Predoctoral Researcher", 
-      keywords: ["Sign Language", "Deafness", "Motion Tracking"], 
-      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/Joaquin_2026.jpg"
-    }
+    
   ],
   dissertation: [
-    {
-      name: "Ignacy Sus", 
-      role: "MCS Student",
-      keywords: ["Speech Production", "EEG"],
-      publications: [
-        { title: "LinkedIn", link: "https://www.linkedin.com/in/ignacy-sus/" }],
-      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Ignacy.jpg"
-    },
-    {
-      name: "Declan Michael McCabe", 
-      role: "MCS Student",
-      keywords: ["Music Decoding", "Machine Learning", "Audio Perception"],
-      publications: [
-        { title: "LinkedIn", link: "https://www.linkedin.com/in/declan-michael-mccabe/" }],
-      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Declan.jpg"
-    },
-    {
-      name: "Stephen Komolafe", 
-      role: "MCS Student",
-      keywords: ["Large Language Models","Auditory Cognition","EEG"],
-      publications: [
-        { title: "LinkedIn", link : "http://www.linkedin.com/in/stephen-komolafe-197842263/"},
-        { title: "GitHub", link: "https://github.com/SK-portfolio"}]
-    },
-    {
-      name: "Niall Grogan", 
-      role: "MAI Student", 
-      keywords: ["Machine Learning", "Speech Communication"],
-      publications: [
-      { title: "LinkedIn", link : "https://www.linkedin.com/in/niall-grogan-a17482228/"}],
-      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Niall.jpg"
-    },
-    {
-      name: "Anna Sawicka", 
-      role: "MCS Student",
-      keywords: ["Speech","EEG","Machine Learning"],
-      publications: [
-        {title: "LinkedIn", link: "https://www.linkedin.com/in/annasawicka/"}],
-      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Anna.jpg"      
-    },
     {
       name: "Stevin Joseph Sebastian", 
       role: "MCS Student",
       keywords: ["Music Perception", "Sign Language", "Transformers"],
       photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Stevin.jpg"      
-    },
-    {
-      name: "Tom Gilbride", 
-      role: "MCS Student"
-    },
-    {
-      name: "Maria Mezquita Garcia-Poggio", 
-      role: "MAI Student"
     }
   ]
 };
