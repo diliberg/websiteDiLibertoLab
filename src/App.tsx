@@ -52,7 +52,16 @@ function App() {
       case 'welcome':
         return <Welcome />;
       case 'team':
-        return <Team onViewCV={() => setShowCV(true)} />;
+        // Added onViewAlumni here to update the state
+        return (
+          <Team 
+            onViewCV={() => setShowCV(true)} 
+            onViewAlumni={() => {
+              setActiveSection('alumni');
+              setShowCV(false); // Just to be safe
+            }}
+          />
+        );
       case 'research':
         return <Research />;
       case 'publications':

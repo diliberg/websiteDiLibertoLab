@@ -184,10 +184,18 @@ function TeamSection({ title, members }: { title: string; members: TeamMember[] 
   );
 }
 
-export function Team({ onViewCV }: { onViewCV: () => void }) {
+export function Team({ onViewCV, onViewAlumni }: { onViewCV: () => void, onViewAlumni: () => void }) {
   return (
     <div className="max-w-4xl">
-      <h2 className="text-3xl font-semibold mb-8">Our Team</h2>
+      <div className="mb-8">
+        <h2 className="text-3xl font-semibold mb-2">Our Team</h2>
+        <button
+          onClick={onViewAlumni}
+          className="text-blue-600 hover:text-blue-800 text-sm font-medium hover:underline inline-flex items-center"
+        >
+          See our Alumni →
+        </button>
+      </div>
       
       <div className="mb-12">
         <div className="bg-gray-50 p-8 rounded-lg flex gap-6 items-start">
