@@ -1,6 +1,6 @@
 import React from 'react';
 import { ExternalLink, Globe, Twitter, Cloud } from 'lucide-react';
-import Link from 'next/link';
+
 
 type TeamMember = {
   name: string;
@@ -188,12 +188,7 @@ export function Team({ onViewCV }: { onViewCV: () => void }) {
   return (
     <div className="max-w-4xl">
       <h2 className="text-3xl font-semibold mb-8">Our Team</h2>
-      <Link 
-      href="/Alumni" 
-      className="text-blue-600 hover:underline"
-      >
-      See our Alumni
-      </Link>
+      
       <div className="mb-12">
         <div className="bg-gray-50 p-8 rounded-lg flex gap-6 items-start">
           <img
