@@ -191,7 +191,7 @@ export function Team({ onViewCV, onViewAlumni }: { onViewCV: () => void, onViewA
         <h2 className="text-3xl font-semibold mb-2">Our Team</h2>
         <button
           onClick={onViewAlumni}
-          className="text-blue-600 hover:text-blue-800 text-sm font-medium hover:underline inline-flex items-center"
+          className="text-2xl text-blue-600 hover:text-blue-800 text-sm font-medium hover:underline inline-flex items-center"
         >
           See our Alumni →
         </button>
