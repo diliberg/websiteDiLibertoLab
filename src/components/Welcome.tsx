@@ -175,7 +175,8 @@ const nextConferences = [
   }
 ];
 
-export function Welcome() {
+// Added the prop here
+export function Welcome({ onViewAllNews }: { onViewAllNews?: () => void }) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -253,8 +254,20 @@ export function Welcome() {
         </div>
       </div>
 
-      <div>
-        <h2 className="text-2xl font-semibold mb-6">Latest News</h2>
+      <div className="mb-12">
+        {/* Updated layout to place the button next to the title */}
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-2xl font-semibold">Latest News</h2>
+          {onViewAllNews && (
+            <button
+              onClick={onViewAllNews}
+              className="text-blue-600 hover:text-blue-800 text-sm font-medium hover:underline inline-flex items-center"
+            >
+              See all news →
+            </button>
+          )}
+        </div>
+        
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {newsItems.map((item, index) => (
             <div key={index} className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">

@@ -24,7 +24,6 @@ const menuItems: MenuItem[] = [
   { id: 'alumni', label: 'Alumni' },
   { id: 'research', label: 'Research' },
   { id: 'publications', label: 'Publications' },
-  { id: 'news', label: 'News' },
   { id: 'press', label: 'Press' },
   { id: 'open-science', label: 'Open Science' },
   { id: 'datasets', label: 'Open Data' },
@@ -50,15 +49,22 @@ function App() {
 
     switch (activeSection) {
       case 'welcome':
-        return <Welcome />;
+        // Added onViewAllNews here to route to the News section
+        return (
+          <Welcome 
+            onViewAllNews={() => {
+              setActiveSection('news');
+              setShowCV(false);
+            }} 
+          />
+        );
       case 'team':
-        // Added onViewAlumni here to update the state
         return (
           <Team 
             onViewCV={() => setShowCV(true)} 
             onViewAlumni={() => {
               setActiveSection('alumni');
-              setShowCV(false); // Just to be safe
+              setShowCV(false); 
             }}
           />
         );
@@ -81,7 +87,15 @@ function App() {
       case 'join-us':
         return <JoinUs />;
       default:
-        return <Welcome />;
+        // Also update the default case fallback
+        return (
+          <Welcome 
+            onViewAllNews={() => {
+              setActiveSection('news');
+              setShowCV(false);
+            }} 
+          />
+        );
     }
   };
 
