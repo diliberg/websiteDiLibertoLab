@@ -25,7 +25,6 @@ const menuItems: MenuItem[] = [
   { id: 'publications', label: 'Publications' },
   { id: 'press', label: 'Press' },
   { id: 'open-science', label: 'Open Science' },
-  { id: 'datasets', label: 'Open Data' },
   { id: 'teaching', label: 'Teaching' },
   { id: 'join-us', label: 'Join us' },
 ];
@@ -76,7 +75,14 @@ function App() {
       case 'press':
         return <Press />;
       case 'open-science':
-        return <OpenScience />;
+        return (
+          <OpenScience 
+            onViewDatasets={() => {
+              setActiveSection('datasets');
+              setShowCV(false);
+            }} 
+          />
+        );
       case 'teaching':
         return <Teaching />;
       case 'alumni':

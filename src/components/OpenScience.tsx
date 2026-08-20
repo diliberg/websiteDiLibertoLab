@@ -40,10 +40,20 @@ const resources: Resource[] = [
   }
 ];
 
-export function OpenScience() {
+export function OpenScience({ onViewDatasets }: { onViewDatasets?: () => void }) {
   return (
     <div className="max-w-4xl">
-      <h2 className="text-3xl font-semibold mb-8">Open Science</h2>
+      <div className="flex items-center justify-between mb-8">
+        <h2 className="text-3xl font-semibold">Open Science</h2>
+        {onViewDatasets && (
+          <button
+            onClick={onViewDatasets}
+            className="text-blue-600 hover:text-blue-800 text-sm font-medium hover:underline inline-flex items-center"
+          >
+            See our standardised datasets →
+          </button>
+        )}
+      </div>
       
       <div className="space-y-8">
         <div className="bg-white p-6 rounded-lg shadow-sm">
@@ -80,18 +90,18 @@ export function OpenScience() {
                 href="https://humanbrainmapping.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-blue-600 italic block"
+                className="text-gray-600 hover:text-blue-600 italic block mt-4"
               >
-                John is presenting out latest mTRF-Toolbox tutorials at the Open Science Room of the OHBM conference (Brisbane, Australia; June 2025).                 
+                John is presenting out latest mTRF-Toolbox tutorials at the Open Science Room of the OHBM conference (Brisbane, Australia; June 2025).                
               </a>
 
               <a
                 href="https://www.youtube.com/watch?v=Sj1txAtvMiA"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-blue-600 italic block"
+                className="text-gray-600 hover:text-blue-600 italic block mt-4"
               >
-                Giovanni talked about some of our open science work (CNSP) at the CogHear conference (Maryland, USA; June 2025). Check out the videorecording here.                 
+                Giovanni talked about some of our open science work (CNSP) at the CogHear conference (Maryland, USA; June 2025). Check out the videorecording here.                
               </a>
             </div>
           </div>
