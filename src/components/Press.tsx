@@ -1,12 +1,12 @@
 import React from 'react';
-import { ExternalLink, Music, Brain, Radio, Tv, Podcast, Newspaper, GraduationCap } from 'lucide-react';
+import { ExternalLink, Music, Brain, AudioWaveform, Radio, Tv, Podcast, Newspaper, GraduationCap } from 'lucide-react';
 
 type MediaCoverage = {
   press: Array<{ name: string; link: string; }>;
   university: Array<{ name: string; link: string; }>;
-  radio: Array<{ name: string; link: string; }>;
-  tv: Array<{ name: string; link: string; }>;
-  podcasts: Array<{ name: string; link: string; }>;
+  radio?: Array<{ name: string; link: string; }>;
+  tv?: Array<{ name: string; link: string; }>;
+  podcasts?: Array<{ name: string; link: string; }>;
 };
 
 type ResearchCoverage = {
@@ -16,6 +16,27 @@ type ResearchCoverage = {
 };
 
 const researchCoverage: ResearchCoverage[] = [
+   {
+    title: "Carta, Aličković, Zaar, López Valdés, Di Liberto, PLoS Biology, 'Competing speech streams are simultaneously represented in the human cortex during attention switching', 2026",
+    paperLink: "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3003876",
+    coverage: {
+      press: [
+        { name: "Neurosciencenews.com", link: "https://neurosciencenews.com/auditory-multitasking-eeg-dual-tracking-conversations-31064/" },
+        { name: "Eurekalert.org", link: "https://www.eurekalert.org/news-releases/1135518"},
+        { name: "Medicalxpress.com", link: "https://medicalxpress.com/news/2026-07-kinda-people-track-conversation.html?src_id=alt" },
+        { name: "Miragenews.com", link: "https://www.miragenews.com/trinity-study-people-track-multiple-1711573/" },
+        { name: "Spektrum.de (Deutsch)", link: "https://www.spektrum.de/news/aufmerksamkeit-kann-das-gehirn-zwei-gespraechen-parallel-folgen/2334053" },
+        { name: "Deutschlandfunknova.de (Deutsch)", link: "https://www.deutschlandfunknova.de/nachrichten/zuhoeren-gehirn-kann-zweigleisig-fahren" }, 
+        { name: "Infobae.com (Español)", link: "https://www.infobae.com/america/ciencia-america/2026/07/19/como-el-cerebro-puede-seguir-dos-conversaciones-a-la-vez-segun-la-ciencia/" },
+        { name: "Jandan.net (中文)", link: "https://jandan.net/p/123298/" }, 
+        { name: "Descopera.ro (Română)", link: "https://www.descopera.ro/stiinta/21106863-un-studiu-arata-ca-oamenii-pot-urmari-mai-multe-conversatii-simultan" },
+        { name: "Scientas.nl (Nederlands)", link: "https://scientias.nl/je-brein-kan-stiekem-twee-gesprekken-tegelijk-volgen-al-is-het-maar-voor-even/" }
+      ],
+      university: [
+        { name: "Trinity College Dublin", link: "https://www.tcd.ie/news_events/top-stories/featured/new-trinity-research-shows-people-can-track-more-than-one-conversation-at-once/" }
+      ]
+    }
+  },
   {
     title: "Di Liberto, Attaheri et al., Nature Communications, 'Emergence of the cortical encoding of phonetic features in the first year of life', 2023",
     paperLink: "https://www.nature.com/articles/s41467-023-43490-x",
@@ -144,6 +165,8 @@ export function Press() {
             <div className="flex items-start gap-4">
               <div className="flex-shrink-0 p-3 bg-blue-50 rounded-full">
                 {index === 0 ? (
+                  <AudioWaveform className="h-6 w-6 text-blue-600" />
+                ) : index === 1 ? (
                   <Brain className="h-6 w-6 text-blue-600" />
                 ) : (
                   <Music className="h-6 w-6 text-blue-600" />
@@ -165,9 +188,9 @@ export function Press() {
                 <div className="space-y-4">
                   <CoverageSection title="Press coverage includes" items={coverage.coverage.press} icon={Newspaper} />
                   <CoverageSection title="University press" items={coverage.coverage.university} icon={GraduationCap} />
-                  <CoverageSection title="Radio coverage" items={coverage.coverage.radio} icon={Radio} />
-                  <CoverageSection title="TV coverage" items={coverage.coverage.tv} icon={Tv} />
-                  <CoverageSection title="Podcasts" items={coverage.coverage.podcasts} icon={Podcast} />
+                  <CoverageSection title="Radio coverage" items={coverage.coverage.radio || []} icon={Radio} />
+                  <CoverageSection title="TV coverage" items={coverage.coverage.tv || []} icon={Tv} />
+                  <CoverageSection title="Podcasts" items={coverage.coverage.podcasts || []} icon={Podcast} />
                 </div>
               </div>
             </div>

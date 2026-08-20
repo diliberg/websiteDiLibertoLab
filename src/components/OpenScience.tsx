@@ -49,7 +49,7 @@ export function OpenScience({ onViewDatasets }: { onViewDatasets?: () => void })
           <button
             onClick={onViewDatasets}
             // Made the link larger (text-lg) and bolder (font-semibold)
-            className="text-blue-600 hover:text-blue-800 text-lg font-semibold hover:underline inline-flex items-center transition-colors"
+            className="text-blue-600 hover:text-blue-800 text-3xl font-semibold hover:underline inline-flex items-center transition-colors text-left"
           >
             See our standardised datasets →
           </button>

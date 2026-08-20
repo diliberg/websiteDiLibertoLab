@@ -261,7 +261,7 @@ export function Welcome({ onViewAllNews }: { onViewAllNews?: () => void }) {
           {onViewAllNews && (
             <button
               onClick={onViewAllNews}
-              className="text-2xl text-blue-600 hover:text-blue-800 text-sm font-medium hover:underline inline-flex items-center"
+              className="text-blue-600 hover:text-blue-800 text-2xl font-semibold hover:underline inline-flex items-center"
             >
               See all news →
             </button>
