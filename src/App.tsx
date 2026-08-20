@@ -21,7 +21,6 @@ type MenuItem = {
 const menuItems: MenuItem[] = [
   { id: 'welcome', label: 'Welcome' },
   { id: 'team', label: 'Team' },
-  { id: 'alumni', label: 'Alumni' },
   { id: 'research', label: 'Research' },
   { id: 'publications', label: 'Publications' },
   { id: 'press', label: 'Press' },
