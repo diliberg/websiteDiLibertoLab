@@ -1,9 +1,9 @@
 import React from 'react';
-import { ExternalLink, Music, Brain, AudioWaveform, Radio, Tv, Podcast, Newspaper, GraduationCap } from 'lucide-react';
+import { ExternalLink, Music, Brain, Activity, Radio, Tv, Podcast, Newspaper, GraduationCap, LucideIcon } from 'lucide-react';
 
 type MediaCoverage = {
-  press: Array<{ name: string; link: string; }>;
-  university: Array<{ name: string; link: string; }>;
+  press?: Array<{ name: string; link: string; }>;
+  university?: Array<{ name: string; link: string; }>;
   radio?: Array<{ name: string; link: string; }>;
   tv?: Array<{ name: string; link: string; }>;
   podcasts?: Array<{ name: string; link: string; }>;
@@ -16,13 +16,13 @@ type ResearchCoverage = {
 };
 
 const researchCoverage: ResearchCoverage[] = [
-   {
+  {
     title: "Carta, Aličković, Zaar, López Valdés, Di Liberto, PLoS Biology, 'Competing speech streams are simultaneously represented in the human cortex during attention switching', 2026",
     paperLink: "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3003876",
     coverage: {
       press: [
         { name: "Neurosciencenews.com", link: "https://neurosciencenews.com/auditory-multitasking-eeg-dual-tracking-conversations-31064/" },
-        { name: "Eurekalert.org", link: "https://www.eurekalert.org/news-releases/1135518"},
+        { name: "Eurekalert.org", link: "https://www.eurekalert.org/news-releases/1135518" },
         { name: "Medicalxpress.com", link: "https://medicalxpress.com/news/2026-07-kinda-people-track-conversation.html?src_id=alt" },
         { name: "Miragenews.com", link: "https://www.miragenews.com/trinity-study-people-track-multiple-1711573/" },
         { name: "Spektrum.de (Deutsch)", link: "https://www.spektrum.de/news/aufmerksamkeit-kann-das-gehirn-zwei-gespraechen-parallel-folgen/2334053" },
@@ -71,6 +71,7 @@ const researchCoverage: ResearchCoverage[] = [
     paperLink: "https://www.jneurosci.org/content/41/35/7449",
     coverage: {
       press: [
+        { name: "Horizon", link: "https://projects.research-and-innovation.ec.europa.eu/en/horizon-magazine/what-music-reveals-about-human-brain" },
         { name: "The Sunday Times", link: "https://diliberg.github.io/websiteDiLibertoLabImages/sundaytimesmusicsilence.jpg" },
         { name: "Inverse", link: "https://www.inverse.com/mind-body/neuroscience-of-imagined-music" },
         { name: "Medical News Today", link: "https://www.medicalnewstoday.com/articles/medical-myths-all-about-dementia#11.-Dementia-is-never-fatal" },
@@ -124,12 +125,16 @@ const otherMedia = [
   }
 ];
 
-function CoverageSection({ title, items, icon: Icon }: { 
+function CoverageSection({ 
+  title, 
+  items, 
+  icon: Icon 
+}: { 
   title: string; 
-  items: Array<{ name: string; link: string; }>;
-  icon: React.ComponentType<any>;
+  items?: Array<{ name: string; link: string; }>;
+  icon: LucideIcon;
 }) {
-  if (!items?.length) return null;
+  if (!items || items.length === 0) return null;
   
   return (
     <div className="mb-4">
@@ -165,7 +170,7 @@ export function Press() {
             <div className="flex items-start gap-4">
               <div className="flex-shrink-0 p-3 bg-blue-50 rounded-full">
                 {index === 0 ? (
-                  <AudioWaveform className="h-6 w-6 text-blue-600" />
+                  <Activity className="h-6 w-6 text-blue-600" />
                 ) : index === 1 ? (
                   <Brain className="h-6 w-6 text-blue-600" />
                 ) : (
@@ -188,9 +193,9 @@ export function Press() {
                 <div className="space-y-4">
                   <CoverageSection title="Press coverage includes" items={coverage.coverage.press} icon={Newspaper} />
                   <CoverageSection title="University press" items={coverage.coverage.university} icon={GraduationCap} />
-                  <CoverageSection title="Radio coverage" items={coverage.coverage.radio || []} icon={Radio} />
-                  <CoverageSection title="TV coverage" items={coverage.coverage.tv || []} icon={Tv} />
-                  <CoverageSection title="Podcasts" items={coverage.coverage.podcasts || []} icon={Podcast} />
+                  <CoverageSection title="Radio coverage" items={coverage.coverage.radio} icon={Radio} />
+                  <CoverageSection title="TV coverage" items={coverage.coverage.tv} icon={Tv} />
+                  <CoverageSection title="Podcasts" items={coverage.coverage.podcasts} icon={Podcast} />
                 </div>
               </div>
             </div>

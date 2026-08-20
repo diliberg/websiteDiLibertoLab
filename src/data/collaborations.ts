@@ -92,10 +92,15 @@ export const collaborations = [
 ];
 
 export const fundingLogos = [
+    {
+    name: "European Union",
+    logo: "https://marie-sklodowska-curie-actions.ec.europa.eu/themes/contrib/oe_theme/dist/ec/images/logo/positive/logo-ec--en.svg",
+    link: "https://marie-sklodowska-curie-actions.ec.europa.eu/"
+  },
   {
-    name: "Irish Research Council",
-    logo: "https://diliberg.github.io/websiteDiLibertoLabImages/ircLogo.png",
-    link: "https://research.ie/"
+    name: "Taighde Éireann - Research Ireland",
+    logo: "https://media.researchireland.ie/wp-content/uploads/2026/01/Research_Ireland_RGB_logo_black-e1770415535287.jpg",
+    link: "https://www.researchireland.ie/"
   },
   {
     name: "Demant Foundation",
@@ -104,7 +109,7 @@ export const fundingLogos = [
   },
   {
     name: "Fidelity FCAT",
-    logo: "https://www.fcatalyst.com/bin-public/060_www_fidelity_com/external_fcat/images/07.28.22FCAT_LogoLockup_LG_transparent.png",
+    logo: "https://yt3.googleusercontent.com/gw8fUM_0frxKTtNZD56xJSOGPtDsxR8vhiizj64RXHW6fRmGP8Vo7FA2SYQrSZFM3AKmvq_J=s900-c-k-c0x00ffffff-no-rj",
     link: "https://www.fcatalyst.com/overview"
   },
   {
