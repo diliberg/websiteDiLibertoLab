@@ -43,12 +43,13 @@ const resources: Resource[] = [
 export function OpenScience({ onViewDatasets }: { onViewDatasets?: () => void }) {
   return (
     <div className="max-w-4xl">
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
         <h2 className="text-3xl font-semibold">Open Science</h2>
         {onViewDatasets && (
           <button
             onClick={onViewDatasets}
-            className="text-blue-600 hover:text-blue-800 text-sm font-medium hover:underline inline-flex items-center"
+            // Made the link larger (text-lg) and bolder (font-semibold)
+            className="text-blue-600 hover:text-blue-800 text-lg font-semibold hover:underline inline-flex items-center transition-colors"
           >
             See our standardised datasets →
           </button>
@@ -143,13 +144,6 @@ export function OpenScience({ onViewDatasets }: { onViewDatasets?: () => void })
             </div>
           </div>
         ))}
-
-        <div className="mt-12">
-          <h3 className="text-2xl font-semibold mb-8">
-            The Di Liberto-lab has contributed by sharing several standardised neurophysiology datasets 
-            (see Open Data).
-          </h3>
-        </div>
       </div>
     </div>
   );
