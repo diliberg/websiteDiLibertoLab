@@ -21,6 +21,7 @@ const researchCoverage: ResearchCoverage[] = [
     paperLink: "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3003876",
     coverage: {
       press: [
+        { name: "Irishtimes.com", link: "https://www.irishtimes.com/science/2026/07/16/the-secret-to-successful-eavesdropping-trinity-college-study-shows-how-we-do-it/" },
         { name: "Neurosciencenews.com", link: "https://neurosciencenews.com/auditory-multitasking-eeg-dual-tracking-conversations-31064/" },
         { name: "Eurekalert.org", link: "https://www.eurekalert.org/news-releases/1135518" },
         { name: "Medicalxpress.com", link: "https://medicalxpress.com/news/2026-07-kinda-people-track-conversation.html?src_id=alt" },

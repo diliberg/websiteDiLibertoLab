@@ -3,6 +3,19 @@ import { ChevronLeft, ChevronRight, ExternalLink, MapPin } from 'lucide-react';
 
 const newsItems = [
   {
+    date: "August 2026",
+    title: "Sharon and Noelle join the lab!",
+    description: "Sharon Moran and Noelle Law have joined the Di Liberto-lab as research assistants on our new projects with ARC-HUB and Fidelity.",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/sharon_and_noelle2026.jpg"
+  },
+  {
+    date: "July 2026",
+    title: "Horizon publication",
+    description: "Our work on the NEUME project has been featured in a recent article in Horizon Magazine!",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/horizon_logo.jpg",
+    link: "https://projects.research-and-innovation.ec.europa.eu/en/horizon-magazine/what-music-reveals-about-human-brain"
+  },
+  {
     date: "July 2026",
     title: "Amir's PhD defence",
     description: "Amirhossein Chalehchaleh has succesfully defended his PhD thesis on methods towards realistic tasks and scenarios. Congratulations!",

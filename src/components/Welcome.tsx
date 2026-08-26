@@ -34,6 +34,19 @@ const slides = [
 
 const newsItems = [
   {
+    date: "August 2026",
+    title: "Sharon and Noelle join the lab!",
+    description: "Sharon Moran and Noelle Law have joined the Di Liberto-lab as research assistants on our new projects with ARC-HUB and Fidelity.",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/sharon_and_noelle2026.jpg"
+  },
+  {
+    date: "July 2026",
+    title: "Horizon publication",
+    description: "Our work on the NEUME project has been featured in a recent article in Horizon Magazine!",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/horizon_logo.jpg",
+    link: "https://projects.research-and-innovation.ec.europa.eu/en/horizon-magazine/what-music-reveals-about-human-brain"
+  },
+  {
     date: "July 2026",
     title: "Amir's PhD defence",
     description: "Amirhossein Chalehchaleh has succesfully defended his PhD thesis on methods towards realistic tasks and scenarios. Congratulations!",
@@ -59,19 +72,6 @@ const newsItems = [
     description: "Please check out our new preprint using fNIRS, co-led by Giovanni and Jaimy, that came about from the CNSP Hackathon (Maastricht, 2025)",
     image: "https://diliberg.github.io/websiteDiLibertoLabImages/FNIRS_2025.jpg", 
     link: "https://www.biorxiv.org/content/10.64898/2026.03.20.713212v1"
-  },
-  {
-    date: "May 2026",
-    title: "Joaquín visits the lab",
-    description: "Joaquín Ordoñez from BCBL will join the lab for a three-months visit!",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/Joaquin2026_wide.jpg"
-  },
-  {
-    date: "May 2026",
-    title: "Jaimy's new preprint",
-    description: "Please check out Jaimy's new preprint on trust in speech tracking!",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/gnome.png", 
-    link: "https://www.biorxiv.org/content/10.64898/2026.03.11.711118v1.abstract"
   }
  ];
 

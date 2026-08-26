@@ -104,7 +104,12 @@ const teamMembers = {
     { name: "Sharon Moran", 
       role: "Research Assistant", 
       photo: "https://diliberg.github.io/websiteDiLibertoLabImages/sharon2026.jpg"
-    }
+    },
+    { name: "Noelle Law", 
+      role: "Research Assistant", 
+      keywords: ["Machine Learning", "Trust", "Multimodal Metric Design"],
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2026Noelle.jpeg"
+    },
   ],
   visitorsCurrent: [
     
