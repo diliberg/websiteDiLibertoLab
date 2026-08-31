@@ -138,3 +138,15 @@ export const fundingLogos = [
     link: "https://www.tcd.ie/Neuroscience/"
   },
 ];
+export const researchhighlights = [
+    {
+    name: "Arc-Hub",
+    logo: "https://diliberg.github.io/websiteDiLibertoLabImages/arc_hub.jpg",
+    link: "https://diliberto-lab.github.io/ARC-Hub-listening-study/"
+  },
+  {
+    name: "prodaptive",
+    logo: "https://marie-sklodowska-curie-actions.ec.europa.eu/themes/contrib/oe_theme/dist/ec/images/logo/positive/logo-ec--en.svg",
+    link: "#prodaptive"
+  }
+];
