@@ -1,30 +1,28 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 import { researchAreas } from '../data/research';
-import { collaborations, fundingLogos } from '../data/collaborations';
+import { collaborations, fundingLogos, researchhighlights } from '../data/collaborations';
 import type { ResearchArea } from '../types/research';
 
-function ResearchAreaCard({ area, expanded, onToggle }: { 
-  area: ResearchArea; 
+interface ResearchAreaCardProps {
+  area: ResearchArea;
   expanded: boolean;
   onToggle: () => void;
-}) {
+}
+
+function ResearchAreaCard({ area, expanded, onToggle }: ResearchAreaCardProps) {
   const Icon = area.icon;
-  
   return (
-    <div 
+    <div
       className={`bg-white rounded-lg shadow-sm transition-all duration-300 ${
         expanded ? 'ring-2 ring-blue-500 shadow-lg' : 'hover:shadow-md'
       }`}
       style={{
-        backgroundImage: `url("${area.bgPattern}")`,
+        backgroundImage: area.bgPattern ? `url("${area.bgPattern}")` : 'none',
         backgroundRepeat: 'repeat'
       }}
     >
-      <button
-        onClick={onToggle}
-        className="w-full p-4 md:p-6 text-left"
-      >
+      <button onClick={onToggle} className="w-full p-4 md:p-6 text-left">
         <div className="flex items-center gap-3 md:gap-4">
           <div className="p-2 md:p-3 bg-white bg-opacity-50 rounded-full">
             <Icon className="h-4 w-4 md:h-6 md:w-6 text-blue-600" />
@@ -36,117 +34,54 @@ function ResearchAreaCard({ area, expanded, onToggle }: {
             <ChevronDown className="h-4 w-4 md:h-5 md:w-5 text-gray-500 ml-auto" />
           )}
         </div>
-        <p className="text-gray-600 hidden md:block">{area.description}</p>
+        <p className="text-gray-600 hidden md:block mt-2">{area.description}</p>
       </button>
     </div>
   );
 }
 
-function ExpandedContent({ area, isTransitioning }: { 
-  area: ResearchArea;
-  isTransitioning: boolean;
-}) {
-  return (
-    <div className="bg-white rounded-lg shadow-lg p-8 mt-8">
-      <h3 className="text-2xl font-semibold mb-6">{area.title}</h3>
-      
-      <div className="space-y-12">
-        {area.keyStudies.map((study, index) => (
-          <div key={index} className="border-b last:border-b-0 pb-8 last:pb-0">
-            <div className="lg:flex gap-8 items-start">
-              <div className="lg:w-1/2 mb-6 lg:mb-0">
-                {study.image && (
-                  <div className="relative aspect-[2/1] rounded-lg overflow-hidden bg-gray-100">
-                    {!isTransitioning && (
-                      <img 
-                        src={study.image} 
-                        alt={study.title}
-                        className="w-full h-full object-cover transition-opacity duration-300"
-                      />
-                    )}
-                  </div>
-                )}
-                
-                {study.publications && (
-                  <div className="mt-6">
-                    <h5 className="font-medium text-gray-700 mb-3">Related Publications</h5>
-                    <div className="space-y-2">
-                      {study.publications.map((pub, idx) => (
-                        <a
-                          key={idx}
-                          href={pub.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-blue-600 hover:text-blue-800"
-                        >
-                          <ExternalLink className="h-4 w-4 flex-shrink-0" />
-                          <span>{pub.title}</span>
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-              
-              <div className="lg:w-1/2">
-                <h4 className="text-xl font-semibold mb-4">{study.title}</h4>
-                <p className="text-gray-600">{study.description}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+interface FundingSectionProps {
+  onSectionChange?: (sectionId: string) => void;
 }
 
-function CollaborationCard({ collaboration }: { 
-  collaboration: typeof collaborations[0]
-}) {
-  return (
-    <a
-      href={collaboration.website}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-all group hover:bg-gray-50"
-    >
-      <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
-        {collaboration.name}
-      </h3>
-      <p className="text-gray-600 text-sm mt-1">
-        {collaboration.institution}
-      </p>
-      <div className="flex items-center gap-1 text-blue-600 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-        <span>Visit website</span>
-        <ExternalLink className="h-3 w-3" />
-      </div>
-    </a>
-  );
-}
-
-function FundingSection() {
+function FundingSection({ onSectionChange }: FundingSectionProps) {
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-      {fundingLogos.map((funder) => (
-        <a
-          key={funder.name}
-          href={funder.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
-        >
-          <img
-            src={funder.logo}
-            alt={funder.name}
-            className="max-h-16 w-auto"
-          />
-        </a>
-      ))}
+      {fundingLogos.map((funder) => {
+        const isInternal = funder.link.startsWith('#');
+        const sectionId = isInternal ? funder.link.substring(1) : '';
+
+        return (
+          <a
+            key={funder.name}
+            href={funder.link}
+            target={isInternal ? '_self' : '_blank'}
+            rel="noopener noreferrer"
+            onClick={(e) => {
+              if (isInternal && onSectionChange) {
+                e.preventDefault();
+                onSectionChange(sectionId);
+              }
+            }}
+            className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
+          >
+            <img
+              src={funder.logo}
+              alt={funder.name}
+              className="max-h-16 w-auto object-contain"
+            />
+          </a>
+        );
+      })}
     </div>
   );
 }
 
-export function Research() {
+export interface ResearchProps {
+  onSectionChange?: (sectionId: string) => void;
+}
+
+export function Research({ onSectionChange }: ResearchProps) {
   const [expandedArea, setExpandedArea] = useState<string | null>(null);
   const [contentHeight, setContentHeight] = useState<number>(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -156,10 +91,9 @@ export function Research() {
   useEffect(() => {
     if (expandedArea) {
       setIsTransitioning(true);
-      // Reset transition state after content is loaded
       const timer = setTimeout(() => {
         setIsTransitioning(false);
-      }, 500); // Match the duration of the scroll animation
+      }, 500);
       return () => clearTimeout(timer);
     }
   }, [expandedArea]);
@@ -167,48 +101,58 @@ export function Research() {
   useEffect(() => {
     if (expandedContentRef.current && expandedArea) {
       setContentHeight(expandedContentRef.current.scrollHeight);
-      
-      setTimeout(() => {
-        if (expandedWrapperRef.current) {
-          const yOffset = -20;
-          const y = expandedWrapperRef.current.getBoundingClientRect().top + 
-                   window.pageYOffset + yOffset;
-          
-          const startPosition = window.pageYOffset;
-          const distance = y - startPosition;
-          const duration = 500;
-          const startTime = performance.now();
-
-          function easeInOutCubic(t: number): number {
-            return t < 0.5
-              ? 4 * t * t * t
-              : 1 - Math.pow(-2 * t + 2, 3) / 2;
-          }
-
-          function scrollAnimation(currentTime: number) {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            
-            const easedProgress = easeInOutCubic(progress);
-            window.scrollTo(0, startPosition + distance * easedProgress);
-
-            if (progress < 1) {
-              requestAnimationFrame(scrollAnimation);
-            }
-          }
-
-          requestAnimationFrame(scrollAnimation);
-        }
-      }, 50);
-    } else {
-      setContentHeight(0);
     }
   }, [expandedArea]);
 
   return (
-    <div className="max-w-6xl">
+    <div className="max-w-6xl mx-auto px-4 py-8">
+      {/* Research Highlights Section at the Top */}
+      <section className="mb-12 border-b border-gray-100 pb-10">
+        <h2 className="text-3xl font-bold mb-6 text-gray-900">Research Highlights</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl">
+          {researchhighlights && researchhighlights.map((highlight) => {
+            const isInternal = highlight.link.startsWith('#');
+            const sectionId = isInternal ? highlight.link.substring(1) : '';
+
+            return (
+              <a
+                key={highlight.name}
+                href={highlight.link}
+                target={isInternal ? '_self' : '_blank'}
+                rel="noopener noreferrer"
+                onClick={(e) => {
+                  if (isInternal && onSectionChange) {
+                    e.preventDefault();
+                    onSectionChange(sectionId);
+                  }
+                }}
+                className="flex items-center gap-4 p-5 bg-gradient-to-r from-blue-50/40 to-indigo-50/40 hover:from-blue-50 hover:to-indigo-50 border border-blue-100/50 hover:border-blue-200/80 rounded-xl transition-all duration-300 shadow-sm hover:shadow-md group"
+              >
+                <div className="flex-shrink-0 w-16 h-16 bg-white rounded-lg p-2 border border-gray-100 flex items-center justify-center">
+                  <img
+                    src={highlight.logo}
+                    alt={highlight.name}
+                    className="max-h-12 max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <span className="block text-lg font-bold text-gray-800 group-hover:text-blue-700 transition-colors truncate">
+                    {highlight.name}
+                  </span>
+                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-blue-600 mt-0.5">
+                    {isInternal ? 'View Project Subpage' : 'External Website'}
+                    <ExternalLink className="h-3 w-3" />
+                  </span>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Research Areas Section */}
       <section className="mb-12">
-        <h2 className="text-3xl font-semibold mb-8">Research Areas</h2>
+        <h2 className="text-3xl font-bold mb-8 text-gray-900">Research Areas</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {researchAreas.map((area) => (
             <ResearchAreaCard
@@ -221,40 +165,69 @@ export function Research() {
         </div>
       </section>
 
-      <div 
+      {/* Expanded Research Area Content Panel with Smooth Transition */}
+      <div
         ref={expandedWrapperRef}
-        className="transition-all duration-500 ease-in-out overflow-hidden"
-        style={{ height: contentHeight ? `${contentHeight}px` : '0px' }}
+        style={{
+          height: expandedArea ? `${contentHeight}px` : '0px',
+          transition: 'height 500ms ease-in-out',
+        }}
+        className="overflow-hidden mb-12"
       >
-        <div ref={expandedContentRef}>
+        <div ref={expandedContentRef} className="p-6 bg-blue-50/50 rounded-xl border border-blue-100">
           {expandedArea && (
-            <ExpandedContent 
-              area={researchAreas.find(area => area.id === expandedArea)!}
-              isTransitioning={isTransitioning}
-            />
+            <div>
+              {researchAreas.find((a) => a.id === expandedArea)?.details ? (
+                <div className="prose max-w-none text-gray-700">
+                  <p className="font-semibold text-lg text-blue-900 mb-2">
+                    {researchAreas.find((a) => a.id === expandedArea)?.title}
+                  </p>
+                  <p className="whitespace-pre-wrap">
+                    {researchAreas.find((a) => a.id === expandedArea)?.details}
+                  </p>
+                </div>
+              ) : (
+                <div className="text-gray-700">
+                  <p className="font-semibold text-lg text-blue-900 mb-2">
+                    {researchAreas.find((a) => a.id === expandedArea)?.title}
+                  </p>
+                  <p>{researchAreas.find((a) => a.id === expandedArea)?.description}</p>
+                </div>
+              )}
+            </div>
           )}
         </div>
       </div>
 
-      <div 
-        className={`transition-all duration-500 ${
-          expandedArea ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100'
-        }`}
-      >
-        <section className="mb-12">
-          <h2 className="text-3xl font-semibold mb-8">Main Collaborators</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {collaborations.map((collaboration, index) => (
-              <CollaborationCard key={index} collaboration={collaboration} />
-            ))}
-          </div>
-        </section>
+      {/* Collaborations Section */}
+      <section className="mb-12">
+        <h2 className="text-3xl font-bold mb-8 text-gray-900">Collaborations</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {collaborations.map((collab) => (
+            <a
+              key={collab.name}
+              href={collab.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-4 bg-gray-50 hover:bg-gray-100 border border-gray-100 rounded-lg transition-colors flex justify-between items-center group"
+            >
+              <div>
+                <div className="font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">
+                  {collab.name}
+                </div>
+                <div className="text-sm text-gray-500">{collab.institution}</div>
+              </div>
+              <ExternalLink className="h-4 w-4 text-gray-400 group-hover:text-blue-500 transition-colors flex-shrink-0" />
+            </a>
+          ))}
+        </div>
+      </section>
 
-        <section>
-          <h2 className="text-3xl font-semibold mb-8">Funding & Support</h2>
-          <FundingSection />
-        </section>
-      </div>
+      {/* Funding & Sponsors Section */}
+      <section className="mb-12">
+        <h2 className="text-3xl font-bold mb-8 text-gray-900">Funding & Sponsors</h2>
+        <FundingSection onSectionChange={onSectionChange} />
+      </section>
     </div>
   );
 }
