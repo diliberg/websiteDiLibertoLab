@@ -1,4 +1,23 @@
-export const collaborations = [
+export interface Collaboration {
+  name: string;
+  institution: string;
+  website: string;
+}
+
+export interface FunderLogo {
+  name: string;
+  logo: string;
+  link: string;
+}
+
+export interface ResearchHighlight {
+  name: string;
+  logo: string;
+  link: string;
+}
+
+// 1. Individual Academic Collaborators
+export const collaborations: Collaboration[] = [
   {
     name: "Prof. Edmund Lalor",
     institution: "University of Rochester",
@@ -23,7 +42,7 @@ export const collaborations = [
     name: "Prof. Nima Mesgarani",
     institution: "Columbia University",
     website: "http://nima.ee.columbia.edu/"
-  }, 
+  },
   {
     name: "Dr. Mick Crosse",
     institution: "Segotia and Trinity College Dublin",
@@ -91,16 +110,17 @@ export const collaborations = [
   }
 ];
 
-export const fundingLogos = [
-    {
+// 2. Funding & Sponsors (Featuring updated Prodaptive entry)
+export const fundingLogos: FunderLogo[] = [
+  {
     name: "European Union",
     logo: "https://marie-sklodowska-curie-actions.ec.europa.eu/themes/contrib/oe_theme/dist/ec/images/logo/positive/logo-ec--en.svg",
     link: "https://marie-sklodowska-curie-actions.ec.europa.eu/"
   },
   {
-    name: "Taighde Éireann - Research Ireland",
-    logo: "https://media.researchireland.ie/wp-content/uploads/2026/01/Research_Ireland_RGB_logo_black-e1770415535287.jpg",
-    link: "https://www.researchireland.ie/"
+    name: "Prodaptive",
+    logo: "https://marie-sklodowska-curie-actions.ec.europa.eu/themes/contrib/oe_theme/dist/ec/images/logo/positive/logo-ec--en.svg",
+    link: "#prodaptive"
   },
   {
     name: "Demant Foundation",
@@ -136,5 +156,19 @@ export const fundingLogos = [
     name: "TCIN",
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVjZIqf5H75kVb35X5gOMDLWmw6zP0urMPrg&s",
     link: "https://www.tcd.ie/Neuroscience/"
+  }
+];
+
+// 3. Research Highlights (Displayed at the top of Research page)
+export const researchhighlights: ResearchHighlight[] = [
+  {
+    name: "ARC-HUB",
+    logo: "https://marie-sklodowska-curie-actions.ec.europa.eu/themes/contrib/oe_theme/dist/ec/images/logo/positive/logo-ec--en.svg",
+    link: "https://diliberg.github.io/websiteDiLibertoLabImages/arc_hub.jpg"
   },
+  {
+    name: "Prodaptive",
+    logo: "https://marie-sklodowska-curie-actions.ec.europa.eu/themes/contrib/oe_theme/dist/ec/images/logo/positive/logo-ec--en.svg",
+    link: "#prodaptive"
+  }
 ];
