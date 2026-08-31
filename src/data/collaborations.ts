@@ -118,19 +118,19 @@ export const fundingLogos: FunderLogo[] = [
     link: "https://marie-sklodowska-curie-actions.ec.europa.eu/"
   },
   {
-    name: "Prodaptive",
-    logo: "https://marie-sklodowska-curie-actions.ec.europa.eu/themes/contrib/oe_theme/dist/ec/images/logo/positive/logo-ec--en.svg",
-    link: "#prodaptive"
+    name: "Taighde Éireann - Research Ireland",
+    logo: "https://media.researchireland.ie/wp-content/uploads/2026/01/Research_Ireland_RGB_logo_black-e1770415535287.jpg",
+    link: "https://www.researchireland.ie/"
   },
   {
     name: "Demant Foundation",
     logo: "https://diliberg.github.io/websiteDiLibertoLabImages/wdf.png",
-    link: "https://www.demant.com/about/foundation"
+    link: "https://www.demant.com/"
   },
   {
     name: "Fidelity FCAT",
     logo: "https://yt3.googleusercontent.com/gw8fUM_0frxKTtNZD56xJSOGPtDsxR8vhiizj64RXHW6fRmGP8Vo7FA2SYQrSZFM3AKmvq_J=s900-c-k-c0x00ffffff-no-rj",
-    link: "https://www.fcatalyst.com/overview"
+    link: "https://www.fcatalyst.com/"
   },
   {
     name: "MathWorks",
