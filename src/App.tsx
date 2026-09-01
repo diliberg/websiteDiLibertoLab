@@ -86,6 +86,8 @@ function App() {
         );
       case 'teaching':
         return <Teaching />;
+      case 'prodaptive':
+        return <Prodaptive />;
       case 'alumni':
         return <Alumni />;
       case 'datasets':
