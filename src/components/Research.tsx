@@ -1,8 +1,51 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 import { researchAreas } from '../data/research';
-import { collaborations, fundingLogos } from '../data/collaborations';
+import { collaborations, fundingLogos, researchhighlights } from '../data/collaborations';
 import type { ResearchArea } from '../types/research';
+
+function ResearchHighlights({ onSelectProject }: { onSelectProject?: (id: string) => void }) {
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+      {researchhighlights.map((project) => {
+        const isExternal = project.link.startsWith('http');
+
+        if (isExternal) {
+          return (
+            <a
+              key={project.name}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
+            >
+              <img
+                src={project.logo}
+                alt={project.name}
+                className="max-h-16 w-auto"
+              />
+            </a>
+          );
+        }
+
+        // If it's an internal link (like "prodaptive"), render a button
+        return (
+          <button
+            key={project.name}
+            onClick={() => onSelectProject?.(project.link)}
+            className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+          >
+            <img
+              src={project.logo}
+              alt={project.name}
+              className="max-h-16 w-auto"
+            />
+          </button>
+        );
+      })}
+    </div>
+  );
+}
 
 function ResearchAreaCard({ area, expanded, onToggle }: { 
   area: ResearchArea; 
@@ -146,7 +189,7 @@ function FundingSection() {
   );
 }
 
-export function Research() {
+export function Research({ onSelectProject }: { onSelectProject?: (id: string) => void }) {
   const [expandedArea, setExpandedArea] = useState<string | null>(null);
   const [contentHeight, setContentHeight] = useState<number>(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -207,6 +250,11 @@ export function Research() {
 
   return (
     <div className="max-w-6xl">
+      <section>
+        <h2 className="text-3xl font-semibold mb-8">Research Highlights</h2>
+        <ResearchHighlights onSelectProject={onSelectProject} />
+      </section>
+
       <section className="mb-12">
         <h2 className="text-3xl font-semibold mb-8">Research Areas</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -12,6 +12,7 @@ import { Teaching } from './components/Teaching';
 import { CV } from './components/CV';
 import { Datasets } from './components/Datasets';
 import { News } from './components/News';
+import { Prodaptive } from './components/Prodaptive';
 
 type MenuItem = {
   id: string;
@@ -67,7 +68,7 @@ function App() {
           />
         );
       case 'research':
-        return <Research />;
+  return <Research onSelectProject={(section) => setActiveSection(section)} />;
       case 'publications':
         return <Publications />;
       case 'news':
