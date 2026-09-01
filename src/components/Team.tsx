@@ -92,17 +92,28 @@ const teamMembers = {
       publications: [
         {title: "BioRxiv, 2025", link: "https://www.biorxiv.org/content/10.1101/2025.09.23.674728v1"}],
       photo: "https://diliberg.github.io/websiteDiLibertoLabImages/asenaPic.jpg"
+    },
+    {
+      name: "Anna Sawicka", 
+      role: "PhD Student",
+      keywords: ["Speech","EEG","Machine Learning"],
+      publications: [
+        {title: "LinkedIn", link: "https://www.linkedin.com/in/annasawicka/"}],
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025Anna.jpg"      
+    },
+    {
+      name: "Yannick Peters",
+      role: "PhD Student", 
+      keywords: ["Sign Language Processing", "Irish Sign Language", "Modality"],
+      publications: [
+        {title: "LinkedIn", link: "https://www.linkedin.com/in/yannick-peters-97b17b2b9/"}],
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025yannick.jpg"
     }
   ],
   staff: [
-    {
-      name: "Yannick Peters",
-      role: "Research Assistant", 
-      keywords: ["Sign Language Processing", "Irish Sign Language", "Modality"],
-      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2025yannick.jpg"
-    }, 
     { name: "Sharon Moran", 
       role: "Research Assistant", 
+      keywords : ["Neurodiversity", "Speech Processing", "Multimodal Analysis"],
       photo: "https://diliberg.github.io/websiteDiLibertoLabImages/sharon2026.jpg"
     },
     { name: "Noelle Law", 
