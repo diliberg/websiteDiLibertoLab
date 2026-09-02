@@ -17,12 +17,14 @@ function ResearchHighlights({ onSelectProject }: { onSelectProject?: (id: string
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
+              // Increased padding (p-8) and added a fixed height (h-32 md:h-40)
+              className="flex items-center justify-center w-full p-8 h-32 md:h-40 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
             >
               <img
                 src={project.logo}
                 alt={project.name}
-                className="max-h-16 w-auto"
+                // Increased logo size from max-h-16 to max-h-24
+                className="max-h-20 md:max-h-24 w-auto object-contain"
               />
             </a>
           );
@@ -33,12 +35,14 @@ function ResearchHighlights({ onSelectProject }: { onSelectProject?: (id: string
           <button
             key={project.name}
             onClick={() => onSelectProject?.(project.link)}
-            className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+            // Increased padding (p-8) and added a fixed height (h-32 md:h-40)
+            className="flex items-center justify-center w-full p-8 h-32 md:h-40 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
           >
             <img
               src={project.logo}
               alt={project.name}
-              className="max-h-16 w-auto"
+              // Increased logo size from max-h-16 to max-h-24
+              className="max-h-20 md:max-h-24 w-auto object-contain"
             />
           </button>
         );
