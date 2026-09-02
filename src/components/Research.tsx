@@ -250,7 +250,7 @@ export function Research({ onSelectProject }: { onSelectProject?: (id: string) =
 
   return (
     <div className="max-w-6xl">
-      <section>
+      <section className ="mb-12">
         <h2 className="text-3xl font-semibold mb-8">Research Highlights</h2>
         <ResearchHighlights onSelectProject={onSelectProject} />
       </section>

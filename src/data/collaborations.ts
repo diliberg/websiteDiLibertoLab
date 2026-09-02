@@ -163,12 +163,12 @@ export const fundingLogos: FunderLogo[] = [
 export const researchhighlights: ResearchHighlight[] = [
   {
     name: "ARC-HUB",
-    logo: "https://diliberg.github.io/websiteDiLibertoLabImages/arc_hub.jpg",
+    logo: "https://diliberg.github.io/websiteDiLibertoLabImages/refocus.PNG",
     link: "https://diliberto-lab.github.io/ARC-Hub-listening-study/"
   },
   {
     name: "Prodaptive",
-    logo: "https://marie-sklodowska-curie-actions.ec.europa.eu/themes/contrib/oe_theme/dist/ec/images/logo/positive/logo-ec--en.svg",
+    logo: "https://diliberg.github.io/websiteDiLibertoLabImages/prodaptive.PNG",
     link: "prodaptive"
   }
 ];
