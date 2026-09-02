@@ -11,10 +11,10 @@ export function Prodaptive() {
           <span>Marie Curie Individual Fellowship</span>
         </div>
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight leading-tight mb-4">
-          PRODAPTIVE: The Neural Foundations of Communicative Adaptation
+          PRODAPTIVE
         </h1>
         <p className="text-lg md:text-xl text-gray-600 max-w-3xl leading-relaxed">
-          Exploring the bidirectional neural mechanisms of speech production and perception to unlock new frontiers in cognitive neuroscience and clinical rehabilitation.
+          Exploring the neural mechanisms of speech production and perception.
         </p>
       </div>
 
@@ -27,7 +27,7 @@ export function Prodaptive() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end">
           <p className="text-white text-sm md:text-base p-6 md:p-8 font-medium">
-            The PRODAPTIVE research team under the Di Liberto Lab at Trinity College Dublin.
+            The Di Liberto-lab at Trinity College Dublin.
           </p>
         </div>
       </div>
@@ -49,10 +49,7 @@ export function Prodaptive() {
 
           {/* Section 2: Core Inquiry */}
           <section className="bg-gradient-to-br from-blue-50 to-indigo-50 border-l-4 border-blue-600 rounded-r-xl p-6 md:p-8 shadow-sm">
-            <h3 className="text-lg font-bold text-blue-900 mb-2">The Central Scientific Question</h3>
-            <p className="text-blue-950 font-semibold text-lg md:text-xl leading-relaxed">
-              &ldquo;Do the brain mechanisms that let us change our own speech also support how we understand others?&rdquo;
-            </p>
+            <h3 className="text-lg font-bold text-blue-900 mb-2">Do the brain mechanisms that let us change our own speech also support how we understand others?</h3>
             <p className="text-gray-700 mt-4 text-sm md:text-base leading-relaxed">
               Led by <strong>Dr. Giorgio Piazza</strong> and supervised by <strong>Asst. Prof. Giovanni Di Liberto</strong> at Trinity College Dublin, PRODAPTIVE asks this fundamental question. Detecting if the same neural system is at the foundation of both perception and production would have important implications, such as the development of targeted therapies that strengthen comprehension deficits through production exercises.
             </p>
@@ -62,16 +59,16 @@ export function Prodaptive() {
           <section className="prose prose-blue max-w-none">
             <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2 border-b pb-2">
               <Activity className="h-5 w-5 text-blue-600" />
-              Cutting-Edge Technology: OPM-MEG
+              OPM-MEG
             </h2>
             <p className="text-gray-700 leading-relaxed text-base">
-              This project uses a new brain-recording tool called <strong>OPM-MEG</strong> (Optically Pumped Magnetometer Magnetoencephalography), representing <strong>the first system of its kind in Ireland</strong>.
+              This project uses a new brain recording tool called <strong>OPM MEG</strong> (Optically Pumped Magnetometer Magnetoencephalography), the first system of its kind in Ireland.  
             </p>
             <div className="bg-gray-50 border border-gray-200 rounded-xl p-5 mt-4 flex flex-col md:flex-row gap-4 items-start">
               <div className="flex-1">
                 <h4 className="font-semibold text-gray-900 mb-1">Natural Movement & Realistic Settings</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Unlike traditional scanners that require people to stay completely still, the lightweight OPM-MEG helmet allows natural movement. This makes it possible to record brain activity while people speak and listen in realistic settings, including noisy environments like a busy café. Studying conversation as it naturally happens makes the findings directly relevant to everyday communication.
+                  Unlike traditional scanners that require people to stay still, the lightweight OPM MEG helmet allows natural movement. That makes it possible to record brain activity while people speak and listen in realistic settings, including noisy environments like a busy café. Studying conversation as it naturally happens makes the findings directly relevant to everyday communication. 
                 </p>
               </div>
             </div>
@@ -140,7 +137,7 @@ export function Prodaptive() {
           This Marie Curie Individual Fellowship is based in the <strong>School of Computer Science and Statistics</strong>, with support from the <strong>Trinity College Institute of Neuroscience (TCIN)</strong> and the <strong>Rinn AI Centre</strong>.
         </p>
         <p className="text-gray-700 leading-relaxed text-sm md:text-base mb-6">
-          It forms a pivotal part of the <strong>Di Liberto Lab’s</strong> broader program investigating how human communication develops and changes across the lifespan. This extensive research includes dedicated work on speech, sign language, music, attention in hearing, as well as translational research into neurodiversity and assistive technologies.
+          It forms a pivotal part of the <strong>Di Liberto-lab’s</strong> broader program investigating how human communication develops and changes across the lifespan. This extensive research includes dedicated work on speech, sign language, music, attention in hearing, as well as translational research into neurodiversity and assistive technologies.
         </p>
         <div className="flex flex-wrap gap-4 items-center justify-between pt-4 border-t border-gray-200">
           <span className="text-sm font-semibold text-gray-500">School of Computer Science & Statistics, Trinity College Dublin</span>
@@ -150,7 +147,7 @@ export function Prodaptive() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg text-sm font-semibold shadow-sm transition-colors"
           >
-            Visit Di Liberto Lab website
+            Go back to main website
             <ExternalLink className="h-4 w-4" />
           </a>
         </div>

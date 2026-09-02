@@ -3,6 +3,12 @@ import { ChevronLeft, ChevronRight, ExternalLink, MapPin } from 'lucide-react';
 
 const newsItems = [
   {
+    date: "September 2026",
+    title: "Anna and Yannick start their PhD",
+    description: "Anna Sawicka and Yannick Peters begin their 4-year funded PhD studentships.",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/yannick_and_anna.jpg"
+  },
+  {
     date: "August 2026",
     title: "Sharon and Noelle join the lab!",
     description: "Sharon Moran and Noelle Law have joined the Di Liberto-lab as research assistants on our new projects with ARC-HUB and Fidelity.",

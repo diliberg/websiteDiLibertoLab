@@ -34,6 +34,12 @@ const slides = [
 
 const newsItems = [
   {
+    date: "September 2026",
+    title: "Anna and Yannick start their PhD",
+    description: "Anna Sawicka and Yannick Peters begin their 4-year funded PhD studentships. ",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/yannick_and_anna.jpg"
+  },
+  {
     date: "August 2026",
     title: "Sharon and Noelle join the lab!",
     description: "Sharon Moran and Noelle Law have joined the Di Liberto-lab as research assistants on our new projects with ARC-HUB and Fidelity.",
@@ -65,13 +71,6 @@ const newsItems = [
     description: "Emily and Giovanni's paper on speech neurophysiology in realistic contexts has been publised in the European Journal of Neuroscience",
     image: "https://diliberg.github.io/websiteDiLibertoLabImages/big_leap_updated.png", 
     link: "https://onlinelibrary.wiley.com/doi/full/10.1111/ejn.70496"
-  },
-  {
-    date: "May 2026",
-    title: "fNIRS preprint",
-    description: "Please check out our new preprint using fNIRS, co-led by Giovanni and Jaimy, that came about from the CNSP Hackathon (Maastricht, 2025)",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/FNIRS_2025.jpg", 
-    link: "https://www.biorxiv.org/content/10.64898/2026.03.20.713212v1"
   }
  ];
 
