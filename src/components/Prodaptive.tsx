@@ -3,9 +3,9 @@ import { ExternalLink, Brain, Activity, Award, MessageSquare, ShieldCheck } from
 
 export function Prodaptive() {
   return (
-    <div className="max-w-5xl mx-auto px-4 py-8 md:py-12">
+    <div className="max-w-6xl">
       {/* Hero Section */}
-      <div className="mb-12 text-center md:text-left">
+      <div className="mb-12">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-sm font-medium mb-4">
           <Award className="h-4 w-4" />
           <span>Marie Curie Individual Fellowship</span>
