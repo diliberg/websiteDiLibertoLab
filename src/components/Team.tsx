@@ -123,9 +123,48 @@ const teamMembers = {
     },
   ],
   visitorsCurrent: [
-    
-  ],
+  
+    ],
   dissertation: [
+    {
+      name: "Daria Podkopaieva", 
+      role: "MCS Student",
+      keywords: ["Music", "OPM-MEG"],
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/dasha2026.jpg"      
+    },
+    {
+      name: "Gaurav Anand Boob", 
+      role: "MCS Student",
+      keywords: ["Visual Perception"],
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/gaurav2026.jpg"      
+    },
+    {
+      name: "James Liu", 
+      role: "MAI Student",
+      keywords: ["Music Perception"]      
+    },
+    {
+      name: "Hera Khan", 
+      role: "MAI Student",
+      keywords: ["Speechify"]      
+    },
+    {
+      name: "Marco Curran", 
+      role: "MAI Student",
+      keywords: ["Brain-to-speech Decoding"]      
+    },
+    {
+      name: "Finn Clancy", 
+      role: "MCS Student",
+      keywords: ["Speechify"]      
+    },
+    
+    {
+      name: "Manon Galian", 
+      role: "MCS Student"   
+    }
+  ],
+  dissertationold: [
     {
       name: "Stevin Joseph Sebastian", 
       role: "MCS Student",
@@ -252,7 +291,8 @@ export function Team({ onViewCV, onViewAlumni }: { onViewCV: () => void, onViewA
       <TeamSection title="Postdoctoral Researchers" members={teamMembers.postdocs} />
       <TeamSection title="PhD Students" members={teamMembers.phd} />
       <TeamSection title="Research Staff" members={teamMembers.staff} />
-      <TeamSection title="Dissertation Projects 2025-26" members={teamMembers.dissertation} />
+      <TeamSection title="Dissertation Projects 2026-2027" members={teamMembers.dissertation} />
+      <TeamSection title="Dissertation Projects 2025-2026" members={teamMembers.dissertationold} />
       <TeamSection title="Visiting Students/Researchers" members={teamMembers.visitorsCurrent} />
 
     </div>
