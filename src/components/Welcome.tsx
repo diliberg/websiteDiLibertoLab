@@ -34,6 +34,12 @@ const slides = [
 
 const newsItems = [
   {
+    date: "October 2026",
+    title: "Giovanni receives Excellence in Research Supervision Award",
+    description: "Trinity College Dublin has awarded Giovanni with its annual Excellence in Research Supervision Award. Congratulations!",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/2026giovanniaward.jpg"
+  },
+  {
     date: "September 2026",
     title: "Anna and Yannick start their PhD",
     description: "Anna Sawicka and Yannick Peters begin their 4-year funded PhD studentships. ",
@@ -64,13 +70,6 @@ const newsItems = [
     description: "Sara's paper on attention switching has been published in PLoS Biology",
     image: "https://diliberg.github.io/websiteDiLibertoLabImages/sara_paper_image.png", 
     link: "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3003876"
-  },
-  {
-    date: "June 2026",
-    title: "New publication",
-    description: "Emily and Giovanni's paper on speech neurophysiology in realistic contexts has been publised in the European Journal of Neuroscience",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/big_leap_updated.png", 
-    link: "https://onlinelibrary.wiley.com/doi/full/10.1111/ejn.70496"
   }
  ];
 

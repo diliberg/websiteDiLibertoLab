@@ -31,7 +31,8 @@ const researchCoverage: ResearchCoverage[] = [
         { name: "Infobae.com (Español)", link: "https://www.infobae.com/america/ciencia-america/2026/07/19/como-el-cerebro-puede-seguir-dos-conversaciones-a-la-vez-segun-la-ciencia/" },
         { name: "Jandan.net (中文)", link: "https://jandan.net/p/123298/" }, 
         { name: "Descopera.ro (Română)", link: "https://www.descopera.ro/stiinta/21106863-un-studiu-arata-ca-oamenii-pot-urmari-mai-multe-conversatii-simultan" },
-        { name: "Scientas.nl (Nederlands)", link: "https://scientias.nl/je-brein-kan-stiekem-twee-gesprekken-tegelijk-volgen-al-is-het-maar-voor-even/" }
+        { name: "Scientas.nl (Nederlands)", link: "https://scientias.nl/je-brein-kan-stiekem-twee-gesprekken-tegelijk-volgen-al-is-het-maar-voor-even/" },
+        { name: "Theconversation.com", link: "https://theconversation.com/neuroscience-offers-new-insights-into-how-our-brain-solves-the-cocktail-party-problem-292169" }
       ],
       university: [
         { name: "Trinity College Dublin", link: "https://www.tcd.ie/news_events/top-stories/featured/new-trinity-research-shows-people-can-track-more-than-one-conversation-at-once/" }

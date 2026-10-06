@@ -51,7 +51,7 @@ export function OpenScience({ onViewDatasets }: { onViewDatasets?: () => void })
             // Made the link larger (text-lg) and bolder (font-semibold)
             className="text-blue-600 hover:text-blue-800 text-3xl font-semibold hover:underline inline-flex items-center transition-colors text-left"
           >
-            See our standardised datasets →
+            See the standardised datasets →
           </button>
         )}
       </div>

@@ -3,6 +3,12 @@ import { ChevronLeft, ChevronRight, ExternalLink, MapPin } from 'lucide-react';
 
 const newsItems = [
   {
+    date: "October 2026",
+    title: "Giovanni receives Excellence in Research Supervision Award",
+    description: "Trinity College Dublin has awarded Giovanni with its annual Excellence in Research Supervision Award. Congratulations!",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/2026giovanniaward.jpg"
+  },
+  {
     date: "September 2026",
     title: "Anna and Yannick start their PhD",
     description: "Anna Sawicka and Yannick Peters begin their 4-year funded PhD studentships.",

@@ -129,7 +129,7 @@ const teamMembers = {
     {
       name: "Daria Podkopaieva", 
       role: "MCS Student",
-      keywords: ["OPM-MEG", "Musw", "Transformers"],
+      keywords: ["OPM-MEG"],
       photo: "https://diliberg.github.io/websiteDiLibertoLabImages/dasha2026.jpg"      
     },
     {
