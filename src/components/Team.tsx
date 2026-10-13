@@ -139,6 +139,12 @@ const teamMembers = {
       photo: "https://diliberg.github.io/websiteDiLibertoLabImages/gaurav2026.jpg"      
     },
     {
+      name: "Hera Khan", 
+      role: "MAI Student",
+      keywords: ["Speechify"], 
+      photo: "https://diliberg.github.io/websiteDiLibertoLabImages/2026hera.png"
+    },
+    {
       name: "James Liu", 
       role: "MAI Student",
       keywords: ["Music Perception"]      
