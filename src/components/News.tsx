@@ -12,7 +12,7 @@ const newsItems = [
     date: "September 2026",
     title: "Anna and Yannick start their PhD",
     description: "Anna Sawicka and Yannick Peters begin their 4-year funded PhD studentships.",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/yannick_and_anna.jpg"
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/yannick_and_anna_with_logos.jpg"
   },
   {
     date: "August 2026",
