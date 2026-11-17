@@ -3,11 +3,15 @@ import { ChevronLeft, ChevronRight, ExternalLink, MapPin } from 'lucide-react';
 
 const slides = [
   {
-    url: "https://diliberg.github.io/websiteDiLibertoLabImages/2025-2labphoto_2.jpg",
+    url: "https://diliberg.github.io/websiteDiLibertoLabImages/2026lab.jpg",
     alt: "Di Liberto Lab team"
   },
   {
-    url: "https://diliberg.github.io/websiteDiLibertoLabImages/2025-2labphoto_1.jpg",
+    url: "https://diliberg.github.io/websiteDiLibertoLabImages/2026lab2.jpg",
+    alt: "Di Liberto Lab team"
+  },
+  {
+    url: "https://diliberg.github.io/websiteDiLibertoLabImages/2025-2labphoto_2.jpg",
     alt: "Di Liberto Lab team"
   },
     {
