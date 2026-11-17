@@ -3,6 +3,12 @@ import { ChevronLeft, ChevronRight, ExternalLink, MapPin } from 'lucide-react';
 
 const newsItems = [
   {
+    date: "November 2026",
+    title: "Emily's PhD defence",
+    description: "Emily Ip has succesfully defended her PhD thesis. Congratulations!",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/2026emilyviva.jpg"
+  },
+  {
     date: "October 2026",
     title: "Giovanni receives Excellence in Research Supervision Award",
     description: "Trinity College Dublin has awarded Giovanni with its annual Excellence in Research Supervision Award. Congratulations!",

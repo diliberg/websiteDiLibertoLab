@@ -38,6 +38,12 @@ const slides = [
 
 const newsItems = [
   {
+    date: "November 2026",
+    title: "Emily's PhD defence",
+    description: "Emily Ip has succesfully defended her PhD thesis. Congratulations!",
+    image: "https://diliberg.github.io/websiteDiLibertoLabImages/2026emilyviva.jpg"
+  },
+  {
     date: "October 2026",
     title: "Giovanni receives Excellence in Research Supervision Award",
     description: "Trinity College Dublin has awarded Giovanni with its annual Excellence in Research Supervision Award. Congratulations!",
@@ -67,13 +73,6 @@ const newsItems = [
     title: "Amir's PhD defence",
     description: "Amirhossein Chalehchaleh has succesfully defended his PhD thesis on methods towards realistic tasks and scenarios. Congratulations!",
     image: "https://diliberg.github.io/websiteDiLibertoLabImages/amir_graduation.jpeg"
-  },
-  {
-    date: "July 2026",
-    title: "Sara's new publication",
-    description: "Sara's paper on attention switching has been published in PLoS Biology",
-    image: "https://diliberg.github.io/websiteDiLibertoLabImages/sara_paper_image.png", 
-    link: "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3003876"
   }
  ];
 
